@@ -1,5 +1,7 @@
 h1,
 h2,
+h3,
+h4,
 p {
   color: var(--Primary-Dark);
 }
@@ -14,6 +16,16 @@ h1 {
 }
 
 h2 {
+font-size: 96px;
+font-style: normal;
+font-weight: 900;
+line-height: 114%; /* 109.44px */
+letter-spacing: 0.96px;
+text-transform: uppercase;
+margin: 0;
+}
+
+h3 {
   font-size: 24px;
   font-style: normal;
   font-weight: 614;
@@ -22,22 +34,38 @@ h2 {
   margin: 0px;
 }
 
+h4 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 614;
+  line-height: 114%; /* 27.36px */
+  letter-spacing: 0.24px;
+  margin: 0px;  
+}
+
 .primary-button {
   display: inline-flex;
   padding: 10px;
+  margin-top: 40px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   border-radius: 37px;
   background: var(--Accent-Light);
-  border: 0;
+  border: 3px solid transparent;
   width: 270px;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  border: 3px solid var(--Accent-Dark);
 }
 
 .secondary-button {
   display: inline-flex;
   padding: 10px;
-  margin: 20px;
+  margin-left: 20px;
+  margin-top: 40px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -45,6 +73,11 @@ h2 {
   border: 3px solid var(--Accent-Light);
   background-color: var(--Primary-Light);
   width: 270px;
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  border: 3px solid var(--Accent-Dark);
 }
 
 .primary-button p {
@@ -55,7 +88,7 @@ h2 {
   font-weight: 700;
   line-height: 144%; /* 23.04px */
   letter-spacing: 0.16px;
-  margin: 10px;
+  margin: 7px;
 }
 
 .secondary-button p {

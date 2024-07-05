@@ -84,7 +84,10 @@ const SecondTextDiv = styled.div`
 
 const Triskelion = styled.svg`
   margin-bottom: 300px;
-  margin-left: 20px;
+  margin-left: 100px;
+  @media (max-width: 1400px) {
+    margin-left: 20px;
+  }
 `;
 
 const Orb1 = styled.svg`
@@ -97,7 +100,8 @@ const Orb2 = styled.svg`
   position: absolute;
   bottom: 50px;
   right: 10px;
-  z-index: -3;`;
+  z-index: -3;
+`;
 function LandingPage() {
   return (
     <ParalaxWrapper>
@@ -270,22 +274,22 @@ function LandingPage() {
             her truth.
           </h4>
           <ButtonDiv>
-          <button className="primary-button">
-            <p>meet nicki</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="37"
-              height="15"
-              viewBox="0 0 37 15"
-              fill="none"
-            >
-              <path
-                className="arrow"
-                d="M35.8781 8.20711C36.2686 7.81658 36.2686 7.18342 35.8781 6.79289L29.5142 0.428932C29.1236 0.0384078 28.4905 0.0384078 28.0999 0.428932C27.7094 0.819457 27.7094 1.45262 28.0999 1.84315L33.7568 7.5L28.0999 13.1569C27.7094 13.5474 27.7094 14.1805 28.0999 14.5711C28.4905 14.9616 29.1236 14.9616 29.5142 14.5711L35.8781 8.20711ZM0 8.5H35.171V6.5H0V8.5Z"
-                fill="#590000"
-              />
-            </svg>
-          </button>
+            <button className="primary-button">
+              <p>meet nicki</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="37"
+                height="15"
+                viewBox="0 0 37 15"
+                fill="none"
+              >
+                <path
+                  className="arrow"
+                  d="M35.8781 8.20711C36.2686 7.81658 36.2686 7.18342 35.8781 6.79289L29.5142 0.428932C29.1236 0.0384078 28.4905 0.0384078 28.0999 0.428932C27.7094 0.819457 27.7094 1.45262 28.0999 1.84315L33.7568 7.5L28.0999 13.1569C27.7094 13.5474 27.7094 14.1805 28.0999 14.5711C28.4905 14.9616 29.1236 14.9616 29.5142 14.5711L35.8781 8.20711ZM0 8.5H35.171V6.5H0V8.5Z"
+                  fill="#590000"
+                />
+              </svg>
+            </button>
           </ButtonDiv>
           <Orb1
             xmlns="http://www.w3.org/2000/svg"

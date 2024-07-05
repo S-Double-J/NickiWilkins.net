@@ -1,0 +1,89 @@
+h1,
+h2,
+p {
+  color: var(--Primary-Dark);
+}
+
+h1 {
+  font-size: 144px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%; /* 144px */
+  letter-spacing: -1.44px;
+  margin: 0px;
+}
+
+h2 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 614;
+  line-height: 114%; /* 27.36px */
+  letter-spacing: 0.24px;
+  margin: 0px;
+}
+
+.primary-button {
+  display: inline-flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 37px;
+  background: var(--Accent-Light);
+  border: 0;
+  width: 270px;
+}
+
+.secondary-button {
+  display: inline-flex;
+  padding: 10px;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 37px;
+  border: 3px solid var(--Accent-Light);
+  background-color: var(--Primary-Light);
+  width: 270px;
+}
+
+.primary-button p {
+  color: var(--Accent-Dark);
+  font-family: Cinzel;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 144%; /* 23.04px */
+  letter-spacing: 0.16px;
+  margin: 10px;
+}
+
+.secondary-button p {
+  color: var(--Accent-Dark);
+  font-family: Cinzel;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 144%; /* 23.04px */
+  letter-spacing: 0.16px;
+  margin: 7px 10px;
+}
+
+.navbar p {
+  color: var(--Primary-Light);
+  text-align: center;
+  font-family: Cinzel;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.hamburger-span {
+  background: var(--Primary-Light);
+  height: 3px;
+  width: 45px;
+  position: absolute;
+}

@@ -4,16 +4,34 @@ const ParalaxWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
+  position: relative;
+  height: calc(100vh - 60px)
 `;
 const SplotchTopLeft = styled.svg`
   position: absolute;
   top: 0;
   left: 0;
+  @media (max-width: 1000px){
+    width: 300px;
+    top: -95px;
+  }
 `;
 const SplotchMiddleRight = styled.svg`
   position: absolute;
   right: 0;
   bottom: -75%;
+  width: 560px;
+  @media (max-width: 1000px){
+    width: 400px;
+    bottom: -55%
+  }
+  @media (max-width: 780px){
+    right: -100px;
+  }
+  @media (max-width: 680px){
+    right: -200px;
+  }
 `;
 const Venus = styled.svg`
   margin: 0;
@@ -80,6 +98,7 @@ const SecondTextDiv = styled.div`
   width: 500px;
   margin-left: 80px;
   margin-bottom: 150px;
+  margin-right: 470px;
 `;
 
 const Triskelion = styled.svg`
@@ -119,8 +138,6 @@ function LandingPage() {
       </SplotchTopLeft>
       <SplotchMiddleRight
         xmlns="http://www.w3.org/2000/svg"
-        width="558"
-        height="1325"
         viewBox="0 0 558 1325"
         fill="none"
       >

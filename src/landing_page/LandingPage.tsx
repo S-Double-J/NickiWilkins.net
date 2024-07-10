@@ -1,18 +1,25 @@
 import styled from "styled-components";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { useRef } from "react";
 
 const ParalaxWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: hidden;
   position: relative;
-  height: calc(100vh - 60px)
+  height: calc(100svh - 60px);
+  overflow-y: scroll;
 `;
 const SplotchTopLeft = styled.svg`
   position: absolute;
   top: 0;
   left: 0;
-  @media (max-width: 1000px){
+  @media (max-width: 1000px) {
     width: 300px;
     top: -95px;
   }
@@ -22,14 +29,14 @@ const SplotchMiddleRight = styled.svg`
   right: 0;
   bottom: -75%;
   width: 560px;
-  @media (max-width: 1000px){
+  @media (max-width: 1000px) {
     width: 400px;
-    bottom: -55%
+    bottom: -55%;
   }
-  @media (max-width: 780px){
+  @media (max-width: 780px) {
     right: -100px;
   }
-  @media (max-width: 680px){
+  @media (max-width: 680px) {
     right: -200px;
   }
 `;
@@ -74,9 +81,10 @@ const ExploreText = styled.p`
   line-height: 114%; /* 15.96px */
   letter-spacing: 0.14px;
   text-transform: uppercase;
+  margin-bottom: 15px;
 `;
 
-const SecondSection = styled.div`
+const Section2 = styled.div`
   min-height: calc(100svh - 60px);
   width: 100%;
   position: relative;
@@ -86,9 +94,10 @@ const SecondSection = styled.div`
 `;
 const SplotchBottom = styled.svg`
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   width: 100%;
+  z-index: -1;
 `;
 
 const SecondTextDiv = styled.div`
@@ -121,9 +130,137 @@ const Orb2 = styled.svg`
   right: 10px;
   z-index: -3;
 `;
+
+const Section3 = styled.div`
+  width: 100%;
+  min-height: calc(100svh - 60px);
+  background-color: #8c1c1c;
+  position: relative;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  overflow: hidden;
+`;
+
+const StickyScrollDiv = styled.div`
+  min-height: 500vh;
+  width: 100%;
+`;
+
+const ThirdTextDiv = styled.div`
+  position: absolute;
+  top: 0;
+  right: 50px;
+`;
+
+const Spiral = styled.svg`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(40deg);
+`;
+const SpiralTextAxis = styled.div`
+  position: absolute;
+  height: 760px;
+  width: 760px;
+  border-radius: 100%;
+`;
+
+const Section4 = styled.div`
+  min-height: calc(100svh - 60px);
+`;
+
+const Footer = styled.div`
+  min-height: 200px;
+`;
 function LandingPage() {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    container: targetRef,
+  });
+  const scrollValues = [0.29, 0.82];
+  const rotate = useTransform(scrollYProgress, scrollValues, [
+    "20deg",
+    "-340deg",
+  ]);
+  const rotate1 = useTransform(scrollYProgress, scrollValues, [
+    "-110deg",
+    "250deg",
+  ]);
+  const fontSize1 = useTransform(
+    scrollYProgress,
+    [0.29, 0.32, 0.79, 0.82],
+    ["36px", "15px", "15px", "36px"]
+  );
+  const rotate2 = useTransform(scrollYProgress, scrollValues, [
+    "-155deg",
+    "205deg",
+  ]);
+  const fontSize2 = useTransform(
+    scrollYProgress,
+    [0.31, 0.33, 0.355, 0.37],
+    ["15px", "36px", "36px", "15px"]
+  );
+  const rotate3 = useTransform(scrollYProgress, scrollValues, [
+    "-200deg",
+    "160deg",
+  ]);
+  const fontSize3 = useTransform(
+    scrollYProgress,
+    [0.38, 0.4, 0.425, 0.445],
+    ["15px", "36px", "36px", "15px"]
+  );
+  const rotate4 = useTransform(scrollYProgress, scrollValues, [
+    "-245deg",
+    "115deg",
+  ]);
+  const fontSize4 = useTransform(
+    scrollYProgress,
+    [0.44, 0.47, 0.495, 0.51],
+    ["15px", "36px", "36px", "15px"]
+  );
+  const rotate5 = useTransform(scrollYProgress, scrollValues, [
+    "-290deg",
+    "70deg",
+  ]);
+  const fontSize5 = useTransform(
+    scrollYProgress,
+    [0.5, 0.53, 0.56, 0.58],
+    ["15px", "36px", "36px", "15px"]
+  );
+  const rotate6 = useTransform(scrollYProgress, scrollValues, [
+    "-335deg",
+    "25deg",
+  ]);
+  const fontSize6 = useTransform(
+    scrollYProgress,
+    [0.58, 0.6, 0.625, 0.645],
+    ["15px", "36px", "36px", "15px"]
+  );
+  const rotate7 = useTransform(scrollYProgress, scrollValues, [
+    "-20deg",
+    "340deg",
+  ]);
+  const fontSize7 = useTransform(
+    scrollYProgress,
+    [0.645, 0.665, 0.69, 0.715],
+    ["15px", "36px", "36px", "15px"]
+  );
+  const rotate8 = useTransform(scrollYProgress, scrollValues, [
+    "-65deg",
+    "295deg",
+  ]);
+  const fontSize8 = useTransform(
+    scrollYProgress,
+    [0.715, 0.735, 0.755, 0.78],
+    ["15px", "36px", "36px", "15px"]
+  );
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    console.log(latest);
+  });
   return (
-    <ParalaxWrapper>
+    <ParalaxWrapper ref={targetRef}>
       <SplotchTopLeft
         width="438"
         height="593"
@@ -149,7 +286,7 @@ function LandingPage() {
       <HeroContainer id="Hero">
         <HeroTextDiv>
           <h1 className="hero-title">begin again</h1>
-          <h3>Finding purpose in the second half of life</h3>
+          <h4>Finding purpose in the second half of life</h4>
           <ButtonDiv>
             <button className="primary-button">
               <p>let's work together</p>
@@ -246,7 +383,7 @@ function LandingPage() {
           </svg>
         </ExploreDiv>
       </HeroContainer>
-      <SecondSection id="Second">
+      <Section2 id="Second">
         <Triskelion
           width="397"
           height="420"
@@ -272,7 +409,7 @@ function LandingPage() {
             <br />
             WHOLE
           </h2>
-          <h4>
+          <p>
             I offer transformational mentoring to women, guiding them through
             the various stages of the midlife metamorphosis.
             <br />
@@ -289,25 +426,23 @@ function LandingPage() {
             <br />A woman who travels this long, arduous spiritual journey will
             be strong in soulfulness, grounded in heart-based wisdom, and speak
             her truth.
-          </h4>
-          <ButtonDiv>
-            <button className="primary-button">
-              <p>meet nicki</p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="37"
-                height="15"
-                viewBox="0 0 37 15"
-                fill="none"
-              >
-                <path
-                  className="arrow"
-                  d="M35.8781 8.20711C36.2686 7.81658 36.2686 7.18342 35.8781 6.79289L29.5142 0.428932C29.1236 0.0384078 28.4905 0.0384078 28.0999 0.428932C27.7094 0.819457 27.7094 1.45262 28.0999 1.84315L33.7568 7.5L28.0999 13.1569C27.7094 13.5474 27.7094 14.1805 28.0999 14.5711C28.4905 14.9616 29.1236 14.9616 29.5142 14.5711L35.8781 8.20711ZM0 8.5H35.171V6.5H0V8.5Z"
-                  fill="#590000"
-                />
-              </svg>
-            </button>
-          </ButtonDiv>
+          </p>
+          <button className="primary-button">
+            <p>meet nicki</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="37"
+              height="15"
+              viewBox="0 0 37 15"
+              fill="none"
+            >
+              <path
+                className="arrow"
+                d="M35.8781 8.20711C36.2686 7.81658 36.2686 7.18342 35.8781 6.79289L29.5142 0.428932C29.1236 0.0384078 28.4905 0.0384078 28.0999 0.428932C27.7094 0.819457 27.7094 1.45262 28.0999 1.84315L33.7568 7.5L28.0999 13.1569C27.7094 13.5474 27.7094 14.1805 28.0999 14.5711C28.4905 14.9616 29.1236 14.9616 29.5142 14.5711L35.8781 8.20711ZM0 8.5H35.171V6.5H0V8.5Z"
+                fill="#590000"
+              />
+            </svg>
+          </button>
           <Orb1
             xmlns="http://www.w3.org/2000/svg"
             width="217"
@@ -336,7 +471,71 @@ function LandingPage() {
             fill="#8C1C1C"
           />
         </SplotchBottom>
-      </SecondSection>
+      </Section2>
+      <StickyScrollDiv>
+        <Section3 id="Third">
+          <ThirdTextDiv id="ThirdTextDiv">
+            <h3>the circle of rebirth</h3>
+          </ThirdTextDiv>
+          <motion.div
+            className="spiral-div"
+            style={{
+              rotate,
+            }}
+          >
+            <Spiral
+              className="spiral"
+              id="Spiral"
+              xmlns="http://www.w3.org/2000/svg"
+              width="684"
+              height="675"
+              viewBox="0 0 684 675"
+              fill="none"
+            >
+              <path
+                d="M173.139 25.417C268.878 -6.52406 489.854 -30.6608 607.845 128.321C755.335 327.048 671.773 650.105 444.374 670.5C244.372 688.437 -20.4701 617.35 3.73096 372.835C27.9321 128.321 173.142 70.584 316.062 64.5C480.5 57.5 682.5 222.5 616 437.5C563.546 607.089 362.584 676.726 229.303 617.349C37.5212 531.911 58.9826 447.889 89.5764 325.632C120.17 203.374 174.189 112.012 355.332 128.321C479.5 139.5 579.502 289.11 565 389.828C541 556.514 362.638 614.989 265.377 569.202C168.116 523.414 114.234 430.423 136.152 348.289C169.987 221.5 279.546 168.186 382.273 208.095C461.951 239.049 519.309 310.303 501.908 396.437C486.664 471.895 405.104 531.5 355.332 531.5C305.56 531.5 256.324 511.155 229.303 462.522C194.701 400.241 211.952 331.296 283.642 287.397C325.955 261.486 378.163 270.592 407.387 297.781C430.218 319.023 451.965 353.954 444.374 389.828C434.185 437.976 388.665 469.444 355.332 468.5C321.998 467.556 274.053 436.56 274.053 403.989C274.053 358.202 312.866 325.632 344.373 336.96C344.373 336.96 385.322 350.2 390.035 372.835C394.5 394.274 386.033 415.315 366.291 423.343C346.81 431.265 318.352 425.5 316.062 403.989C314.596 390.214 319.178 374.381 332.501 372.835C343.419 371.568 353.031 378.723 355.332 389.828"
+                stroke="#8C1C1C"
+                stroke-width="3"
+              />
+            </Spiral>
+            <SpiralTextAxis className="axis-1">
+              <motion.p style={{ rotate: rotate1, fontSize: fontSize1 }}>
+                1. The Call in the middle of the night
+              </motion.p>
+            </SpiralTextAxis>
+            <SpiralTextAxis className="axis-2">
+              <motion.p style={{ rotate: rotate2, fontSize: fontSize2 }}>
+                2. Preparation: the gathering of allies, the road of trials. A
+                sorting of this from that
+              </motion.p>
+            </SpiralTextAxis>
+            <SpiralTextAxis className="axis-3">
+              <motion.p style={{ rotate: rotate3, fontSize: fontSize3 }}>
+                3. Awakening to feelings of loss and death
+              </motion.p>
+            </SpiralTextAxis>
+            <SpiralTextAxis className="axis-4">
+              <motion.p style={{ rotate: rotate4, fontSize: fontSize4 }}>4. The descent</motion.p>
+            </SpiralTextAxis>
+            <SpiralTextAxis className="axis-5">
+              <motion.p style={{ rotate: rotate5, fontSize: fontSize5 }}>5. Soul Quest</motion.p>
+            </SpiralTextAxis>
+            <SpiralTextAxis className="axis-6">
+              <motion.p style={{ rotate: rotate6, fontSize: fontSize6 }}>6. The return</motion.p>
+            </SpiralTextAxis>
+            <SpiralTextAxis className="axis-7">
+              <motion.p style={{ rotate: rotate7, fontSize: fontSize7 }}>
+                7. Integration of the experience and the gift you received
+              </motion.p>
+            </SpiralTextAxis>
+            <SpiralTextAxis className="axis-8">
+              <motion.p style={{ rotate: rotate8, fontSize: fontSize8 }}>8. Ceremony</motion.p>
+            </SpiralTextAxis>
+          </motion.div>
+        </Section3>
+      </StickyScrollDiv>
+      <Section4></Section4>
+      <Footer></Footer>
     </ParalaxWrapper>
   );
 }

@@ -149,8 +149,8 @@ p {
   position: absolute;
   color: var(--Primary-Light);
   width: 40vw;
-  top: -100px; 
-  text-align: center;  
+  top: -100px;
+  text-align: center;
 }
 
 .axis-1 {
@@ -223,4 +223,50 @@ p {
 .axis-8 p {
   transform-origin: center left;
   transform: rotate(-45deg);
+}
+
+.crone-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  border: var(--Primary-Light);
+  background-color: var(--Primary-Light);
+  grid-area: crone;
+}
+
+.selkie-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  border: var(--Primary-Light);
+  background-color: var(--Primary-Light);
+  grid-area: selkie;
+}
+
+.triskelion-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  border: var(--Primary-Light);
+  background-color: var(--Primary-Light);
+  grid-area: trisk;
+}
+
+.leaf-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  border: var(--Primary-Light);
+  background-color: var(--Primary-Light);
+  grid-area: leaf;
+}
+
+.title-card {
+  color: var(--Primary-Light);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 144%; /* 57.6px */
+  letter-spacing: 0.4px;
+  grid-area: title;
 }

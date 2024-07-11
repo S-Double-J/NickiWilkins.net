@@ -13,7 +13,9 @@ const ParalaxWrapper = styled.div`
   align-items: center;
   position: relative;
   height: calc(100svh - 60px);
+  width: 100svw;
   overflow-y: scroll;
+  overflow-x: hidden;
 `;
 const SplotchTopLeft = styled.svg`
   position: absolute;
@@ -132,7 +134,7 @@ const Orb2 = styled.svg`
 `;
 
 const Section3 = styled.div`
-  width: 100%;
+  width: 100svw;
   min-height: calc(100svh - 60px);
   background-color: #8c1c1c;
   position: relative;
@@ -168,6 +170,28 @@ const SpiralTextAxis = styled.div`
 
 const Section4 = styled.div`
   min-height: calc(100svh - 60px);
+  min-width: 100svw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const BentoBox = styled.div`
+  display: grid;
+  grid-template-columns: calc(20% - 5px) calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) calc(20% - 5px);
+  grid-template-rows: calc(20% - 5px) calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) calc(20% - 5px);
+  grid-template-areas: 
+  'crone crone crone leaf title'
+  'crone crone crone leaf title'
+  'crone crone crone trisk trisk'
+  'selkie selkie selkie trisk trisk'
+  'selkie selkie selkie trisk trisk';
+  gap: 10px;
+  border-radius: 25px;
+  background-color: #8c1c1c;
+  height: 90%;
+  width: 95%;
+  padding: 10px;
 `;
 
 const Footer = styled.div`
@@ -515,13 +539,19 @@ function LandingPage() {
               </motion.p>
             </SpiralTextAxis>
             <SpiralTextAxis className="axis-4">
-              <motion.p style={{ rotate: rotate4, fontSize: fontSize4 }}>4. The descent</motion.p>
+              <motion.p style={{ rotate: rotate4, fontSize: fontSize4 }}>
+                4. The descent
+              </motion.p>
             </SpiralTextAxis>
             <SpiralTextAxis className="axis-5">
-              <motion.p style={{ rotate: rotate5, fontSize: fontSize5 }}>5. Soul Quest</motion.p>
+              <motion.p style={{ rotate: rotate5, fontSize: fontSize5 }}>
+                5. Soul Quest
+              </motion.p>
             </SpiralTextAxis>
             <SpiralTextAxis className="axis-6">
-              <motion.p style={{ rotate: rotate6, fontSize: fontSize6 }}>6. The return</motion.p>
+              <motion.p style={{ rotate: rotate6, fontSize: fontSize6 }}>
+                6. The return
+              </motion.p>
             </SpiralTextAxis>
             <SpiralTextAxis className="axis-7">
               <motion.p style={{ rotate: rotate7, fontSize: fontSize7 }}>
@@ -529,12 +559,22 @@ function LandingPage() {
               </motion.p>
             </SpiralTextAxis>
             <SpiralTextAxis className="axis-8">
-              <motion.p style={{ rotate: rotate8, fontSize: fontSize8 }}>8. Ceremony</motion.p>
+              <motion.p style={{ rotate: rotate8, fontSize: fontSize8 }}>
+                8. Ceremony
+              </motion.p>
             </SpiralTextAxis>
           </motion.div>
         </Section3>
       </StickyScrollDiv>
-      <Section4></Section4>
+      <Section4>
+        <BentoBox>
+          <div className="crone-card"></div>
+          <div className="selkie-card"></div>
+          <div className="triskelion-card"></div>
+          <div className="leaf-card"></div>
+          <p className="title-card">my programs</p>
+        </BentoBox>
+      </Section4>
       <Footer></Footer>
     </ParalaxWrapper>
   );

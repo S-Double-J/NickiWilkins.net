@@ -4,7 +4,6 @@ import {
   useMotionValueEvent,
   useScroll,
   useTransform,
-  MotionConfig,
 } from "framer-motion";
 import { useRef } from "react";
 
@@ -87,19 +86,6 @@ const SplotchBottom = styled.svg`
   left: 0;
   width: 100%;
   z-index: -1;
-`;
-
-const Orb1 = styled.svg`
-  position: absolute;
-  top: -150px;
-  z-index: -5;
-`;
-
-const Orb2 = styled.svg`
-  position: absolute;
-  bottom: 50px;
-  right: 10px;
-  z-index: -3;
 `;
 
 const Section3 = styled.div`

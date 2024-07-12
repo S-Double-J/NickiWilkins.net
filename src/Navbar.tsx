@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { motion, MotionConfig } from "framer-motion";
 import Menu from "./HamburgerHiddenMenu";
-import { useRef, useEffect } from "react";
 
 const Container = styled.div`
   background-color: #8c1c1c;

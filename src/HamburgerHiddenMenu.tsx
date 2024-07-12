@@ -1,5 +1,5 @@
 import { motion, MotionConfig } from "framer-motion";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 type ClickHandler = React.MouseEventHandler<HTMLElement>;
 
@@ -15,7 +15,7 @@ function Menu({ active, setActive }: Props) {
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const handler = (e: MouseEvent) => {
       if (active === true) {
         if (!menuRef.current?.contains(e.target as Node)) {
           setActive(false);
@@ -24,12 +24,12 @@ function Menu({ active, setActive }: Props) {
       }
     };
 
-    document.addEventListener("mousedown", handler);
+    document.addEventListener('mousedown', handler);
 
     return () => {
-      document.removeEventListener("mousedown", handler);
+      document.removeEventListener('mousedown', handler);
     };
-  });
+  }, [active, setActive]);
 
   return (
     <MotionConfig transition={{ duration: 0.3, ease: "easeInOut" }}>

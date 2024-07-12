@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
+import Menu from "./HamburgerHiddenMenu";
+import { useRef, useEffect } from "react";
 
 const Container = styled.div`
   background-color: #8c1c1c;
@@ -11,47 +13,62 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 60px;
-  z-index: 1000;
+  z-index: 200;
 `;
-const Hamburger = styled.div`
-  width: 60px;
-  height: 60px;
-  position: relative;
-  cursor: pointer;
-`;
-function Navbar() {
+
+type ClickHandler = React.MouseEventHandler<HTMLElement>;
+interface Props {
+  active: boolean;
+  setActive: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function Navbar({ active, setActive }: Props) {
+  const handleClick: ClickHandler = () => {
+    setActive((prevValue) => !prevValue);
+  };
+
   return (
     <Container className="navbar">
       <p>nicki wilkins</p>
-      <Hamburger className="hamburger">
-        <motion.span
-          className="hamburger-span"
-          style={{
-            top: "35%",
-            left: "50%",
-            x: "-50%",
-            y: "-50%",
-          }}
-        />
-        <motion.span
-          className="hamburger-span"
-          style={{
-            top: "50%",
-            left: "50%",
-            x: "-50%",
-            y: "-50%",
-          }}
-        />
-        <motion.span
-          className="hamburger-span"
-          style={{
-            bottom: "35%",
-            left: "50%",
-            x: "-50%",
-            y: "50%",
-          }}
-        />
-      </Hamburger>
+      <MotionConfig transition={{ duration: 0.3, ease: "easeInOut" }}>
+        <motion.button
+          initial={false}
+          onClick={handleClick}
+          className="hamburger"
+          animate={active ? "open" : "closed"}
+        >
+          <motion.span
+            className="hamburger-span"
+            style={{
+              left: "50%",
+              top: "35%",
+              x: "-50%",
+              y: "-50%",
+            }}
+
+          />
+          <motion.span
+            className="hamburger-span"
+            style={{
+              left: "50%",
+              top: "50%",
+              x: "-50%",
+              y: "-50%",
+            }}
+
+          />
+          <motion.span
+            className="hamburger-span"
+            style={{
+              left: "50%",
+              bottom: "35%",
+              x: "-50%",
+              y: "50%",
+            }}
+          />
+        </motion.button>
+      </MotionConfig>
+      <Menu active={active} setActive={setActive} />
     </Container>
   );
 }

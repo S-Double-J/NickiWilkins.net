@@ -25,26 +25,29 @@ const SplotchTopLeft = styled.svg`
     width: 300px;
     top: -95px;
   }
+  @media (max-width: 835px) {
+    width: 201px;
+    height: 271px;
+    top: -60px;
+    left: -1px;
+  }
 `;
 const SplotchMiddleRight = styled.svg`
   position: absolute;
-  right: 0;
-  bottom: -75%;
-  width: 560px;
-  @media (max-width: 1000px) {
-    width: 400px;
-    bottom: -55%;
-  }
-  @media (max-width: 780px) {
-    right: -100px;
-  }
-  @media (max-width: 680px) {
-    right: -200px;
+  right: -1px;
+  bottom: -650px;
+  @media (max-width: 835px) {
+    width: 175.417px;
+    height: 1145px;
   }
 `;
 const Venus = styled.svg`
-  margin: 0;
-  max-height: calc(100svh - 80px);
+  margin-left: -50px;
+  max-height: calc(100svh - 250px);
+  @media (max-width: 835px) {
+    margin-left: -50px;
+    margin-right: 10px;
+  }
 `;
 
 const HeroTextDiv = styled.div`
@@ -53,12 +56,20 @@ const HeroTextDiv = styled.div`
   margin: 0;
   padding: 0;
   z-index: 1;
-  margin-left: 80px;
+  margin-left: 200px;
   width: 600px;
+  @media (max-width: 1000px) {
+    margin-left: 120px;
+  }
 `;
 const ButtonDiv = styled.div`
   display: flex;
   align-items: center;
+  @media (max-width: 835px) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+  }
 `;
 
 const ExploreText = styled.p`
@@ -89,7 +100,7 @@ const SplotchBottom = styled.svg`
 `;
 
 const Section3 = styled.div`
-  width: 100svw;
+  width: 101svw;
   min-height: calc(100svh - 60px);
   background-color: #8c1c1c;
   position: relative;
@@ -110,12 +121,20 @@ const Spiral = styled.svg`
   left: 50%;
   transform: translate(-50%, -50%) rotate(40deg);
   z-index: 5;
+  @media (max-width: 835px) {
+    width: 437px;
+    height: 437px;
+  }
 `;
 const SpiralTextAxis = styled.div`
   position: absolute;
   height: 760px;
   width: 760px;
   border-radius: 100%;
+  @media (max-width: 835px) {
+    width: 437px;
+    height: 437px;
+  }
 `;
 
 const Section4 = styled.div`
@@ -271,11 +290,13 @@ function LandingPage() {
       </SplotchTopLeft>
       <SplotchMiddleRight
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 558 1325"
+        width="176"
+        height="1145"
+        viewBox="0 0 176 1145"
         fill="none"
       >
         <path
-          d="M558 0.49999C558 0.49999 552.265 -14 509.632 191C467 396 453.029 415.933 380.176 467.082C318.745 510.212 333.507 580.291 273.712 625.582C189.626 689.273 41.0419 575.633 6.30272 674.163C-24.248 760.813 62.7077 811.019 128.761 875.846C202.119 947.84 310.95 913.576 360.683 1002.94C396.993 1068.18 345.701 1126.16 380.176 1192.36C411.857 1253.19 446.447 1283.95 509.632 1312.58C544.5 1324.5 558 1324.5 558 1324.5V0.49999Z"
+          d="M128.5 269C175.083 173.032 176 0 176 0V1145C176 1145 117.411 1029.42 98.5 949.5C78.4752 864.872 93.385 813.579 81 727.5C63.7397 607.537 -27.9813 540.757 9.49992 425.5C33.2441 352.485 94.9723 338.072 128.5 269Z"
           fill="#8C1C1C"
         />
       </SplotchMiddleRight>
@@ -406,13 +427,11 @@ function LandingPage() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
+          <path className="trisk-path-fill"
             d="M207.928 264.873C210.118 232.071 210.107 207.452 194.829 174.338C226.11 195.705 239.957 201.245 277.345 207.349C247.251 224.567 230.436 238.501 207.928 264.873Z"
-            fill="#8C1C1C"
           />
-          <path
+          <path className="trisk-path-stroke"
             d="M207.928 264.873C210.118 232.071 210.107 207.452 194.829 174.338M207.928 264.873C230.436 238.501 247.251 224.567 277.345 207.349M207.928 264.873C161.053 369.879 276.252 455.243 355.736 396.897C446.957 329.936 352.712 191.481 263.351 255.384C192.837 305.809 263.392 418.712 334.875 366.24C385.553 329.04 335.141 250.298 286.063 286.324C251.922 311.385 284.281 356.587 312.555 335.833C327.942 324.538 313.11 307.515 304.042 314.171M194.829 174.338C226.11 195.705 239.957 201.245 277.345 207.349M194.829 174.338C109.145 63.2013 -11.5551 157.354 5.30933 237.11C30.5526 356.49 197.629 324.146 171.509 215.259C152.087 134.292 37.3115 150.982 41.5562 226.1C45.3789 293.752 144.291 287.626 136.937 230.787C130.439 180.556 78.4499 199.018 78.6598 221.85C78.8888 246.764 107.307 241.865 101.752 228.705M277.345 207.349C402.566 193.416 410.538 42.3613 316.172 9.74189C212.771 -26.0006 147.345 119.714 249.861 164.316C324.477 196.779 387.321 79.8283 303.238 44.683C249.084 22.0474 205.219 103.5 258.844 127.348C276.949 135.399 293.104 129.287 301.565 117.33C310.027 105.373 306.085 84.7852 291.764 79.3752C276.997 73.7967 264.518 90.3453 276.226 97.3482"
-            stroke="#8C1C1C"
             stroke-width="7"
           />
         </motion.svg>

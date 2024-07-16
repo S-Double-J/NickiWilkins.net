@@ -31,6 +31,14 @@ const SplotchTopLeft = styled.svg`
     top: -60px;
     left: -1px;
   }
+  @media (max-width: 450px) {
+    width: 165px;
+    height: 220.514px;
+  }
+  @media (max-width: 360px) {
+    transform: rotate(15deg);
+    left: -25px;
+  }
 `;
 const SplotchMiddleRight = styled.svg`
   position: absolute;
@@ -40,6 +48,11 @@ const SplotchMiddleRight = styled.svg`
     width: 175.417px;
     height: 1145px;
   }
+  @media (max-width: 710px) {
+    width: 90.022px;
+    height: 579.699px;
+    bottom: -300px;
+  }
 `;
 const Venus = styled.svg`
   margin-left: -50px;
@@ -47,6 +60,13 @@ const Venus = styled.svg`
   @media (max-width: 835px) {
     margin-left: -50px;
     margin-right: 10px;
+  }
+  @media (max-width: 710px) {
+    margin: 0;
+    position: absolute;
+    height: 347px;
+    right: 2px;
+    bottom: 120px;
   }
 `;
 
@@ -60,6 +80,14 @@ const HeroTextDiv = styled.div`
   width: 600px;
   @media (max-width: 1000px) {
     margin-left: 120px;
+  }
+  @media (max-width: 710px) {
+    margin-left: 0px;
+    margin-top: 120px;
+    width: 75%;
+  }
+  @media (max-width: 535px) {
+    width: 320px;
   }
 `;
 const ButtonDiv = styled.div`
@@ -121,9 +149,11 @@ const Spiral = styled.svg`
   left: 50%;
   transform: translate(-50%, -50%) rotate(40deg);
   z-index: 5;
-  @media (max-width: 835px) {
+  @media (max-width: 1050px) {
     width: 437px;
     height: 437px;
+  }
+  @media (max-width: 650px) {
   }
 `;
 const SpiralTextAxis = styled.div`
@@ -131,9 +161,11 @@ const SpiralTextAxis = styled.div`
   height: 760px;
   width: 760px;
   border-radius: 100%;
-  @media (max-width: 835px) {
+  @media (max-width: 1050px) {
     width: 437px;
     height: 437px;
+  }
+  @media (max-width: 650px) {
   }
 `;
 
@@ -156,6 +188,9 @@ const Mask = styled.div`
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid #fff4df;
+  @media (hover : none){
+    display: none;
+  }
 `;
 const DisapearingBox = styled.div`
   height: 10%;
@@ -193,84 +228,213 @@ function LandingPage() {
   const { scrollYProgress } = useScroll({
     container: targetRef,
   });
-  const scrollValues = [0.29, 0.82];
-  const rotate = useTransform(scrollYProgress, scrollValues, [
+  let scrollValues = [0.29, 0.82];
+  let fontSizeValues = ["15px", "36px", "36px", "15px"];
+  let rotate = useTransform(scrollYProgress, scrollValues, [
     "20deg",
     "-340deg",
   ]);
-  const rotate1 = useTransform(scrollYProgress, scrollValues, [
+  let rotate1 = useTransform(scrollYProgress, scrollValues, [
     "-110deg",
     "250deg",
   ]);
-  const fontSize1 = useTransform(
+  let fontSize1 = useTransform(
     scrollYProgress,
     [0.29, 0.32, 0.79, 0.82],
     ["36px", "15px", "15px", "36px"]
   );
-  const rotate2 = useTransform(scrollYProgress, scrollValues, [
+  let rotate2 = useTransform(scrollYProgress, scrollValues, [
     "-155deg",
     "205deg",
   ]);
-  const fontSize2 = useTransform(
+  let fontSize2 = useTransform(
     scrollYProgress,
     [0.31, 0.33, 0.355, 0.37],
-    ["15px", "36px", "36px", "15px"]
+    fontSizeValues
   );
-  const rotate3 = useTransform(scrollYProgress, scrollValues, [
+  let rotate3 = useTransform(scrollYProgress, scrollValues, [
     "-200deg",
     "160deg",
   ]);
-  const fontSize3 = useTransform(
+  let fontSize3 = useTransform(
     scrollYProgress,
     [0.38, 0.4, 0.425, 0.445],
-    ["15px", "36px", "36px", "15px"]
+    fontSizeValues
   );
-  const rotate4 = useTransform(scrollYProgress, scrollValues, [
+  let rotate4 = useTransform(scrollYProgress, scrollValues, [
     "-245deg",
     "115deg",
   ]);
-  const fontSize4 = useTransform(
+  let fontSize4 = useTransform(
     scrollYProgress,
     [0.44, 0.47, 0.495, 0.51],
-    ["15px", "36px", "36px", "15px"]
+    fontSizeValues
   );
-  const rotate5 = useTransform(scrollYProgress, scrollValues, [
+  let rotate5 = useTransform(scrollYProgress, scrollValues, [
     "-290deg",
     "70deg",
   ]);
-  const fontSize5 = useTransform(
+  let fontSize5 = useTransform(
     scrollYProgress,
     [0.5, 0.53, 0.56, 0.58],
-    ["15px", "36px", "36px", "15px"]
+    fontSizeValues
   );
-  const rotate6 = useTransform(scrollYProgress, scrollValues, [
+  let rotate6 = useTransform(scrollYProgress, scrollValues, [
     "-335deg",
     "25deg",
   ]);
-  const fontSize6 = useTransform(
+  let fontSize6 = useTransform(
     scrollYProgress,
     [0.58, 0.6, 0.625, 0.645],
-    ["15px", "36px", "36px", "15px"]
+    fontSizeValues
   );
-  const rotate7 = useTransform(scrollYProgress, scrollValues, [
+  let rotate7 = useTransform(scrollYProgress, scrollValues, [
     "-20deg",
     "340deg",
   ]);
-  const fontSize7 = useTransform(
+  let fontSize7 = useTransform(
     scrollYProgress,
     [0.645, 0.665, 0.69, 0.715],
-    ["15px", "36px", "36px", "15px"]
+    fontSizeValues
   );
-  const rotate8 = useTransform(scrollYProgress, scrollValues, [
+  let rotate8 = useTransform(scrollYProgress, scrollValues, [
     "-65deg",
     "295deg",
   ]);
-  const fontSize8 = useTransform(
+  let fontSize8 = useTransform(
     scrollYProgress,
     [0.715, 0.735, 0.755, 0.78],
-    ["15px", "36px", "36px", "15px"]
+    fontSizeValues
   );
 
+  if (window.innerWidth <= 650) {
+    scrollValues = [0.29, 0.82];
+    fontSizeValues = ["8px", "24px", "24px", "8px"];
+    rotate = useTransform(scrollYProgress, scrollValues, ["-30deg", "-390deg"]);
+    rotate1 = useTransform(scrollYProgress, scrollValues, ["-60deg", "300deg"]);
+    fontSize1 = useTransform(
+      scrollYProgress,
+      [0.29, 0.32, 0.79, 0.82],
+      ["24px", "8px", "8px", "24px"]
+    );
+    rotate2 = useTransform(scrollYProgress, scrollValues, [
+      "-105deg",
+      "255deg",
+    ]);
+    fontSize2 = useTransform(
+      scrollYProgress,
+      [0.31, 0.33, 0.355, 0.37],
+      fontSizeValues
+    );
+    rotate3 = useTransform(scrollYProgress, scrollValues, [
+      "-150deg",
+      "210deg",
+    ]);
+    fontSize3 = useTransform(
+      scrollYProgress,
+      [0.38, 0.4, 0.425, 0.445],
+      fontSizeValues
+    );
+    rotate4 = useTransform(scrollYProgress, scrollValues, [
+      "-195deg",
+      "165deg",
+    ]);
+    fontSize4 = useTransform(
+      scrollYProgress,
+      [0.44, 0.47, 0.495, 0.51],
+      fontSizeValues
+    );
+    rotate5 = useTransform(scrollYProgress, scrollValues, [
+      "-240deg",
+      "120deg",
+    ]);
+    fontSize5 = useTransform(
+      scrollYProgress,
+      [0.5, 0.53, 0.56, 0.58],
+      fontSizeValues
+    );
+    rotate6 = useTransform(scrollYProgress, scrollValues, ["-285deg", "75deg"]);
+    fontSize6 = useTransform(
+      scrollYProgress,
+      [0.58, 0.6, 0.625, 0.645],
+      fontSizeValues
+    );
+    rotate7 = useTransform(scrollYProgress, scrollValues, ["30deg", "390deg"]);
+    fontSize7 = useTransform(
+      scrollYProgress,
+      [0.645, 0.665, 0.69, 0.715],
+      fontSizeValues
+    );
+    rotate8 = useTransform(scrollYProgress, scrollValues, ["-15deg", "345deg"]);
+    fontSize8 = useTransform(
+      scrollYProgress,
+      [0.715, 0.735, 0.755, 0.78],
+      fontSizeValues
+    );
+  }
+
+  if (window.innerWidth <= 550) {
+    scrollValues = [0.29, 0.82];
+    fontSizeValues = ["8px", "24px", "24px", "8px"];
+    rotate = useTransform(scrollYProgress, scrollValues, ["-55deg", "-415deg"]);
+    rotate1 = useTransform(scrollYProgress, scrollValues, ["-35deg", "325deg"]);
+    fontSize1 = useTransform(
+      scrollYProgress,
+      [0.29, 0.32, 0.79, 0.82],
+      ["24px", "8px", "8px", "24px"]
+    );
+    rotate2 = useTransform(scrollYProgress, scrollValues, ["-80deg", "280deg"]);
+    fontSize2 = useTransform(
+      scrollYProgress,
+      [0.31, 0.33, 0.355, 0.37],
+      fontSizeValues
+    );
+    rotate3 = useTransform(scrollYProgress, scrollValues, [
+      "-125deg",
+      "235deg",
+    ]);
+    fontSize3 = useTransform(
+      scrollYProgress,
+      [0.38, 0.4, 0.425, 0.445],
+      fontSizeValues
+    );
+    rotate4 = useTransform(scrollYProgress, scrollValues, [
+      "-170deg",
+      "190deg",
+    ]);
+    fontSize4 = useTransform(
+      scrollYProgress,
+      [0.44, 0.47, 0.495, 0.51],
+      fontSizeValues
+    );
+    rotate5 = useTransform(scrollYProgress, scrollValues, [
+      "-215deg",
+      "145deg",
+    ]);
+    fontSize5 = useTransform(
+      scrollYProgress,
+      [0.5, 0.53, 0.56, 0.58],
+      fontSizeValues
+    );
+    rotate6 = useTransform(scrollYProgress, scrollValues, ["-260deg", "100deg"]);
+    fontSize6 = useTransform(
+      scrollYProgress,
+      [0.58, 0.6, 0.625, 0.645],
+      fontSizeValues
+    );
+    rotate7 = useTransform(scrollYProgress, scrollValues, ["55deg", "415deg"]);
+    fontSize7 = useTransform(
+      scrollYProgress,
+      [0.645, 0.665, 0.69, 0.715],
+      fontSizeValues
+    );
+    rotate8 = useTransform(scrollYProgress, scrollValues, ["10deg", "370deg"]);
+    fontSize8 = useTransform(
+      scrollYProgress,
+      [0.715, 0.735, 0.755, 0.78],
+      fontSizeValues
+    );
+  }
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     console.log(latest);
   });
@@ -427,10 +591,12 @@ function LandingPage() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path className="trisk-path-fill"
+          <path
+            className="trisk-path-fill"
             d="M207.928 264.873C210.118 232.071 210.107 207.452 194.829 174.338C226.11 195.705 239.957 201.245 277.345 207.349C247.251 224.567 230.436 238.501 207.928 264.873Z"
           />
-          <path className="trisk-path-stroke"
+          <path
+            className="trisk-path-stroke"
             d="M207.928 264.873C210.118 232.071 210.107 207.452 194.829 174.338M207.928 264.873C230.436 238.501 247.251 224.567 277.345 207.349M207.928 264.873C161.053 369.879 276.252 455.243 355.736 396.897C446.957 329.936 352.712 191.481 263.351 255.384C192.837 305.809 263.392 418.712 334.875 366.24C385.553 329.04 335.141 250.298 286.063 286.324C251.922 311.385 284.281 356.587 312.555 335.833C327.942 324.538 313.11 307.515 304.042 314.171M194.829 174.338C226.11 195.705 239.957 201.245 277.345 207.349M194.829 174.338C109.145 63.2013 -11.5551 157.354 5.30933 237.11C30.5526 356.49 197.629 324.146 171.509 215.259C152.087 134.292 37.3115 150.982 41.5562 226.1C45.3789 293.752 144.291 287.626 136.937 230.787C130.439 180.556 78.4499 199.018 78.6598 221.85C78.8888 246.764 107.307 241.865 101.752 228.705M277.345 207.349C402.566 193.416 410.538 42.3613 316.172 9.74189C212.771 -26.0006 147.345 119.714 249.861 164.316C324.477 196.779 387.321 79.8283 303.238 44.683C249.084 22.0474 205.219 103.5 258.844 127.348C276.949 135.399 293.104 129.287 301.565 117.33C310.027 105.373 306.085 84.7852 291.764 79.3752C276.997 73.7967 264.518 90.3453 276.226 97.3482"
             stroke-width="7"
           />
@@ -494,7 +660,7 @@ function LandingPage() {
             className="orb1-motion-container"
             initial={{ opacity: 0, y: "50px" }}
             whileInView={{ opacity: 1, y: "0px" }}
-            viewport={{ margin: "-200px", once: true }}
+            viewport={{ margin: "-100px", once: true }}
             transition={{ duration: 0.5 }}
             xmlns="http://www.w3.org/2000/svg"
             width="217"
@@ -502,13 +668,13 @@ function LandingPage() {
             viewBox="0 0 217 217"
             fill="none"
           >
-            <circle cx="108.5" cy="108.5" r="108.5" fill="#FAD07D" />
+            <circle className="orb-1-fill" cx="108.5" cy="108.5" r="108.5" />
           </motion.svg>
           <motion.svg
             className="orb2-motion-container"
             initial={{ opacity: 0, y: "50px" }}
             whileInView={{ opacity: 1, y: "0px" }}
-            viewport={{ margin: "-200px", once: true }}
+            viewport={{ margin: "-100px", once: true }}
             transition={{ duration: 0.5 }}
             xmlns="http://www.w3.org/2000/svg"
             width="120"
@@ -516,7 +682,7 @@ function LandingPage() {
             viewBox="0 0 120 120"
             fill="none"
           >
-            <circle cx="60" cy="60" r="60" fill="#FAD07D" />
+            <circle className="orb-2-fill" cx="60" cy="60" r="60" />
           </motion.svg>
         </motion.div>
         <SplotchBottom
@@ -547,7 +713,7 @@ function LandingPage() {
             }}
             initial={{ opacity: 0, y: "50px" }}
             whileInView={{ opacity: 1, y: "0px" }}
-            viewport={{ margin: "-200px", once: true }}
+            viewport={{ margin: "00px", once: true }}
             transition={{ duration: 0.5 }}
           >
             <Spiral

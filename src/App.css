@@ -20,6 +20,13 @@ h1 {
     line-height: 100%; /* 128px */
     letter-spacing: -1.28px;
   }
+  @media (max-width: 535px) {
+    font-size: 92px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%; /* 92px */
+    letter-spacing: -0.96px;
+  }
 }
 
 h2 {
@@ -30,7 +37,19 @@ h2 {
   letter-spacing: 0.96px;
   text-transform: uppercase;
   margin: 0;
-  @media (max-width) {
+  @media (max-width: 835px) {
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 114%; /* 72.96px */
+    letter-spacing: 0.72px;
+  }
+  @media (max-width: 710px) {
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 114%; /* 72.96px */
+    letter-spacing: 0.64px;
   }
 }
 
@@ -48,6 +67,13 @@ h3 {
     line-height: 114%; /* 54.72px */
     letter-spacing: 0.48px;
   }
+  @media (max-width: 650px) {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 114%; /* 36.48px */
+    letter-spacing: 0.32px;
+  }
 }
 
 h4 {
@@ -60,9 +86,17 @@ h4 {
   @media (max-width: 835px) {
     font-size: 20px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 614;
     line-height: 114%; /* 22.8px */
     letter-spacing: 0.2px;
+  }
+  @media (max-width: 450px) {
+    font-family: Cinzel;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 614;
+    line-height: 114%; /* 18.24px */
+    letter-spacing: 0.16px;
   }
 }
 
@@ -73,6 +107,20 @@ p {
   line-height: 114%; /* 27.36px */
   letter-spacing: 0.24px;
   margin: 0px;
+  @media (max-width: 710px) {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 607;
+    line-height: 144%; /* 23.04px */
+    letter-spacing: 0.16px;
+  }
+  @media (max-width: 360px) {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 607;
+    line-height: 144%; /* 23.04px */
+    letter-spacing: 0.14px;
+  }
 }
 .button-arrow {
   transition: transform 0.3s ease-in-out;
@@ -91,6 +139,10 @@ p {
   height: 65px;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+  @media (max-width: 535px) {
+    width: 210px;
+    height: 50px;
+  }
 }
 
 .primary-button:hover {
@@ -120,6 +172,10 @@ p {
   @media (max-width: 835px) {
     margin-left: 0;
   }
+  @media (max-width: 535px) {
+    width: 210px;
+    height: 50px;
+  }
 }
 
 .secondary-button:hover {
@@ -140,6 +196,14 @@ p {
   line-height: 144%; /* 23.04px */
   letter-spacing: 0.16px;
   margin: 7px;
+  @media (max-width: 535px) {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 144%; /* 17.28px */
+    letter-spacing: 0.12px;
+    margin: 0;
+  }
 }
 
 .secondary-button p {
@@ -151,6 +215,13 @@ p {
   line-height: 144%; /* 23.04px */
   letter-spacing: 0.16px;
   margin: 7px 10px;
+  @media (max-width: 535px) {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 144%; /* 17.28px */
+    letter-spacing: 0.12px;
+  }
 }
 
 .navbar p {
@@ -261,10 +332,14 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (max-width: 835px) {
+  @media (max-width: 1050px) {
     width: 437px;
     height: 437px;
-    top: 50%;
+    bottom: -50px;
+    left: -300px;
+  }
+  @media (max-width: 650px) {
+    bottom: -200px;
     left: -200px;
   }
 }
@@ -275,17 +350,16 @@ p {
   width: 40vw;
   top: -100px;
   text-align: center;
-  @media (max-width: 835px) {
+  @media (max-width: 1050px) {
     width: 400px;
+  }
+  @media (max-width: 450px) {
+    width: 95svw;
   }
 }
 
 .axis-1 {
   transform: rotate(90deg);
-  @media (max-width: 835px) {
-    width: 437px;
-    height: 437px;
-  }
 }
 
 .axis-1 p {
@@ -295,10 +369,6 @@ p {
 
 .axis-2 {
   transform: rotate(135deg);
-  @media (max-width: 835px) {
-    width: 437px;
-    height: 437px;
-  }
 }
 
 .axis-2 p {
@@ -308,10 +378,6 @@ p {
 
 .axis-3 {
   transform: rotate(180deg);
-  @media (max-width: 835px) {
-    width: 437px;
-    height: 437px;
-  }
 }
 
 .axis-3 p {
@@ -321,10 +387,6 @@ p {
 
 .axis-4 {
   transform: rotate(225deg);
-  @media (max-width: 835px) {
-    width: 437px;
-    height: 437px;
-  }
 }
 
 .axis-4 p {
@@ -334,10 +396,6 @@ p {
 
 .axis-5 {
   transform: rotate(270deg);
-  @media (max-width: 835px) {
-    width: 437px;
-    height: 437px;
-  }
 }
 
 .axis-5 p {
@@ -347,10 +405,6 @@ p {
 
 .axis-6 {
   transform: rotate(315deg);
-  @media (max-width: 835px) {
-    width: 437px;
-    height: 437px;
-  }
 }
 
 .axis-6 p {
@@ -360,10 +414,6 @@ p {
 
 .axis-7 {
   transform: rotate(360deg);
-  @media (max-width: 835px) {
-    width: 437px;
-    height: 437px;
-  }
 }
 
 .axis-7 p {
@@ -373,10 +423,6 @@ p {
 
 .axis-8 {
   transform: rotate(45deg);
-  @media (max-width: 835px) {
-    width: 437px;
-    height: 437px;
-  }
 }
 
 .axis-8 p {
@@ -608,6 +654,10 @@ p {
   align-items: center;
   width: 100%;
   min-height: calc(100svh - 60px);
+  @media (max-width: 710px) {
+    position: relative;
+    align-items: start;
+  }
 }
 
 .explore-motion-container {
@@ -632,6 +682,10 @@ p {
     top: 20px;
     width: 313px;
     height: 294.24px;
+  }
+  @media (max-width: 630px) {
+    right: 0;
+    top: 200px;
   }
 }
 
@@ -658,6 +712,10 @@ p {
   width: 716px;
   @media (max-width: 890px) {
     width: 540px;
+  }
+  @media (max-width: 710px) {
+    margin: 0px 20px;
+    width: 100%;
   }
 }
 
@@ -691,6 +749,16 @@ p {
       "trisk trisk trisk trisk trisk"
       "trisk trisk trisk trisk trisk";
   }
+  @media (max-width: 650px){
+    grid-template-rows: calc(5% - 5px) calc(19% - 10px) calc(19% - 10px) calc(19% - 10px) calc(19% - 10px)
+    calc(19% - 5px);
+    grid-template-areas: " title title title title title"
+    "selkie selkie selkie selkie selkie"
+    "crone crone crone crone crone"
+    "crone crone crone crone crone"
+    "trisk trisk trisk trisk trisk"
+    "trisk trisk trisk trisk trisk";
+  }
 }
 
 .circle-text-motion-container {
@@ -702,6 +770,10 @@ p {
   z-index: 1;
   backdrop-filter: blur(2px);
   text-align: right;
+  @media (max-width: 650px) {
+    right: 15px;
+    width: 90%;
+  }
 }
 
 .menu-background {
@@ -717,6 +789,11 @@ p {
   position: absolute;
   top: -150px;
   z-index: -5;
+  @media (max-width: 400px) {
+    height: 150px;
+    width: 150px;
+    top: -100px;
+  }
 }
 
 .orb2-motion-container {
@@ -724,4 +801,19 @@ p {
   bottom: 50px;
   right: 10px;
   z-index: -3;
+  @media (max-width: 400px) {
+    height: 80px;
+    width: 80px;
+    bottom: 20px;
+  }
+}
+
+.orb-1-fill {
+  fill: var(--Accent-Light);
+  @media (max-width: 710px) {
+    fill: var(--Accent-Dark);
+  }
+}
+.orb-2-fill {
+  fill: var(--Accent-Light);
 }

@@ -817,3 +817,7 @@ p {
 .orb-2-fill {
   fill: var(--Accent-Light);
 }
+
+.bold {
+  font-weight: 900;
+}

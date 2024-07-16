@@ -472,8 +472,8 @@ function LandingPage() {
         transition={{ duration: 0.5 }}
       >
         <HeroTextDiv>
-          <h1 className="hero-title">begin again</h1>
-          <h4>Finding purpose in the second half of life</h4>
+          <h1 className="hero-title">Begin Again</h1>
+          <h4>Helping women find purpose in the second half of life</h4>
           <ButtonDiv>
             <button className="primary-button">
               <p>let's work together</p>
@@ -615,23 +615,18 @@ function LandingPage() {
             <br />
             WHOLE
           </h2>
+          <p className="bold">
+          The most important relationship is the one you foster with your truest self! 
+          </p>
           <p>
-            I offer transformational mentoring to women, guiding them through
-            the various stages of the midlife metamorphosis.
             <br />
-            This is when a woman rebirths her wholeness. It’s a soul initiation,
-            a sacred pilgrimage to self.
+            I mentor women in midlife who are travelling the creative journey to self, re-discovering heart-based wisdom, gifts, and purpose. 
             <br />
-            She longs for an authentic and intuitive relationship with her body
-            and her soul.
             <br />
-            She learns to practice self-acceptance, self-love, self-loyalty.
+            As a Transformational Mentor, Teacher, and Purpose Guide, I offer one-to-one mentoring, courses, meditations, retreats, and ceremonies.
             <br />
-            She asks: Who am I now? What are my gifts? What’s my offering to the
-            world?
-            <br />A woman who travels this long, arduous spiritual journey will
-            be strong in soulfulness, grounded in heart-based wisdom, and speak
-            her truth.
+            <br />
+            I’m so glad you’re here. 
           </p>
           <motion.button
             className="primary-button"

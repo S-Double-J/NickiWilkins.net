@@ -24,6 +24,7 @@ const SplotchTopLeft = styled.svg`
   @media (max-width: 1000px) {
     width: 300px;
     top: -95px;
+    left: -10px;
   }
   @media (max-width: 835px) {
     width: 201px;
@@ -39,6 +40,20 @@ const SplotchTopLeft = styled.svg`
     transform: rotate(15deg);
     left: -25px;
   }
+  @media (orientation: landscape) and (max-width: 1200px) {
+    width: 280px;
+    height: 379.307px;
+    top: -1px;
+    left: -1px;
+  }
+  @media (orientation: landscape) and (max-height: 535px) {
+    width: 165px;
+    height: 220.514px;
+  }
+  @media (orientation: landscape) and (max-height: 400px) {
+    height: 180px;
+    width: 132px;
+  }
 `;
 const SplotchMiddleRight = styled.svg`
   position: absolute;
@@ -49,6 +64,11 @@ const SplotchMiddleRight = styled.svg`
     height: 1145px;
   }
   @media (max-width: 710px) {
+    width: 90.022px;
+    height: 579.699px;
+    bottom: -300px;
+  }
+  @media (orientation: landscape) and (max-height: 535px) {
     width: 90.022px;
     height: 579.699px;
     bottom: -300px;
@@ -65,8 +85,14 @@ const Venus = styled.svg`
     margin: 0;
     position: absolute;
     height: 347px;
-    right: 2px;
+    width: 250px;
+    right: 0px;
     bottom: 120px;
+  }
+  @media screen and (orientation: landscape) and (max-height: 535px){
+    position: static;
+    max-height: calc(100svh - 80px);
+    margin: 0;
   }
 `;
 
@@ -89,6 +115,16 @@ const HeroTextDiv = styled.div`
   @media (max-width: 535px) {
     width: 320px;
   }
+  @media screen and (orientation: landscape) and (max-width: 1200px) {
+    margin-left: 100px;
+    width: 550px;
+  }
+  @media screen and (orientation: landscape) and (max-height: 535px) {
+    width: 320px;
+    margin: 0;
+    margin-left: 100px;
+    margin-top: 50px;
+  }
 `;
 const ButtonDiv = styled.div`
   display: flex;
@@ -97,6 +133,11 @@ const ButtonDiv = styled.div`
     flex-direction: column;
     align-items: flex-start;
     margin-left: 0;
+  }
+  @media screen and (orientation: landscape) and (max-height: 535px) {
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
   }
 `;
 
@@ -117,7 +158,27 @@ const Section2 = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 150px;
+  box-sizing: border-box;
+  @media screen and (orientation: landscape) and (max-width: 1200px) {
+    padding: 100px 10px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  @media (max-width: 1060px) {
+    padding-left: 10px;
+  }
+  @media (max-width: 835px) {
+    justify-content: center;
+    align-items: flex-start;
+  }
+  @media screen and (orientation: landscape) and (max-height: 535px){
+    flex-direction: row-reverse;
+    padding: 0;
+  }
 `;
 const SplotchBottom = styled.svg`
   position: absolute;
@@ -153,8 +214,6 @@ const Spiral = styled.svg`
     width: 437px;
     height: 437px;
   }
-  @media (max-width: 650px) {
-  }
 `;
 const SpiralTextAxis = styled.div`
   position: absolute;
@@ -164,8 +223,6 @@ const SpiralTextAxis = styled.div`
   @media (max-width: 1050px) {
     width: 437px;
     height: 437px;
-  }
-  @media (max-width: 650px) {
   }
 `;
 
@@ -188,7 +245,7 @@ const Mask = styled.div`
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid #fff4df;
-  @media (hover : none){
+  @media (hover: none) {
     display: none;
   }
 `;
@@ -230,6 +287,9 @@ function LandingPage() {
   });
   let scrollValues = [0.29, 0.82];
   let fontSizeValues = ["15px", "36px", "36px", "15px"];
+  if (window.innerHeight <= 550) {
+    fontSizeValues = ["8px", "20px", "20px", "8px"];
+  }
   let rotate = useTransform(scrollYProgress, scrollValues, [
     "20deg",
     "-340deg",
@@ -375,7 +435,7 @@ function LandingPage() {
 
   if (window.innerWidth <= 550) {
     scrollValues = [0.29, 0.82];
-    fontSizeValues = ["8px", "24px", "24px", "8px"];
+    fontSizeValues = ["8px", "22px", "22px", "8px"];
     rotate = useTransform(scrollYProgress, scrollValues, ["-55deg", "-415deg"]);
     rotate1 = useTransform(scrollYProgress, scrollValues, ["-35deg", "325deg"]);
     fontSize1 = useTransform(
@@ -416,7 +476,10 @@ function LandingPage() {
       [0.5, 0.53, 0.56, 0.58],
       fontSizeValues
     );
-    rotate6 = useTransform(scrollYProgress, scrollValues, ["-260deg", "100deg"]);
+    rotate6 = useTransform(scrollYProgress, scrollValues, [
+      "-260deg",
+      "100deg",
+    ]);
     fontSize6 = useTransform(
       scrollYProgress,
       [0.58, 0.6, 0.625, 0.645],
@@ -435,6 +498,7 @@ function LandingPage() {
       fontSizeValues
     );
   }
+
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     console.log(latest);
   });
@@ -579,28 +643,6 @@ function LandingPage() {
         </svg>
       </motion.div>
       <Section2 id="Second">
-        <motion.svg
-          className="trisk-motion-container"
-          initial={{ opacity: 0, y: "50px" }}
-          whileInView={{ opacity: 1, y: "0px" }}
-          viewport={{ margin: "-200px", once: true }}
-          transition={{ duration: 0.5 }}
-          width="397"
-          height="420"
-          viewBox="0 0 397 420"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            className="trisk-path-fill"
-            d="M207.928 264.873C210.118 232.071 210.107 207.452 194.829 174.338C226.11 195.705 239.957 201.245 277.345 207.349C247.251 224.567 230.436 238.501 207.928 264.873Z"
-          />
-          <path
-            className="trisk-path-stroke"
-            d="M207.928 264.873C210.118 232.071 210.107 207.452 194.829 174.338M207.928 264.873C230.436 238.501 247.251 224.567 277.345 207.349M207.928 264.873C161.053 369.879 276.252 455.243 355.736 396.897C446.957 329.936 352.712 191.481 263.351 255.384C192.837 305.809 263.392 418.712 334.875 366.24C385.553 329.04 335.141 250.298 286.063 286.324C251.922 311.385 284.281 356.587 312.555 335.833C327.942 324.538 313.11 307.515 304.042 314.171M194.829 174.338C226.11 195.705 239.957 201.245 277.345 207.349M194.829 174.338C109.145 63.2013 -11.5551 157.354 5.30933 237.11C30.5526 356.49 197.629 324.146 171.509 215.259C152.087 134.292 37.3115 150.982 41.5562 226.1C45.3789 293.752 144.291 287.626 136.937 230.787C130.439 180.556 78.4499 199.018 78.6598 221.85C78.8888 246.764 107.307 241.865 101.752 228.705M277.345 207.349C402.566 193.416 410.538 42.3613 316.172 9.74189C212.771 -26.0006 147.345 119.714 249.861 164.316C324.477 196.779 387.321 79.8283 303.238 44.683C249.084 22.0474 205.219 103.5 258.844 127.348C276.949 135.399 293.104 129.287 301.565 117.33C310.027 105.373 306.085 84.7852 291.764 79.3752C276.997 73.7967 264.518 90.3453 276.226 97.3482"
-            stroke-width="7"
-          />
-        </motion.svg>
         <motion.div
           className="wise-motion-container"
           initial={{ opacity: 0, y: "50px" }}
@@ -614,19 +656,45 @@ function LandingPage() {
             WILD
             <br />
             WHOLE
-          </h2>
+          </h2>          
+          <motion.svg
+            className="orb1-motion-container"
+            initial={{ opacity: 0, y: "50px" }}
+            whileInView={{ opacity: 1, y: "0px" }}
+            viewport={{ margin: "-100px", once: true }}
+            transition={{ duration: 0.5 }}
+            xmlns="http://www.w3.org/2000/svg"
+            width="217"
+            height="217"
+            viewBox="0 0 217 217"
+            fill="none"
+          >
+            <circle className="orb-1-fill" cx="108.5" cy="108.5" r="108.5" />
+          </motion.svg>
+        </motion.div>
+        <motion.div
+          className="wise-text-motion-container"
+          initial={{ opacity: 0, y: "50px" }}
+          whileInView={{ opacity: 1, y: "0px" }}
+          viewport={{ margin: "-50px", once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <p className="bold">
-          The most important relationship is the one you foster with your truest self! 
+            The most important relationship is the one you foster with your
+            truest self!
           </p>
           <p>
             <br />
-            I mentor women in midlife who are travelling the creative journey to self, re-discovering heart-based wisdom, gifts, and purpose. 
+            I mentor women in midlife who are travelling the creative journey to
+            self, re-discovering heart-based wisdom, gifts, and purpose.
             <br />
             <br />
-            As a Transformational Mentor, Teacher, and Purpose Guide, I offer one-to-one mentoring, courses, meditations, retreats, and ceremonies.
+            As a Transformational Mentor, Teacher, and Purpose Guide, I offer
+            one-to-one mentoring, courses, meditations, retreats, and
+            ceremonies.
             <br />
             <br />
-            I’m so glad you’re here. 
+            I’m so glad you’re here.
           </p>
           <motion.button
             className="primary-button"
@@ -652,20 +720,6 @@ function LandingPage() {
             </svg>
           </motion.button>
           <motion.svg
-            className="orb1-motion-container"
-            initial={{ opacity: 0, y: "50px" }}
-            whileInView={{ opacity: 1, y: "0px" }}
-            viewport={{ margin: "-100px", once: true }}
-            transition={{ duration: 0.5 }}
-            xmlns="http://www.w3.org/2000/svg"
-            width="217"
-            height="217"
-            viewBox="0 0 217 217"
-            fill="none"
-          >
-            <circle className="orb-1-fill" cx="108.5" cy="108.5" r="108.5" />
-          </motion.svg>
-          <motion.svg
             className="orb2-motion-container"
             initial={{ opacity: 0, y: "50px" }}
             whileInView={{ opacity: 1, y: "0px" }}
@@ -679,6 +733,28 @@ function LandingPage() {
           >
             <circle className="orb-2-fill" cx="60" cy="60" r="60" />
           </motion.svg>
+          <motion.svg
+          className="trisk-motion-container"
+          initial={{ opacity: 0, y: "50px" }}
+          whileInView={{ opacity: 1, y: "0px" }}
+          viewport={{ margin: "-200px", once: true }}
+          transition={{ duration: 0.5 }}
+          width="397"
+          height="420"
+          viewBox="0 0 397 420"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className="trisk-path-fill"
+            d="M207.928 264.873C210.118 232.071 210.107 207.452 194.829 174.338C226.11 195.705 239.957 201.245 277.345 207.349C247.251 224.567 230.436 238.501 207.928 264.873Z"
+          />
+          <path
+            className="trisk-path-stroke"
+            d="M207.928 264.873C210.118 232.071 210.107 207.452 194.829 174.338M207.928 264.873C230.436 238.501 247.251 224.567 277.345 207.349M207.928 264.873C161.053 369.879 276.252 455.243 355.736 396.897C446.957 329.936 352.712 191.481 263.351 255.384C192.837 305.809 263.392 418.712 334.875 366.24C385.553 329.04 335.141 250.298 286.063 286.324C251.922 311.385 284.281 356.587 312.555 335.833C327.942 324.538 313.11 307.515 304.042 314.171M194.829 174.338C226.11 195.705 239.957 201.245 277.345 207.349M194.829 174.338C109.145 63.2013 -11.5551 157.354 5.30933 237.11C30.5526 356.49 197.629 324.146 171.509 215.259C152.087 134.292 37.3115 150.982 41.5562 226.1C45.3789 293.752 144.291 287.626 136.937 230.787C130.439 180.556 78.4499 199.018 78.6598 221.85C78.8888 246.764 107.307 241.865 101.752 228.705M277.345 207.349C402.566 193.416 410.538 42.3613 316.172 9.74189C212.771 -26.0006 147.345 119.714 249.861 164.316C324.477 196.779 387.321 79.8283 303.238 44.683C249.084 22.0474 205.219 103.5 258.844 127.348C276.949 135.399 293.104 129.287 301.565 117.33C310.027 105.373 306.085 84.7852 291.764 79.3752C276.997 73.7967 264.518 90.3453 276.226 97.3482"
+            stroke-width="7"
+          />
+        </motion.svg>
         </motion.div>
         <SplotchBottom
           xmlns="http://www.w3.org/2000/svg"

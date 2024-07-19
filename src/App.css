@@ -13,6 +13,7 @@ h1 {
   line-height: 100%; /* 144px */
   letter-spacing: -1.44px;
   margin: 0px;
+
   @media (max-width: 835px) {
     font-size: 128px;
     font-style: normal;
@@ -38,7 +39,7 @@ h1 {
     font-size: 72px;
     font-style: normal;
     font-weight: 900;
-    line-height: 100%; 
+    line-height: 100%;
     letter-spacing: -0.96px;
   }
 }
@@ -115,14 +116,16 @@ h3 {
 h4 {
   font-size: 24px;
   font-style: normal;
-  font-weight: 614;
+  font-weight: 714;
   line-height: 114%; /* 27.36px */
   letter-spacing: 0.24px;
   margin: 0px;
+  background-color: rgba(255, 244, 223, 0.2);
+  backdrop-filter: blur(2px);
   @media (max-width: 835px) {
     font-size: 20px;
     font-style: normal;
-    font-weight: 614;
+    font-weight: 714;
     line-height: 114%; /* 22.8px */
     letter-spacing: 0.2px;
   }
@@ -130,7 +133,7 @@ h4 {
     font-family: Cinzel;
     font-size: 16px;
     font-style: normal;
-    font-weight: 614;
+    font-weight: 714;
     line-height: 114%; /* 18.24px */
     letter-spacing: 0.16px;
   }
@@ -138,7 +141,7 @@ h4 {
     font-family: Cinzel;
     font-size: 16px;
     font-style: normal;
-    font-weight: 614;
+    font-weight: 714;
     line-height: 114%; /* 18.24px */
     letter-spacing: 0.16px;
   }
@@ -207,7 +210,7 @@ p {
     height: 50px;
   }
   @media screen and (orientation: landscape) and (max-height: 400px) {
-   margin: 0;
+    margin: 0;
   }
 }
 
@@ -249,7 +252,7 @@ p {
   }
   @media screen and (orientation: landscape) and (max-height: 400px) {
     margin: 0;
-   }
+  }
 }
 
 .secondary-button:hover {
@@ -751,59 +754,31 @@ p {
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: calc(100svh - 60px);
+  height: calc(100svh - 60px);
+  min-height: 600px;
   @media (max-width: 710px) {
     position: relative;
     align-items: start;
   }
   @media screen and (orientation: landscape) and (max-height: 535px) {
     align-items: start;
-  }
-}
-
-.explore-motion-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  bottom: 40px;
-  left: 20%;
-  z-index: 1;
-  @media screen and (orientation: landscape) and (max-height: 535px) {
-    left: 20px;
-  }
-  @media screen and (orientation: landscape) and (max-height: 400px) {
-    display: none;
+    min-height: 300px;
   }
 }
 
 .trisk-motion-container {
-  position: absolute;
-  z-index: -10;
-  left: -450px;
-  top: -200px;
-  @media screen and (orientation: landscape) and (max-width: 1200px) {
-    left: 20px;
-    top: -230px;
-    width: 313px;
-    height: 294.24px;
-  }
-  @media (max-width: 835px) {
-    left: 200px;
-    top: -330px;
-    width: 313px;
-    height: 294.24px;
-  }
-  @media (max-width: 630px) {
-    right: 0;
-    top: 200px;
+  width: 313px;
+  height: 294.24px;
+  @media (max-width: 470px) {
+    display: none;
   }
   @media screen and (orientation: landscape) and (max-height: 535px) {
-    position: absolute;
-    left: 600px;
-    top: -16px;
-    width: 217px;
-    height: 203.994px;
+    height: 190px;
+    width: 190px;
+  }
+  @media (max-width: 710px) {
+  height: 190px;
+  width: 190px;
   }
 }
 
@@ -823,49 +798,12 @@ p {
 
 .wise-motion-container {
   display: flex;
-  position: relative;
-  flex-direction: column;
-  margin-left: 80px;
-  width: 716px;
-  z-index: 1;
-  @media (max-width: 890px) {
-    width: 540px;
-  }
-  @media (max-width: 710px) {
-    margin: 0px 20px;
-    width: 100%;
-  }
-  @media screen and (orientation: landscape) and (max-width: 1200px) {
-    width: auto;
-    margin: 10px;
-  }
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .wise-text-motion-container {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  margin-left: 80px;
-  margin-bottom: 150px;
-  width: 716px;
-  @media (max-width: 890px) {
-    width: 540px;
-  }
-  @media (max-width: 710px) {
-    margin: 0px 20px;
-    width: auto;
-  }
-  @media screen and (orientation: landscape) and (max-width: 1200px) {
-    margin: 10px;
-    margin-right: 150px;
-    width: 530px;
-  }
-  @media screen and (orientation: landscape) and (max-height: 535px) {
-    margin-right: 10px;
-  }
-  @media screen and (orientation: landscape) and (max-height: 400px) {
-    width: 300px;
-  }
+  width: 80%;
 }
 
 .bento-motion-container {
@@ -926,11 +864,6 @@ p {
   @media (max-width: 650px) {
     right: 15px;
     width: 90%;
-  }
-  @media screen and (orientation: landscape) and (max-height: 535px){
-    /* backdrop-filter: blur(0);
-    width:auto;
-    background-color: transparent; */
   }
 }
 

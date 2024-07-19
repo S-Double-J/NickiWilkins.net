@@ -8,24 +8,19 @@ import {
 import { useRef } from "react";
 
 const ParalaxWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
   height: calc(100svh - 60px);
   width: 100svw;
   overflow-y: scroll;
   overflow-x: hidden;
+  position: relative;
 `;
 const SplotchTopLeft = styled.svg`
   position: absolute;
   top: 0;
   left: 0;
-  @media (max-width: 1000px) {
-    width: 300px;
-    top: -95px;
-    left: -10px;
-  }
+  width: 300px;
+  top: -95px;
+  left: -10px;
   @media (max-width: 835px) {
     width: 201px;
     height: 271px;
@@ -39,12 +34,6 @@ const SplotchTopLeft = styled.svg`
   @media (max-width: 360px) {
     transform: rotate(15deg);
     left: -25px;
-  }
-  @media (orientation: landscape) and (max-width: 1200px) {
-    width: 280px;
-    height: 379.307px;
-    top: -1px;
-    left: -1px;
   }
   @media (orientation: landscape) and (max-height: 535px) {
     width: 165px;
@@ -60,10 +49,6 @@ const SplotchMiddleRight = styled.svg`
   right: -1px;
   bottom: -650px;
   @media (max-width: 835px) {
-    width: 175.417px;
-    height: 1145px;
-  }
-  @media (max-width: 710px) {
     width: 90.022px;
     height: 579.699px;
     bottom: -300px;
@@ -76,7 +61,8 @@ const SplotchMiddleRight = styled.svg`
 `;
 const Venus = styled.svg`
   margin-left: -50px;
-  max-height: calc(100svh - 250px);
+  height: calc(100svh - 250px);
+  min-height: 300px;
   @media (max-width: 835px) {
     margin-left: -50px;
     margin-right: 10px;
@@ -89,7 +75,7 @@ const Venus = styled.svg`
     right: 0px;
     bottom: 120px;
   }
-  @media screen and (orientation: landscape) and (max-height: 535px){
+  @media screen and (orientation: landscape) and (max-height: 535px) {
     position: static;
     max-height: calc(100svh - 80px);
     margin: 0;
@@ -141,43 +127,34 @@ const ButtonDiv = styled.div`
   }
 `;
 
-const ExploreText = styled.p`
-  font-family: Cinzel;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 114%; /* 15.96px */
-  letter-spacing: 0.14px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-`;
-
 const Section2 = styled.div`
-  min-height: calc(100svh - 60px);
-  width: 100%;
-  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 800px;
   flex-direction: column;
-  padding-left: 150px;
-  box-sizing: border-box;
-  @media screen and (orientation: landscape) and (max-width: 1200px) {
-    padding: 100px 10px;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: row;
-  }
-  @media (max-width: 1060px) {
-    padding-left: 10px;
-  }
-  @media (max-width: 835px) {
-    justify-content: center;
-    align-items: flex-start;
-  }
-  @media screen and (orientation: landscape) and (max-height: 535px){
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  @media screen and (orientation: landscape) and (max-height: 535px) {
     flex-direction: row-reverse;
     padding: 0;
+    min-height: 500px;
+  }
+`;
+
+const Section2Frame = styled.div`
+  display: flex;
+  padding: 0px 150px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  @media (max-width: 700px){
+    padding: 0 50px;
+  }
+  @media (max-width: 470px){
+    padding-right: 5px;
   }
 `;
 const SplotchBottom = styled.svg`
@@ -190,7 +167,8 @@ const SplotchBottom = styled.svg`
 
 const Section3 = styled.div`
   width: 101svw;
-  min-height: calc(100svh - 60px);
+  height: calc(100svh - 60px);
+  min-height: 600px;
   background-color: #8c1c1c;
   position: relative;
   position: sticky;
@@ -200,7 +178,7 @@ const Section3 = styled.div`
 `;
 
 const StickyScrollDiv = styled.div`
-  min-height: 500vh;
+  min-height: 500%;
   width: 100%;
 `;
 
@@ -227,8 +205,9 @@ const SpiralTextAxis = styled.div`
 `;
 
 const Section4 = styled.div`
-  min-height: calc(100svh - 60px);
-  min-width: 100svw;
+  height: calc(100svh - 60px);
+  min-height: 600px;
+  width: 100svw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -620,29 +599,8 @@ function LandingPage() {
           </defs>
         </Venus>
       </motion.div>
-      <motion.div
-        className="explore-motion-container"
-        initial={{ opacity: 0, y: "50px" }}
-        whileInView={{ opacity: 1, y: "0px" }}
-        viewport={{ amount: "all", once: true }}
-        transition={{ delay: 2.5, duration: 0.3 }}
-      >
-        <ExploreText>scroll to explore</ExploreText>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="37"
-          height="15"
-          viewBox="0 0 37 15"
-          fill="none"
-          style={{ transform: "rotate(90deg)" }}
-        >
-          <path
-            d="M35.8781 8.20711C36.2686 7.81658 36.2686 7.18342 35.8781 6.79289L29.5142 0.428932C29.1236 0.0384078 28.4905 0.0384078 28.0999 0.428932C27.7094 0.819457 27.7094 1.45262 28.0999 1.84315L33.7568 7.5L28.0999 13.1569C27.7094 13.5474 27.7094 14.1805 28.0999 14.5711C28.4905 14.9616 29.1236 14.9616 29.5142 14.5711L35.8781 8.20711ZM0 8.5H35.171V6.5H0V8.5Z"
-            fill="#8C1C1C"
-          />
-        </svg>
-      </motion.div>
       <Section2 id="Second">
+        <Section2Frame>
         <motion.div
           className="wise-motion-container"
           initial={{ opacity: 0, y: "50px" }}
@@ -656,20 +614,28 @@ function LandingPage() {
             WILD
             <br />
             WHOLE
-          </h2>          
+          </h2>
           <motion.svg
-            className="orb1-motion-container"
+            className="trisk-motion-container"
             initial={{ opacity: 0, y: "50px" }}
             whileInView={{ opacity: 1, y: "0px" }}
-            viewport={{ margin: "-100px", once: true }}
+            viewport={{ margin: "-200px", once: true }}
             transition={{ duration: 0.5 }}
-            xmlns="http://www.w3.org/2000/svg"
-            width="217"
-            height="217"
-            viewBox="0 0 217 217"
+            width="397"
+            height="420"
+            viewBox="0 0 397 420"
             fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <circle className="orb-1-fill" cx="108.5" cy="108.5" r="108.5" />
+            <path
+              className="trisk-path-fill"
+              d="M207.928 264.873C210.118 232.071 210.107 207.452 194.829 174.338C226.11 195.705 239.957 201.245 277.345 207.349C247.251 224.567 230.436 238.501 207.928 264.873Z"
+            />
+            <path
+              className="trisk-path-stroke"
+              d="M207.928 264.873C210.118 232.071 210.107 207.452 194.829 174.338M207.928 264.873C230.436 238.501 247.251 224.567 277.345 207.349M207.928 264.873C161.053 369.879 276.252 455.243 355.736 396.897C446.957 329.936 352.712 191.481 263.351 255.384C192.837 305.809 263.392 418.712 334.875 366.24C385.553 329.04 335.141 250.298 286.063 286.324C251.922 311.385 284.281 356.587 312.555 335.833C327.942 324.538 313.11 307.515 304.042 314.171M194.829 174.338C226.11 195.705 239.957 201.245 277.345 207.349M194.829 174.338C109.145 63.2013 -11.5551 157.354 5.30933 237.11C30.5526 356.49 197.629 324.146 171.509 215.259C152.087 134.292 37.3115 150.982 41.5562 226.1C45.3789 293.752 144.291 287.626 136.937 230.787C130.439 180.556 78.4499 199.018 78.6598 221.85C78.8888 246.764 107.307 241.865 101.752 228.705M277.345 207.349C402.566 193.416 410.538 42.3613 316.172 9.74189C212.771 -26.0006 147.345 119.714 249.861 164.316C324.477 196.779 387.321 79.8283 303.238 44.683C249.084 22.0474 205.219 103.5 258.844 127.348C276.949 135.399 293.104 129.287 301.565 117.33C310.027 105.373 306.085 84.7852 291.764 79.3752C276.997 73.7967 264.518 90.3453 276.226 97.3482"
+              stroke-width="7"
+            />
           </motion.svg>
         </motion.div>
         <motion.div
@@ -696,66 +662,31 @@ function LandingPage() {
             <br />
             I’m so glad you’re here.
           </p>
-          <motion.button
-            className="primary-button"
-            initial={{ opacity: 0, y: "20px" }}
-            whileInView={{ opacity: 1, y: "0px" }}
-            viewport={{ amount: "all", once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <p>meet nicki</p>
-            <svg
-              className="button-arrow"
-              xmlns="http://www.w3.org/2000/svg"
-              width="37"
-              height="15"
-              viewBox="0 0 37 15"
-              fill="none"
-            >
-              <path
-                className="arrow"
-                d="M35.8781 8.20711C36.2686 7.81658 36.2686 7.18342 35.8781 6.79289L29.5142 0.428932C29.1236 0.0384078 28.4905 0.0384078 28.0999 0.428932C27.7094 0.819457 27.7094 1.45262 28.0999 1.84315L33.7568 7.5L28.0999 13.1569C27.7094 13.5474 27.7094 14.1805 28.0999 14.5711C28.4905 14.9616 29.1236 14.9616 29.5142 14.5711L35.8781 8.20711ZM0 8.5H35.171V6.5H0V8.5Z"
-                fill="#590000"
-              />
-            </svg>
-          </motion.button>
-          <motion.svg
-            className="orb2-motion-container"
-            initial={{ opacity: 0, y: "50px" }}
-            whileInView={{ opacity: 1, y: "0px" }}
-            viewport={{ margin: "-100px", once: true }}
-            transition={{ duration: 0.5 }}
+        </motion.div>
+        <motion.button
+          className="primary-button"
+          initial={{ opacity: 0, y: "20px" }}
+          whileInView={{ opacity: 1, y: "0px" }}
+          viewport={{ amount: "all", once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <p>meet nicki</p>
+          <svg
+            className="button-arrow"
             xmlns="http://www.w3.org/2000/svg"
-            width="120"
-            height="120"
-            viewBox="0 0 120 120"
+            width="37"
+            height="15"
+            viewBox="0 0 37 15"
             fill="none"
           >
-            <circle className="orb-2-fill" cx="60" cy="60" r="60" />
-          </motion.svg>
-          <motion.svg
-          className="trisk-motion-container"
-          initial={{ opacity: 0, y: "50px" }}
-          whileInView={{ opacity: 1, y: "0px" }}
-          viewport={{ margin: "-200px", once: true }}
-          transition={{ duration: 0.5 }}
-          width="397"
-          height="420"
-          viewBox="0 0 397 420"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            className="trisk-path-fill"
-            d="M207.928 264.873C210.118 232.071 210.107 207.452 194.829 174.338C226.11 195.705 239.957 201.245 277.345 207.349C247.251 224.567 230.436 238.501 207.928 264.873Z"
-          />
-          <path
-            className="trisk-path-stroke"
-            d="M207.928 264.873C210.118 232.071 210.107 207.452 194.829 174.338M207.928 264.873C230.436 238.501 247.251 224.567 277.345 207.349M207.928 264.873C161.053 369.879 276.252 455.243 355.736 396.897C446.957 329.936 352.712 191.481 263.351 255.384C192.837 305.809 263.392 418.712 334.875 366.24C385.553 329.04 335.141 250.298 286.063 286.324C251.922 311.385 284.281 356.587 312.555 335.833C327.942 324.538 313.11 307.515 304.042 314.171M194.829 174.338C226.11 195.705 239.957 201.245 277.345 207.349M194.829 174.338C109.145 63.2013 -11.5551 157.354 5.30933 237.11C30.5526 356.49 197.629 324.146 171.509 215.259C152.087 134.292 37.3115 150.982 41.5562 226.1C45.3789 293.752 144.291 287.626 136.937 230.787C130.439 180.556 78.4499 199.018 78.6598 221.85C78.8888 246.764 107.307 241.865 101.752 228.705M277.345 207.349C402.566 193.416 410.538 42.3613 316.172 9.74189C212.771 -26.0006 147.345 119.714 249.861 164.316C324.477 196.779 387.321 79.8283 303.238 44.683C249.084 22.0474 205.219 103.5 258.844 127.348C276.949 135.399 293.104 129.287 301.565 117.33C310.027 105.373 306.085 84.7852 291.764 79.3752C276.997 73.7967 264.518 90.3453 276.226 97.3482"
-            stroke-width="7"
-          />
-        </motion.svg>
-        </motion.div>
+            <path
+              className="arrow"
+              d="M35.8781 8.20711C36.2686 7.81658 36.2686 7.18342 35.8781 6.79289L29.5142 0.428932C29.1236 0.0384078 28.4905 0.0384078 28.0999 0.428932C27.7094 0.819457 27.7094 1.45262 28.0999 1.84315L33.7568 7.5L28.0999 13.1569C27.7094 13.5474 27.7094 14.1805 28.0999 14.5711C28.4905 14.9616 29.1236 14.9616 29.5142 14.5711L35.8781 8.20711ZM0 8.5H35.171V6.5H0V8.5Z"
+              fill="#590000"
+            />
+          </svg>
+        </motion.button>
+        </Section2Frame>
         <SplotchBottom
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 206"

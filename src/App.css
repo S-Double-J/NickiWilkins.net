@@ -455,7 +455,7 @@ p {
     width: 400px;
   }
   @media (max-width: 450px) {
-    width: 95svw;
+    width: 90svw;
   }
 }
 
@@ -762,7 +762,7 @@ p {
   }
   @media screen and (orientation: landscape) and (max-height: 535px) {
     align-items: start;
-    min-height: 300px;
+    min-height: 380px;
   }
 }
 
@@ -874,48 +874,6 @@ p {
   position: fixed;
   bottom: 0;
   z-index: 100;
-}
-
-.orb1-motion-container {
-  position: absolute;
-  top: -150px;
-  z-index: -5;
-  @media (max-width: 400px) {
-    height: 150px;
-    width: 150px;
-    top: -100px;
-  }
-  @media screen and (orientation: landscape) and (max-height: 535px) {
-    display: none;
-  }
-}
-
-.orb2-motion-container {
-  position: absolute;
-  bottom: 50px;
-  right: 10px;
-  z-index: -3;
-  @media (max-width: 400px) {
-    height: 80px;
-    width: 80px;
-    bottom: 20px;
-  }
-  @media screen and (orientation: landscape) and (max-height: 535px) {
-    display: none;
-  }
-}
-
-.orb-1-fill {
-  fill: var(--Accent-Light);
-  @media (max-width: 710px) {
-    fill: var(--Accent-Dark);
-  }
-}
-.orb-2-fill {
-  fill: var(--Accent-Light);
-  @media screen and (orientation: landscape) and (max-height: 535px) {
-    fill: var(--Accent-Dark);
-  }
 }
 
 .bold {

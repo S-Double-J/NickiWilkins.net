@@ -142,6 +142,9 @@ const Section2 = styled.div`
     padding: 0;
     min-height: 500px;
   }
+  @media screen and (max-width: 500px){
+    min-height: 600px;
+  }
 `;
 
 const Section2Frame = styled.div`

@@ -38,29 +38,38 @@ function Menu({ active, setActive }: Props) {
         className="menu-background"
         animate={active ? "open" : "closed"}
         style={{
-          right: "-100%",
-          bottom: "0",
+          width: "0px",
           opacity: 0,
         }}
         variants={{
           open: {
-            right: "0",
+            width: "400px",
             opacity: 1,
           },
           closed: {
-            right: "-100%",
+            width: "0px",
             opacity: 0,
           },
         }}
       >
-        <div className="hamburger-x">
+        <motion.div className="hamburger-x"
+        animate={active ? "open" : "closed"}
+        variants={{
+          open: {
+            width: "60px",
+            opacity: 1,
+          },
+          closed: {
+            width: "0px",
+            opacity: 0,
+          }}}
+        >
         <motion.button
           initial={false}
           onClick={handleClick}
           className="hamburger"
           animate={active ? "open" : "closed"}
         >
-
           <motion.span
             className="hamburger-x-span"
             style={{
@@ -70,7 +79,15 @@ function Menu({ active, setActive }: Props) {
               y: "-50%",
               rotate: "45deg"
             }}
-
+            variants={{
+              open: {
+                width: "40px",
+                opacity: 1,
+              },
+              closed: {
+                width: "0px",
+                opacity: 0,
+              }}}
           />
           <motion.span
             className="hamburger-x-span"
@@ -81,9 +98,18 @@ function Menu({ active, setActive }: Props) {
               y: "-50%",
               rotate: "-45deg"
             }}
+            variants={{
+              open: {
+                width: "40px",
+                opacity: 1,
+              },
+              closed: {
+                width: "0px",
+                opacity: 0,
+              }}}
           />
           </motion.button>
-          </div>
+          </motion.div>
       </motion.div>
     </MotionConfig>
   );

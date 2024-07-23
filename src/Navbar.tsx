@@ -3,7 +3,8 @@ import { motion, MotionConfig } from "framer-motion";
 import Menu from "./HamburgerHiddenMenu";
 
 const Container = styled.div`
-  background-color: #8c1c1c;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(25px);
   width: 100%;
   position: sticky;
   top: 0;
@@ -44,7 +45,6 @@ function Navbar({ active, setActive }: Props) {
               x: "-50%",
               y: "-50%",
             }}
-
           />
           <motion.span
             className="hamburger-span"
@@ -54,7 +54,6 @@ function Navbar({ active, setActive }: Props) {
               x: "-50%",
               y: "-50%",
             }}
-
           />
           <motion.span
             className="hamburger-span"

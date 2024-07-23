@@ -1,14 +1,15 @@
-import './App.css'
-import Navbar from './Navbar'
-import LandingPage from './landing_page/LandingPage'
-import { useState } from "react";
+import "./App.css";
+import LandingPage from "./landing_page/LandingPage";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 function App() {
-  const [active, setActive] = useState(false);
-  return <>
-  <Navbar key="Nav-bar" active={active} setActive={setActive}/>
-  <LandingPage key="Landing-Page" />
-  </>
+  return (
+    <>
+      <ParallaxProvider>
+        <LandingPage key="Landing-Page" />
+      </ParallaxProvider>
+    </>
+  );
 }
 
-export default App
+export default App;

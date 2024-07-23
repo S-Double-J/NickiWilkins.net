@@ -11,4 +11,7 @@ body {
   --Accent-Dark: #590000;
   
   background: var(--Primary-Light);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
 }

@@ -4,11 +4,11 @@ import styled from "styled-components";
 
 const Section3 = styled.div`
   width: 100%;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 58px);
   background-color: #8c1c1c;
   position: sticky;
   position: -webkit-sticky;
-  top: 60px;
+  top: 58px;
   overflow: hidden;
 `;
 

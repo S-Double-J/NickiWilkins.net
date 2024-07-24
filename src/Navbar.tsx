@@ -2,29 +2,6 @@ import styled from "styled-components";
 import { motion, MotionConfig, useTransform, useScroll } from "framer-motion";
 import Menu from "./HamburgerHiddenMenu";
 
-const Container = styled.div`
-  backdrop-filter: blur(10px);
-  width: 100%;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-  z-index: 200;
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0px;
-    z-index: -1;
-    background: rgba(255, 255, 255, 0.9);
-    mask: linear-gradient(to top, transparent, black 100%);
-    backdrop-filter: blur(10px);
-  }
-`;
-
 type ClickHandler = React.MouseEventHandler<HTMLElement>;
 interface Props {
   active: boolean;

@@ -242,7 +242,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 61px;
+  height: 62px;
   z-index: 200;
 }
 
@@ -790,11 +790,18 @@ p {
 
 .splotch-top-left {
   position: absolute;
-  top: 0;
+  top: -170px;
   left: 0;
   width: 700px;
   height: 948.267px;
-  max-width: 50svw;
+  @media screen and (max-width: 800px){
+    width: 500px;
+    top: -30px
+  }
+  @media screen and (max-width: 600px){
+    width: 300px;
+    top: -40px;
+  }
 }
 
 .splotch-top-right {
@@ -803,6 +810,14 @@ p {
   top: 0;
   width: 249px;
   height: 1625.301px;
+  @media screen and (max-width: 600px) {
+    width: 200px;
+    top: 100px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 100px;
+    top: 300px;
+  }
 }
 
 .orb-large {

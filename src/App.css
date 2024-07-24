@@ -96,6 +96,9 @@ h4 {
   line-height: 114%; /* 36.48px */
   letter-spacing: -0.64px;
   margin: 0;
+  @media screen and (max-width: 535px) {
+  font-size: 24px;
+  }
 }
 
 p {
@@ -106,34 +109,6 @@ p {
   line-height: 100%; /* 20px */
   letter-spacing: -0.8px;
   margin: 0;
-  @media (max-width: 710px) {
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 607;
-    line-height: 114%;
-    letter-spacing: 0.16px;
-  }
-  @media (max-width: 450px) {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 607;
-    line-height: 114%;
-    letter-spacing: 0.14px;
-  }
-  @media screen and (orientation: landscape) and (max-height: 535px) {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 607;
-    line-height: 114%;
-    letter-spacing: 0.14px;
-  }
-  @media screen and (orientation: landscape) and (max-height: 400px) {
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 607;
-    line-height: 114%;
-    letter-spacing: 0.14px;
-  }
 }
 .button-arrow {
   transition: transform 0.3s ease-in-out;
@@ -158,9 +133,6 @@ p {
   @media screen and (orientation: landscape) and (max-height: 535px) {
     width: 210px;
     height: 50px;
-  }
-  @media screen and (orientation: landscape) and (max-height: 400px) {
-    margin: 0;
   }
 }
 
@@ -196,9 +168,6 @@ p {
   @media screen and (orientation: landscape) and (max-height: 535px) {
     width: 210px;
     height: 50px;
-  }
-  @media screen and (orientation: landscape) and (max-height: 400px) {
-    margin: 0;
   }
 }
 
@@ -800,7 +769,7 @@ p {
 
 .trisk {
   position: absolute;
-  top: 100vh;
+  top: 95vh;
   right: 20%;
 }
 

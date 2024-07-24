@@ -77,7 +77,7 @@ function LandingPage() {
       >
         <path
           d="M217 108.5C217 168.423 168.423 217 108.5 217C48.5771 217 0 168.423 0 108.5C0 48.5771 48.5771 0 108.5 0C168.423 0 217 48.5771 217 108.5Z"
-          fill="#FAD07D"
+          fill="#590000"
         />
       </svg>
       </Parallax>
@@ -114,7 +114,7 @@ function LandingPage() {
         viewBox="0 0 120 120"
         fill="none"
       >
-        <circle cx="60" cy="60" r="60" fill="#FAD07D" />
+        <circle cx="60" cy="60" r="60" fill="#590000" />
       </svg>
       </Parallax>
       <Heroine />

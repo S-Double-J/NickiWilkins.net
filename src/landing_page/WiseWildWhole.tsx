@@ -11,8 +11,16 @@ const Section2 = styled.div`
   gap: 50px;
   box-sizing: border-box;
   position: relative;
-  background: rgba(255, 244, 223, 0.01);
-  backdrop-filter: blur(5px);
+  z-index: 0;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.01);
+    mask: linear-gradient(to bottom, transparent, black 35%);
+    backdrop-filter: blur(10px);
+  }
 `;
 
 const TextContainer = styled.div`
@@ -32,7 +40,7 @@ const SplotchBottom = styled.svg`
   bottom: -3px;
   left: 0;
   width: 100%;
-  z-index: -1;
+  z-index: 0;
 `;
 
 function WiseWildWhole() {

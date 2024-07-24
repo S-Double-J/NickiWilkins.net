@@ -67,7 +67,7 @@ function Heroine() {
           </svg>
         </button>
         <button className="secondary-button">
-          <p>See what i do</p>
+          <p>See what I do</p>
           <svg
             className="button-arrow"
             xmlns="http://www.w3.org/2000/svg"

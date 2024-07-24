@@ -13,7 +13,7 @@ h1 {
   font-style: normal;
   font-weight: 900;
   line-height: 74%; /* 296px */
-  letter-spacing: -8px;
+  letter-spacing: -1px;
   margin: 0;
 }
 
@@ -100,6 +100,17 @@ h4 {
     font-size: 24px;
   }
 }
+h5 {
+  color: var(--Primary-Light);
+  text-align: center;
+  font-family: Cinzel;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 144%; /* 34.56px */
+  letter-spacing: 0.24px;
+  margin: 0;
+}
 
 p {
   font-family: Comfortaa;
@@ -109,6 +120,26 @@ p {
   line-height: 100%; /* 20px */
   letter-spacing: -0.8px;
   margin: 0;
+}
+.testimonial-main-text {
+  color: var(--Primary-Light);
+  text-align: center;
+  font-family: Comfortaa;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 131%; 
+  letter-spacing: -0.72px;
+}
+.testimonial-name {
+  color: var(--Primary-Light);
+  text-align: center;
+  font-family: Comfortaa;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 144%; /* 34.56px */
+  letter-spacing: 0.24px;
 }
 .button-arrow {
   transition: transform 0.3s ease-in-out;
@@ -531,6 +562,7 @@ p {
 }
 
 .title-card {
+  font-family: Cinzel;
   color: var(--Primary-Light);
   font-size: 40px;
   font-style: normal;
@@ -538,7 +570,7 @@ p {
   line-height: 144%; /* 57.6px */
   letter-spacing: 0.4px;
   grid-area: title;
-  @media (max-width: 835px) {
+  @media (max-width: 1100px) {
     font-size: 20px;
   }
 }
@@ -707,7 +739,6 @@ p {
 
 .bento-motion-container {
   display: grid;
-  margin: 80px;
   grid-template-columns:
     calc(20% - 5px) calc(20% - 10px) calc(20% - 10px) calc(20% - 10px)
     calc(20% - 5px);
@@ -723,8 +754,8 @@ p {
   gap: 10px;
   border-radius: 25px;
   background-color: #8c1c1c;
-  height: 90%;
-  width: 95%;
+  height: 100%;
+  width: 100%;
   padding: 10px;
   position: relative;
   align-items: center;
@@ -794,11 +825,11 @@ p {
   left: 0;
   width: 700px;
   height: 948.267px;
-  @media screen and (max-width: 800px){
+  @media screen and (max-width: 800px) {
     width: 500px;
-    top: -30px
+    top: -30px;
   }
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 600px) {
     width: 300px;
     top: -40px;
   }
@@ -863,3 +894,7 @@ p {
   top: 80vh;
   left: 5%;
 }
+.dot {
+  transition: scale 0.2s ease-in-out;
+}
+

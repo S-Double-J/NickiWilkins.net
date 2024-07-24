@@ -34,7 +34,7 @@ function Menu({ active, setActive }: Props) {
   return (
     <MotionConfig transition={{ duration: 0.3, ease: "easeInOut" }}>
       <motion.div
-      initial={false}
+        initial={false}
         ref={menuRef}
         className="menu-background"
         animate={active ? "open" : "closed"}
@@ -54,7 +54,7 @@ function Menu({ active, setActive }: Props) {
         }}
       >
         <motion.div
-        initial={false}
+          initial={false}
           className="hamburger-x-div"
           animate={active ? "open" : "closed"}
           variants={{
@@ -81,7 +81,8 @@ function Menu({ active, setActive }: Props) {
               closed: {
                 width: "0px",
                 opacity: 0,
-              }}}
+              },
+            }}
           >
             <motion.span
               className="hamburger-x-span"
@@ -95,9 +96,11 @@ function Menu({ active, setActive }: Props) {
               variants={{
                 open: {
                   width: "40px",
+                  height: "3px",
                   opacity: 1,
                 },
                 closed: {
+                  height: "0px",
                   width: "0px",
                   opacity: 0,
                 },

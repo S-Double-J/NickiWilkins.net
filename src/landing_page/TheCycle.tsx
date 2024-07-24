@@ -1,4 +1,5 @@
 import { motion, useTransform, MotionValue } from "framer-motion";
+import { useScroll } from "framer-motion";
 import styled from "styled-components";
 
 const Section3 = styled.div`
@@ -37,12 +38,11 @@ const SpiralTextAxis = styled.div`
     height: 437px;
   }
 `;
-interface Props {
-    scrollTracker: MotionValue<number>;
-}
 
-function TheCycle({scrollTracker}: Props) {
-  const scrollYProgress = scrollTracker;
+
+function TheCycle() {
+  const { scrollYProgress } = useScroll({
+  });
   let scrollValues = [0.29, 0.82];
   let fontSizeValues = ["15px", "36px", "36px", "15px"];
   if (window.innerHeight <= 550) {

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 import Navbar from "../Navbar";
@@ -13,10 +12,7 @@ const Footer = styled.div`
 `;
 
 function LandingPage() {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    container: targetRef,
-  });
+
   const [active, setActive] = useState(false);
 
   return (
@@ -119,7 +115,7 @@ function LandingPage() {
       </Parallax>
       <Heroine />
       <WiseWildWhole />
-      <TheCycle scrollTracker={scrollYProgress} />
+      <TheCycle />
       <Projects />
       <Footer></Footer>
       </>

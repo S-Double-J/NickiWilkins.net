@@ -3,8 +3,8 @@ import { motion, MotionConfig } from "framer-motion";
 import Menu from "./HamburgerHiddenMenu";
 
 const Container = styled.div`
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(25px);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
   width: 100%;
   position: sticky;
   position: -webkit-sticky;

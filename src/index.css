@@ -9,10 +9,6 @@ body {
   --Primary-Dark: #8C1C1C;
   --Accent-Light: #FAD07D;
   --Accent-Dark: #590000;
-  
-  background: var(--Primary-Light);
-  overflow-y: scroll;
-  position: relative;
 }
 
 

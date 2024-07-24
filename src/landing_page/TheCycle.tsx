@@ -4,7 +4,6 @@ import styled from "styled-components";
 const Section3 = styled.div`
   width: 100%;
   height: calc(100vh - 60px);
-  min-height: 600px;
   background-color: #8c1c1c;
   position: sticky;
   position: -webkit-sticky;

@@ -14,3 +14,9 @@ body {
   overflow-y: scroll;
   position: relative;
 }
+
+
+div#root{
+  background: var(--Primary-Light);
+  position: relative;
+}

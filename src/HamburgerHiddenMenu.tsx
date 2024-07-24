@@ -86,6 +86,7 @@ function Menu({ active, setActive }: Props) {
           >
             <motion.span
               className="hamburger-x-span"
+              animate={active ? "open" : "closed"}
               style={{
                 left: "50%",
                 top: "50%",
@@ -108,6 +109,7 @@ function Menu({ active, setActive }: Props) {
             />
             <motion.span
               className="hamburger-x-span"
+              animate={active ? "open" : "closed"}
               style={{
                 left: "50%",
                 top: "50%",

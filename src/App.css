@@ -281,13 +281,26 @@ p {
   cursor: pointer;
   background: none;
   border: none;
+  padding: 0;
+}
+.hamburger-x-button {
+  width: 0px;
+  height: 60px;
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
-.hamburger-x {
+.hamburger-x-div {
   position: absolute;
   top: 0px;
   right: 0px;
   transform-origin: center center;
+  width: 0px;
+  margin: 0;
+  height: 60px;
 }
 
 .hamburger-span {
@@ -300,9 +313,11 @@ p {
 
 .hamburger-x-span {
   background: var(--Primary-Dark);
-  height: 3px;
+  height: 0px;
   position: absolute;
   border: none;
+  width: 0px;
+  margin: 0;
 }
 
 .hamburger-span:nth-of-type(1) {
@@ -352,7 +367,7 @@ p {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
-.hamburger-x:hover {
+.hamburger-x-button:hover {
   animation-name: span-rotate;
   animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
@@ -776,12 +791,12 @@ p {
 
 .menu-background {
   background-color: var(--Accent-Dark);
-  width: 400px;
   height: 100svh;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 100;
+  margin: 0;
 }
 
 .bold {
@@ -800,11 +815,12 @@ p {
   left: 0;
   width: 700px;
   height: 948.267px;
+  max-width: 50svw;
 }
 
 .splotch-top-right {
   position: absolute;
-  right: -1px;
+  right: 0;
   top: 0;
   width: 249px;
   height: 1625.301px;

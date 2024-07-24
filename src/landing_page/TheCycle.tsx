@@ -2,7 +2,7 @@ import { motion, useTransform, MotionValue } from "framer-motion";
 import styled from "styled-components";
 
 const Section3 = styled.div`
-  width: 101svw;
+  width: 100%;
   height: calc(100svh - 60px);
   min-height: 600px;
   background-color: #8c1c1c;

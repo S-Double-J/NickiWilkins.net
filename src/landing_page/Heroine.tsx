@@ -30,6 +30,11 @@ const ButtonDiv = styled.div`
   align-items: center;
   gap: 50px;
   align-self: stretch;
+  @media screen and (max-width:605px){
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 `;
 
 function Heroine() {

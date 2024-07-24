@@ -24,16 +24,17 @@ function Menu({ active, setActive }: Props) {
       }
     };
 
-    document.addEventListener('mousedown', handler);
+    document.addEventListener("mousedown", handler);
 
     return () => {
-      document.removeEventListener('mousedown', handler);
+      document.removeEventListener("mousedown", handler);
     };
   }, [active, setActive]);
 
   return (
     <MotionConfig transition={{ duration: 0.3, ease: "easeInOut" }}>
       <motion.div
+      initial={false}
         ref={menuRef}
         className="menu-background"
         animate={active ? "open" : "closed"}
@@ -52,64 +53,80 @@ function Menu({ active, setActive }: Props) {
           },
         }}
       >
-        <motion.div className="hamburger-x"
-        animate={active ? "open" : "closed"}
-        variants={{
-          open: {
-            width: "60px",
-            opacity: 1,
-          },
-          closed: {
-            width: "0px",
-            opacity: 0,
-          }}}
-        >
-        <motion.button
-          initial={false}
-          onClick={handleClick}
-          className="hamburger"
+        <motion.div
+        initial={false}
+          className="hamburger-x-div"
           animate={active ? "open" : "closed"}
+          variants={{
+            open: {
+              width: "60px",
+              opacity: 1,
+            },
+            closed: {
+              width: "0px",
+              opacity: 0,
+            },
+          }}
         >
-          <motion.span
-            className="hamburger-x-span"
-            style={{
-              left: "50%",
-              top: "50%",
-              x: "-50%",
-              y: "-50%",
-              rotate: "45deg"
-            }}
+          <motion.button
+            initial={false}
+            onClick={handleClick}
+            className="hamburger-x-button"
+            animate={active ? "open" : "closed"}
             variants={{
               open: {
-                width: "40px",
+                width: "60px",
                 opacity: 1,
               },
               closed: {
                 width: "0px",
                 opacity: 0,
               }}}
-          />
-          <motion.span
-            className="hamburger-x-span"
-            style={{
-              left: "50%",
-              top: "50%",
-              x: "-50%",
-              y: "-50%",
-              rotate: "-45deg"
-            }}
-            variants={{
-              open: {
-                width: "40px",
-                opacity: 1,
-              },
-              closed: {
-                width: "0px",
-                opacity: 0,
-              }}}
-          />
+          >
+            <motion.span
+              className="hamburger-x-span"
+              style={{
+                left: "50%",
+                top: "50%",
+                x: "-50%",
+                y: "-50%",
+                rotate: "45deg",
+              }}
+              variants={{
+                open: {
+                  width: "40px",
+                  opacity: 1,
+                },
+                closed: {
+                  width: "0px",
+                  opacity: 0,
+                },
+              }}
+            />
+            <motion.span
+              className="hamburger-x-span"
+              style={{
+                left: "50%",
+                top: "50%",
+                x: "-50%",
+                y: "-50%",
+                rotate: "-45deg",
+              }}
+              variants={{
+                open: {
+                  width: "40px",
+                  height: "3px",
+                  opacity: 1,
+                },
+                closed: {
+                  height: "0px",
+                  width: "0px",
+                  opacity: 0,
+                },
+              }}
+            />
           </motion.button>
-          </motion.div>
+        </motion.div>
       </motion.div>
     </MotionConfig>
   );

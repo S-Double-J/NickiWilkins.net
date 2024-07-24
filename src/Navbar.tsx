@@ -7,6 +7,7 @@ const Container = styled.div`
   backdrop-filter: blur(25px);
   width: 100%;
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   left: 0;
   display: flex;

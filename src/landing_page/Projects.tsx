@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Section4 = styled.div`
   min-height: 600px;
-  width: 100svw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

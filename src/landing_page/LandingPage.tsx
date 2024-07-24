@@ -8,53 +8,8 @@ import WiseWildWhole from "./WiseWildWhole";
 import TheCycle from "./TheCycle";
 import Projects from "./Projects";
 
-const ScrollContainer = styled.div`
-  height: 100svh;
-  width: 100svw;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  position: relative;
-`;
-const SplotchTopLeft = styled.svg`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 700px;
-  height: 948.267px;
-`;
-const SplotchMiddleRight = styled.svg`
-  position: absolute;
-  right: -1px;
-  top: 0;
-  width: 249px;
-  height: 1625.301px;
-`;
-const Trisk = styled.div`
-
-  position: absolute;
-  bottom: -300px;
-  right: 20%;
-`;
 const Footer = styled.div`
   min-height: 200px;
-`;
-const OrbLarge = styled.svg`
-  width: 217px;
-  height: 217px;
-  flex-shrink: 0;
-  fill: #fad07d;
-  position: absolute;
-  bottom: 0;
-  left: 150px;
-`;
-const OrbSmall = styled.svg`
-  width: 120px;
-  height: 120px;
-  flex-shrink: 0;
-  fill: var(--Primary-Light-Accent, #fad07d);
-  position: absolute;
-  bottom: 0;
-  right: 15%;
 `;
 
 function LandingPage() {

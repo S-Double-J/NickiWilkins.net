@@ -101,7 +101,7 @@ function Testimonials() {
   };
 
   const [testimonialIndex, setTestimonialIndex] = useState(0);
-  const [dragging, setDragging] = useState(false);
+  const [_, setDragging] = useState(false);
 
   function showPrevTestimonial() {
     setTestimonialIndex((index) => {

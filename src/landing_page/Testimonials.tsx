@@ -25,18 +25,6 @@ const TestimonialContainer = styled.div`
     width: 100%;
   }
 `;
-const TestimonialInView = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  width: 100%;
-  height: 100%;
-  transition: translate 0.8s ease-in-out, opacity 0.5s ease-in-out 0.3s;
-`;
 const DotContainer = styled.div`
   display: flex;
   height: 20px;

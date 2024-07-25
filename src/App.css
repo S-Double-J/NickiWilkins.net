@@ -267,7 +267,6 @@ p {
   background: rgba(255, 244, 223, 0.5);
   width: 100%;
   position: sticky;
-  position: -webkit-sticky;
   top: 0;
   left: 0;
   display: flex;

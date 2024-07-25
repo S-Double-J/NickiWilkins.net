@@ -104,12 +104,15 @@ h5 {
   color: var(--Primary-Light);
   text-align: center;
   font-family: Cinzel;
-  font-size: 24px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 144%; /* 34.56px */
   letter-spacing: 0.24px;
   margin: 0;
+  @media screen and (max-width: 535px) {
+    font-size: 16px;
+  }
 }
 
 p {
@@ -130,6 +133,9 @@ p {
   font-weight: 400;
   line-height: 131%; 
   letter-spacing: -0.72px;
+  @media screen and (max-width: 540px){
+    font-size: 18px;
+  }
 }
 .testimonial-name {
   color: var(--Primary-Light);
@@ -140,6 +146,9 @@ p {
   font-weight: 400;
   line-height: 144%; /* 34.56px */
   letter-spacing: 0.24px;
+  @media screen and (max-width: 540px){
+    font-size: 14px;
+  }
 }
 .button-arrow {
   transition: transform 0.3s ease-in-out;

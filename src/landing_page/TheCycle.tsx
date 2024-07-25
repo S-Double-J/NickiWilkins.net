@@ -264,7 +264,7 @@ function TheCycle() {
           className="circle-text-motion-container"
           initial={{ opacity: 0, y: "50px" }}
           whileInView={{ opacity: 1, y: "0px" }}
-          viewport={{ margin: "-200px", once: true }}
+          viewport={{ margin: "-50px", once: true }}
           transition={{ duration: 0.5 }}
         >
           <h3>the circle of rebirth</h3>

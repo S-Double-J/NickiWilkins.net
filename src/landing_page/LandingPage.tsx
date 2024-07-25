@@ -112,6 +112,7 @@ function LandingPage() {
         </svg>
       </Parallax>
       <Heroine />
+      <Heroine />
       <WiseWildWhole />
       <TheCycle />
       <ColourBox>

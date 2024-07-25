@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { motion, MotionConfig, useTransform, useScroll } from "framer-motion";
 import Menu from "./HamburgerHiddenMenu";
 

@@ -161,7 +161,7 @@ function Testimonials() {
           ))}
         </TestimonialViewWindow>
         <DotContainer>
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((_,index) => (
             <DotButton
               onClick={() => setTestimonialIndex(index)}
               style={{ opacity: setDotOpacity(index) }}

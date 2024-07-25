@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 import Navbar from "../Navbar";
 import Heroine from "./Heroine";

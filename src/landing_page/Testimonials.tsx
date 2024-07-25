@@ -98,7 +98,7 @@ function Testimonials() {
 
   const dragX = useMotionValue(0);
 
-  const DRAG_BUFFER = 50;
+  const DRAG_BUFFER = 20;
   const SPRING_VALUES = {
     type: "spring",
     mass: 3,

@@ -1,4 +1,4 @@
-import { motion, useTransform, MotionValue } from "framer-motion";
+import { motion, useTransform } from "framer-motion";
 import { useScroll } from "framer-motion";
 import styled from "styled-components";
 

@@ -735,7 +735,7 @@ p {
 
 .hero-motion-container {
   display: flex;
-  width: 50%;
+  width: 100%;
   padding: 50px 0px;
   flex-direction: column;
   justify-content: center;

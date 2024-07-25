@@ -41,10 +41,10 @@ function Heroine() {
   return (
     <motion.div
       className="hero-motion-container"
-      initial={{ opacity: 0, y: "50px" }}
-      whileInView={{ opacity: 1, y: "0px" }}
-      viewport={{ margin: "-200px", once: true }}
-      transition={{ duration: 0.5 }}
+      // initial={{ opacity: 0, y: "50px" }}
+      // whileInView={{ opacity: 1, y: "0px" }}
+      // viewport={{ margin: "-200px", once: true }}
+      // transition={{ duration: 0.5 }}
     >
       <h1 className="hero-title">BEGIN AGAIN</h1>
       <h4>Helping women find purpose in the second half of life</h4>

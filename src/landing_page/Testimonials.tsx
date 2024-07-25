@@ -5,12 +5,11 @@ import { motion, useMotionValue } from "framer-motion";
 const SectionContainer = styled.div`
   display: flex;
   padding: 50px 10px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-grow: 0;
   flex-shrink: 0;
   width: 100%;
-  gap: 40px;
 `;
 const TestimonialContainer = styled.div`
   display: flex;
@@ -19,6 +18,7 @@ const TestimonialContainer = styled.div`
   align-items: center;
   gap: 20px;
   width: 70%;
+  max-width: 600px;
   flex-grow: 0;
   flex-shrink: 0;
   @media screen and (max-width: 750px) {
@@ -70,22 +70,28 @@ const DotButton = styled.button`
     scale: 1.2;
   }
 `;
+
+const SlideButtonDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 function Testimonials() {
   const testimonials = [
     {
-      text: "My experience with Nicki was life changing. She helped me unlock aspects of myself that were hidden. The most transformative moment was when she helped me find my mythopoetic name: River Priestess of the Temple of Ordinary Moments. Working with her is like poetry incarnate.",
+      text: `"My experience with Nicki was life changing. She helped me unlock aspects of myself that were hidden. The most transformative moment was when she helped me find my mythopoetic name: River Priestess of the Temple of Ordinary Moments. Working with her is like poetry incarnate."`,
       name: "Kamie, USA",
     },
     {
-      text: "I loved being in the space of Nicki. Our time together was sacred and blessed. There was a dreamy quality to it. She created the space to explore what felt like ancient forgotten parts of myself. Nicki is expansive and vast, honourable and generous, and a perfect guide.",
+      text: `"I loved being in the space of Nicki. Our time together was sacred and blessed. There was a dreamy quality to it. She created the space to explore what felt like ancient forgotten parts of myself. Nicki is expansive and vast, honourable and generous, and a perfect guide."`,
       name: "Kristin, USA",
     },
     {
-      text: "Nicki is deeply insightful and skilled at listening and helping me weave together the threads of my life. She asks deep questions in a gentle, supportive way. I appreciated the way she honoured my menopausal transition as being part of my soul’s journey.",
+      text: `"Nicki is deeply insightful and skilled at listening and helping me weave together the threads of my life. She asks deep questions in a gentle, supportive way. I appreciated the way she honoured my menopausal transition as being part of my soul’s journey."`,
       name: "Paula, Scotland",
     },
     {
-      text: "During our work together, Nicki shared her enthusiasm and wisdom on the importance of listening to nature and honouring the simplicity and silence within ourselves. It was infectious and transformative. Her vast knowledge of archetypal wisdom and the mythologies we carry helped her identify my strengths and encouraged me to follow my intuition. This gave me the confidence to trust myself and connect more fully with the world around me. I now feel much better equipped to navigate the journey of my life.",
+      text: `"During our work together, Nicki shared her enthusiasm and wisdom on the importance of listening to nature and honouring the simplicity and silence within ourselves. It was infectious and transformative. Her vast knowledge of archetypal wisdom and the mythologies we carry helped her identify my strengths and encouraged me to follow my intuition. This gave me the confidence to trust myself and connect more fully with the world around me. I now feel much better equipped to navigate the journey of my life."`,
       name: "Priya, Scotland",
     },
   ];
@@ -96,8 +102,8 @@ function Testimonials() {
   const SPRING_VALUES = {
     type: "spring",
     mass: 3,
-    stiffness: 400,
-    damping: 50,
+    stiffness: 40,
+    damping: 10,
   };
 
   const [testimonialIndex, setTestimonialIndex] = useState(0);
@@ -143,22 +149,24 @@ function Testimonials() {
 
   return (
     <SectionContainer id="section-container">
-      <TestimonialSliderButton onClick={showPrevTestimonial}>
-        <svg
-          className="testimonial-slider-button-left"
-          xmlns="http://www.w3.org/2000/svg"
-          width="71"
-          height="66"
-          viewBox="0 0 71 66"
-          fill="none"
-        >
-          <path
-            d="M55.9585 19.5012C59.9585 19.5012 61.9585 16.0015 61.9585 13.0015C61.9585 10.0273 56.22 7.89697 53.4585 9.00146C45.9585 12.0012 48.1768 22.464 52.4585 26.0012C58.9735 31.3834 70.1117 20.3728 68.9585 12.0012C67.9163 4.43495 60.0862 1.11007 52.4585 1.50123C32.9585 2.5012 1.95853 32.5012 1.95853 32.5012C1.95853 32.5012 34.4585 63.501 52.4585 64.5012C60.53 64.9497 68.9585 60.0852 68.9585 52.0012C68.9585 43.9173 59.2785 35.1609 52.4585 39.5012C46.9585 43.0015 45.9585 53.0015 50.4585 56.0012C52.8242 57.5782 60.1774 54.7349 60.9585 52.0012C61.9585 48.5015 56.9585 44.5015 54.4585 46.0012"
-            stroke="#FFF4DF"
-            stroke-width="2"
-          />
-        </svg>
-      </TestimonialSliderButton>
+      <SlideButtonDiv>
+        <TestimonialSliderButton onClick={showPrevTestimonial}>
+          <svg
+            className="testimonial-slider-button-left"
+            xmlns="http://www.w3.org/2000/svg"
+            width="71"
+            height="66"
+            viewBox="0 0 71 66"
+            fill="none"
+          >
+            <path
+              d="M55.9585 19.5012C59.9585 19.5012 61.9585 16.0015 61.9585 13.0015C61.9585 10.0273 56.22 7.89697 53.4585 9.00146C45.9585 12.0012 48.1768 22.464 52.4585 26.0012C58.9735 31.3834 70.1117 20.3728 68.9585 12.0012C67.9163 4.43495 60.0862 1.11007 52.4585 1.50123C32.9585 2.5012 1.95853 32.5012 1.95853 32.5012C1.95853 32.5012 34.4585 63.501 52.4585 64.5012C60.53 64.9497 68.9585 60.0852 68.9585 52.0012C68.9585 43.9173 59.2785 35.1609 52.4585 39.5012C46.9585 43.0015 45.9585 53.0015 50.4585 56.0012C52.8242 57.5782 60.1774 54.7349 60.9585 52.0012C61.9585 48.5015 56.9585 44.5015 54.4585 46.0012"
+              stroke="#FFF4DF"
+              stroke-width="2"
+            />
+          </svg>
+        </TestimonialSliderButton>
+      </SlideButtonDiv>
       <TestimonialContainer id="testimonial-container" draggable="false">
         <h5>What Nicki's clients have to say</h5>
         <TestimonialViewWindow id="testimonial-view-window">
@@ -230,22 +238,24 @@ function Testimonials() {
           ))}
         </DotContainer>
       </TestimonialContainer>
-      <TestimonialSliderButton onClick={showNextTestimonial}>
-        <svg
-          className="testimonial-slider-button-right"
-          xmlns="http://www.w3.org/2000/svg"
-          width="70"
-          height="66"
-          viewBox="0 0 70 66"
-          fill="none"
-        >
-          <path
-            d="M14.1083 46.4862C10.1132 46.4862 8.11572 49.9826 8.11572 52.9798C8.11572 55.9512 13.8472 58.0795 16.6052 56.976C24.0959 53.9791 21.8804 43.5262 17.604 39.9923C11.0971 34.6152 -0.027343 45.6154 1.12438 53.9791C2.16531 61.5383 9.9857 64.86 17.604 64.4692C37.0798 63.4702 68.0415 33.4984 68.0415 33.4984C68.0415 33.4984 35.5817 2.52779 17.604 1.52853C9.54246 1.08044 1.12438 5.94042 1.12438 14.0168C1.12438 22.0931 10.7924 30.8412 17.604 26.505C23.0972 23.0081 24.0959 13.0175 19.6015 10.0205C17.2388 8.44505 9.89461 11.2857 9.11448 14.0168C8.11572 17.5132 13.1095 21.5095 15.6064 20.0111"
-            stroke="#FFF4DF"
-            stroke-width="2"
-          />
-        </svg>
-      </TestimonialSliderButton>
+      <SlideButtonDiv>
+        <TestimonialSliderButton onClick={showNextTestimonial}>
+          <svg
+            className="testimonial-slider-button-right"
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="66"
+            viewBox="0 0 70 66"
+            fill="none"
+          >
+            <path
+              d="M14.1083 46.4862C10.1132 46.4862 8.11572 49.9826 8.11572 52.9798C8.11572 55.9512 13.8472 58.0795 16.6052 56.976C24.0959 53.9791 21.8804 43.5262 17.604 39.9923C11.0971 34.6152 -0.027343 45.6154 1.12438 53.9791C2.16531 61.5383 9.9857 64.86 17.604 64.4692C37.0798 63.4702 68.0415 33.4984 68.0415 33.4984C68.0415 33.4984 35.5817 2.52779 17.604 1.52853C9.54246 1.08044 1.12438 5.94042 1.12438 14.0168C1.12438 22.0931 10.7924 30.8412 17.604 26.505C23.0972 23.0081 24.0959 13.0175 19.6015 10.0205C17.2388 8.44505 9.89461 11.2857 9.11448 14.0168C8.11572 17.5132 13.1095 21.5095 15.6064 20.0111"
+              stroke="#FFF4DF"
+              stroke-width="2"
+            />
+          </svg>
+        </TestimonialSliderButton>
+      </SlideButtonDiv>
     </SectionContainer>
   );
 }

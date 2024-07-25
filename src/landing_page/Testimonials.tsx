@@ -1,25 +1,29 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { motion, useMotionValue } from "framer-motion";
 
 const SectionContainer = styled.div`
   display: flex;
-  padding: 50px 0px;
+  padding: 50px 10px;
   justify-content: center;
   align-items: center;
-  gap: 80px;
   flex-grow: 0;
   flex-shrink: 0;
   width: 100%;
+  gap: 40px;
 `;
 const TestimonialContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   width: 70%;
   flex-grow: 0;
   flex-shrink: 0;
+  @media screen and (max-width: 750px) {
+    width: 100%;
+  }
 `;
 const TestimonialInView = styled.div`
   display: flex;
@@ -53,6 +57,7 @@ const TestimonialViewWindow = styled.div`
 
 const TestimonialSliderButton = styled.button`
   flex-shrink: 0;
+  flex-grow: 0;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -63,6 +68,9 @@ const TestimonialSliderButton = styled.button`
     50% {
       scale: 1.1;
     }
+  }
+  @media screen and (max-width: 750px) {
+    display: none;
   }
 `;
 const DotButton = styled.button`
@@ -94,7 +102,18 @@ function Testimonials() {
     },
   ];
 
+  const dragX = useMotionValue(0);
+
+  const DRAG_BUFFER = 50;
+  const SPRING_VALUES = {
+    type: "spring",
+    mass: 3,
+    stiffness: 400,
+    damping: 50,
+  };
+
   const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [dragging, setDragging] = useState(false);
 
   function showPrevTestimonial() {
     setTestimonialIndex((index) => {
@@ -112,13 +131,6 @@ function Testimonials() {
       return index + 1;
     });
   }
-  function setTestimonialOpacity(currentTestimonialIndex: number) {
-    if (currentTestimonialIndex === testimonialIndex) {
-      return 1;
-    } else {
-      return 0;
-    }
-  }
   function setDotOpacity(currentTestimonialIndex: number) {
     if (currentTestimonialIndex === testimonialIndex) {
       return 1;
@@ -126,6 +138,21 @@ function Testimonials() {
       return 0.5;
     }
   }
+  function onDragStart() {
+    setDragging(true);
+  }
+  function onDragEnd() {
+    setDragging(false);
+
+    const x = dragX.get();
+
+    if (x <= -DRAG_BUFFER) {
+      showNextTestimonial();
+    } else if (x >= DRAG_BUFFER) {
+      showPrevTestimonial();
+    }
+  }
+
   return (
     <SectionContainer id="section-container">
       <TestimonialSliderButton onClick={showPrevTestimonial}>
@@ -144,29 +171,61 @@ function Testimonials() {
           />
         </svg>
       </TestimonialSliderButton>
-      <TestimonialContainer id="testimonial-container">
+      <TestimonialContainer id="testimonial-container" draggable="false">
         <h5>What Nicki's clients have to say</h5>
         <TestimonialViewWindow id="testimonial-view-window">
           {testimonials.map((testimonial, index) => (
-            <TestimonialInView
+            <motion.div
+              className="testimonial-in-view"
               key={index}
               style={{
                 translate: `${-100 * testimonialIndex}%`,
-                opacity: setTestimonialOpacity(index),
+                x: dragX,
+              }}
+              drag="x"
+              dragConstraints={{
+                left: 0,
+                right: 0,
+              }}
+              onDragStart={onDragStart}
+              onDragEnd={onDragEnd}
+              transition={{
+                SPRING_VALUES,
               }}
             >
-              <p className="testimonial-main-text">{testimonial.text}</p>
-              <p className="testimonial-name">{testimonial.name}</p>
-            </TestimonialInView>
+              <motion.p
+                className="testimonial-main-text"
+                animate={{
+                  scale: testimonialIndex === index ? 0.95 : 0.85,
+                }}
+                transition={{
+                  SPRING_VALUES,
+                }}
+              >
+                {testimonial.text}
+              </motion.p>
+              <motion.p
+                className="testimonial-name"
+                animate={{
+                  scale: testimonialIndex === index ? 1 : 0.85,
+                }}
+                transition={{
+                  SPRING_VALUES,
+                }}
+              >
+                {testimonial.name}
+              </motion.p>
+            </motion.div>
           ))}
         </TestimonialViewWindow>
         <DotContainer>
-          {testimonials.map((_,index) => (
+          {testimonials.map((_, index) => (
             <DotButton
               onClick={() => setTestimonialIndex(index)}
               style={{ opacity: setDotOpacity(index) }}
             >
-              <svg className="dot"
+              <svg
+                className="dot"
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
                 height="20"

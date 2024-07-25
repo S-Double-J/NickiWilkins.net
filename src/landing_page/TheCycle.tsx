@@ -13,7 +13,7 @@ const Section3 = styled.div`
 `;
 
 const StickyScrollDiv = styled.div`
-  height: 500svh;
+  height: 500vh;
   width: 100%;
 `;
 

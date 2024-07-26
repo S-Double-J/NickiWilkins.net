@@ -267,7 +267,7 @@ function TheCycle() {
           viewport={{ margin: "-50px", once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h3>the circle of rebirth</h3>
+          <h3>The Circle of Rebirth</h3>
         </motion.div>
         <motion.div
           className="spiral-div"

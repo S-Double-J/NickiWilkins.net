@@ -10,8 +10,9 @@ h1,
 h2,
 h3,
 h5 {
-  font-family: "rozha One";
-  font-weight: 500;
+  /* font-family: "Rozha One"; */
+  font-family: Cinzel; 
+  font-weight: 900;
 }
 h4,
 p {
@@ -20,10 +21,10 @@ p {
 
 h1 {
   text-align: center;
-  font-size: calc(100vw / 2.9);
+  font-size: calc(100vw / 3.6);
   font-style: normal;
-  line-height: 60%;
-  letter-spacing: -6px;
+  line-height: 75%;
+  letter-spacing: -8px;
   margin: 0;
   @media screen and (min-width: 1750px) {
     font-size: 473px;
@@ -31,6 +32,7 @@ h1 {
 }
 
 h2 {
+  font-weight: 600;
   font-size: 96px;
   font-style: normal;
   line-height: 76%;
@@ -105,7 +107,7 @@ h4 {
 h5 {
   color: var(--Primary-Light);
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 144%; /* 34.56px */

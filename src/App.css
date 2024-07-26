@@ -10,7 +10,8 @@ h1,
 h2,
 h3,
 h5 {
-  font-family: CSBelvina;
+  font-family: "rozha One";
+  font-weight: 500;
 }
 h4,
 p {
@@ -18,16 +19,12 @@ p {
 }
 
 h1 {
-  font-family: CSBelvina;
   text-align: center;
   font-size: calc(100vw / 2.9);
   font-style: normal;
-  font-weight: 900;
-  line-height: 74%;
+  line-height: 60%;
   letter-spacing: -6px;
   margin: 0;
-  margin-block-start: 15px;
-  margin-inline-start: -20px;
   @media screen and (min-width: 1750px) {
     font-size: 473px;
   }
@@ -36,7 +33,6 @@ h1 {
 h2 {
   font-size: 96px;
   font-style: normal;
-  font-weight: 900;
   line-height: 76%;
   letter-spacing: -0.96px;
   text-transform: uppercase;
@@ -44,29 +40,21 @@ h2 {
   @media (max-width: 835px) {
     font-size: 72px;
     font-style: normal;
-    font-weight: 900;
-    line-height: 114%;
     letter-spacing: 0.72px;
   }
   @media (max-width: 710px) {
     font-size: 56px;
     font-style: normal;
-    font-weight: 900;
-    line-height: 114%;
     letter-spacing: 0.64px;
   }
   @media screen and (orientation: landscape) and (max-height: 535px) {
     font-size: 56px;
     font-style: normal;
-    font-weight: 900;
-    line-height: 114%;
     letter-spacing: 0.64px;
   }
   @media screen and (orientation: landscape) and (max-height: 400px) {
     font-size: 52px;
     font-style: normal;
-    font-weight: 900;
-    line-height: 114%;
     letter-spacing: 0.64px;
   }
 }
@@ -830,7 +818,7 @@ p {
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .trisk {

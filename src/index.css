@@ -19,15 +19,15 @@ div#root{
 
 @font-face {
   font-family: "Hempa-Regular";
-  src: local(Hempa-Regular), url("src/fonts/HempaSans-Regular-BF669dd5f885033.otf") format("opentype");
+  src: local(Hempa-Regular), url("public/fonts/HempaSans-Regular-BF669dd5f885033.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Hempa-Bold";
-  src: local(Hempa-Bold), url("src/fonts/HempaSans-Black-BF669dd5efa957e.otf") format("opentype");
+  src: local(Hempa-Bold), url("public/fonts/HempaSans-Black-BF669dd5efa957e.otf") format("opentype");
 }
 
 @font-face {
   font-family: "CSBelvina";
-  src: local(CSBelvina), url("src/fonts/CSBelvina-Regular_demo-BF669f0fb63ba84.otf") format("opentype");
+  src: local(CSBelvina), url("public/fonts/CSBelvina-Regular_demo-BF669f0fb63ba84.otf") format("opentype");
 }

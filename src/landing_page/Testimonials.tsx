@@ -193,9 +193,12 @@ function Testimonials() {
                 className="testimonial-main-text"
                 animate={{
                   scale: testimonialIndex === index ? 0.95 : 0.85,
+                  opacity: testimonialIndex === index ? 1: 0
                 }}
                 transition={{
                   SPRING_VALUES,
+                  delay: 0.3
+
                 }}
               >
                 {testimonial.text}
@@ -204,9 +207,11 @@ function Testimonials() {
                 className="testimonial-name"
                 animate={{
                   scale: testimonialIndex === index ? 1 : 0.85,
+                  opacity: testimonialIndex === index ? 1: 0
                 }}
                 transition={{
                   SPRING_VALUES,
+                  delay: 0.3
                 }}
               >
                 {testimonial.name}

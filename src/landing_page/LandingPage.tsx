@@ -53,7 +53,7 @@ function LandingPage() {
           />
         </svg>
       </Parallax>
-      <Parallax className="trisk" speed={-10}>
+      {/* <Parallax className="trisk" speed={-10}>
         <svg
           width="313px"
           height="294.24px"
@@ -73,7 +73,7 @@ function LandingPage() {
             stroke="#590000"
           />
         </svg>
-      </Parallax>
+      </Parallax> */}
 
       <Parallax className="orb-large-fast" speed={170}>
         <svg

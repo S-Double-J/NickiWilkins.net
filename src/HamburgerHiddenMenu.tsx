@@ -1,5 +1,15 @@
 import { motion, MotionConfig } from "framer-motion";
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const LinkText = styled(Link)`
+text-decoration: none;
+color: #fff4df;
+font-family: Cinzel;
+font-weight: 700;
+font-size: 20px;
+margin: 10px;`;
 
 type ClickHandler = React.MouseEventHandler<HTMLElement>;
 
@@ -53,6 +63,7 @@ function Menu({ active, setActive }: Props) {
           },
         }}
       >
+        <LinkText to={"about"}>About</LinkText>
         <motion.div
           initial={false}
           className="hamburger-x-div"

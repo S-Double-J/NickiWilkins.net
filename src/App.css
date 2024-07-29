@@ -10,8 +10,8 @@ h1,
 h2,
 h3,
 h5 {
-  font-family: "CSBelvina";
-  /* font-family: Cinzel;  */
+  /* font-family: "Rozha One"; */
+  font-family: Cinzel; 
   font-weight: 900;
 }
 h4,
@@ -32,7 +32,8 @@ h1 {
 }
 
 h2 {
-  font-weight: 600;
+  color: var(--Accent-Dark);
+  font-weight: 900;
   font-size: 96px;
   font-style: normal;
   line-height: 76%;
@@ -119,6 +120,7 @@ h5 {
 }
 
 p {
+  color: var(--Accent-Dark);
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
@@ -817,6 +819,10 @@ p {
   z-index: 100;
   margin: 0;
   overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 100px;
 }
 
 .bold {
@@ -904,6 +910,37 @@ p {
   top: 80vh;
   left: 5%;
 }
+
+.about-orb-large-fast {
+  width: 217px;
+  height: 217px;
+  flex-shrink: 0;
+  fill: #fad07d;
+  position: absolute;
+  right: 50%;
+  bottom: 900px;
+  @media screen and (max-width: 385px) {
+    right: 20px;
+  }
+}
+.about-orb-small {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  fill: var(--Primary-Light-Accent, #fad07d);
+  position: absolute;
+  right: 25%;
+  bottom: 600px;
+}
+.about-orb-small-fast {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  fill: var(--Primary-Light-Accent, #fad07d);
+  position: absolute;
+  left: 20px;
+  bottom: 1000px;
+}
 .dot {
   transition: scale 0.2s ease-in-out;
 }
@@ -919,4 +956,21 @@ p {
   width: 100%;
   height: 100%;
   transition-duration: 0.8s;
+}
+.about-heading {
+  color: var(--Primary-Dark);
+}
+
+.about-sub-heading {
+  color: var(--Primary-Dark);
+  font-family: Cinzel;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  flex-shrink: 0;
+}
+.about-text {
+  color: var(--Primary-Dark);
+
 }

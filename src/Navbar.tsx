@@ -1,5 +1,16 @@
 import { motion, MotionConfig, useTransform, useScroll } from "framer-motion";
 import Menu from "./HamburgerHiddenMenu";
+import { useLocation, Link } from "react-router-dom";
+import styled from "styled-components";
+
+const LinkText = styled(Link)`
+text-decoration: none;
+color: inherit;
+font-family: Cinzel;
+font-size: 20px;
+font-weight: 700;
+margin: 10px;
+`;
 
 type ClickHandler = React.MouseEventHandler<HTMLElement>;
 interface Props {
@@ -11,20 +22,19 @@ function Navbar({ active, setActive }: Props) {
   const handleClick: ClickHandler = () => {
     setActive((prevValue) => !prevValue);
   };
+  const location = useLocation();
   const { scrollYProgress } = useScroll({});
-  const scrollValues = [0.29, 0.31, 0.8, 0.82];
+  let scrollValues = [0.29, 0.31, 0.8, 0.82];
+  if (location.pathname !== "/") {
+    scrollValues = [0, 0, 0, 0];
+  }
   const barColourValues = [
     "rgba(255, 244, 223, 0.5)",
     "#8C1C1C",
     "#8C1C1C",
     "rgba(255, 244, 223, 0.5)",
   ];
-  const accentColourValues = [
-    "#8C1C1C",
-    "#FFF4DF",
-    "#FFF4DF",
-    "#8C1C1C",
-  ];
+  const accentColourValues = ["#8C1C1C", "#FFF4DF", "#FFF4DF", "#8C1C1C"];
   const barBgColour = useTransform(
     scrollYProgress,
     scrollValues,
@@ -38,9 +48,9 @@ function Navbar({ active, setActive }: Props) {
 
   return (
     <motion.div className="navbar" style={{ background: barBgColour }}>
-      <motion.p style={{ color: accentColour }}>
-        nicki wilkins
-      </motion.p>
+      <motion.div style={{ color: accentColour }}>
+        <LinkText to={"/"}>nicki wilkins</LinkText>
+      </motion.div>
       <MotionConfig transition={{ duration: 0.3, ease: "easeInOut" }}>
         <motion.button
           initial={false}

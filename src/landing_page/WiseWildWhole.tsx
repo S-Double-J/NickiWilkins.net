@@ -1,5 +1,11 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+const LinkText = styled(Link)`
+text-decoration: none;
+z-index: 1;
+`;
 
 const Section2 = styled.div`
   display: flex;
@@ -17,7 +23,7 @@ const Section2 = styled.div`
     position: absolute;
     inset: 0px;
     z-index: -1;
-    background: rgba(255, 255, 255, 0.01);
+    background: rgba(255, 255, 255, 0.25);
     mask: linear-gradient(to bottom, transparent, black 35%);
     backdrop-filter: blur(10px);
   }
@@ -30,7 +36,7 @@ const TextContainer = styled.div`
   align-items: flex-start;
   justify-content: center;
   gap: 50px;
-  @media screen and (max-width: 670px){
+  @media screen and (max-width: 670px) {
     padding: 0px 20px;
   }
 `;
@@ -69,11 +75,12 @@ function WiseWildWhole() {
           viewport={{ margin: "-50px", once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="bold">
-            The most important relationship is the one you foster with your
-            truest self!
-          </p>
           <p>
+            <b>
+              The most important relationship is the one you foster with your
+              truest self!
+            </b>
+            <br />
             <br />
             I mentor women in midlife who are travelling the creative journey to
             self, re-discovering heart-based wisdom, gifts, and purpose.
@@ -93,7 +100,7 @@ function WiseWildWhole() {
           viewport={{ margin: "-50px", once: true }}
           transition={{ duration: 0.5 }}
         >
-          <button className="primary-button">
+          <LinkText to={"about"} className="primary-button">
             <p>Meet Nicki</p>
             <svg
               className="button-arrow"
@@ -109,7 +116,7 @@ function WiseWildWhole() {
                 fill="#590000"
               />
             </svg>
-          </button>
+          </LinkText>
         </motion.div>
       </TextContainer>
       <SplotchBottom xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 206">

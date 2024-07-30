@@ -915,7 +915,7 @@ p {
   width: 217px;
   height: 217px;
   flex-shrink: 0;
-  fill: var(--Accent-Dark);
+  fill: var(--Accent-Light);
   position: absolute;
   right: 50%;
   bottom: 900px;
@@ -928,7 +928,7 @@ p {
   width: 120px;
   height: 120px;
   flex-shrink: 0;
-  fill: var(--Accent-Dark);
+  fill: var(--Accent-Light);
   position: absolute;
   right: 25%;
   bottom: 600px;
@@ -940,7 +940,7 @@ p {
   width: 120px;
   height: 120px;
   flex-shrink: 0;
-  fill: var(--Accent-Dark);
+  fill: var(--Accent-Light);
   position: absolute;
   left: 20px;
   bottom: 1000px;
@@ -962,11 +962,11 @@ p {
   transition-duration: 0.8s;
 }
 .about-heading {
-  color: var(--Primary-Light);
+  color: var(--Primary-Dark);
 }
 
 .about-sub-heading {
-  color: var(--Primary-Light);
+  color: var(--Primary-Dark);
   font-family: Cinzel;
   font-size: 32px;
   font-style: normal;
@@ -975,6 +975,6 @@ p {
   flex-shrink: 0;
 }
 .about-text {
-  color: var(--Primary-Light);
+  color: var(--Primary-Dark);
 
 }

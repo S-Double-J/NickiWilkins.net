@@ -8,7 +8,7 @@ const AboutDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--Primary-Dark);
+  background-color: var(--Primary-Light);
 `;
 
 const Container = styled.div`
@@ -64,7 +64,7 @@ const NickiPortraitMain = styled.img`
   width: 350px;
   height: 350px;
   border-radius: 300px;
-  background: var(--Primary-Light);
+  background: var(--Primary-Dark);
   flex-shrink: 0;
   @media screen and (max-width: 330px) {
     width: 200px;
@@ -75,14 +75,14 @@ const NickiPortraitMain = styled.img`
 const Line = styled.line`
   width: 100%;
   height: 1px;
-  background: var(--Primary-Dark);
+  background: var(--Primary-Light);
   flex-shrink: 0;
 `;
 
 const Icons = styled.a`
   width: 80px;
   height: 80px;
-  background: var(--Primary-Light);
+  background: var(--Primary-Dark);
   border-radius: 50%;
   flex-shrink: 0;
 `;

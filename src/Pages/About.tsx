@@ -93,36 +93,6 @@ function About() {
     <>
       
       <AboutDiv key="About">
-        <Parallax className="about-orb-large-fast" speed={90}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="217"
-            height="217"
-            viewBox="0 0 217 217"
-          >
-            <path d="M217 108.5C217 168.423 168.423 217 108.5 217C48.5771 217 0 168.423 0 108.5C0 48.5771 48.5771 0 108.5 0C168.423 0 217 48.5771 217 108.5Z" />
-          </svg>
-        </Parallax>
-        <Parallax className="about-orb-small" speed={20}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="120"
-            height="120"
-            viewBox="0 0 120 120"
-          >
-            <circle cx="60" cy="60" r="60" />
-          </svg>
-        </Parallax>
-        <Parallax className="about-orb-small-fast" speed={15}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="120"
-            height="120"
-            viewBox="0 0 120 120"
-          >
-            <circle cx="60" cy="60" r="60" />
-          </svg>
-        </Parallax>
         <Navbar key="nav-bar" active={active} setActive={setActive} />
         <Container key="container">
           <TitleSocialsAndImage key="title-image-and-icons">
@@ -142,7 +112,7 @@ function About() {
           <Line />
           <h3 className="about-sub-heading">MY HEART, MY LIFE, AND WORK</h3>
           <p className="about-text">
-            Hello, I’m Nicki Wilkins. Here are 7 things about me...
+            Hello, I’m Nicki Wilkins. Here are 8 things about me...
             <br />
             <br /> <b>I AM A POEM.</b> And so are you! I see poems everywhere.
             Ones written and ones lived. Short ones. Long ones. Forever growing
@@ -165,7 +135,9 @@ function About() {
             <b>THE YEAR I TURNED 50</b>, I posed nude for a life drawing class.
             I thought it would help me accept my body. Once and for all. I wrote
             about it in my short collection of essays called, Inside Art.
-            MENOPAUSE was a long and arduous soul journey, full of creativity,
+            <br />
+            <br />
+            <b>MENOPAUSE</b> was a long and arduous soul journey, full of creativity,
             reflection, and growth. My inner life started to align with my outer
             one, and I found a deep self-love that still surprises me.
             <br />

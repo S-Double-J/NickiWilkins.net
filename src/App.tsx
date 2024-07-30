@@ -19,9 +19,7 @@ function App() {
         <Route
           path="about"
           element={
-            <ParallaxProvider>
               <About key="About" />
-            </ParallaxProvider>
           }
         />
       </Routes>

@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const LinkText = styled(Link)`
-text-decoration: none;
-z-index: 1;
+  text-decoration: none;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
 `;
 
 const Section2 = styled.div`

@@ -54,7 +54,7 @@ function Menu({ active, setActive }: Props) {
         }}
         variants={{
           open: {
-            width: "400px",
+            width: "100%",
             opacity: 1,
           },
           closed: {

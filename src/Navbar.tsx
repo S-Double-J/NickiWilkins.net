@@ -35,12 +35,12 @@ function Navbar({ active, setActive }: Props) {
   if (location.pathname === "/about") {
     scrollValues = [0, 0, 0, 0];
     barColourValues = [
-      "rgba(140, 28, 28, 0.1)",
-      "rgba(140, 28, 28, 0.1)",
-      "rgba(140, 28, 28, 0.1)",
-      "rgba(140, 28, 28, 0.1)",
+      "rgba(255, 244, 223, 0.5)",
+      "rgba(255, 244, 223, 0.5)",
+      "rgba(255, 244, 223, 0.5)",
+      "rgba(255, 244, 223, 0.5)",
     ];
-    accentColourValues = ["#FFF4DF", "#FFF4DF", "#FFF4DF", "#FFF4DF"];
+    accentColourValues = ["#8C1C1C", "#8C1C1C", "#8C1C1C", "#8C1C1C"];
   }
   const barBgColour = useTransform(
     scrollYProgress,

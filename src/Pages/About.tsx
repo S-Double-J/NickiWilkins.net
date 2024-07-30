@@ -1,4 +1,3 @@
-import { Parallax } from "react-scroll-parallax";
 import Navbar from "../Navbar";
 import { useState } from "react";
 import styled from "styled-components";

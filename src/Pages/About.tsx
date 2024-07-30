@@ -8,6 +8,7 @@ const AboutDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--Primary-Dark);
 `;
 
 const Container = styled.div`
@@ -22,7 +23,7 @@ const Container = styled.div`
   max-width: 800px;
 `;
 
-const TitleAndImage = styled.div`
+const TitleSocialsAndImage = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
@@ -39,6 +40,10 @@ const TitleAndSocials = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 1420px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 const SocialsIcons = styled.div`
@@ -48,6 +53,7 @@ const SocialsIcons = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
+  flex-shrink: 0;
   @media screen and (max-width: 1420px) {
     flex-direction: row;
     align-items: center;
@@ -58,14 +64,26 @@ const NickiPortraitMain = styled.img`
   width: 350px;
   height: 350px;
   border-radius: 300px;
-  background: #d9d9d9;
+  background: var(--Primary-Light);
   flex-shrink: 0;
+  @media screen and (max-width: 330px) {
+    width: 200px;
+    height: 200px;
+  }
 `;
 
 const Line = styled.line`
   width: 100%;
   height: 1px;
-  background: var(--Primary-Dark, #8c1c1c);
+  background: var(--Primary-Dark);
+  flex-shrink: 0;
+`;
+
+const Icons = styled.a`
+  width: 80px;
+  height: 80px;
+  background: var(--Primary-Light);
+  border-radius: 50%;
   flex-shrink: 0;
 `;
 
@@ -73,59 +91,54 @@ function About() {
   const [active, setActive] = useState(false);
   return (
     <>
-      <Parallax className="about-orb-large-fast" speed={90}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="217"
-          height="217"
-          viewBox="0 0 217 217"
-          fill="none"
-        >
-          <path
-            d="M217 108.5C217 168.423 168.423 217 108.5 217C48.5771 217 0 168.423 0 108.5C0 48.5771 48.5771 0 108.5 0C168.423 0 217 48.5771 217 108.5Z"
-            fill="#FAD07D"
-          />
-        </svg>
-      </Parallax>
-      <Parallax className="about-orb-small" speed={20}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="120"
-          height="120"
-          viewBox="0 0 120 120"
-          fill="none"
-        >
-          <circle cx="60" cy="60" r="60" fill="#FAD07D" />
-        </svg>
-      </Parallax>
-      <Parallax className="about-orb-small-fast" speed={15}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="120"
-          height="120"
-          viewBox="0 0 120 120"
-          fill="none"
-        >
-          <circle cx="60" cy="60" r="60" fill="#FAD07D" />
-        </svg>
-      </Parallax>
-      <Navbar key="nav-bar" active={active} setActive={setActive} />
+      
       <AboutDiv key="About">
+        <Parallax className="about-orb-large-fast" speed={90}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="217"
+            height="217"
+            viewBox="0 0 217 217"
+          >
+            <path d="M217 108.5C217 168.423 168.423 217 108.5 217C48.5771 217 0 168.423 0 108.5C0 48.5771 48.5771 0 108.5 0C168.423 0 217 48.5771 217 108.5Z" />
+          </svg>
+        </Parallax>
+        <Parallax className="about-orb-small" speed={20}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="120"
+            height="120"
+            viewBox="0 0 120 120"
+          >
+            <circle cx="60" cy="60" r="60" />
+          </svg>
+        </Parallax>
+        <Parallax className="about-orb-small-fast" speed={15}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="120"
+            height="120"
+            viewBox="0 0 120 120"
+          >
+            <circle cx="60" cy="60" r="60" />
+          </svg>
+        </Parallax>
+        <Navbar key="nav-bar" active={active} setActive={setActive} />
         <Container key="container">
-          <TitleAndImage key="title-image-and-icons">
+          <TitleSocialsAndImage key="title-image-and-icons">
             <NickiPortraitMain key="nicki-portrait-main" />
             <TitleAndSocials>
               <h2 className="about-heading">About Nicki</h2>
               <SocialsIcons key="socials-icons">
-                <a href="#">
+                <Icons href="#">
                   <i className="instagram"></i>
-                </a>
-                <a href="#">
+                </Icons>
+                <Icons href="#">
                   <i className="substack"></i>
-                </a>
+                </Icons>
               </SocialsIcons>
             </TitleAndSocials>
-          </TitleAndImage>
+          </TitleSocialsAndImage>
           <Line />
           <h3 className="about-sub-heading">MY HEART, MY LIFE, AND WORK</h3>
           <p className="about-text">

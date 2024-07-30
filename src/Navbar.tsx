@@ -4,12 +4,12 @@ import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
 
 const LinkText = styled(Link)`
-text-decoration: none;
-color: inherit;
-font-family: Cinzel;
-font-size: 20px;
-font-weight: 700;
-margin: 10px;
+  text-decoration: none;
+  color: inherit;
+  font-family: Cinzel;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px;
 `;
 
 type ClickHandler = React.MouseEventHandler<HTMLElement>;
@@ -25,16 +25,23 @@ function Navbar({ active, setActive }: Props) {
   const location = useLocation();
   const { scrollYProgress } = useScroll({});
   let scrollValues = [0.29, 0.31, 0.8, 0.82];
-  if (location.pathname !== "/") {
-    scrollValues = [0, 0, 0, 0];
-  }
-  const barColourValues = [
+  let barColourValues = [
     "rgba(255, 244, 223, 0.5)",
     "#8C1C1C",
     "#8C1C1C",
     "rgba(255, 244, 223, 0.5)",
   ];
-  const accentColourValues = ["#8C1C1C", "#FFF4DF", "#FFF4DF", "#8C1C1C"];
+  let accentColourValues = ["#8C1C1C", "#FFF4DF", "#FFF4DF", "#8C1C1C"];
+  if (location.pathname === "/about") {
+    scrollValues = [0, 0, 0, 0];
+    barColourValues = [
+      "rgba(140, 28, 28, 0.1)",
+      "rgba(140, 28, 28, 0.1)",
+      "rgba(140, 28, 28, 0.1)",
+      "rgba(140, 28, 28, 0.1)",
+    ];
+    accentColourValues = ["#FFF4DF", "#FFF4DF", "#FFF4DF", "#FFF4DF"];
+  }
   const barBgColour = useTransform(
     scrollYProgress,
     scrollValues,

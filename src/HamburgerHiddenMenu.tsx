@@ -5,11 +5,15 @@ import styled from "styled-components";
 
 const LinkText = styled(Link)`
 text-decoration: none;
-color: #fff4df;
-font-family: Cinzel;
-font-weight: 700;
-font-size: 20px;
-margin: 10px;`;
+color: var(--Accent-Light);
+font-family: "M Plus Rounded 1c";
+font-weight: 500;
+font-size: 16px;
+margin: 10px;
+transition: all 0.2s ease;
+&:hover {
+ transform: translateX(-3px)
+}`;
 
 type ClickHandler = React.MouseEventHandler<HTMLElement>;
 
@@ -41,6 +45,7 @@ function Menu({ active, setActive }: Props) {
     };
   }, [active, setActive]);
 
+
   return (
     <MotionConfig transition={{ duration: 0.3, ease: "easeInOut" }}>
       <motion.div
@@ -54,7 +59,7 @@ function Menu({ active, setActive }: Props) {
         }}
         variants={{
           open: {
-            width: "100%",
+            width: "150px",
             opacity: 1,
           },
           closed: {
@@ -63,7 +68,7 @@ function Menu({ active, setActive }: Props) {
           },
         }}
       >
-        <LinkText to={"about"}>About</LinkText>
+        <LinkText to="/about">About</LinkText>
         <motion.div
           initial={false}
           className="hamburger-x-div"

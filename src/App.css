@@ -10,7 +10,6 @@ h1,
 h2,
 h3,
 h5 {
-  /* font-family: "Rozha One"; */
   font-family: Cinzel; 
   font-weight: 900;
 }
@@ -344,6 +343,7 @@ p {
   border: none;
   width: 0px;
   margin: 0;
+  transition: background .5s ease;
 }
 
 .hamburger-span:nth-of-type(1) {
@@ -369,23 +369,7 @@ p {
   }
 }
 
-@keyframes span-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  75% {
-    transform: rotate(365deg);
-  }
-  80% {
-    transform: rotate(355deg);
-  }
-  85% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+
 
 .hamburger:hover .hamburger-span {
   animation-name: span-shrink;
@@ -393,11 +377,8 @@ p {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
-.hamburger-x-button:hover {
-  animation-name: span-rotate;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+.hamburger-x-button:hover .hamburger-x-span {
+  background: var(--Accent-Light)
 }
 .spiral-div {
   width: 760px;

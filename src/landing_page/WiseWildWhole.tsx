@@ -62,7 +62,7 @@ function WiseWildWhole() {
           viewport={{ margin: "-50px", once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2>
+          <h2 className="gradient-text">
             WISE
             <br />
             WILD

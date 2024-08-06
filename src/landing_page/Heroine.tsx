@@ -1,35 +1,13 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-// const Venus = styled.svg`
-//   margin-left: -50px;
-//   height: calc(100svh - 250px);
-//   min-height: 300px;
-//   @media (max-width: 835px) {
-//     margin-left: -50px;
-//     margin-right: 10px;
-//   }
-//   @media (max-width: 710px) {
-//     margin: 0;
-//     position: absolute;
-//     height: 347px;
-//     width: 250px;
-//     right: 0px;
-//     bottom: 120px;
-//   }
-//   @media screen and (orientation: landscape) and (max-height: 535px) {
-//     position: static;
-//     max-height: calc(100svh - 80px);
-//     margin: 0;
-//   }
-// `;
-
 const ButtonDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
   align-self: stretch;
+  margin: 0;
   @media screen and (max-width: 605px) {
     flex-direction: column;
     align-items: center;
@@ -46,7 +24,7 @@ function Heroine() {
       viewport={{ margin: "-50px", once: true }}
       transition={{ duration: 0.5 }}
     >
-      <h1 className="hero-title">BEGIN AGAIN</h1>
+      <h1 >BEGIN AGAIN</h1>
       <h4>Helping women find purpose in the second half of life</h4>
       <ButtonDiv>
         <button className="primary-button">

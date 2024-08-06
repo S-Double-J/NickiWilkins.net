@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "CSBelvina";
+  src: url(/fonts/CSBelvina-Regular_demo-BF669f0fb63ba84.otf)
+    format("opentype");
+}
 h1,
 h2,
 h3,
@@ -10,7 +15,7 @@ h1,
 h2,
 h3,
 h5 {
-  font-family: Cinzel; 
+  font-family: "CSBelvina";
   font-weight: 900;
 }
 h4,
@@ -125,6 +130,7 @@ p {
   font-weight: 400;
   line-height: 114%; /* 20px */
   letter-spacing: -1px;
+  position: relative;
 }
 
 .testimonial-main-text {
@@ -157,6 +163,7 @@ p {
 .primary-button {
   display: flex;
   width: 270px;
+  height: 60px;
   padding: 17px;
   justify-content: center;
   align-items: center;
@@ -343,7 +350,7 @@ p {
   border: none;
   width: 0px;
   margin: 0;
-  transition: background .5s ease;
+  transition: background 0.5s ease;
 }
 
 .hamburger-span:nth-of-type(1) {
@@ -369,8 +376,6 @@ p {
   }
 }
 
-
-
 .hamburger:hover .hamburger-span {
   animation-name: span-shrink;
   animation-duration: 0.7s;
@@ -378,7 +383,7 @@ p {
   animation-iteration-count: infinite;
 }
 .hamburger-x-button:hover .hamburger-x-span {
-  background: var(--Accent-Light)
+  background: var(--Accent-Light);
 }
 .spiral-div {
   width: 760px;
@@ -923,5 +928,4 @@ p {
 }
 .about-text {
   color: var(--Primary-Dark);
-
 }

@@ -6,6 +6,8 @@ const Container = styled.div`
   padding: 10px 20px;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 const Contacts = styled.div`

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
-import Navbar from "../Navbar";
+import Navbar from "../../Components/Navbar";
 import Heroine from "./Heroine";
 import WiseWildWhole from "./WiseWildWhole";
 import TheCycle from "./TheCycle";
@@ -18,9 +18,6 @@ const ColourBox = styled.div`
   flex: 1 0 0;
   align-self: stretch;
   background: #590000;
-`;
-const Footer = styled.div`
-  min-height: 200px;
 `;
 
 function LandingPage() {
@@ -96,7 +93,6 @@ function LandingPage() {
       <Projects />
       <Testimonials />
       </ColourBox>
-      <Footer></Footer>
     </>
   );
 }

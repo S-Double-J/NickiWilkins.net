@@ -1,6 +1,8 @@
-import Navbar from "../Navbar";
+import Navbar from "../Components/Navbar";
 import { useState } from "react";
 import styled from "styled-components";
+import Footer from "../Components/Footer";
+import { ScrollRestoration } from "react-router-dom";
 
 const AboutDiv = styled.div`
   width: 100%;
@@ -177,7 +179,9 @@ function About() {
             journey to your wise, wild, and whole self.
           </p>
         </Container>
+        <Footer />
       </AboutDiv>
+      <ScrollRestoration />
     </>
   );
 }

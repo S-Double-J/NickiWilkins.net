@@ -170,7 +170,8 @@ p {
   display: flex;
   width: 270px;
   height: 60px;
-  padding: 17px;
+  padding: 0px;
+  text-decoration: none;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -202,7 +203,8 @@ p {
 .secondary-button {
   display: flex;
   width: 270px;
-  padding: 17px;
+  padding: 0px;
+  text-decoration: none;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -350,10 +352,11 @@ p {
 }
 
 .hamburger-x-span {
-  background: var(--Primary-Dark);
+  background: var(--Accent-Dark);
   height: 0px;
   position: absolute;
   border: none;
+  border-radius: 2px;
   width: 0px;
   margin: 0;
   transition: background 0.5s ease;
@@ -803,18 +806,21 @@ p {
 }
 
 .menu-background {
-  background-color: var(--Accent-Dark);
-  height: 100svh;
+  background-color: rgba(89,0,0,0.4);
+  backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 100;
+  z-index: 999;
   margin: 0;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  padding-top: 100px;
+  justify-content: flex-start;
+  padding-top: 70px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 .bold {

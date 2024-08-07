@@ -32,7 +32,7 @@ function Navbar({ active, setActive }: Props) {
     "rgba(255, 244, 223, 0.5)",
   ];
   let accentColourValues = ["#8C1C1C", "#FFF4DF", "#FFF4DF", "#8C1C1C"];
-  if (location.pathname === "/about") {
+  if (location.pathname !== "/") {
     scrollValues = [0, 0, 0, 0];
     barColourValues = [
       "rgba(255, 244, 223, 0.5)",
@@ -54,51 +54,53 @@ function Navbar({ active, setActive }: Props) {
   );
 
   return (
-    <motion.div className="navbar" style={{ background: barBgColour }}>
-      <motion.div style={{ color: accentColour }}>
-        <LinkText to={"/"}>nicki wilkins</LinkText>
+    <>
+      <motion.div className="navbar" style={{ background: barBgColour }}>
+        <motion.div style={{ color: accentColour }}>
+          <LinkText to={"/"}>nicki wilkins</LinkText>
+        </motion.div>
+        <MotionConfig transition={{ duration: 0.3, ease: "easeInOut" }}>
+          <motion.button
+            initial={false}
+            onClick={handleClick}
+            className="hamburger"
+            animate={active ? "open" : "closed"}
+          >
+            <motion.span
+              className="hamburger-span"
+              style={{
+                left: "50%",
+                top: "35%",
+                x: "-50%",
+                y: "-50%",
+                backgroundColor: accentColour,
+              }}
+            />
+            <motion.span
+              className="hamburger-span"
+              style={{
+                left: "50%",
+                top: "50%",
+                x: "-50%",
+                y: "-50%",
+                backgroundColor: accentColour,
+              }}
+            />
+            <motion.span
+              className="hamburger-span"
+              style={{
+                left: "50%",
+                bottom: "35%",
+                x: "-50%",
+                y: "50%",
+                backgroundColor: accentColour,
+              }}
+            />
+          </motion.button>
+        </MotionConfig>
       </motion.div>
-      <MotionConfig transition={{ duration: 0.3, ease: "easeInOut" }}>
-        <motion.button
-          initial={false}
-          onClick={handleClick}
-          className="hamburger"
-          animate={active ? "open" : "closed"}
-        >
-          <motion.span
-            className="hamburger-span"
-            style={{
-              left: "50%",
-              top: "35%",
-              x: "-50%",
-              y: "-50%",
-              backgroundColor: accentColour,
-            }}
-          />
-          <motion.span
-            className="hamburger-span"
-            style={{
-              left: "50%",
-              top: "50%",
-              x: "-50%",
-              y: "-50%",
-              backgroundColor: accentColour,
-            }}
-          />
-          <motion.span
-            className="hamburger-span"
-            style={{
-              left: "50%",
-              bottom: "35%",
-              x: "-50%",
-              y: "50%",
-              backgroundColor: accentColour,
-            }}
-          />
-        </motion.button>
-      </MotionConfig>
       <Menu active={active} setActive={setActive} />
-    </motion.div>
+    </>
   );
 }
 

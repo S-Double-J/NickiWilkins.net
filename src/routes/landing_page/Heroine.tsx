@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const ButtonDiv = styled.div`
@@ -27,7 +28,7 @@ function Heroine() {
       <h1 >BEGIN AGAIN</h1>
       <h4>Helping women find purpose in the second half of life</h4>
       <ButtonDiv>
-        <button className="primary-button">
+        <Link to={"/contact"}className="primary-button">
           <p>Let's work together</p>
           <svg
             className="button-arrow"
@@ -43,7 +44,7 @@ function Heroine() {
               fill="#590000"
             />
           </svg>
-        </button>
+        </Link>
         <button className="secondary-button">
           <p>See what I do</p>
           <svg

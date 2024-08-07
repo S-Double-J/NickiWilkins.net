@@ -1,6 +1,6 @@
 import "./App.css";
-import LandingPage from "./routes/landing_page/LandingPage";
-import Footer from "./Components/Footer";
+import LandingPage from "./landing_page/LandingPage";
+import Footer from "../Components/Footer";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { ScrollRestoration } from "react-router-dom";
 

@@ -8,6 +8,9 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   box-sizing: border-box;
+  @media screen and (max-width: 600px){
+    flex-direction: column;
+  }
 `;
 
 const Contacts = styled.div`
@@ -36,6 +39,10 @@ const Details = styled.div`
   gap: 10px;
   flex-shrink: 0;
   align-self: stretch;
+  @media screen and (max-width: 600px){
+   align-items: start;
+   width: auto;
+  }
 `;
 
 const Line = styled.line`
@@ -57,6 +64,9 @@ const TextRight = styled.p`
   text-align: right;
   padding: 0;
   margin: 0;
+  @media screen and (max-width: 600px){
+    display: none;
+  }
 `;
 
 const A = styled.a`

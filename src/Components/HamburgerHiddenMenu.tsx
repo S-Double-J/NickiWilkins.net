@@ -12,7 +12,7 @@ font-size: 16px;
 margin: 10px;
 transition: all 0.2s ease;
 &:hover {
- transform: translateX(-3px)
+ transform: translateX(3px)
 }`;
 
 type ClickHandler = React.MouseEventHandler<HTMLElement>;
@@ -59,7 +59,7 @@ function Menu({ active, setActive }: Props) {
         }}
         variants={{
           open: {
-            width: "150px",
+            width: "100px",
             opacity: 1,
           },
           closed: {
@@ -68,7 +68,9 @@ function Menu({ active, setActive }: Props) {
           },
         }}
       >
+        <LinkText to="/">Home</LinkText>
         <LinkText to="/about">About</LinkText>
+        <LinkText to="/contact">Contact</LinkText>
         <motion.div
           initial={false}
           className="hamburger-x-div"
@@ -112,8 +114,8 @@ function Menu({ active, setActive }: Props) {
               }}
               variants={{
                 open: {
-                  width: "40px",
-                  height: "3px",
+                  width: "30px",
+                  height: "2px",
                   opacity: 1,
                 },
                 closed: {
@@ -135,8 +137,8 @@ function Menu({ active, setActive }: Props) {
               }}
               variants={{
                 open: {
-                  width: "40px",
-                  height: "3px",
+                  width: "30px",
+                  height: "2px",
                   opacity: 1,
                 },
                 closed: {

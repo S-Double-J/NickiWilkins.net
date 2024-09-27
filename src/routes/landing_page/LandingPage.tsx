@@ -5,7 +5,8 @@ import Navbar from "../../Components/Navbar";
 import Heroine from "./Heroine";
 import WiseWildWhole from "./WiseWildWhole";
 import TheCycle from "./TheCycle";
-import Projects from "./Projects";
+// import Projects from "./Projects";
+import Conclusion from "./Conclusion";
 import Testimonials from "./Testimonials";
 
 const ColourBox = styled.div`
@@ -90,8 +91,9 @@ function LandingPage() {
       <WiseWildWhole />
       <TheCycle />
       <ColourBox>
-      <Projects />
-      <Testimonials />
+        {/* <Projects /> */}
+        <Testimonials />
+        <Conclusion />
       </ColourBox>
     </>
   );

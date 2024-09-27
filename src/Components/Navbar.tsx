@@ -6,9 +6,9 @@ import styled from "styled-components";
 const LinkText = styled(Link)`
   text-decoration: none;
   color: inherit;
-  font-family: Cinzel;
-  font-size: 20px;
-  font-weight: 700;
+  font-family: CSBelvina;
+  font-size: 32px;
+  font-weight: 500;
   margin: 10px;
 `;
 
@@ -26,10 +26,10 @@ function Navbar({ active, setActive }: Props) {
   const { scrollYProgress } = useScroll({});
   let scrollValues = [0.29, 0.31, 0.8, 0.82];
   let barColourValues = [
-    "rgba(255, 244, 223, 0.5)",
+    "rgba(255, 244, 223, 0.1)",
     "#8C1C1C",
     "#8C1C1C",
-    "rgba(255, 244, 223, 0.5)",
+    "rgba(255, 244, 223, 0.1)",
   ];
   let accentColourValues = ["#8C1C1C", "#FFF4DF", "#FFF4DF", "#8C1C1C"];
   if (location.pathname !== "/") {
@@ -57,7 +57,7 @@ function Navbar({ active, setActive }: Props) {
     <>
       <motion.div className="navbar" style={{ background: barBgColour }}>
         <motion.div style={{ color: accentColour }}>
-          <LinkText to={"/"}>nicki wilkins</LinkText>
+          <LinkText to={"/"}>Wise Wild Whole</LinkText>
         </motion.div>
         <MotionConfig transition={{ duration: 0.3, ease: "easeInOut" }}>
           <motion.button

@@ -10,6 +10,8 @@ const Section3 = styled.div`
   position: -webkit-sticky;
   top: 58px;
   overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const StickyScrollDiv = styled.div`
@@ -38,7 +40,14 @@ const SpiralTextAxis = styled.div`
     height: 437px;
   }
 `;
-
+const TextFrame = styled.div`
+display: flex;
+width: 700px;
+padding: 0px 50px;
+flex-direction: column;
+align-items: flex-end;
+gap: 50px;
+`
 
 function TheCycle() {
   const { scrollYProgress } = useScroll({
@@ -260,14 +269,16 @@ function TheCycle() {
   return (
     <StickyScrollDiv>
       <Section3 id="Third">
-        <motion.div
-          className="circle-text-motion-container"
+        <motion.div className="blur"
           initial={{ opacity: 0, y: "50px" }}
           whileInView={{ opacity: 1, y: "0px" }}
           viewport={{ margin: "-50px", once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h3>The Circle of Rebirth</h3>
+          <TextFrame>
+          <h4 className="ta-right white">The Rebirthing Spiral</h4>
+          <p className="ta-right white">The spiral, an ancient symbol for regeneration, is the map I use for the Midlife Rebirth. Its circular movement invites you inward to the centre of Self to find your heart-based wisdom and purpose. The outward movement invites you to integrate your new found wisdom and purpose into your life. At each curve of the spiral, I ask a new question to invite you to travel deeper into your rebirth. </p>
+          </TextFrame>
         </motion.div>
         <motion.div
           className="spiral-div"

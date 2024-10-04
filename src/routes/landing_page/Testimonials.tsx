@@ -168,7 +168,7 @@ function Testimonials() {
         </TestimonialSliderButton>
       </SlideButtonDiv>
       <TestimonialContainer id="testimonial-container" draggable="false">
-        <h5>What Nicki's clients have to say</h5>
+        <h3 className="white">What Nicki's clients have to say</h3>
         <TestimonialViewWindow id="testimonial-view-window">
           {testimonials.map((testimonial, index) => (
             <motion.div

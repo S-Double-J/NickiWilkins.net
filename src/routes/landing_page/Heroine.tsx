@@ -25,7 +25,7 @@ function Heroine() {
         viewport={{ margin: "-50px", once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h1>WISE WILD WHOLE</h1>
+        <h1>NICKI WILKINS</h1>
         <h2>Midlife is not a crisis, it's a rebirth!</h2>
         <ButtonDiv>
           <Link to={"/contact"} className="primary-button">

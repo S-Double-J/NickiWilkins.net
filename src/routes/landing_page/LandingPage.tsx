@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { Parallax } from "react-scroll-parallax";
 import Navbar from "../../Components/Navbar";
 import Heroine from "./Heroine";
 import WiseWildWhole from "./WiseWildWhole";
 import TheCycle from "./TheCycle";
-// import Projects from "./Projects";
 import Conclusion from "./Conclusion";
 import Testimonials from "./Testimonials";
 
@@ -27,8 +25,7 @@ function LandingPage() {
   return (
     <>
       <Navbar key="Nav-bar" active={active} setActive={setActive} />
-      <Parallax className="splotch-top-left" speed={-50}>
-        <svg
+        <svg className="splotch-top-left"
           viewBox="0 0 438 593"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -38,9 +35,7 @@ function LandingPage() {
             fill="#590000"
           />
         </svg>
-      </Parallax>
-      <Parallax className="splotch-top-right" speed={-50}>
-        <svg
+        <svg className="splotch-top-right" 
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 176 1145"
           fill="none"
@@ -50,43 +45,7 @@ function LandingPage() {
             fill="#590000"
           />
         </svg>
-      </Parallax>
-      <Parallax className="orb-large-fast" speed={170}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="217"
-          height="217"
-          viewBox="0 0 217 217"
-          fill="none"
-        >
-          <path
-            d="M217 108.5C217 168.423 168.423 217 108.5 217C48.5771 217 0 168.423 0 108.5C0 48.5771 48.5771 0 108.5 0C168.423 0 217 48.5771 217 108.5Z"
-            fill="#FAD07D"
-          />
-        </svg>
-      </Parallax>
-      <Parallax className="orb-small" speed={50}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="120"
-          height="120"
-          viewBox="0 0 120 120"
-          fill="none"
-        >
-          <circle cx="60" cy="60" r="60" fill="#FAD07D" />
-        </svg>
-      </Parallax>
-      <Parallax className="orb-small-fast" speed={150}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="120"
-          height="120"
-          viewBox="0 0 120 120"
-          fill="none"
-        >
-          <circle cx="60" cy="60" r="60" fill="#FAD07D" />
-        </svg>
-      </Parallax>
+
       <Heroine />
       <WiseWildWhole />
       <TheCycle />

@@ -37,7 +37,7 @@ function Conclusion() {
           If you’re inspired to reframe your menopausal journey as a rebirth,
           and you’re curious about the ways your soul is asking you to show up
           as a Wise, Wild, and Whole Woman, I invite you to read more about my
-          courses, sign up to my newsletter and read my Substack. 
+          courses, Birthing Wisdom and Transformative Mentoring. You can also sign up to my newsletter and read my Substack. 
         </p>
       </TextDiv>
       <ButtonFrame>
@@ -47,8 +47,18 @@ function Conclusion() {
           viewport={{ margin: "-50px", once: true }}
           transition={{ duration: 0.5 }}
         >
-          <LinkText to={"about"} className="primary-button-dark">
-            <p>My Courses</p>
+          <LinkText to={"#"} className="primary-button-dark">
+            <p>Birthing Wisdom</p>
+          </LinkText>
+        </motion.div>{" "}
+        <motion.div
+          initial={{ opacity: 0, y: "50px" }}
+          whileInView={{ opacity: 1, y: "0px" }}
+          viewport={{ margin: "-50px", once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <LinkText to={"#"} className="primary-button-dark">
+            <p>Transformative Mentoring</p>
           </LinkText>
         </motion.div>
         <motion.div
@@ -57,7 +67,7 @@ function Conclusion() {
           viewport={{ margin: "-50px", once: true }}
           transition={{ duration: 0.5 }}
         >
-          <LinkText to={"about"} className="primary-button-dark">
+          <LinkText to={"#"} className="primary-button-dark">
             <p>Sign up to my Newsletter</p>
           </LinkText>
         </motion.div>
@@ -67,7 +77,7 @@ function Conclusion() {
           viewport={{ margin: "-50px", once: true }}
           transition={{ duration: 0.5 }}
         >
-          <LinkText to={"about"} className="primary-button-dark">
+          <LinkText to={"#"} className="primary-button-dark">
             <p>Read my Substack</p>
           </LinkText>
         </motion.div>

@@ -1,116 +1,164 @@
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
-  padding: 10px 20px;
+  padding: 10px 50px;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 700px) {
+    flex-direction: column-reverse;
+  }
+`;
+const FooterLeft = styled.div`
+  display: flex;
+  width: 40%;
+  max-width: 600px;
+  padding: 25px 0px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+  align-self: stretch;
+  @media screen and (max-width: 1300px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width:700px) {
+    flex-direction: row;
+    width: 100%;
+  }
+  @media screen and (max-width:600px) {
     flex-direction: column;
   }
 `;
-
-const Contacts = styled.div`
+const ContactsAndSocials = styled.div`
   display: flex;
   padding: 10px;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
-  gap: 10px;
+  gap: 20px;
+  flex: 1 0 0;
   align-self: stretch;
 `;
-
 const Socials = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 `;
-
-const Details = styled.div`
+const PagesOuter = styled.div`
   display: flex;
-  width: 400px;
-  max-width: 90svw;
+  align-items: center;
+  align-self: stretch;
+`;
+const PagesInner = styled.div`
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+
+`;
+const FooterRight = styled.div`
+  display: flex;
+  width: 40%;
+  max-width: 600px;
+  padding: 25px 0px;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
-  gap: 10px;
+  gap: 20px;
   flex-shrink: 0;
-  align-self: stretch;
-  @media screen and (max-width: 600px){
-   align-items: start;
-   width: auto;
-  }
-`;
-
-const Line = styled.line`
-  width: 100%;
-  height: 1px;
-`;
-const Text = styled.p`
-  color: var(--Primary-Light, #fff4df);
-  font-size: 14px;
-  font-weight: 400;
-  padding: 0;
-  margin: 0;
-`;
-
-const TextRight = styled.p`
-  color: var(--Primary-Light, #fff4df);
-  font-size: 14px;
-  font-weight: 400;
   text-align: right;
-  padding: 0;
-  margin: 0;
-  @media screen and (max-width: 600px){
-    display: none;
+  @media screen and (max-width:700px) {
+    align-items: center;
+    width: 100%;
+    text-align: left;
   }
 `;
-
-const A = styled.a`
-  color: var(--Primary-Light, #fff4df);
-  font-size: 14px;
+const Plink = styled(Link)`
+  color: var(--Primary-Dark, #8c1c1c);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
   font-weight: 400;
-  padding: 0;
+  line-height: 144%; /* 28.8px */
+  letter-spacing: -0.8px;
+  align-self: stretch;
   margin: 0;
 `;
+const Line = styled.div`
+  height: 200px;
+  width: 1px;
+  background-color: var(--Primary-Dark);
+  @media screen and (max-width:700px) {
+    width: 100%;
+    height: 1px;
+  }
+`
 function Footer() {
   const location = useLocation();
   let containerBackground = "transparent";
+  let aboutColor = " var(--Primary-Light";
   if (location.pathname === "/") {
     containerBackground = "var(--Accent-Dark)";
-  }
-  let aboutColor = " var(--Primary-Light";
-  if (location.pathname === "/about") {
+  } else {
     aboutColor = "var(--Primary-Dark)";
   }
   return (
     <Container style={{ backgroundColor: containerBackground }}>
-      <Contacts>
-        <Text style={{ color: aboutColor }}>
-          contact:{" "}
-          <A
-            style={{ color: aboutColor }}
-            href="mailto:nwilkins@btinternet.com"
-          >
-            nwilkins@btinternet.com
-          </A>
-        </Text>
-        <Socials></Socials>
-      </Contacts>
-      <Details>
-        <TextRight style={{ color: aboutColor }}>
+      <FooterLeft>
+        <ContactsAndSocials>
+          <p style={{ color: aboutColor }}>
+            contact:
+            <br />
+            <a
+              style={{ color: aboutColor }}
+              href="mailto:nwilkins@btinternet.com"
+            >
+              nwilkins@btinternet.com
+            </a>
+          </p>
+          <Socials></Socials>
+        </ContactsAndSocials>
+        <PagesOuter>
+          <PagesInner>
+            <Plink to="/" style={{ color: aboutColor }}>
+              Home
+            </Plink>
+            <Plink to="/about" style={{ color: aboutColor }}>
+              About
+            </Plink>
+            <Plink to="/contact" style={{ color: aboutColor }}>
+              Contact
+            </Plink>
+          </PagesInner>
+          <PagesInner>
+            <Plink to="#" style={{ color: aboutColor }}>
+              Birthing Wisdom
+            </Plink>
+            <Plink to="#" style={{ color: aboutColor }}>
+              Transformative Mentoring
+            </Plink>
+            <Plink to="#" style={{ color: aboutColor }}>
+              Retreats
+            </Plink>
+          </PagesInner>
+        </PagesOuter>
+      </FooterLeft>
+      <Line style={{ backgroundColor: aboutColor}}/>
+      <FooterRight>
+        <p style={{ color: aboutColor }}>
           I guide women navigating the soulfulness of menopause to reveal their
           heart-based wisdom, gifts, and purpose for a regenerative world full
           of compassion and meaning.
-        </TextRight>
-        <Line style={{ backgroundColor: aboutColor }} />
-        <Text style={{ color: aboutColor }}>
-          Copyright @ 2024 Nicki Wilkins. All rights reserved.
-        </Text>
-      </Details>
+        </p>
+        <p style={{fontSize: "12px", color: aboutColor}}>Copyright @ 2024 Nicki Wilkins     All rights reserved</p>
+      </FooterRight>
     </Container>
   );
 }

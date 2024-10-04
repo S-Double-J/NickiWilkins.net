@@ -7,7 +7,7 @@ const LinkText = styled(Link)`
   text-decoration: none;
   color: inherit;
   font-family: CSBelvina;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 500;
   margin: 10px;
 `;
@@ -24,21 +24,21 @@ function Navbar({ active, setActive }: Props) {
   };
   const location = useLocation();
   const { scrollYProgress } = useScroll({});
-  let scrollValues = [0.29, 0.31, 0.8, 0.82];
+  let scrollValues = [0.29, 0.35, 0.8, 0.82];
   let barColourValues = [
-    "rgba(255, 244, 223, 0.1)",
+    "rgba(255, 244, 223, 0)",
     "#8C1C1C",
     "#8C1C1C",
-    "rgba(255, 244, 223, 0.1)",
+    "rgba(255, 244, 223, 0)",
   ];
-  let accentColourValues = ["#8C1C1C", "#FFF4DF", "#FFF4DF", "#8C1C1C"];
+  let accentColourValues = ["#8C1C1C", "#FFF4DF", "#FFF4DF", "#FFF4DF"];
   if (location.pathname !== "/") {
     scrollValues = [0, 0, 0, 0];
     barColourValues = [
-      "rgba(255, 244, 223, 0.5)",
-      "rgba(255, 244, 223, 0.5)",
-      "rgba(255, 244, 223, 0.5)",
-      "rgba(255, 244, 223, 0.5)",
+      "rgba(255, 244, 223, 0)",
+      "rgba(255, 244, 223, 0)",
+      "rgba(255, 244, 223, 0)",
+      "rgba(255, 244, 223, 0)",
     ];
     accentColourValues = ["#8C1C1C", "#8C1C1C", "#8C1C1C", "#8C1C1C"];
   }
@@ -57,7 +57,7 @@ function Navbar({ active, setActive }: Props) {
     <>
       <motion.div className="navbar" style={{ background: barBgColour }}>
         <motion.div style={{ color: accentColour }}>
-          <LinkText to={"/"}>Wise Wild Whole</LinkText>
+          <LinkText to={"/"}>NICKI WILKNS</LinkText>
         </motion.div>
         <MotionConfig transition={{ duration: 0.3, ease: "easeInOut" }}>
           <motion.button

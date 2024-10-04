@@ -8,7 +8,7 @@ const Section3 = styled.div`
   background-color: #8c1c1c;
   position: sticky;
   position: -webkit-sticky;
-  top: 58px;
+  top: 62px;
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
@@ -41,17 +41,16 @@ const SpiralTextAxis = styled.div`
   }
 `;
 const TextFrame = styled.div`
-display: flex;
-width: 700px;
-padding: 0px 50px;
-flex-direction: column;
-align-items: flex-end;
-gap: 50px;
-`
+  display: flex;
+  width: 700px;
+  padding: 50px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 50px;
+`;
 
 function TheCycle() {
-  const { scrollYProgress } = useScroll({
-  });
+  const { scrollYProgress } = useScroll({});
   let scrollValues = [0.29, 0.82];
   let fontSizeValues = ["15px", "36px", "36px", "15px"];
   if (window.innerHeight <= 550) {
@@ -269,15 +268,24 @@ function TheCycle() {
   return (
     <StickyScrollDiv>
       <Section3 id="Third">
-        <motion.div className="blur"
+        <motion.div
+          className="blur"
           initial={{ opacity: 0, y: "50px" }}
           whileInView={{ opacity: 1, y: "0px" }}
           viewport={{ margin: "-50px", once: true }}
           transition={{ duration: 0.5 }}
         >
           <TextFrame>
-          <h4 className="ta-right white">The Rebirthing Spiral</h4>
-          <p className="ta-right white">The spiral, an ancient symbol for regeneration, is the map I use for the Midlife Rebirth. Its circular movement invites you inward to the centre of Self to find your heart-based wisdom and purpose. The outward movement invites you to integrate your new found wisdom and purpose into your life. At each curve of the spiral, I ask a new question to invite you to travel deeper into your rebirth. </p>
+            <h3 className="ta-right white">The Rebirthing Spiral</h3>
+            <p className="ta-right white">
+              The spiral, an ancient symbol for regeneration, is the map I use
+              for the Midlife Rebirth. Its circular movement invites you inward
+              to the centre of Self to find your heart-based wisdom and purpose.
+              The outward movement invites you to integrate your new found
+              wisdom and purpose into your life. At each curve of the spiral, I
+              ask a new question to invite you to travel deeper into your
+              rebirth. 
+            </p>
           </TextFrame>
         </motion.div>
         <motion.div
@@ -351,6 +359,5 @@ function TheCycle() {
     </StickyScrollDiv>
   );
 }
-
 
 export default TheCycle;

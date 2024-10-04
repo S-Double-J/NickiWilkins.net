@@ -14,12 +14,6 @@ const InfoSection = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 50px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 244, 223, 0) 13.5%,
-    rgba(255, 244, 223, 0.01) 31.5%
-  );
-  backdrop-filter: blur(10px);
 `;
 const OuterFrame = styled.div`
   display: flex;
@@ -57,6 +51,7 @@ const Card = styled.div`
 const SplotchBottom = styled.svg`
   width: 100%;
   z-index: 0;
+  margin-bottom: -2px;
 `;
 
 function WiseWildWhole() {

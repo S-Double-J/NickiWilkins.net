@@ -11,6 +11,7 @@ const Frame = styled.div`
   gap: 40px;
   width: 100%;
   padding: 50px;
+  box-sizing: border-box;
 `;
 const ButtonFrame = styled.div`
   display: flex;

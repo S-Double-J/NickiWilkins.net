@@ -1,6 +1,6 @@
 @font-face {
   font-family: "CSBelvina";
-  src: url(/fonts/CSBelvina-Regular_demo-BF669f0fb63ba84.otf) format("opentype");
+  src: url(public/fonts/CSBelvina-Regular_demo-BF669f0fb63ba84.otf) format("opentype");
 }
 .libre {
   font-family: Libre Caslon Text;

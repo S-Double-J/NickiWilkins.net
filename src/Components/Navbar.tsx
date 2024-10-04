@@ -57,7 +57,7 @@ function Navbar({ active, setActive }: Props) {
     <>
       <motion.div className="navbar" style={{ background: barBgColour }}>
         <motion.div style={{ color: accentColour }}>
-          <LinkText to={"/"}>NICKI WILKNS</LinkText>
+          <LinkText to={"/"}>NICKI WILKINS</LinkText>
         </motion.div>
         <MotionConfig transition={{ duration: 0.3, ease: "easeInOut" }}>
           <motion.button

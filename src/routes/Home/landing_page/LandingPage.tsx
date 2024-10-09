@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
-import Navbar from "../../Components/Navbar";
+import Navbar from "../../../Components/Navbar";
 import Heroine from "./Heroine";
 import WiseWildWhole from "./WiseWildWhole";
 import TheCycle from "./TheCycle";

@@ -1,17 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./routes/App.tsx";
+import Home from "./routes/Home/Home.tsx";
 import About from "./routes/About.tsx";
 import Contact from "./routes/Contact.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./routes/App.css";
-
+import BirthingWisdom from "./routes/BirthingWidom.tsx";
+import TransformativeMentoring from "./routes/TransformativeMentoring.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home key="Home" />,
   },
   {
     path: "/about",
@@ -28,7 +29,23 @@ const router = createBrowserRouter([
         <Contact key="Contact" />
       </>
     ),
-  }
+  },
+  {
+    path: "/birthing-wisdom",
+    element: (
+      <>
+        <BirthingWisdom key="Birthing Wisdom" />
+      </>
+    ),
+  },
+  {
+    path: "/transformative-mentoring",
+    element: (
+      <>
+        <TransformativeMentoring key="Transformative Mentoring" />
+      </>
+    ),
+  },
 ]);
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

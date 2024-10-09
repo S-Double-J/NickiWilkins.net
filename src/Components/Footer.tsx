@@ -103,21 +103,21 @@ const Line = styled.div`
 function Footer() {
   const location = useLocation();
   let containerBackground = "transparent";
-  let aboutColor = " var(--Primary-Light";
-  if (location.pathname === "/") {
+  let textColor = " var(--Primary-Light)";
+  if (location.pathname === "/" || location.pathname === "/birthing-wisdom") {
     containerBackground = "var(--Accent-Dark)";
   } else {
-    aboutColor = "var(--Primary-Dark)";
+    textColor = "var(--Primary-Dark)";
   }
   return (
     <Container style={{ backgroundColor: containerBackground }}>
       <FooterLeft>
         <ContactsAndSocials>
-          <p style={{ color: aboutColor }}>
+          <p style={{ color: textColor }}>
             contact:
             <br />
             <a
-              style={{ color: aboutColor }}
+              style={{ color: textColor }}
               href="mailto:nwilkins@btinternet.com"
             >
               nwilkins@btinternet.com
@@ -127,37 +127,37 @@ function Footer() {
         </ContactsAndSocials>
         <PagesOuter>
           <PagesInner>
-            <Plink to="/" style={{ color: aboutColor }}>
+            <Plink to="/" style={{ color: textColor }}>
               Home
             </Plink>
-            <Plink to="/about" style={{ color: aboutColor }}>
+            <Plink to="/about" style={{ color: textColor }}>
               About
             </Plink>
-            <Plink to="/contact" style={{ color: aboutColor }}>
+            <Plink to="/contact" style={{ color: textColor }}>
               Contact
             </Plink>
           </PagesInner>
           <PagesInner>
-            <Plink to="#" style={{ color: aboutColor }}>
+            <Plink to="#" style={{ color: textColor }}>
               Birthing Wisdom
             </Plink>
-            <Plink to="#" style={{ color: aboutColor }}>
+            <Plink to="#" style={{ color: textColor }}>
               Transformative Mentoring
             </Plink>
-            <Plink to="#" style={{ color: aboutColor }}>
+            <Plink to="#" style={{ color: textColor }}>
               Retreats
             </Plink>
           </PagesInner>
         </PagesOuter>
       </FooterLeft>
-      <Line style={{ backgroundColor: aboutColor}}/>
+      <Line style={{ backgroundColor: textColor}}/>
       <FooterRight>
-        <p style={{ color: aboutColor }}>
+        <p style={{ color: textColor }}>
           I guide women navigating the soulfulness of menopause to reveal their
           heart-based wisdom, gifts, and purpose for a regenerative world full
           of compassion and meaning.
         </p>
-        <p style={{fontSize: "12px", color: aboutColor}}>Copyright @ 2024 Nicki Wilkins     All rights reserved</p>
+        <p style={{fontSize: "12px", color: textColor}}>Copyright @ 2024 Nicki Wilkins     All rights reserved</p>
       </FooterRight>
     </Container>
   );

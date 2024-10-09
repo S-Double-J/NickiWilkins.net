@@ -47,10 +47,10 @@ function Conclusion() {
           viewport={{ margin: "-50px", once: true }}
           transition={{ duration: 0.5 }}
         >
-          <LinkText to={"#"} className="primary-button-dark">
+          <LinkText to={"/birthing-wisdom"} className="primary-button-dark">
             <p>Birthing Wisdom</p>
           </LinkText>
-        </motion.div>{" "}
+        </motion.div>
         <motion.div
           initial={{ opacity: 0, y: "50px" }}
           whileInView={{ opacity: 1, y: "0px" }}

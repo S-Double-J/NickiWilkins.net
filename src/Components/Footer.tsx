@@ -138,7 +138,7 @@ function Footer() {
             </Plink>
           </PagesInner>
           <PagesInner>
-            <Plink to="#" style={{ color: textColor }}>
+            <Plink to="/birthing-wisdom" style={{ color: textColor }}>
               Birthing Wisdom
             </Plink>
             <Plink to="#" style={{ color: textColor }}>

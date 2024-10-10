@@ -1,5 +1,3 @@
-import Navbar from "../Components/Navbar";
-import { useState } from "react";
 import styled from "styled-components";
 import Footer from "../Components/Footer";
 import { ScrollRestoration } from "react-router-dom";
@@ -82,11 +80,9 @@ const TextContainer = styled.div`
 `;
 
 function About() {
-  const [active, setActive] = useState(false);
   return (
     <>
       <AboutDiv key="About">
-        <Navbar key="nav-bar" active={active} setActive={setActive} />
         <Container key="container">
           <TitleSocialsAndImage key="title-image-and-icons">
             <NickiPortraitMain key="nicki-portrait-main" />

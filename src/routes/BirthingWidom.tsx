@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import Navbar from "../Components/Navbar";
-import { useState } from "react";
-import { Link, ScrollRestoration } from "react-router-dom";
+import { Link } from "react-router-dom";
 import DDButton from "../Components/DropDownButton";
 import Footer from "../Components/Footer";
 const PageContainer = styled.div`
@@ -114,12 +112,10 @@ const Tick = styled.svg`
   flex-shrink: 0;
 `;
 function BirthingWisdom() {
-  const [active, setActive] = useState(false);
 
   return (
     <>
       <PageContainer key="Birthing Wisdom Page">
-        <Navbar key="Nav-bar" active={active} setActive={setActive} />
         <TitleFrame>
           <h1 className="projects-title-h">Birthing Wisdom</h1>
           <p className="projects-title-p">
@@ -682,10 +678,6 @@ function BirthingWisdom() {
         </SectionFrame>
         <Footer />
       </PageContainer>
-      <ScrollRestoration 
-        getKey={(location) => {
-          return location.key;
-        }}/>
     </>
   );
 }

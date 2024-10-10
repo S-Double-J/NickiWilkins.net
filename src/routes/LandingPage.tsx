@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import { useState } from "react";
-import Navbar from "../../../Components/Navbar";
-import Heroine from "./Heroine";
-import WiseWildWhole from "./WiseWildWhole";
-import TheCycle from "./TheCycle";
-import Conclusion from "./Conclusion";
-import Testimonials from "./Testimonials";
+import Heroine from "../Components/Landing Page Components/Heroine";
+import WiseWildWhole from "../Components/Landing Page Components/WiseWildWhole";
+import TheCycle from "../Components/Landing Page Components/TheCycle";
+import Conclusion from "../Components/Landing Page Components/Conclusion";
+import Testimonials from "../Components/Landing Page Components/Testimonials";
 
 const ColourBox = styled.div`
   display: flex;
@@ -20,11 +18,9 @@ const ColourBox = styled.div`
 `;
 
 function LandingPage() {
-  const [active, setActive] = useState(false);
 
   return (
     <>
-      <Navbar key="Nav-bar" active={active} setActive={setActive} />
         <svg className="splotch-top-left"
           viewBox="0 0 438 593"
           fill="none"

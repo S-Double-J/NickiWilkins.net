@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { ScrollRestoration } from "react-router-dom";
-import { useState } from "react";
-import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
 const ContactContainer = styled.div`
@@ -90,11 +88,9 @@ const Image = styled.img`
   border-radius: 100%;
 `;
 function Contact() {
-  const [active, setActive] = useState(false);
 
   return (
     <ContactContainer>
-      <Navbar key="Nav-bar" active={active} setActive={setActive} />
       <ComponentsContainer>
         <Content>
           <TextContainer>

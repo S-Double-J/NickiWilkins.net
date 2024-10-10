@@ -71,7 +71,7 @@ function Menu({ active, setActive }: Props) {
         <LinkText to="/">Home</LinkText>
         <LinkText to="/about">About</LinkText>
         <LinkText to="/contact">Contact</LinkText>
-        <LinkText to="/birthing-wisodm">Birthing Wisdom</LinkText>
+        <LinkText to="/birthing-wisdom">Birthing Wisdom</LinkText>
         <motion.div
           initial={false}
           className="hamburger-x-div"

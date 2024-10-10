@@ -9,7 +9,11 @@ function Home() {
         <LandingPage key="Landing-Page" />
         <Footer key="Footer" />
       </ParallaxProvider>
-      <ScrollRestoration />
+      <ScrollRestoration
+         getKey={(location, matches) => {
+          return location.pathname;
+        }}
+      />
     </>
   );
 }

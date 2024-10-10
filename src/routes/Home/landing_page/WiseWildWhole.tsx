@@ -142,7 +142,7 @@ function WiseWildWhole() {
                 viewport={{ margin: "-50px", once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <LinkText to={"about"} className="primary-button">
+                <LinkText to={"/transformative-mentoring"} className="primary-button">
                   <p>Transformative Mentoring</p>
                 </LinkText>
               </motion.div>
@@ -178,7 +178,7 @@ function WiseWildWhole() {
                 viewport={{ margin: "-50px", once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <LinkText to={"about"} className="primary-button">
+                <LinkText to={"/retreats"} className="primary-button">
                   <p>Retreats</p>
                 </LinkText>
               </motion.div>

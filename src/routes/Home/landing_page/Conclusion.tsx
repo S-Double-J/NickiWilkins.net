@@ -47,7 +47,7 @@ function Conclusion() {
           viewport={{ margin: "-50px", once: true }}
           transition={{ duration: 0.5 }}
         >
-          <LinkText to={"/birthing-wisdom"} className="primary-button-dark">
+          <LinkText to={"birthing-wisdom"} className="primary-button-dark">
             <p>Birthing Wisdom</p>
           </LinkText>
         </motion.div>

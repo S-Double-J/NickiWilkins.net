@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import DDButton from "../Components/DropDownButton";
-import Footer from "../Components/Footer";
 const PageContainer = styled.div`
   display: flex;
   width: 100%;
@@ -676,7 +675,6 @@ function BirthingWisdom() {
             </ButtonDiv>
           </SectionTextContainer>
         </SectionFrame>
-        <Footer />
       </PageContainer>
     </>
   );

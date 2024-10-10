@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { ScrollRestoration } from "react-router-dom";
-import Footer from "../Components/Footer";
 
 const ContactContainer = styled.div`
   display: flex;
@@ -129,7 +128,6 @@ function Contact() {
             <Image src="images/20220102_135354.jpg" />
           </ImageContainer>
         </Content>
-        <Footer />
       </ComponentsContainer>
       <ScrollRestoration />
     </ContactContainer>

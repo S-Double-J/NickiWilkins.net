@@ -72,6 +72,7 @@ function Menu({ active, setActive }: Props) {
         <LinkText to="/about">About</LinkText>
         <LinkText to="/contact">Contact</LinkText>
         <LinkText to="/birthing-wisdom">Birthing Wisdom</LinkText>
+        <LinkText to="/transformative-mentoring">Transformative Mentoring</LinkText>
         <motion.div
           initial={false}
           className="hamburger-x-div"

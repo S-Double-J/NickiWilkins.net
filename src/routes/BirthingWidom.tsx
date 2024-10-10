@@ -1,54 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import DDButton from "../Components/DropDownButton";
-const PageContainer = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  align-items: center;
-`;
-const TitleFrame = styled.div`
-  display: flex;
-  height: calc(100svh - 62px);
-  max-width: 800px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0px;
-  padding: 100px;
-  box-sizing: border-box;
-`;
-const SectionFrame = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 100px;
-  box-sizing: border-box;
-  width: 100%;
-  background-color: var(--Primary-Light);
-`;
-const SectionTextContainer = styled.div`
-  width: 100%;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  gap: 30px;
-`;
-const ButtonDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  align-self: stretch;
-  margin: 0;
-  @media screen and (max-width: 605px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-`;
+import "./projects.css";
+
 const Box = styled.div`
   display: flex;
   max-width: 800px;
@@ -60,12 +14,8 @@ const Box = styled.div`
   background: var(--Primary-Dark);
   box-sizing: border-box;
 `;
-const Line = styled.line`
-  width: calc(100% - 200px);
-  height: 1px;
-  background: var(--Primary-Dark);
-`;
-const BoxInnerRoundedFull = styled.div`
+
+const BoxInnerNoBorder = styled.div`
   display: flex;
   padding: 5px 20px;
   align-items: center;
@@ -111,19 +61,18 @@ const Tick = styled.svg`
   flex-shrink: 0;
 `;
 function BirthingWisdom() {
-
   return (
     <>
-      <PageContainer key="Birthing Wisdom Page">
-        <TitleFrame>
+      <div className="page-container" key="Birthing Wisdom Page">
+        <div className="title-frame">
           <h1 className="projects-title-h">Birthing Wisdom</h1>
           <p className="projects-title-p">
             A 6-month online soul initiation for women travelling the midlife
             journey of rebirth. January-June 2025
           </p>
-        </TitleFrame>
-        <SectionFrame key="Foreword">
-          <SectionTextContainer>
+        </div>
+        <section className="section-frame" key="Foreword">
+          <div className="section-text-container">
             <h3>Foreword</h3>
             <p>
               Birthing Wisdom is a journey of soul initiation for women
@@ -174,18 +123,15 @@ function BirthingWisdom() {
               </b>{" "}
               here.
             </p>
-            <ButtonDiv>
+            <div className="col-to-row">
               <Link to={"/transformative-mentoring"} className="primary-button">
                 <p>Transformative Mentoring</p>
               </Link>
-            </ButtonDiv>
-          </SectionTextContainer>
-        </SectionFrame>
-        <SectionFrame
-          style={{ backgroundColor: "var(--Accent-Dark)" }}
-          key="Letter"
-        >
-          <SectionTextContainer>
+            </div>
+          </div>
+        </section>
+        <section className="section-frame-dark" key="Letter">
+          <div className="section-text-container">
             <h3 className="white">A letter from Nicki, your guide</h3>
             <p className="white">Hello friend,</p>
             <p className="white">
@@ -223,10 +169,13 @@ function BirthingWisdom() {
             </p>
             <p className="white">In service,</p>
             <p className="white">Nicki</p>
-          </SectionTextContainer>
-        </SectionFrame>
-        <SectionFrame>
-          <SectionTextContainer key="what is Birthing Wisdom?">
+          </div>
+        </section>
+        <section className="section-frame">
+          <div
+            className="section-text-container"
+            key="what is Birthing Wisdom?"
+          >
             <h3>
               What is <i>Birthing Wisdom</i>?
             </h3>
@@ -262,11 +211,11 @@ function BirthingWisdom() {
                 </li>
               </ul>
             </Box>
-          </SectionTextContainer>
-        </SectionFrame>
-        <Line />
-        <SectionFrame key="your journey">
-          <SectionTextContainer>
+          </div>
+        </section>
+        <line className="line" />
+        <section className="section-frame" key="your journey">
+          <div className="section-text-container">
             <h3>
               So, what will <i>Your Journey</i> look like?
             </h3>
@@ -291,7 +240,7 @@ function BirthingWisdom() {
             </p>
             <h4>On this journey you'll have access to</h4>
             <Box style={{ padding: "50px" }}>
-              <BoxInnerRoundedFull>
+              <BoxInnerNoBorder>
                 <Tick
                   xmlns="http://www.w3.org/2000/svg"
                   width="22"
@@ -311,8 +260,8 @@ function BirthingWisdom() {
                   </i>
                   with Nicki
                 </p>
-              </BoxInnerRoundedFull>
-              <BoxInnerRoundedFull>
+              </BoxInnerNoBorder>
+              <BoxInnerNoBorder>
                 <Tick
                   xmlns="http://www.w3.org/2000/svg"
                   width="22"
@@ -332,8 +281,8 @@ function BirthingWisdom() {
                   </i>
                   with Nicki
                 </p>
-              </BoxInnerRoundedFull>
-              <BoxInnerRoundedFull>
+              </BoxInnerNoBorder>
+              <BoxInnerNoBorder>
                 <Tick
                   xmlns="http://www.w3.org/2000/svg"
                   width="22"
@@ -354,8 +303,8 @@ function BirthingWisdom() {
                   one for each of the 12 modules, outlining practices and
                   exercises to deepen your soul-work.
                 </p>
-              </BoxInnerRoundedFull>
-              <BoxInnerRoundedFull>
+              </BoxInnerNoBorder>
+              <BoxInnerNoBorder>
                 <Tick
                   xmlns="http://www.w3.org/2000/svg"
                   width="22"
@@ -375,8 +324,8 @@ function BirthingWisdom() {
                   </i>
                   with Nicki
                 </p>
-              </BoxInnerRoundedFull>
-              <BoxInnerRoundedFull>
+              </BoxInnerNoBorder>
+              <BoxInnerNoBorder>
                 <Tick
                   xmlns="http://www.w3.org/2000/svg"
                   width="22"
@@ -396,13 +345,13 @@ function BirthingWisdom() {
                   </i>
                   that support your soul-work
                 </p>
-              </BoxInnerRoundedFull>
+              </BoxInnerNoBorder>
             </Box>
-          </SectionTextContainer>
-        </SectionFrame>
-        <Line />
-        <SectionFrame key="the threads">
-          <SectionTextContainer>
+          </div>
+        </section>
+        <line className="line" />
+        <section className="section-frame" key="the threads">
+          <div className="section-text-container">
             <h3>
               The <i>Threads </i> of Birthing Wisdom
             </h3>
@@ -443,13 +392,10 @@ function BirthingWisdom() {
                 </RoundedHalfInnerTop>
               </BoxInnerRoundedHalf>
             </Box>
-          </SectionTextContainer>
-        </SectionFrame>
-        <SectionFrame
-          key="the four stages"
-          style={{ backgroundColor: "var(--Accent-Dark)" }}
-        >
-          <SectionTextContainer>
+          </div>
+        </section>
+        <section className="section-frame-dark" key="the four stages">
+          <div className="section-text-container">
             <h3 className="white">
               The <i>Four Stages </i>of Birthing Wisdom
             </h3>
@@ -498,10 +444,10 @@ function BirthingWisdom() {
                 </RoundedHalfInnerTop>
               </BoxInnerRoundedHalf>
             </Box>
-          </SectionTextContainer>
-        </SectionFrame>
-        <SectionFrame key="my role">
-          <SectionTextContainer>
+          </div>
+        </section>
+        <section className="section-frame" key="my role">
+          <div className="section-text-container">
             <h3>
               My role as your <i>Transformative Mentor</i>
             </h3>
@@ -537,11 +483,11 @@ function BirthingWisdom() {
               <b>I’ve walked this midlife journey.</b> I know the themes and the
               patterns. I know its sacred path.
             </p>
-          </SectionTextContainer>
-        </SectionFrame>
-        <Line />
-        <SectionFrame key="the details">
-          <SectionTextContainer>
+          </div>
+        </section>
+        <line className="line" />
+        <section className="section-frame" key="the details">
+          <div className="section-text-container">
             <h3>
               The <i>Details</i>
             </h3>
@@ -562,13 +508,10 @@ function BirthingWisdom() {
               The 6-month online program is <b>£900</b>. This is a one-time
               Special Launch price.
             </p>
-          </SectionTextContainer>
-        </SectionFrame>
-        <SectionFrame
-          key="faqs"
-          style={{ backgroundColor: "var(--Accent-Dark)" }}
-        >
-          <SectionTextContainer>
+          </div>
+        </section>
+        <section className="section-frame-dark" key="faqs">
+          <div className="section-text-container">
             <h3 className="white">
               Frequently asked <i>Questions</i>
             </h3>
@@ -617,20 +560,25 @@ function BirthingWisdom() {
               If uncertain about your readiness, I recommend working with a
               coach or therapist for a time before embarking on this journey.
             </p>
-          </SectionTextContainer>
-        </SectionFrame>
-        <SectionFrame style={{ background: "var(--Accent-Dark)", padding: 0 }}>
-          <Line style={{ background: "var(--Primary-Light)" }} />
-        </SectionFrame>
-        <SectionFrame
-          key="other ways to work with me"
-          style={{ background: "var(--Accent-Dark)" }}
+          </div>
+        </section>
+        <section
+          className="section-frame-dark"
+          style={{ padding: 0 }}
         >
-          <SectionTextContainer>
+          <line
+            className="line-white"
+          />
+        </section>
+        <section
+          className="section-frame-dark"
+          key="other ways to work with me"
+        >
+          <div className="section-text-container">
             <h3 className="white">
               <i>Other ways</i> to work with me and this journey
             </h3>
-            <ButtonDiv>
+            <div className="col-to-row">
               <SmallBox>
                 <h4>Individual sessions</h4>
                 <ul>
@@ -672,10 +620,10 @@ function BirthingWisdom() {
                   <p>Book now</p>
                 </Link>
               </SmallBox>
-            </ButtonDiv>
-          </SectionTextContainer>
-        </SectionFrame>
-      </PageContainer>
+            </div>
+          </div>
+        </section>
+      </div>
     </>
   );
 }

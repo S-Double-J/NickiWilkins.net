@@ -57,7 +57,7 @@ function Conclusion() {
           viewport={{ margin: "-50px", once: true }}
           transition={{ duration: 0.5 }}
         >
-          <LinkText to={"#"} className="primary-button-dark">
+          <LinkText to={"transformative-mentoring"} className="primary-button-dark">
             <p>Transformative Mentoring</p>
           </LinkText>
         </motion.div>

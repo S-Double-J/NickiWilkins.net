@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Heroine from "../Components/Landing Page Components/Heroine";
-import WiseWildWhole from "../Components/Landing Page Components/WiseWildWhole";
+import WiseWildWhole from "../Components/Landing Page Components/Introduction";
 import TheCycle from "../Components/Landing Page Components/TheCycle";
 import Conclusion from "../Components/Landing Page Components/Conclusion";
 import Testimonials from "../Components/Landing Page Components/Testimonials";

@@ -104,7 +104,7 @@ function Footer() {
   const location = useLocation();
   let containerBackground = "transparent";
   let textColor = " var(--Primary-Light)";
-  if (location.pathname === "/" || location.pathname === "/birthing-wisdom") {
+  if (location.pathname === "/" || location.pathname === "/birthing-wisdom" || location.pathname === "/transformative-mentoring") {
     containerBackground = "var(--Accent-Dark)";
   } else {
     textColor = "var(--Primary-Dark)";
@@ -141,7 +141,7 @@ function Footer() {
             <Plink to="/birthing-wisdom" style={{ color: textColor }}>
               Birthing Wisdom
             </Plink>
-            <Plink to="#" style={{ color: textColor }}>
+            <Plink to="/transformative-mentoring" style={{ color: textColor }}>
               Transformative Mentoring
             </Plink>
             <Plink to="#" style={{ color: textColor }}>

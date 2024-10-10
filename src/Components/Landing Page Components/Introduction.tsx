@@ -54,7 +54,7 @@ const SplotchBottom = styled.svg`
   margin-bottom: -2px;
 `;
 
-function WiseWildWhole() {
+function Intro() {
   return (
     <InfoSection id="Second">
       <OuterFrame>
@@ -66,7 +66,7 @@ function WiseWildWhole() {
           of life.
         </p>
         <InnerFrame>
-          <p className="libre fs-24">My Journey</p>
+          <h4 style={{width: "100%"}}>My Journey</h4>
           <p>
             10 years ago I began the journey I call the{" "}
             <i className="libre">Midlife Rebirth</i>. It was a profound
@@ -196,74 +196,4 @@ function WiseWildWhole() {
   );
 }
 
-export default WiseWildWhole;
-
-{
-  /* <TextContainer>
-        <motion.div
-          className="wise-title-motion-container"
-          initial={{ opacity: 0, y: "50px" }}
-          whileInView={{ opacity: 1, y: "0px" }}
-          viewport={{ margin: "-50px", once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="gradient-text">
-            WISE
-            <br />
-            WILD
-            <br />
-            WHOLE
-          </h2>
-        </motion.div>
-        <motion.div
-          className="wise-text-motion-container"
-          initial={{ opacity: 0, y: "50px" }}
-          whileInView={{ opacity: 1, y: "0px" }}
-          viewport={{ margin: "-50px", once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <p>
-            <b>
-              The most important relationship is the one you foster with your
-              truest self!
-            </b>
-            <br />
-            <br />
-            I mentor women in midlife who are travelling the creative journey to
-            self, re-discovering heart-based wisdom, gifts, and purpose.
-            <br />
-            <br />
-            As a Transformational Mentor, Teacher, and Purpose Guide, I offer
-            one-to-one mentoring, courses, meditations, retreats, and
-            ceremonies.
-            <br />
-            <br />
-            I’m so glad you’re here.
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: "50px" }}
-          whileInView={{ opacity: 1, y: "0px" }}
-          viewport={{ margin: "-50px", once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <LinkText to={"about"} className="primary-button">
-            <p>Meet Nicki</p>
-            <svg
-              className="button-arrow"
-              xmlns="http://www.w3.org/2000/svg"
-              width="37"
-              height="15"
-              viewBox="0 0 37 15"
-              fill="none"
-            >
-              <path
-                className="arrow"
-                d="M35.8781 8.20711C36.2686 7.81658 36.2686 7.18342 35.8781 6.79289L29.5142 0.428932C29.1236 0.0384078 28.4905 0.0384078 28.0999 0.428932C27.7094 0.819457 27.7094 1.45262 28.0999 1.84315L33.7568 7.5L28.0999 13.1569C27.7094 13.5474 27.7094 14.1805 28.0999 14.5711C28.4905 14.9616 29.1236 14.9616 29.5142 14.5711L35.8781 8.20711ZM0 8.5H35.171V6.5H0V8.5Z"
-                fill="#590000"
-              />
-            </svg>
-          </LinkText>
-        </motion.div>
-      </TextContainer> */
-}
+export default Intro;

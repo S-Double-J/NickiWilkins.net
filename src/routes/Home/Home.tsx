@@ -10,7 +10,7 @@ function Home() {
         <Footer key="Footer" />
       </ParallaxProvider>
       <ScrollRestoration
-         getKey={(location, matches) => {
+         getKey={(location) => {
           return location.pathname;
         }}
       />

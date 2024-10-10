@@ -683,7 +683,7 @@ function BirthingWisdom() {
         <Footer />
       </PageContainer>
       <ScrollRestoration 
-        getKey={(location, matches) => {
+        getKey={(location) => {
           return location.key;
         }}/>
     </>

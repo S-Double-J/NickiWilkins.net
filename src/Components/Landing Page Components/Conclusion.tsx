@@ -12,6 +12,7 @@ const Frame = styled.div`
   width: 100%;
   padding: 50px;
   box-sizing: border-box;
+  z-index: inherit;
 `;
 const ButtonFrame = styled.div`
   display: flex;
@@ -29,53 +30,74 @@ const TextDiv = styled.div`
   width: 600px;
 `;
 function Conclusion() {
+  const DURATION = 0.7;
+  const EASE = "easeInOut";
+  const MARGIN = "-100px";
   return (
     <Frame>
-      <h1 className="white">THANK YOU FOR VISITING MY WEBSITE</h1>
+      <motion.h1
+        className="white"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: DURATION, ease: EASE }}
+        viewport={{ once: true, margin: MARGIN }}
+      >
+        THANK YOU FOR VISITING MY WEBSITE
+      </motion.h1>
       <TextDiv>
-        <p className="white">
+        <motion.p
+          className="white"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: DURATION, ease: EASE }}
+          viewport={{ once: true, margin: MARGIN }}
+        >
           If you’re inspired to reframe your menopausal journey as a rebirth,
           and you’re curious about the ways your soul is asking you to show up
           as a Wise, Wild, and Whole Woman, I invite you to read more about my
-          courses, Birthing Wisdom and Transformative Mentoring. You can also sign up to my newsletter and read my Substack. 
-        </p>
+          courses, Birthing Wisdom and Transformative Mentoring. You can also
+          sign up to my newsletter and read my Substack. 
+        </motion.p>
       </TextDiv>
       <ButtonFrame>
         <motion.div
-          initial={{ opacity: 0, y: "50px" }}
-          whileInView={{ opacity: 1, y: "0px" }}
-          viewport={{ margin: "-50px", once: true }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: DURATION, ease: EASE }}
+          viewport={{ once: true, margin: MARGIN }}
         >
           <LinkText to={"birthing-wisdom"} className="primary-button-dark">
             <p>Birthing Wisdom</p>
           </LinkText>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, y: "50px" }}
-          whileInView={{ opacity: 1, y: "0px" }}
-          viewport={{ margin: "-50px", once: true }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: DURATION, ease: EASE }}
+          viewport={{ once: true, margin: MARGIN }}
         >
-          <LinkText to={"transformative-mentoring"} className="primary-button-dark">
+          <LinkText
+            to={"transformative-mentoring"}
+            className="primary-button-dark"
+          >
             <p>Transformative Mentoring</p>
           </LinkText>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, y: "50px" }}
-          whileInView={{ opacity: 1, y: "0px" }}
-          viewport={{ margin: "-50px", once: true }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: DURATION, ease: EASE }}
+          viewport={{ once: true, margin: MARGIN }}
         >
           <LinkText to={"#"} className="primary-button-dark">
             <p>Sign up to my Newsletter</p>
           </LinkText>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, y: "50px" }}
-          whileInView={{ opacity: 1, y: "0px" }}
-          viewport={{ margin: "-50px", once: true }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: DURATION, ease: EASE }}
+          viewport={{ once: true, margin: MARGIN }}
         >
           <LinkText to={"#"} className="primary-button-dark">
             <p>Read my Substack</p>

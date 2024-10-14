@@ -409,17 +409,6 @@ p, ul {
   transform: rotate(-45deg);
 }
 
-.hero-motion-container {
-  display: flex;
-  width: 100%;
-  height: calc(100svh - 62px);
-  padding: 0px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
 .menu-background {
   background-color: rgba(89, 0, 0, 0.4);
   backdrop-filter: blur(10px);
@@ -446,7 +435,7 @@ p, ul {
   height: 948.267px;
   @media screen and (max-width: 800px) {
     width: 500px;
-    top: -30px;
+    top: -150px;
   }
   @media screen and (max-width: 600px) {
     width: 300px;

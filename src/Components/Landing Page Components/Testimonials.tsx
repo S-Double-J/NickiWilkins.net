@@ -77,6 +77,9 @@ const SlideButtonDiv = styled.div`
   justify-content: center;
 `;
 function Testimonials() {
+  const DURATION = 0.7;
+  const EASE = "easeInOut";
+  const MARGIN = "-100px";
   const testimonials = [
     {
       text: `"My experience with Nicki was life changing. She helped me unlock aspects of myself that were hidden. The most transformative moment was when she helped me find my mythopoetic name: River Priestess of the Temple of Ordinary Moments. Working with her is like poetry incarnate."`,
@@ -150,25 +153,40 @@ function Testimonials() {
   return (
     <SectionContainer id="section-container">
       <SlideButtonDiv>
-        <TestimonialSliderButton onClick={showPrevTestimonial}>
-          <svg
-            className="testimonial-slider-button-left"
-            xmlns="http://www.w3.org/2000/svg"
-            width="71"
-            height="66"
-            viewBox="0 0 71 66"
-            fill="none"
-          >
-            <path
-              d="M55.9585 19.5012C59.9585 19.5012 61.9585 16.0015 61.9585 13.0015C61.9585 10.0273 56.22 7.89697 53.4585 9.00146C45.9585 12.0012 48.1768 22.464 52.4585 26.0012C58.9735 31.3834 70.1117 20.3728 68.9585 12.0012C67.9163 4.43495 60.0862 1.11007 52.4585 1.50123C32.9585 2.5012 1.95853 32.5012 1.95853 32.5012C1.95853 32.5012 34.4585 63.501 52.4585 64.5012C60.53 64.9497 68.9585 60.0852 68.9585 52.0012C68.9585 43.9173 59.2785 35.1609 52.4585 39.5012C46.9585 43.0015 45.9585 53.0015 50.4585 56.0012C52.8242 57.5782 60.1774 54.7349 60.9585 52.0012C61.9585 48.5015 56.9585 44.5015 54.4585 46.0012"
-              stroke="#FFF4DF"
-              stroke-width="2"
-            />
-          </svg>
-        </TestimonialSliderButton>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: DURATION, ease: EASE }}
+          viewport={{ once: true, margin: MARGIN }}
+        >
+          <TestimonialSliderButton onClick={showPrevTestimonial}>
+            <svg
+              className="testimonial-slider-button-left"
+              xmlns="http://www.w3.org/2000/svg"
+              width="71"
+              height="66"
+              viewBox="0 0 71 66"
+              fill="none"
+            >
+              <path
+                d="M55.9585 19.5012C59.9585 19.5012 61.9585 16.0015 61.9585 13.0015C61.9585 10.0273 56.22 7.89697 53.4585 9.00146C45.9585 12.0012 48.1768 22.464 52.4585 26.0012C58.9735 31.3834 70.1117 20.3728 68.9585 12.0012C67.9163 4.43495 60.0862 1.11007 52.4585 1.50123C32.9585 2.5012 1.95853 32.5012 1.95853 32.5012C1.95853 32.5012 34.4585 63.501 52.4585 64.5012C60.53 64.9497 68.9585 60.0852 68.9585 52.0012C68.9585 43.9173 59.2785 35.1609 52.4585 39.5012C46.9585 43.0015 45.9585 53.0015 50.4585 56.0012C52.8242 57.5782 60.1774 54.7349 60.9585 52.0012C61.9585 48.5015 56.9585 44.5015 54.4585 46.0012"
+                stroke="#FFF4DF"
+                stroke-width="2"
+              />
+            </svg>
+          </TestimonialSliderButton>
+        </motion.div>
       </SlideButtonDiv>
       <TestimonialContainer id="testimonial-container" draggable="false">
-        <h3 className="white">What Nicki's clients have to say</h3>
+        <motion.h3
+          className="white center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: DURATION, ease: EASE }}
+          viewport={{ once: true, margin: MARGIN }}
+        >
+          What Nicki's clients have to say
+        </motion.h3>
         <TestimonialViewWindow id="testimonial-view-window">
           {testimonials.map((testimonial, index) => (
             <motion.div
@@ -178,6 +196,9 @@ function Testimonials() {
                 translate: `${-100 * testimonialIndex}%`,
                 x: dragX,
               }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: MARGIN }}
               drag="x"
               dragConstraints={{
                 left: 0,
@@ -187,18 +208,19 @@ function Testimonials() {
               onDragEnd={onDragEnd}
               transition={{
                 SPRING_VALUES,
+                duration: DURATION,
+                ease: EASE,
               }}
             >
               <motion.p
                 className="testimonial-main-text"
                 animate={{
                   scale: testimonialIndex === index ? 0.95 : 0.85,
-                  opacity: testimonialIndex === index ? 1: 0
+                  opacity: testimonialIndex === index ? 1 : 0,
                 }}
                 transition={{
                   SPRING_VALUES,
-                  delay: 0.3
-
+                  delay: 0.3,
                 }}
               >
                 {testimonial.text}
@@ -207,11 +229,11 @@ function Testimonials() {
                 className="testimonial-name"
                 animate={{
                   scale: testimonialIndex === index ? 1 : 0.85,
-                  opacity: testimonialIndex === index ? 1: 0
+                  opacity: testimonialIndex === index ? 1 : 0,
                 }}
                 transition={{
                   SPRING_VALUES,
-                  delay: 0.3
+                  delay: 0.3,
                 }}
               >
                 {testimonial.name}
@@ -219,6 +241,10 @@ function Testimonials() {
             </motion.div>
           ))}
         </TestimonialViewWindow>
+        <motion.div           initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: DURATION, ease: EASE }}
+          viewport={{ once: true, margin: MARGIN }}>
         <DotContainer>
           {testimonials.map((_, index) => (
             <DotButton
@@ -242,8 +268,13 @@ function Testimonials() {
             </DotButton>
           ))}
         </DotContainer>
+        </motion.div>
       </TestimonialContainer>
       <SlideButtonDiv>
+      <motion.div           initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: DURATION, ease: EASE }}
+          viewport={{ once: true, margin: MARGIN }}>
         <TestimonialSliderButton onClick={showNextTestimonial}>
           <svg
             className="testimonial-slider-button-right"
@@ -260,6 +291,7 @@ function Testimonials() {
             />
           </svg>
         </TestimonialSliderButton>
+        </motion.div>
       </SlideButtonDiv>
     </SectionContainer>
   );

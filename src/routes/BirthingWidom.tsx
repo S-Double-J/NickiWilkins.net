@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import DDButton from "../Components/DropDownButton";
 import "./projects.css";
+import { motion } from "framer-motion";
 
 const Box = styled.div`
   display: flex;
@@ -60,21 +61,63 @@ const Tick = styled.svg`
   stroke: var(--Primary-Light);
   flex-shrink: 0;
 `;
+function MakeSplitTextAnim({ children }: { children: string }) {
+  return (
+    <span>
+      {children.split("").map((l, i) => {
+        return (
+          <motion.span
+            key={i}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.7, ease: "easeInOut", delay: 0.15 * i }}
+            viewport={{ once: true }}
+          >
+            {l}
+          </motion.span>
+        );
+      })}
+    </span>
+  );
+}
 function BirthingWisdom() {
+  const DURATION = 0.7;
+  const EASE = "easeInOut";
+  const MARGIN = "-100px";
   return (
     <>
       <div className="page-container" key="Birthing Wisdom Page">
         <div className="title-frame">
-          <h1 className="projects-title-h">Birthing Wisdom</h1>
-          <p className="projects-title-p">
+          <h1 className="projects-title-h">
+            <MakeSplitTextAnim>Birthing Wisdom</MakeSplitTextAnim>
+          </h1>
+          <motion.p
+            className="projects-title-p"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: DURATION, ease: EASE, delay: 2.6 }}
+            viewport={{ once: true, margin: MARGIN }}
+          >
             A 6-month online soul initiation for women travelling the midlife
             journey of rebirth. January-June 2025
-          </p>
+          </motion.p>
         </div>
         <section className="section-frame" key="Foreword">
           <div className="section-text-container">
-            <h3>Foreword</h3>
-            <p>
+            <motion.h3
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
+              Foreword
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               Birthing Wisdom is a journey of soul initiation for women
               travelling the transition from menopause into elderhood. Whether
               in the early days of your midlife metamorphosis or in the middle
@@ -100,15 +143,25 @@ function BirthingWisdom() {
                 <i>share your journey</i>
               </b>{" "}
               and rebirth. 
-            </p>
-            <p>
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               While this course shares themes and practices that are similar to
               my one-to-one sessions, Transformative Mentoring, what makes it
               distinct is that this is a structured program, designed to be
               shared with a community of women as they travel the path of their
               Midlife Rebirth.
-            </p>
-            <p>
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               If you’re interested in a{" "}
               <b>
                 <i>personalised, one-to-one journey</i>
@@ -122,53 +175,127 @@ function BirthingWisdom() {
                 <i>Transformative Mentoring</i>
               </b>{" "}
               here.
-            </p>
-            <div className="col-to-row">
+            </motion.p>
+            <motion.div
+              className="col-to-row"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               <Link to={"/transformative-mentoring"} className="primary-button">
                 <p>Transformative Mentoring</p>
               </Link>
-            </div>
+            </motion.div>
           </div>
         </section>
         <section className="section-frame-dark" key="Letter">
           <div className="section-text-container">
-            <h3 className="white">A letter from Nicki, your guide</h3>
-            <p className="white">Hello friend,</p>
-            <p className="white">
+            <motion.h3
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
+              A letter from Nicki, your guide
+            </motion.h3>
+            <motion.p
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
+              Hello friend,
+            </motion.p>
+            <motion.p
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               Menopause is an initiation of the soul. Even though it’s not
               honoured for what it is—one of the most profound transitions in a
               woman’s life—it deserves to be.
-            </p>
-            <p className="white">
+            </motion.p>
+            <motion.p
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               And it’s not just the cellular changes that need to be addressed.
               The soulful ones beg for our attention too. In fact, many of us
               walk this transition alone. We should change that.
-            </p>
-            <p className="white">
+            </motion.p>
+            <motion.p
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               Let’s build a community where the wise woman is visible and
               honoured. Her vitality, cherished. Her heart-based wisdom, valued.
               Her name, spoken with pride. Let’s build a community where she has
               space to rebirth, in her own time.
-            </p>
-            <p className="white">
+            </motion.p>
+            <motion.p
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               I offer this journey for you to creatively explore your soulful
               identity as a Woman of Wisdom. You’re already doing it. Diving
               deep into your inner landscape, looking for clues about your
               authentic self and your soul’s purpose. 
-            </p>
-            <p className="white">
+            </motion.p>
+            <motion.p
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               Growth and rebirth—they don’t happen in a straight line. It’s
               always a circle. The transition from menopause to your wisdom
               years is no different. This is a journey of circumambulation: a
               “walk around” something holy and sacred. A “circle around” you. A
               pilgrimage. 
-            </p>
-            <p className="white">
+            </motion.p>
+            <motion.p
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               I hold space for you to keep walking. I want you to find her. That
               wise, wild, whole you! The world awaits your return.
-            </p>
-            <p className="white">In service,</p>
-            <p className="white">Nicki</p>
+            </motion.p>
+            <motion.p
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
+              In service,
+            </motion.p>
+            <motion.p
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
+              Nicki
+            </motion.p>
           </div>
         </section>
         <section className="section-frame">
@@ -176,10 +303,20 @@ function BirthingWisdom() {
             className="section-text-container"
             key="what is Birthing Wisdom?"
           >
-            <h3>
+            <motion.h3
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               What is <i>Birthing Wisdom</i>?
-            </h3>
-            <p>
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               Menopause changes us on both the cellular and soulful level. It’s
               a time where we let go of what is dying to make room for the
               emergence of something new. Birthing Wisdom is a structured course
@@ -187,14 +324,19 @@ function BirthingWisdom() {
               relationship with soul, and find purpose. This course is run for a
               group of women, offering a communal space to process this
               journey. 
-            </p>
-            <p>
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               This journey has many threads. While each rebirth is unique and
               organic, there are similar themes and desires that surface at this
               life stage transition. Jungians Bruce Baker and Jane Wheelwright
               identified these psychological-spiritual steps for the journey
               into wise elderhood. These steps heavily inform this course. 
-            </p>
+            </motion.p>
             <Box style={{ padding: "20px 50px" }}>
               <ul className="white">
                 <li>A review of one's life.</li>
@@ -216,10 +358,20 @@ function BirthingWisdom() {
         <line className="line" />
         <section className="section-frame" key="your journey">
           <div className="section-text-container">
-            <h3>
+            <motion.h3
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               So, what will <i>Your Journey</i> look like?
-            </h3>
-            <p>
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               Birthing Wisdom is a course with two-fold intentions. It is an
               inner journey in which a woman births her Wise Woman Elder. It is
               also a collective of women who support each other on this journey
@@ -228,8 +380,13 @@ function BirthingWisdom() {
               rebirth in her own time, and share the gifts she finds in the
               process. We find a space where she is valued, and her voice is
               spoken and heard.
-            </p>
-            <p>
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               Here’s what the two-fold intentions look like in practice. We will
               meet as a group online for two hours, twice a month. We will use
               these bi-monthly sessions for teaching, learning, meditation,
@@ -237,8 +394,15 @@ function BirthingWisdom() {
               for a one-on-one mentoring session. The time in between sessions
               is for personal reflection, soul practices, and creative
               expression.
-            </p>
-            <h4>On this journey you'll have access to</h4>
+            </motion.p>
+            <motion.h4
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
+              On this journey you'll have access to
+            </motion.h4>
             <Box style={{ padding: "50px" }}>
               <BoxInnerNoBorder>
                 <Tick
@@ -254,12 +418,18 @@ function BirthingWisdom() {
                     stroke-width="2"
                   />
                 </Tick>
-                <p className="white">
+                <motion.p
+                  className="white"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: DURATION, ease: EASE }}
+                  viewport={{ once: true, margin: MARGIN }}
+                >
                   <i>
                     <b>12 Live, interactive group sessions </b>
                   </i>
                   with Nicki
-                </p>
+                </motion.p>
               </BoxInnerNoBorder>
               <BoxInnerNoBorder>
                 <Tick
@@ -275,12 +445,18 @@ function BirthingWisdom() {
                     stroke-width="2"
                   />
                 </Tick>
-                <p className="white">
+                <motion.p
+                  className="white"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: DURATION, ease: EASE }}
+                  viewport={{ once: true, margin: MARGIN }}
+                >
                   <i>
                     <b>6 Private, 60 minute sessions </b>
                   </i>
                   with Nicki
-                </p>
+                </motion.p>
               </BoxInnerNoBorder>
               <BoxInnerNoBorder>
                 <Tick
@@ -296,13 +472,19 @@ function BirthingWisdom() {
                     stroke-width="2"
                   />
                 </Tick>
-                <p className="white">
+                <motion.p
+                  className="white"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: DURATION, ease: EASE }}
+                  viewport={{ once: true, margin: MARGIN }}
+                >
                   <i>
                     <b>12 Practical guides, </b>
                   </i>
                   one for each of the 12 modules, outlining practices and
                   exercises to deepen your soul-work.
-                </p>
+                </motion.p>
               </BoxInnerNoBorder>
               <BoxInnerNoBorder>
                 <Tick
@@ -318,12 +500,18 @@ function BirthingWisdom() {
                     stroke-width="2"
                   />
                 </Tick>
-                <p className="white">
+                <motion.p
+                  className="white"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: DURATION, ease: EASE }}
+                  viewport={{ once: true, margin: MARGIN }}
+                >
                   <i>
                     <b>7 Guided soul encounter meditations </b>
                   </i>
                   with Nicki
-                </p>
+                </motion.p>
               </BoxInnerNoBorder>
               <BoxInnerNoBorder>
                 <Tick
@@ -339,12 +527,18 @@ function BirthingWisdom() {
                     stroke-width="2"
                   />
                 </Tick>
-                <p className="white">
+                <motion.p
+                  className="white"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: DURATION, ease: EASE }}
+                  viewport={{ once: true, margin: MARGIN }}
+                >
                   <i>
                     <b>Additional readings and resouces </b>
                   </i>
                   that support your soul-work
-                </p>
+                </motion.p>
               </BoxInnerNoBorder>
             </Box>
           </div>
@@ -352,14 +546,24 @@ function BirthingWisdom() {
         <line className="line" />
         <section className="section-frame" key="the threads">
           <div className="section-text-container">
-            <h3>
+            <motion.h3
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               The <i>Threads </i> of Birthing Wisdom
-            </h3>
-            <p>
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               There are many paths to Birthing your Wisdom. I weave some common
               threads into this journey to help you dive deep into the centre of
               your truest self.
-            </p>
+            </motion.p>
             <Box style={{ padding: 10 }}>
               <BoxInnerRoundedHalf>
                 <RoundedHalfInnerTop>
@@ -396,10 +600,22 @@ function BirthingWisdom() {
         </section>
         <section className="section-frame-dark" key="the four stages">
           <div className="section-text-container">
-            <h3 className="white">
+            <motion.h3
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               The <i>Four Stages </i>of Birthing Wisdom
-            </h3>
-            <p className="white">
+            </motion.h3>
+            <motion.p
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               Each journey is completely unique. Even within the community of
               women on your course, you may find that your journey to soul and
               the shape of your return is different from your sisters. But
@@ -407,7 +623,7 @@ function BirthingWisdom() {
               as you walk the winding path to your own soul encounter. The
               course has four stages: Preparation, Dissolution, Soul Encounter,
               and Return.
-            </p>
+            </motion.p>
             <Box
               style={{ padding: "10px", background: "var(--Primary-Light)" }}
             >
@@ -448,15 +664,30 @@ function BirthingWisdom() {
         </section>
         <section className="section-frame" key="my role">
           <div className="section-text-container">
-            <h3>
+            <motion.h3
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               My role as your <i>Transformative Mentor</i>
-            </h3>
-            <p>
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               As your mentor, I’m like a midwife, holding space for you to
               rebirth your truest self, the most sacred part of you. I’m here to
               stand guard as you birth your unique wise woman elder.
-            </p>
-            <p>
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               I offer a unique perspective from years of working with women in
               various stages of spiritual development. I bring 30+ years
               grounding in the spirituality of transformation, the study of the
@@ -465,57 +696,104 @@ function BirthingWisdom() {
               the core of my work is my desire to reunite the division of the
               body and soul. I’m currently a Mentor for The Purpose Guide
               Institute, a poet, and an artist. 
-            </p>
-            <p>
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               <b>I believe in your body’s intelligence.</b> That you have a deep
               intuitive sense about what’s right for you on this journey. My
               training in Focusing, an experience-based practice of
               self-reflection and meditation, helps locate that felt sense
               within.
-            </p>
-            <p>
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               <b>I am committed to listening, deeply, to your soul,</b> looking
               for your lost threads, I’m committed to working with you to help
               weave your purpose-filled life. To rediscover your innate
               wholeness.
-            </p>
-            <p>
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               <b>I’ve walked this midlife journey.</b> I know the themes and the
               patterns. I know its sacred path.
-            </p>
+            </motion.p>
           </div>
         </section>
         <line className="line" />
         <section className="section-frame" key="the details">
           <div className="section-text-container">
-            <h3>
+            <motion.h3
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               The <i>Details</i>
-            </h3>
-            <p>
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               <b>When the course meets:</b>
               <br />
               Course begins on <b>4 January 2025</b> and meets{" "}
               <b>every other Saturday until 24 May 2025.</b>
-            </p>
-            <p>
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               <b>There are 12 Group Sessions:</b>
               <br />4 Jan, 18 Jan, 1 Feb, 15th Feb, 1 March, 15 March, 29 March,
               12 April, 26 April, 10 May, 17 May, 24 May. All private sessions
               with Nicki will be arranged.
-            </p>
-            <p>
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               <b>The cost of Birthing Wisdom:</b>
               The 6-month online program is <b>£900</b>. This is a one-time
               Special Launch price.
-            </p>
+            </motion.p>
           </div>
         </section>
         <section className="section-frame-dark" key="faqs">
           <div className="section-text-container">
-            <h3 className="white">
+            <motion.h3
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               Frequently asked <i>Questions</i>
-            </h3>
-            <p className="white">
+            </motion.h3>
+            <motion.p
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               <b>
                 <i>What do I need to participate?</i>
               </b>
@@ -524,8 +802,14 @@ function BirthingWisdom() {
               an internet connection, a journal, and art supplies of your
               choice. You will receive the Zoom link to join our call ahead of
               time.
-            </p>
-            <p className="white">
+            </motion.p>
+            <motion.p
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               <b>
                 <i>How much time commitment does the course require?</i>
               </b>
@@ -533,8 +817,14 @@ function BirthingWisdom() {
               practices is required to hold a sacred container for all. Please
               note that this journey involves an 8-hour Soul Quest out in
               nature.
-            </p>
-            <p className="white">
+            </motion.p>
+            <motion.p
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               <b>
                 <i>How can I best prepare for this course?</i>
               </b>
@@ -548,8 +838,14 @@ function BirthingWisdom() {
               This program is for those who maintain a level of stability in
               their lives, are committed to fostering wellness, and are open to
               discovering wholeness.
-            </p>
-            <p className="white">
+            </motion.p>
+            <motion.p
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               <b>
                 <i>
                   Note: this program is not recommended for those with ongoing
@@ -559,25 +855,26 @@ function BirthingWisdom() {
               </b>
               If uncertain about your readiness, I recommend working with a
               coach or therapist for a time before embarking on this journey.
-            </p>
+            </motion.p>
           </div>
         </section>
-        <section
-          className="section-frame-dark"
-          style={{ padding: 0 }}
-        >
-          <line
-            className="line-white"
-          />
+        <section className="section-frame-dark" style={{ padding: 0 }}>
+          <line className="line-white" />
         </section>
         <section
           className="section-frame-dark"
           key="other ways to work with me"
         >
           <div className="section-text-container">
-            <h3 className="white">
+            <motion.h3
+              className="white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE }}
+              viewport={{ once: true, margin: MARGIN }}
+            >
               <i>Other ways</i> to work with me and this journey
-            </h3>
+            </motion.h3>
             <div className="col-to-row">
               <SmallBox>
                 <h4>Individual sessions</h4>

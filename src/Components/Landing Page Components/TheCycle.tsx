@@ -2,21 +2,23 @@ import { motion, useTransform } from "framer-motion";
 import { useScroll } from "framer-motion";
 import styled from "styled-components";
 
-const Section3 = styled.div`
+const Section3 = styled(motion.div)`
   width: 100%;
   height: calc(100vh - 58px);
-  background-color: #8c1c1c;
+  background-color: var(--Primary-Dark);
   position: sticky;
   position: -webkit-sticky;
   top: 62px;
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
+  z-index: 0;
 `;
 
 const StickyScrollDiv = styled.div`
   height: 500vh;
   width: 100%;
+  z-index: 0;
 `;
 
 const Spiral = styled.svg`
@@ -24,7 +26,7 @@ const Spiral = styled.svg`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(40deg);
-  z-index: 5;
+  z-index: 0;
   @media (max-width: 1050px) {
     width: 437px;
     height: 437px;
@@ -43,6 +45,7 @@ const SpiralTextAxis = styled.div`
 const TextFrame = styled.div`
   display: flex;
   width: 700px;
+  max-width: 90%;
   padding: 50px;
   flex-direction: column;
   align-items: flex-end;
@@ -265,15 +268,19 @@ function TheCycle() {
     );
   }
 
+  const DURATION = 0.7;
+  const EASE = "easeInOut";
+  const MARGIN = "-100px";
+
   return (
-    <StickyScrollDiv>
+    <>
       <Section3 id="Third">
         <motion.div
           className="blur"
-          initial={{ opacity: 0, y: "50px" }}
-          whileInView={{ opacity: 1, y: "0px" }}
-          viewport={{ margin: "-50px", once: true }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: DURATION, ease: EASE }}
+          viewport={{ once: true, margin: MARGIN }}
         >
           <TextFrame>
             <h3 className="ta-right white">The Rebirthing Spiral</h3>
@@ -293,10 +300,10 @@ function TheCycle() {
           style={{
             rotate,
           }}
-          initial={{ opacity: 0, y: "50px" }}
-          whileInView={{ opacity: 1, y: "0px" }}
-          viewport={{ margin: "00px", once: true }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: DURATION, ease: EASE }}
+          viewport={{ once: true, margin: MARGIN }}
         >
           <Spiral
             className="spiral"
@@ -356,7 +363,8 @@ function TheCycle() {
           </SpiralTextAxis>
         </motion.div>
       </Section3>
-    </StickyScrollDiv>
+      <StickyScrollDiv />
+    </>
   );
 }
 

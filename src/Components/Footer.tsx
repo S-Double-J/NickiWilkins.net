@@ -86,7 +86,7 @@ const Plink = styled(Link)`
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 144%; /* 28.8px */
+  line-height: 144%;
   letter-spacing: -0.8px;
   align-self: stretch;
   margin: 0;
@@ -95,6 +95,7 @@ const Line = styled.div`
   height: 200px;
   width: 1px;
   background-color: var(--Primary-Dark);
+  opacity: 50%;
   @media screen and (max-width:700px) {
     width: 100%;
     height: 1px;

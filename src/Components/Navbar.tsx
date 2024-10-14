@@ -55,7 +55,14 @@ function Navbar({ active, setActive }: Props) {
 
   return (
     <>
-      <motion.div className="navbar" style={{ background: barBgColour }}>
+      <motion.div
+        className="navbar"
+        style={{ background: barBgColour }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.7, ease: "easeInOut", delay: 2.45 }}
+        viewport={{ once: true }}
+      >
         <motion.div style={{ color: accentColour }}>
           <LinkText to={"/"}>NICKI WILKINS</LinkText>
         </motion.div>

@@ -241,56 +241,60 @@ function Testimonials() {
             </motion.div>
           ))}
         </TestimonialViewWindow>
-        <motion.div           initial={{ opacity: 0 }}
+        <motion.div
+          initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}>
-        <DotContainer>
-          {testimonials.map((_, index) => (
-            <DotButton
-              onClick={() => setTestimonialIndex(index)}
-              style={{ opacity: setDotOpacity(index) }}
-            >
-              <svg
-                className="dot"
-                xmlns="http://www.w3.org/2000/svg"
-                width="21"
-                height="20"
-                viewBox="0 0 21 20"
-                fill="none"
+          viewport={{ once: true, margin: MARGIN }}
+        >
+          <DotContainer>
+            {testimonials.map((_, index) => (
+              <DotButton
+                onClick={() => setTestimonialIndex(index)}
+                style={{ opacity: setDotOpacity(index) }}
               >
-                <circle cx="10.0415" cy="10" r="10" fill="#FFF4DF" />
-                <path
-                  d="M11.5 10C11.5 10.5 9.50001 12.25 8.50001 10.5C7.80141 9.27747 7.68348 6.99937 9.00001 6.5C11.0655 5.71652 13.756 7.80437 14 10C14.2761 12.4853 12.5006 14 9.99999 14C7.49999 14 4.49999 13.5 4.49999 10C4.49999 6.09476 6.75611 2.99997 10.5 3C14.6513 3.00004 17 5.84867 17 10C17 14.1513 14.1513 17 9.99999 17C5.99999 17 -0.5 13.5 3.00001 6"
-                  stroke="#590000"
-                />
-              </svg>
-            </DotButton>
-          ))}
-        </DotContainer>
+                <svg
+                  className="dot"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  height="20"
+                  viewBox="0 0 21 20"
+                  fill="none"
+                >
+                  <circle cx="10.0415" cy="10" r="10" fill="#FFF4DF" />
+                  <path
+                    d="M11.5 10C11.5 10.5 9.50001 12.25 8.50001 10.5C7.80141 9.27747 7.68348 6.99937 9.00001 6.5C11.0655 5.71652 13.756 7.80437 14 10C14.2761 12.4853 12.5006 14 9.99999 14C7.49999 14 4.49999 13.5 4.49999 10C4.49999 6.09476 6.75611 2.99997 10.5 3C14.6513 3.00004 17 5.84867 17 10C17 14.1513 14.1513 17 9.99999 17C5.99999 17 -0.5 13.5 3.00001 6"
+                    stroke="#590000"
+                  />
+                </svg>
+              </DotButton>
+            ))}
+          </DotContainer>
         </motion.div>
       </TestimonialContainer>
       <SlideButtonDiv>
-      <motion.div           initial={{ opacity: 0 }}
+        <motion.div
+          initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}>
-        <TestimonialSliderButton onClick={showNextTestimonial}>
-          <svg
-            className="testimonial-slider-button-right"
-            xmlns="http://www.w3.org/2000/svg"
-            width="70"
-            height="66"
-            viewBox="0 0 70 66"
-            fill="none"
-          >
-            <path
-              d="M14.1083 46.4862C10.1132 46.4862 8.11572 49.9826 8.11572 52.9798C8.11572 55.9512 13.8472 58.0795 16.6052 56.976C24.0959 53.9791 21.8804 43.5262 17.604 39.9923C11.0971 34.6152 -0.027343 45.6154 1.12438 53.9791C2.16531 61.5383 9.9857 64.86 17.604 64.4692C37.0798 63.4702 68.0415 33.4984 68.0415 33.4984C68.0415 33.4984 35.5817 2.52779 17.604 1.52853C9.54246 1.08044 1.12438 5.94042 1.12438 14.0168C1.12438 22.0931 10.7924 30.8412 17.604 26.505C23.0972 23.0081 24.0959 13.0175 19.6015 10.0205C17.2388 8.44505 9.89461 11.2857 9.11448 14.0168C8.11572 17.5132 13.1095 21.5095 15.6064 20.0111"
-              stroke="#FFF4DF"
-              stroke-width="2"
-            />
-          </svg>
-        </TestimonialSliderButton>
+          viewport={{ once: true, margin: MARGIN }}
+        >
+          <TestimonialSliderButton onClick={showNextTestimonial}>
+            <svg
+              className="testimonial-slider-button-right"
+              xmlns="http://www.w3.org/2000/svg"
+              width="70"
+              height="66"
+              viewBox="0 0 70 66"
+              fill="none"
+            >
+              <path
+                d="M14.1083 46.4862C10.1132 46.4862 8.11572 49.9826 8.11572 52.9798C8.11572 55.9512 13.8472 58.0795 16.6052 56.976C24.0959 53.9791 21.8804 43.5262 17.604 39.9923C11.0971 34.6152 -0.027343 45.6154 1.12438 53.9791C2.16531 61.5383 9.9857 64.86 17.604 64.4692C37.0798 63.4702 68.0415 33.4984 68.0415 33.4984C68.0415 33.4984 35.5817 2.52779 17.604 1.52853C9.54246 1.08044 1.12438 5.94042 1.12438 14.0168C1.12438 22.0931 10.7924 30.8412 17.604 26.505C23.0972 23.0081 24.0959 13.0175 19.6015 10.0205C17.2388 8.44505 9.89461 11.2857 9.11448 14.0168C8.11572 17.5132 13.1095 21.5095 15.6064 20.0111"
+                stroke="#FFF4DF"
+                stroke-width="2"
+              />
+            </svg>
+          </TestimonialSliderButton>
         </motion.div>
       </SlideButtonDiv>
     </SectionContainer>

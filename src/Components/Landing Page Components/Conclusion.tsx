@@ -9,10 +9,10 @@ const Frame = styled.div`
   justify-items: center;
   align-content: center;
   gap: 40px;
-  width: 100%;
+  width: calc(100% - 100px);
   padding: 50px;
-  box-sizing: border-box;
   z-index: inherit;
+  margin-bottom: -6px;
 `;
 const ButtonFrame = styled.div`
   display: flex;

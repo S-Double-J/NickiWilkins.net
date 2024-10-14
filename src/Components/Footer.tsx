@@ -13,6 +13,7 @@ const Container = styled.div`
     flex-direction: column-reverse;
   }
 `;
+
 const FooterLeft = styled.div`
   display: flex;
   width: 40%;

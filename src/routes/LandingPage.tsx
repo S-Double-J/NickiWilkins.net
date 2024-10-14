@@ -26,7 +26,7 @@ const StickyScrollDiv = styled.div`
 const SVG = styled.svg`
   width: 100%;
   position: relative;
-  margin-bottom: -4px;
+  margin-bottom: -6px;
 `
 function LandingPage() {
   return (

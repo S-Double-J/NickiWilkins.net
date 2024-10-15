@@ -28,18 +28,19 @@ const SVG = styled.svg`
   position: relative;
   margin-bottom: -6px;
 `
-interface Props{
+interface Props {
   fadeInViewProps: {
     initial: { opacity: number };
     whileInView: { opacity: number };
     transition: { duration: number; ease: string };
     viewport: { once: boolean; margin: string };
   };
+  MakeSplitTextAnim: (props: {children:string}) => JSX.Element;
 }
-function LandingPage({fadeInViewProps}: Props) {
+function LandingPage({fadeInViewProps, MakeSplitTextAnim}: Props) {
   return (
     <>
-      <Heroine fadeInViewProps={fadeInViewProps}/>
+      <Heroine fadeInViewProps={fadeInViewProps} MakeSplitTextAnim={MakeSplitTextAnim}/>
       <WiseWildWhole fadeInViewProps={fadeInViewProps}/>
       <StickyScrollDiv>
       <TheCycle fadeInViewProps={fadeInViewProps}/>

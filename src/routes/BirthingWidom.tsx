@@ -61,32 +61,19 @@ const Tick = styled.svg`
   stroke: var(--Primary-Light);
   flex-shrink: 0;
 `;
-function MakeSplitTextAnim({ children }: { children: string }) {
-  return (
-    <span>
-      {children.split("").map((l, i) => {
-        return (
-          <motion.span
-            key={i}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.7, ease: "easeInOut", delay: 0.13 * i }}
-            viewport={{ once: true }}
-          >
-            {l}
-          </motion.span>
-        );
-      })}
-    </span>
-  );
+
+interface Props {
+  fadeInViewProps: {
+    initial: { opacity: number };
+    whileInView: { opacity: number };
+    transition: { duration: number; ease: string };
+    viewport: { once: boolean; margin: string };
+  };
+  MakeSplitTextAnim: (props: { children: string }) => JSX.Element;
 }
-interface Props{
-  fadeInViewProps: object;
-}
-function BirthingWisdom({fadeInViewProps}: Props) {
-  const DURATION = 0.7;
-  const EASE = "easeInOut";
-  const MARGIN = "-100px";
+function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
+  const DURATION = fadeInViewProps.transition.duration;
+  const EASE = fadeInViewProps.transition.ease;
 
   return (
     <>
@@ -100,7 +87,7 @@ function BirthingWisdom({fadeInViewProps}: Props) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: DURATION, ease: EASE, delay: 2.6 }}
-            viewport={{ once: true, margin: MARGIN }}
+            viewport={{ once: true }}
           >
             A 6-month online soul initiation for women travelling the midlife
             journey of rebirth. January-June 2025
@@ -478,7 +465,8 @@ function BirthingWisdom({fadeInViewProps}: Props) {
               <Box
                 style={{ padding: "10px", background: "var(--Primary-Light)" }}
               >
-                <BoxInnerRoundedHalf {...fadeInViewProps}
+                <BoxInnerRoundedHalf
+                  {...fadeInViewProps}
                   style={{ borderColor: "var(--Primary-Dark)" }}
                 >
                   <RoundedHalfInnerTop>
@@ -486,7 +474,8 @@ function BirthingWisdom({fadeInViewProps}: Props) {
                     <DDButton bg="var(--Primary-Dark" />
                   </RoundedHalfInnerTop>
                 </BoxInnerRoundedHalf>
-                <BoxInnerRoundedHalf {...fadeInViewProps}
+                <BoxInnerRoundedHalf
+                  {...fadeInViewProps}
                   style={{ borderColor: "var(--Primary-Dark)" }}
                 >
                   <RoundedHalfInnerTop>
@@ -494,7 +483,8 @@ function BirthingWisdom({fadeInViewProps}: Props) {
                     <DDButton bg="var(--Primary-Dark" />
                   </RoundedHalfInnerTop>
                 </BoxInnerRoundedHalf>
-                <BoxInnerRoundedHalf {...fadeInViewProps}
+                <BoxInnerRoundedHalf
+                  {...fadeInViewProps}
                   style={{ borderColor: "var(--Primary-Dark)" }}
                 >
                   <RoundedHalfInnerTop>
@@ -502,7 +492,8 @@ function BirthingWisdom({fadeInViewProps}: Props) {
                     <DDButton bg="var(--Primary-Dark" />
                   </RoundedHalfInnerTop>
                 </BoxInnerRoundedHalf>
-                <BoxInnerRoundedHalf {...fadeInViewProps}
+                <BoxInnerRoundedHalf
+                  {...fadeInViewProps}
                   style={{ borderColor: "var(--Primary-Dark)" }}
                 >
                   <RoundedHalfInnerTop>
@@ -644,7 +635,9 @@ function BirthingWisdom({fadeInViewProps}: Props) {
             <div className="col-to-row">
               <motion.div {...fadeInViewProps}>
                 <SmallBox>
-                  <motion.h4 {...fadeInViewProps}>Individual sessions</motion.h4>
+                  <motion.h4 {...fadeInViewProps}>
+                    Individual sessions
+                  </motion.h4>
                   <ul>
                     <motion.li {...fadeInViewProps}>
                       12 individual sessions with me, at your pace.
@@ -670,7 +663,9 @@ function BirthingWisdom({fadeInViewProps}: Props) {
               </motion.div>
               <motion.div {...fadeInViewProps}>
                 <SmallBox>
-                  <motion.h4 {...fadeInViewProps}>Private Group sessions</motion.h4>
+                  <motion.h4 {...fadeInViewProps}>
+                    Private Group sessions
+                  </motion.h4>
                   <motion.p {...fadeInViewProps}>
                     Do you know a small group of women who would be interested
                     in this course? <i>(6-8 women)</i>

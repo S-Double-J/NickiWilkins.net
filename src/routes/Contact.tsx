@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ScrollRestoration } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const ContactContainer = styled.div`
   display: flex;
@@ -86,47 +87,78 @@ const Image = styled.img`
   rotate: 30deg;
   border-radius: 100%;
 `;
-function Contact() {
-
+interface Props {
+  fadeInViewProps: {
+    initial: { opacity: number };
+    whileInView: { opacity: number };
+    transition: { duration: number; ease: string };
+    viewport: { once: boolean; margin: string };
+  };
+  MakeSplitTextAnim: (props: { children: string }) => JSX.Element;
+}
+function Contact({ fadeInViewProps, MakeSplitTextAnim }: Props) {
+  const DURATION = fadeInViewProps.transition.duration;
+  const EASE = fadeInViewProps.transition.ease;
+  const DELAY = 2;
   return (
     <ContactContainer>
       <ComponentsContainer>
         <Content>
           <TextContainer>
-            <h1 style={{ textAlign: "left", fontSize: "70px" }}>
-              Contact Nicki
+            <h1 className="ta-left seventy">
+              <MakeSplitTextAnim>Contact Nicki</MakeSplitTextAnim>
             </h1>
-            <p>
-              <b>Want to work with me one-to-one? Get in touch.</b> I am here to
-              offer support, encouragement, and guidance for your midlife
-              journey.
-              <br />
-              <br />
-              <b>
-                Not sure which program is the right one for you? Let’s chat.
-              </b> I’m happy to talk with you to discuss what is the right path for
-              you. I offer a free 30-minute session to see if my work resonates
-              with you.
-              <br />
-              <br />
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE, delay: DELAY }}
+              viewport={{ once: true }}
+            >
               <p>
-                <b>Want to interview me on your podcast? Contact me.</b> I love
-                discussing meaningful topics like women’s spirituality, the
-                soulful side of menopause, the power of fully initiated elders,
-                and how to find purpose in the second half of life. 
+                <b>Want to work with me one-to-one? Get in touch.</b> I am here
+                to offer support, encouragement, and guidance for your midlife
+                journey.
+                <br />
+                <br />
+                <b>
+                  Not sure which program is the right one for you? Let’s chat.
+                </b>{" "}
+                I’m happy to talk with you to discuss what is the right path for
+                you. I offer a free 30-minute session to see if my work
+                resonates with you.
+                <br />
+                <br />
+                <p>
+                  <b>Want to interview me on your podcast? Contact me.</b> I
+                  love discussing meaningful topics like women’s spirituality,
+                  the soulful side of menopause, the power of fully initiated
+                  elders, and how to find purpose in the second half of life.
+                </p>
               </p>
-            </p>
-            <a
+            </motion.div>
+
+            <motion.a
               style={{ textDecoration: "none" }}
               href="mailto:nwilkins@btinternet.com"
               className="primary-button"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE, delay: DELAY }}
+              viewport={{ once: true }}
             >
               <p>Email Nicki</p>
-            </a>
+            </motion.a>
           </TextContainer>
-          <ImageContainer>
-            <Image src="images/20220102_135354.jpg" />
-          </ImageContainer>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: DURATION, ease: EASE, delay: DELAY }}
+            viewport={{ once: true }}
+          >
+            <ImageContainer>
+              <Image src="images/20220102_135354.jpg" />
+            </ImageContainer>
+          </motion.div>
         </Content>
       </ComponentsContainer>
       <ScrollRestoration />

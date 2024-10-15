@@ -76,15 +76,14 @@ const SlideButtonDiv = styled.div`
   align-items: center;
   justify-content: center;
 `;
-interface MotionProps {
-  initial: { opacity: number };
-  whileInView: { opacity: number };
-  transition: { duration: number; ease: string };
-  viewport: { once: boolean; margin: string };
-}
 
 interface Props {
-  fadeInViewProps: MotionProps;
+  fadeInViewProps: {
+    initial: { opacity: number };
+    whileInView: { opacity: number };
+    transition: { duration: number; ease: string };
+    viewport: { once: boolean; margin: string };
+  };
 }
 function Testimonials({fadeInViewProps}: Props) {
   const DURATION = fadeInViewProps.transition.duration;

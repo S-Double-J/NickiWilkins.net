@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const AboutDiv = styled.div`
   width: 100%;
@@ -12,7 +13,6 @@ const Container = styled.div`
   background: rgba(255, 244, 223, 0.01);
   backdrop-filter: blur(10px);
   display: flex;
-  padding: 100px 0px;
   flex-direction: column;
   align-items: center;
   gap: 50px;
@@ -23,8 +23,10 @@ const TitleSocialsAndImage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   gap: 50px;
+  min-height: calc(100svh - 62px);
 `;
 
 const TitleAndSocials = styled.div`
@@ -35,7 +37,7 @@ const TitleAndSocials = styled.div`
   gap: 20px;
 `;
 
-const SocialsIcons = styled.div`
+const SocialsIcons = styled(motion.div)`
   display: flex;
   width: 100px;
   justify-content: center;
@@ -44,7 +46,7 @@ const SocialsIcons = styled.div`
   align-items: center;
 `;
 
-const NickiPortraitMain = styled.img`
+const NickiPortraitMain = styled(motion.img)`
   width: 350px;
   height: 350px;
   border-radius: 300px;
@@ -76,17 +78,42 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-function About() {
+interface Props {
+  fadeInViewProps: {
+    initial: { opacity: number };
+    whileInView: { opacity: number };
+    transition: { duration: number; ease: string };
+    viewport: { once: boolean; margin: string };
+  };
+  MakeSplitTextAnim: (props: { children: string }) => JSX.Element;
+}
+function About({ fadeInViewProps, MakeSplitTextAnim }: Props) {
+  const DURATION = fadeInViewProps.transition.duration;
+  const EASE = fadeInViewProps.transition.ease;
+  const DELAY = 1.6;
   return (
     <>
       <AboutDiv key="About">
         <Container key="container">
           <TitleSocialsAndImage key="title-image-and-icons">
-            <NickiPortraitMain key="nicki-portrait-main" />
+            <h1 className="seventy">
+              <MakeSplitTextAnim>About Nicki</MakeSplitTextAnim>
+            </h1>{" "}
+            <NickiPortraitMain
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE, delay: DELAY }}
+              viewport={{ once: true }}
+              key="nicki-portrait-main"
+            />
             <TitleAndSocials>
-              <h1>About Nicki</h1>
-              <SocialsIcons key="socials-icons">
+              <SocialsIcons
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: DURATION, ease: EASE, delay: DELAY }}
+                viewport={{ once: true }}
+                key="socials-icons"
+              >
                 <Icons href="#">
                   <i className="instagram"></i>
                 </Icons>
@@ -98,13 +125,13 @@ function About() {
           </TitleSocialsAndImage>
           <TextContainer key="text-container">
             <Line />
-            <h3>
+            <motion.h3 {...fadeInViewProps}>
               <i>My heart, my life, my work</i>
-            </h3>
-            <p>
+            </motion.h3>
+            <motion.p {...fadeInViewProps}>
               Hello, I’m Nicki Wilkins. Here are 10 things about me...
-              <br />
-              <br />
+            </motion.p>
+            <motion.p {...fadeInViewProps}>
               <b>FIRST, SOME DETAILS ABOUT MY TRAINING.</b> With a Masters of
               Divinity from Yale University and a Masters in Creative Writing
               from Stirling University in Scotland, and as a certified Purpose
@@ -116,74 +143,74 @@ function About() {
               teenagers. I’m also a published poet, currently writing a memoir
               about my midlife rebirth. I write weekly for The Soul Pelt Press
               on Substack. 
-              <br />
-              <br />
+            </motion.p>
+            <motion.p {...fadeInViewProps}>
               <b>I AM A POEM.</b> And so are you! I see poems everywhere. Ones
               written and ones lived. Short ones. Long ones. Forever growing
               ones.
-              <br />
-              <br />
+            </motion.p>
+            <motion.p {...fadeInViewProps}>
               <b>MY INTRODUCTION TO SOUL</b> started when my grandma walked me
               around her garden. Always visiting her compost heap (It was her
               holiest of holies), she taught me how to walk an ordinary
               pilgrimage. To circumnavigate. I’ve been hooked ever since.
-              <br />
-              <br />
+            </motion.p>
+            <motion.p {...fadeInViewProps}>
               <b>MY SOUL PURPOSE</b> is to hold space for others as they walk
               life’s journey. I’m like a soul detective, curious and eager for
               you to find your lost threads. The artist in me likes to help you
               weave them together.
-              <br />
-              <br />
+            </motion.p>
+            <motion.p {...fadeInViewProps}>
               <b>THE YEAR I TURNED 50</b>, I posed nude for a life drawing
               class. I thought it would help me accept my body. Once and for
               all. I wrote about it in my short collection of essays called,
               Inside Art.
-              <br />
-              <br />
+            </motion.p>
+            <motion.p {...fadeInViewProps}>
               <b>MENOPAUSE</b> was a long and arduous soul journey, full of
               creativity, reflection, and growth. My inner life started to align
               with my outer one, and I found a deep self-love that still
               surprises me.
-              <br />
-              <br />
+            </motion.p>
+            <motion.p {...fadeInViewProps}>
               <b>I LEFT THE ORDAINED PRIESTHOOD </b> because I needed to go on a
               personal journey to discover the Sacred Feminine. I had resisted
               it for decades, but when my bishop told me I had to choose between
               motherhood and the priesthood, it was a no brainer. I knew there
               was more to explore. And, I chose motherhood.
-              <br />
-              <br />
+            </motion.p>
+            <motion.p {...fadeInViewProps}>
               <b>HOME EDUCATING MY FOUR CHILDREN</b> was a soul-infused
               experimental, time-based performance piece of art with a hint of
               political philosophy. 
-              <br />
-              <br />
+            </motion.p>
+            <motion.p {...fadeInViewProps}>
               <b>IF I HAD TO DECLARE A SPIRITUAL PRACTICE</b> it would be haiku.
               I write while walking, just like the old haiku monks of Japan,
               counting syllables with my fingers.
-              <br />
-              <br />
+            </motion.p>
+            <motion.p {...fadeInViewProps}>
               <b>THE WORK I OFFER</b> is for the healing of Earth, our home. I
               know that when fully initiated wise women speak truth with love
               and authenticity, the next seven generations have a chance. 
-            </p>
+            </motion.p>
 
             <Line />
-            <p>
+            <motion.p {...fadeInViewProps}>
               <b>ELSEWHERE:</b>
-              <br />
-              <br />
+            </motion.p>
+            <motion.p {...fadeInViewProps}>
               Instagram :: This is where I share my artwork.
-              <br />
-              <br />
+            </motion.p>
+            <motion.p {...fadeInViewProps}>
               Substack :: The Soul Pelt Press is where I record the journey into
               my wisewoman years.
-              <br />
-              <br />
+            </motion.p>
+            <motion.p {...fadeInViewProps}>
               #wisewildwhole :: Use this hashtag on Instagram to record your
               journey to your wise, wild, and whole self.
-            </p>
+            </motion.p>
           </TextContainer>
         </Container>
       </AboutDiv>

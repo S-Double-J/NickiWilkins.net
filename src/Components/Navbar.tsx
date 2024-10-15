@@ -53,6 +53,11 @@ function Navbar({ active, setActive }: Props) {
     accentColourValues
   );
 
+  let DELAY = 2.45
+  if(location.pathname === "/transformative-mentoring"){
+DELAY = 3.4
+  }
+
   return (
     <>
       <motion.div
@@ -60,7 +65,7 @@ function Navbar({ active, setActive }: Props) {
         style={{ background: barBgColour }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.7, ease: "easeInOut", delay: 2.45 }}
+        transition={{ duration: 0.7, ease: "easeInOut", delay: DELAY }}
         viewport={{ once: true }}
       >
         <motion.div style={{ color: accentColour }}>

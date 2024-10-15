@@ -50,28 +50,16 @@ const Title = styled.div`
       </svg> */
 }
 
-function MakeSplitTextAnim({ children }: { children: string }) {
-  return (
-    <span>
-      {children.split("").map((l, i) => {
-        return (
-          <motion.span
-            key={i}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.7, ease: "easeInOut", delay: 0.15 * i }}
-          >
-            {l}
-          </motion.span>
-        );
-      })}
-    </span>
-  );
+interface Props {
+  fadeInViewProps: {
+    initial: { opacity: number };
+    whileInView: { opacity: number };
+    transition: { duration: number; ease: string };
+    viewport: { once: boolean; margin: string };
+  };
+  MakeSplitTextAnim: (props: {children:string}) => JSX.Element;
 }
-interface Props{
-  fadeInViewProps: object;
-}
-function Heroine({fadeInViewProps}: Props) {
+function Heroine({fadeInViewProps, MakeSplitTextAnim}: Props) {
   const DURATION = 0.7;
   const EASE = "easeInOut";
   return (

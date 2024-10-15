@@ -56,72 +56,39 @@ const SplotchBottom = styled.svg`
   z-index: 0;
   margin-bottom: -2px;
 `;
-function Intro() {
-  const DURATION = 0.7;
-  const EASE = "easeInOut";
-  const MARGIN = "-100px";
-
+interface IntroProps{
+  fadeInViewProps: object;
+}
+function Intro({fadeInViewProps}: IntroProps) {
   return (
     <InfoSection id="Second">
       <OuterFrame>
-        <motion.h3
-          style={{ width: "100%" }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}
-        >
+        <motion.h3 style={{ width: "100%" }} {...fadeInViewProps}>
           Hi, I'm Nicki
         </motion.h3>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}
-        >
+        <motion.p {...fadeInViewProps}>
            I’m a Transformative Mentor and certified Purpose Guide, a mother, a
           poet and most importantly, an elder. I offer wisdom and guidance to
           women as they move through menopause and transition into a new stage
           of life.
         </motion.p>
         <InnerFrame>
-          <motion.h4
-            style={{ width: "100%" }}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: DURATION, ease: EASE }}
-            viewport={{ once: true, margin: MARGIN }}
-          >
+          <motion.h4 style={{ width: "100%" }} {...fadeInViewProps}>
             My Journey
           </motion.h4>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: DURATION, ease: EASE }}
-            viewport={{ once: true, margin: MARGIN }}
-          >
+          <motion.p {...fadeInViewProps}>
             10 years ago I began the journey I call the{" "}
             <i className="libre">Midlife Rebirth</i>. It was a profound
             transformation, helping me recover lost parts of myself: my
             intuition, creativity, power, and purpose.
           </motion.p>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: DURATION, ease: EASE }}
-            viewport={{ once: true, margin: MARGIN }}
-          >
+          <motion.p {...fadeInViewProps}>
             Once I reached the end of my journey, I found an unexpected clarity.
             Having already spent 30+ years holding sacred space for women to
             rediscover their own innate wholeness, I knew I needed to offer my
             wisdom to a new generation of women.
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: DURATION, ease: EASE }}
-            viewport={{ once: true, margin: MARGIN }}
-          >
+          <motion.div {...fadeInViewProps}>
             <LinkText to={"about"} className="primary-button">
               <p>About Nicki</p>
             </LinkText>
@@ -129,21 +96,11 @@ function Intro() {
         </InnerFrame>
       </OuterFrame>
       <OuterFrame>
-        <motion.h3
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}
-        >
+        <motion.h3 {...fadeInViewProps}>
           What is the <i>Midlife Rebirth</i>?
         </motion.h3>
         <InnerFrame>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: DURATION, ease: EASE }}
-            viewport={{ once: true, margin: MARGIN }}
-          >
+          <motion.p {...fadeInViewProps}>
             The Midlife Rebirth is an antidote to the suppression of voice that
             so many women feel once they begin menopause. This stage in life was
             once a moment for celebration. A marker for the initiation of a new
@@ -152,23 +109,13 @@ function Intro() {
             Midlife Rebirth aims to give that validation and empowerment to a
             new generation of Wise, Wild, Whole Women.
           </motion.p>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: DURATION, ease: EASE }}
-            viewport={{ once: true, margin: MARGIN }}
-          >
+          <motion.p {...fadeInViewProps}>
             Menopause, by its nature, is a cellular change in a woman's body.
             But it’s so much more than this. It’s a transformation of a woman's
             soul. Through my practice, the Midlife Rebirth, I offer guidance
             through this transition of soul, an opportunity for rebirth.
           </motion.p>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: DURATION, ease: EASE }}
-            viewport={{ once: true, margin: MARGIN }}
-          >
+          <motion.p {...fadeInViewProps}>
             During your Midlife Rebirth we will use myth, nature, and art to
             uncover your unique purpose. Then, by pairing your purpose discovery
             with the psychology, biology, and spirituality of menopause and
@@ -178,21 +125,9 @@ function Intro() {
         </InnerFrame>
       </OuterFrame>
       <OuterFrame>
-        <motion.h3
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}
-        >
-          Your Journey
-        </motion.h3>
+        <motion.h3 {...fadeInViewProps}>Your Journey</motion.h3>
         <InnerFrame>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: DURATION, ease: EASE }}
-            viewport={{ once: true, margin: MARGIN }}
-          >
+          <motion.p {...fadeInViewProps}>
             Each woman’s journey is unique. Her journey begins and ends in her
             own time based on her strengths, needs, and her life story. To
             address this, I offer a variety of ways to guide you on your{" "}
@@ -201,37 +136,16 @@ function Intro() {
         </InnerFrame>
       </OuterFrame>
       <CardFrame>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}
-        >
+        <motion.div {...fadeInViewProps}>
           <Card>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: DURATION, ease: EASE }}
-              viewport={{ once: true, margin: MARGIN }}
-              className="libre italic center"
-            >
+            <motion.p {...fadeInViewProps} className="libre italic center">
               Transformative Mentoring
             </motion.p>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: DURATION, ease: EASE }}
-              viewport={{ once: true, margin: MARGIN }}
-            >
+            <motion.p {...fadeInViewProps}>
               I offer one-to-one bespoke mentoring sessions for women who want
               motion. a more intimate, personal approach.
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: DURATION, ease: EASE }}
-              viewport={{ once: true, margin: MARGIN }}
-            >
+            <motion.div {...fadeInViewProps}>
               <LinkText
                 to={"/transformative-mentoring"}
                 className="primary-button"
@@ -241,76 +155,34 @@ function Intro() {
             </motion.div>
           </Card>
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}
-        >
+        <motion.div {...fadeInViewProps}>
           <Card>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: DURATION, ease: EASE }}
-              viewport={{ once: true, margin: MARGIN }}
-              className="libre italic center"
-            >
+            <motion.p {...fadeInViewProps} className="libre italic center">
               Birthing Wisdom
             </motion.p>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: DURATION, ease: EASE }}
-              viewport={{ once: true, margin: MARGIN }}
-            >
+            <motion.p {...fadeInViewProps}>
               For women who are wanting to be part of a community as they move
               through this time of transition, I offer Birthing Wisdom, a
               6-month online program that includes group sessions as well as
               private mentoring sessions with me.
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: DURATION, ease: EASE }}
-              viewport={{ once: true, margin: MARGIN }}
-            >
+            <motion.div {...fadeInViewProps}>
               <LinkText to={"/birthing-wisdom"} className="primary-button">
                 <p>Birthing Wisdom</p>
               </LinkText>
             </motion.div>
           </Card>
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}
-        >
+        <motion.div {...fadeInViewProps}>
           <Card>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: DURATION, ease: EASE }}
-              viewport={{ once: true, margin: MARGIN }}
-              className="libre italic center"
-            >
+            <motion.p {...fadeInViewProps} className="libre italic center">
               Retreats
             </motion.p>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: DURATION, ease: EASE }}
-              viewport={{ once: true, margin: MARGIN }}
-            >
+            <motion.p {...fadeInViewProps}>
               For women looking for a shorter intensive, I run regular week-long
               Retreats.
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: DURATION, ease: EASE }}
-              viewport={{ once: true, margin: MARGIN }}
-            >
+            <motion.div {...fadeInViewProps}>
               <LinkText to={"/retreats"} className="primary-button">
                 <p>Retreats</p>
               </LinkText>

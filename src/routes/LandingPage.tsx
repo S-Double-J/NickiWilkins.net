@@ -28,13 +28,21 @@ const SVG = styled.svg`
   position: relative;
   margin-bottom: -6px;
 `
-function LandingPage() {
+interface Props{
+  fadeInViewProps: {
+    initial: { opacity: number };
+    whileInView: { opacity: number };
+    transition: { duration: number; ease: string };
+    viewport: { once: boolean; margin: string };
+  };
+}
+function LandingPage({fadeInViewProps}: Props) {
   return (
     <>
-      <Heroine />
-      <WiseWildWhole />
+      <Heroine fadeInViewProps={fadeInViewProps}/>
+      <WiseWildWhole fadeInViewProps={fadeInViewProps}/>
       <StickyScrollDiv>
-      <TheCycle />
+      <TheCycle fadeInViewProps={fadeInViewProps}/>
       <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 206">
         <path
           d="M0 206H1440V80C1440 80 1237.49 10.7817 1102.5 2.00005C870.274 -13.1072 752.925 118.349 520.5 130C316.552 140.224 0 80 0 80V206Z"
@@ -42,8 +50,8 @@ function LandingPage() {
         />
       </SVG>
       <ColourBox>
-        <Testimonials />
-        <Conclusion />
+        <Testimonials fadeInViewProps={fadeInViewProps}/>
+        <Conclusion fadeInViewProps={fadeInViewProps}/>
       </ColourBox>
       </StickyScrollDiv>
     </>

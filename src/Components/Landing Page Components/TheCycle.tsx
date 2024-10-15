@@ -52,7 +52,10 @@ const TextFrame = styled.div`
   gap: 50px;
 `;
 
-function TheCycle() {
+interface Props{
+  fadeInViewProps: object;
+}
+function TheCycle({fadeInViewProps}:Props) {
   const { scrollYProgress } = useScroll({});
   let scrollValues = [0.29, 0.82];
   let fontSizeValues = ["15px", "36px", "36px", "15px"];
@@ -268,20 +271,11 @@ function TheCycle() {
     );
   }
 
-  const DURATION = 0.7;
-  const EASE = "easeInOut";
-  const MARGIN = "-100px";
 
   return (
     <>
       <Section3 id="Third">
-        <motion.div
-          className="blur"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}
-        >
+        <motion.div className="blur" {...fadeInViewProps}>
           <TextFrame>
             <h3 className="ta-right white">The Rebirthing Spiral</h3>
             <p className="ta-right white">
@@ -300,10 +294,7 @@ function TheCycle() {
           style={{
             rotate,
           }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}
+          {...fadeInViewProps}
         >
           <Spiral
             className="spiral"

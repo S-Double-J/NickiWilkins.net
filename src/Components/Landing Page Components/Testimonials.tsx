@@ -76,10 +76,20 @@ const SlideButtonDiv = styled.div`
   align-items: center;
   justify-content: center;
 `;
-function Testimonials() {
-  const DURATION = 0.7;
-  const EASE = "easeInOut";
-  const MARGIN = "-100px";
+interface MotionProps {
+  initial: { opacity: number };
+  whileInView: { opacity: number };
+  transition: { duration: number; ease: string };
+  viewport: { once: boolean; margin: string };
+}
+
+interface Props {
+  fadeInViewProps: MotionProps;
+}
+function Testimonials({fadeInViewProps}: Props) {
+  const DURATION = fadeInViewProps.transition.duration;
+  const EASE = fadeInViewProps.transition.ease;
+
   const testimonials = [
     {
       text: `"My experience with Nicki was life changing. She helped me unlock aspects of myself that were hidden. The most transformative moment was when she helped me find my mythopoetic name: River Priestess of the Temple of Ordinary Moments. Working with her is like poetry incarnate."`,
@@ -153,12 +163,7 @@ function Testimonials() {
   return (
     <SectionContainer id="section-container">
       <SlideButtonDiv>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}
-        >
+        <motion.div {...fadeInViewProps}>
           <TestimonialSliderButton onClick={showPrevTestimonial}>
             <svg
               className="testimonial-slider-button-left"
@@ -178,13 +183,7 @@ function Testimonials() {
         </motion.div>
       </SlideButtonDiv>
       <TestimonialContainer id="testimonial-container" draggable="false">
-        <motion.h3
-          className="white center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}
-        >
+        <motion.h3 className="white center" {...fadeInViewProps}>
           What Nicki's clients have to say
         </motion.h3>
         <TestimonialViewWindow id="testimonial-view-window">
@@ -196,9 +195,7 @@ function Testimonials() {
                 translate: `${-100 * testimonialIndex}%`,
                 x: dragX,
               }}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: MARGIN }}
+              {...fadeInViewProps}
               drag="x"
               dragConstraints={{
                 left: 0,
@@ -241,12 +238,7 @@ function Testimonials() {
             </motion.div>
           ))}
         </TestimonialViewWindow>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}
-        >
+        <motion.div {...fadeInViewProps}>
           <DotContainer>
             {testimonials.map((_, index) => (
               <DotButton
@@ -273,12 +265,7 @@ function Testimonials() {
         </motion.div>
       </TestimonialContainer>
       <SlideButtonDiv>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: DURATION, ease: EASE }}
-          viewport={{ once: true, margin: MARGIN }}
-        >
+        <motion.div {...fadeInViewProps}>
           <TestimonialSliderButton onClick={showNextTestimonial}>
             <svg
               className="testimonial-slider-button-right"

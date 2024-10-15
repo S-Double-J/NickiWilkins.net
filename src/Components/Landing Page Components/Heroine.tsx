@@ -60,7 +60,6 @@ function MakeSplitTextAnim({ children }: { children: string }) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.7, ease: "easeInOut", delay: 0.15 * i }}
-            viewport={{ once: true }}
           >
             {l}
           </motion.span>
@@ -69,7 +68,12 @@ function MakeSplitTextAnim({ children }: { children: string }) {
     </span>
   );
 }
-function Heroine() {
+interface Props{
+  fadeInViewProps: object;
+}
+function Heroine({fadeInViewProps}: Props) {
+  const DURATION = 0.7;
+  const EASE = "easeInOut";
   return (
     <>
       <Title>
@@ -77,18 +81,14 @@ function Heroine() {
           <MakeSplitTextAnim>NICKI WILKINS</MakeSplitTextAnim>
         </h1>
         <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.7, ease: "easeInOut", delay: 2.1 }}
-          viewport={{ once: true }}
+          {...fadeInViewProps}
+          transition={{ duration: DURATION, ease: EASE, delay: 2.1 }}
         >
           Midlife is not a crisis, it's a rebirth!
         </motion.h2>
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.7, ease: "easeInOut", delay: 2.45 }}
-          viewport={{ once: true }}
+          {...fadeInViewProps}
+          transition={{ duration: DURATION, ease: EASE, delay: 2.45 }}
         >
           <ButtonDiv>
             <Link to={"/contact"} className="primary-button">

@@ -9,13 +9,18 @@ import "./routes/App.css";
 import BirthingWisdom from "./routes/BirthingWidom.tsx";
 import TransformativeMentoring from "./routes/TransformativeMentoring.tsx";
 import LandingPage from "./routes/LandingPage.tsx";
-
+const fadeInViewProps = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  transition: { duration: 1, ease: "easeInOut" },
+  viewport: { once: true, margin: "-100px" },
+};
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root key="Root" />,
     children: [
-      { path: "/", element: <LandingPage key="LandingPage" /> },
+      { path: "/", element: <LandingPage key="LandingPage" fadeInViewProps={fadeInViewProps}/> },
       {
         path: "about",
         element: <About key="About" />,
@@ -32,7 +37,7 @@ const router = createBrowserRouter([
         path: "birthing-wisdom",
         element: (
           <>
-            <BirthingWisdom key="Birthing Wisdom" />
+            <BirthingWisdom key="Birthing Wisdom" fadeInViewProps={fadeInViewProps}/>
           </>
         ),
       },

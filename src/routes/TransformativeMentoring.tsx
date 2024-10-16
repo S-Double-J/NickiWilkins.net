@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import "./projects.css";
 import { Link } from "react-router-dom";
-import DDButton from "../Components/DropDownButton";
 import { motion } from "framer-motion";
+import DropDownBox from "../Components/DropDownBox";
 
 const Box = styled.div`
   display: flex;
@@ -15,23 +15,7 @@ const Box = styled.div`
   background: var(--Primary-Dark);
   box-sizing: border-box;
 `;
-const BoxInnerRoundedHalf = styled(motion.div)`
-  display: flex;
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  border-radius: 16px;
-  border: 1px solid var(--Primary-Light);
-`;
-const RoundedHalfInnerTop = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-`;
+
 interface Props {
   fadeInViewProps: {
     initial: { opacity: number };
@@ -48,6 +32,12 @@ function TransformativeMentoring({
   const DURATION = fadeInViewProps.transition.duration;
   const EASE = fadeInViewProps.transition.ease;
   const MARGIN = fadeInViewProps.viewport.margin;
+  const lightBoxProps = {
+    bg: "var(--Primary-Light)",
+    border: "1px solid var(--Primary-Light)",
+    class_name: "white",
+    fadeInViewProps: fadeInViewProps,
+  };
   return (
     <div className="page-container">
       <div className="title-frame">
@@ -279,54 +269,72 @@ function TransformativeMentoring({
             feels right to you.
           </motion.p>
           <Box style={{ padding: 10 }}>
-            <BoxInnerRoundedHalf {...fadeInViewProps}>
-              <RoundedHalfInnerTop>
-                <h4 className="white">Nature</h4>
-                <DDButton bg="var(--Primary-Light)" />
-              </RoundedHalfInnerTop>
-            </BoxInnerRoundedHalf>
-            <BoxInnerRoundedHalf {...fadeInViewProps}>
-              <RoundedHalfInnerTop>
-                <h4 className="white">Story</h4>
-                <DDButton bg="var(--Primary-Light)" />
-              </RoundedHalfInnerTop>
-            </BoxInnerRoundedHalf>
-            <BoxInnerRoundedHalf {...fadeInViewProps}>
-              <RoundedHalfInnerTop>
-                <h4 className="white">Archetypes</h4>
-                <DDButton bg="var(--Primary-Light)" />
-              </RoundedHalfInnerTop>
-            </BoxInnerRoundedHalf>
-            <BoxInnerRoundedHalf {...fadeInViewProps}>
-              <RoundedHalfInnerTop>
-                <h4 className="white">Creativity</h4>
-                <DDButton bg="var(--Primary-Light)" />
-              </RoundedHalfInnerTop>
-            </BoxInnerRoundedHalf>
-            <BoxInnerRoundedHalf {...fadeInViewProps}>
-              <RoundedHalfInnerTop>
-                <h4 className="white">Meditation</h4>
-                <DDButton bg="var(--Primary-Light)" />
-              </RoundedHalfInnerTop>
-            </BoxInnerRoundedHalf>
-            <BoxInnerRoundedHalf {...fadeInViewProps}>
-              <RoundedHalfInnerTop>
-                <h4 className="white">Soul-centric Journaling</h4>
-                <DDButton bg="var(--Primary-Light)" />
-              </RoundedHalfInnerTop>
-            </BoxInnerRoundedHalf>
-            <BoxInnerRoundedHalf {...fadeInViewProps}>
-              <RoundedHalfInnerTop>
-                <h4 className="white">Ceremony</h4>
-                <DDButton bg="var(--Primary-Light)" />
-              </RoundedHalfInnerTop>
-            </BoxInnerRoundedHalf>
-            <BoxInnerRoundedHalf {...fadeInViewProps}>
-              <RoundedHalfInnerTop>
-                <h4 className="white">Experience</h4>
-                <DDButton bg="var(--Primary-Light)" />
-              </RoundedHalfInnerTop>
-            </BoxInnerRoundedHalf>
+            <DropDownBox boxProps={lightBoxProps} title="Nature">
+              <p className="white">
+                <b>Nature</b> is our most loyal ally on this journey. Spending
+                time building our relationship with the land invites perspective
+                and a chance to see ourselves in a larger context. I encourage
+                you to foster an authentic and intuitive relationship with
+                Nature.
+              </p>
+            </DropDownBox>
+            <DropDownBox boxProps={lightBoxProps} title="Story">
+              <p className="white">
+                <b>Story</b> is medicine for the soul. Story helps us connect
+                with ourselves through empathy. Is there a myth you’d like to
+                explore? One that’s been calling you?
+              </p>
+            </DropDownBox>
+            <DropDownBox boxProps={lightBoxProps} title="Archetypes">
+              <p className="white">
+                <b>Archetypes</b> are a way to rediscover wholeness. It’s a way
+                to identify and work with the different parts of you. For
+                example, working the Artemis archetype might rekindle your love
+                of the wilderness. As a result, nature connection becomes a
+                doorway to find purpose and meaning.
+              </p>
+            </DropDownBox>
+            <DropDownBox boxProps={lightBoxProps} title="Creativity">
+              <p className="white">
+                <b>Creativity</b> is a spiritual practice, and because it uses
+                the language of soul (metaphor, images, symbols), it’s a useful
+                way to access wisdom, wholeness, and purpose. The art we make
+                mirrors our soul. This art then offers an opportunity to reflect
+                and communicate your rebirthing journey.
+              </p>
+            </DropDownBox>
+            <DropDownBox boxProps={lightBoxProps} title="Meditation">
+              <p className="white">
+                <b>Meditation</b> is a great tool for answering the question:
+                Who am I? It also invites us into the present moment. I offer my
+                clients a number of meditations for their soulwork.
+              </p>
+            </DropDownBox>
+            <DropDownBox
+              boxProps={lightBoxProps}
+              title="Soulcentric Journaling"
+            >
+              <p className="white">
+                <b>Soulcentric Journaling</b> is a free-writing technique to
+                create a conversation with your truest self and your soul.
+              </p>
+            </DropDownBox>
+            <DropDownBox boxProps={lightBoxProps} title="Ceremony">
+              <p className="white">
+                <b>Ceremony</b> is a way to recognize and behold what you are
+                becoming—a wise woman elder. As your rebirthing journey comes to
+                an end, I invite you to consider a ceremony. It could be private
+                or with community.
+              </p>
+            </DropDownBox>
+            <DropDownBox boxProps={lightBoxProps} title="I bring my experience">
+              <p className="white">
+                <b>I bring my experience:</b> my own rebirthing midlife journey
+                (I’ve walked where you walk), my former life as a priest (I hold
+                sacred space for others), and my work as a certified Purpose
+                Guide (I walk with others on the journey of soul initiation).
+              </p>
+            </DropDownBox>
           </Box>
           <motion.p {...fadeInViewProps}>
             <b>
@@ -423,7 +431,7 @@ function TransformativeMentoring({
             right for you. All these sessions will be held online, via a
             video-call.
           </motion.p>
-         <motion.p {...fadeInViewProps} className="white">
+          <motion.p {...fadeInViewProps} className="white">
             One 75-minute Session:
             <br />
             £100

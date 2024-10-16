@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import DDButton from "../Components/DropDownButton";
+import DropDownBox from "../Components/DropDownBox";
 import "./projects.css";
 import { motion } from "framer-motion";
 
@@ -24,23 +24,6 @@ const BoxInnerNoBorder = styled.div`
   flex-shrink: 0;
   align-self: stretch;
   box-sizing: border-box;
-`;
-const BoxInnerRoundedHalf = styled(motion.div)`
-  display: flex;
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  border-radius: 16px;
-  border: 1px solid var(--Primary-Light);
-`;
-const RoundedHalfInnerTop = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
 `;
 const SmallBox = styled.div`
   display: flex;
@@ -74,7 +57,18 @@ interface Props {
 function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
   const DURATION = fadeInViewProps.transition.duration;
   const EASE = fadeInViewProps.transition.ease;
-
+  const lightBoxProps = {
+    bg: "var(--Primary-Light)",
+    border: "1px solid var(--Primary-Light)",
+    class_name: "white",
+    fadeInViewProps: fadeInViewProps,
+  };
+  const darkBoxProps = {
+    bg: "var(--Primary-Dark)",
+    border: "1px solid var(--Primary-Dark)",
+    class_name: "",
+    fadeInViewProps: fadeInViewProps,
+  };
   return (
     <>
       <div className="page-container" key="Birthing Wisdom Page">
@@ -413,36 +407,60 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             </motion.p>
             <motion.div {...fadeInViewProps}>
               <Box style={{ padding: 10 }}>
-                <BoxInnerRoundedHalf {...fadeInViewProps}>
-                  <RoundedHalfInnerTop>
-                    <h4 className="white">Story</h4>
-                    <DDButton bg="var(--Primary-Light)" />
-                  </RoundedHalfInnerTop>
-                </BoxInnerRoundedHalf>
-                <BoxInnerRoundedHalf {...fadeInViewProps}>
-                  <RoundedHalfInnerTop>
-                    <h4 className="white">Personal Discovery</h4>
-                    <DDButton bg="var(--Primary-Light)" />
-                  </RoundedHalfInnerTop>
-                </BoxInnerRoundedHalf>
-                <BoxInnerRoundedHalf {...fadeInViewProps}>
-                  <RoundedHalfInnerTop>
-                    <h4 className="white">The Wisdom Circle</h4>
-                    <DDButton bg="var(--Primary-Light)" />
-                  </RoundedHalfInnerTop>
-                </BoxInnerRoundedHalf>
-                <BoxInnerRoundedHalf {...fadeInViewProps}>
-                  <RoundedHalfInnerTop>
-                    <h4 className="white">Private Mentoring</h4>
-                    <DDButton bg="var(--Primary-Light)" />
-                  </RoundedHalfInnerTop>
-                </BoxInnerRoundedHalf>
-                <BoxInnerRoundedHalf {...fadeInViewProps}>
-                  <RoundedHalfInnerTop>
-                    <h4 className="white">Personal Study</h4>
-                    <DDButton bg="var(--Primary-Light)" />
-                  </RoundedHalfInnerTop>
-                </BoxInnerRoundedHalf>
+                <DropDownBox boxProps={lightBoxProps} title="Story">
+                  <p className="white">
+                    Story is medicine that offers an invitation to find those
+                    lost parts of you.
+                  </p>
+                  <p className="white">
+                    We will be working with the myth of The Handless Maiden, an
+                    underworld story that addresses the feminine life cycle.
+                  </p>
+                  <p className="white">
+                    We will work with archetypal psychology, searching for the
+                    face of the Wise Woman. In our quest to find your unique
+                    elderhood, we will explore a variety of archetypes in women
+                    over fifty.
+                  </p>
+                </DropDownBox>
+                <DropDownBox boxProps={lightBoxProps} title="Soul Practices">
+                  <p className="white">
+                    This thread invites you to work with a variety of practices
+                    to move closer to your soul: meditation, nature connection,
+                    soulcentric journaling, and creativity.
+                  </p>
+                </DropDownBox>
+                <DropDownBox
+                  boxProps={lightBoxProps}
+                  title="Personal Discovery"
+                >
+                  <p className="white">
+                    This is a journey of personal inquiry and purpose discovery.
+                    This will be the work we do together in our private
+                    mentoring sessions. The focus is on finding your purpose and
+                    mythopoetic identity.
+                  </p>
+                </DropDownBox>
+                <DropDownBox boxProps={lightBoxProps} title="The Wisdom Circle">
+                  <p className="white">
+                    These are our online group sessions. They will be used for
+                    teaching, building community, group guidance, and the
+                    exploration of the different stages of soul initiation.
+                  </p>
+                </DropDownBox>
+                <DropDownBox boxProps={lightBoxProps} title="Private Mentoring">
+                  <p className="white">
+                    These one-on-one sessions with me will allow you to dive
+                    deeper into your purpose and rebirthing process.
+                  </p>
+                </DropDownBox>
+                <DropDownBox boxProps={lightBoxProps} title="Personal Study">
+                  <p className="white">
+                    Practices are given to you to complete between sessions,
+                    including personal inquiry, soul practices, and creative
+                    prompts.
+                  </p>
+                </DropDownBox>
               </Box>
             </motion.div>
           </div>
@@ -465,42 +483,205 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               <Box
                 style={{ padding: "10px", background: "var(--Primary-Light)" }}
               >
-                <BoxInnerRoundedHalf
-                  {...fadeInViewProps}
-                  style={{ borderColor: "var(--Primary-Dark)" }}
+                <DropDownBox
+                  boxProps={darkBoxProps}
+                  title="PREPARATION: Cultivating your innate wholeness"
                 >
-                  <RoundedHalfInnerTop>
-                    <h4>Preparation: Cultivating your innate wholeness</h4>
-                    <DDButton bg="var(--Primary-Dark" />
-                  </RoundedHalfInnerTop>
-                </BoxInnerRoundedHalf>
-                <BoxInnerRoundedHalf
-                  {...fadeInViewProps}
-                  style={{ borderColor: "var(--Primary-Dark)" }}
+                  <h4>1. Key Explorations</h4>
+                  <p>How to cultivate your innate wholeness?</p>
+                  <ul>
+                    <li>Reviewing your life story.</li>
+                    <li>Gathering your allies and adversaries.</li>
+                    <li>Meeting your Inner Protectors.</li>
+                    <li>Discovering your Default Purpose.</li>
+                    <li>
+                      Working with myth and archetypes to find lost parts.
+                    </li>
+                    <li>Cultivating soul practices.</li>
+                  </ul>
+                  <h4>2. Story</h4>
+                  <p>
+                    The Handless Maiden:
+                    <br />
+                    Loss and betrayal are the first steps on an initiatory
+                    journey to the underground forest. We will be looking at the
+                    ways this story resonates with you.
+                  </p>
+                  <p>
+                    The Feminine Face of Wisdom: Metis.
+                    <br />
+                    What does her story have to say to women who are moving into
+                    the wisdom years?
+                  </p>
+                  <h4>3. Soul Practices</h4>
+                  <p>
+                    Deepening into Soul:
+                    <br />
+                    Meditation, communing with Nature, making art, building a
+                    small altar for this journey.
+                  </p>
+                  <p>
+                    Creative Expression:
+                    <br />
+                    Self-Portrait 1.
+                    <br />
+                    Over the course of this journey, you will be invited to make
+                    a series of four self-portraits using your preferred medium:
+                    paint, photography, poetry, writing, sculpture, nature art.
+                  </p>
+                  <h4>4. Personal Discovery</h4>
+                  <p>
+                    Purpose Discovery. We will focus on the following facets of
+                    purpose:
+                  </p>
+                  <ul>
+                    <li>What do you envision for the world?</li>
+                    <li>What are your deepest values?</li>
+                    <li>What are your innate strengths and talents?</li>
+                    <li>What is your essence?</li>
+                  </ul>
+                  <p>
+                    You will receive a packet for personal inquiry at each stage
+                    along the journey.
+                  </p>
+                </DropDownBox>
+                <DropDownBox
+                  boxProps={darkBoxProps}
+                  title="DISSOLUTION: Softening the influence of Ego"
                 >
-                  <RoundedHalfInnerTop>
-                    <h4>Dissolution: Softening the influence of Ego</h4>
-                    <DDButton bg="var(--Primary-Dark" />
-                  </RoundedHalfInnerTop>
-                </BoxInnerRoundedHalf>
-                <BoxInnerRoundedHalf
-                  {...fadeInViewProps}
-                  style={{ borderColor: "var(--Primary-Dark)" }}
+                  <h4>1. Key Explorations</h4>
+                  <p>
+                    How can we soften the influence of Ego for Soul to lead?
+                  </p>
+                  <ul>
+                    <li>Reviewing your relationship with death.</li>
+                    <li>Accepting the reality that life has finite limits.</li>
+                    <li>Working with life scripts and subpersonalities.</li>
+                    <li>Cultivating a deeper relationship with Soul.</li>
+                  </ul>
+                  <h4>2. Story</h4>
+                  <p>
+                    The Handless Maiden:
+                    <br />
+                    We will explore the characters in the story as symbolic
+                    representations of the parts of the psyche: the sleepy one,
+                    the trailblazer, the transformer, the mage, the pregnant
+                    one, the predator.
+                  </p>
+                  <p>
+                    The Feminine Face of Wisdom: The Cailleach and Kali.
+                    <br />
+                    We will explore the history of the Crone. Who is she? What’s
+                    her offering? Her role in the Life/Death/Life cycle?
+                  </p>
+                  <h4>3. Soul Practices</h4>
+                  <p>
+                    Deepening into Soul:
+                    <br />
+                    Your work at this stage is twofold: the practice of letting
+                    go and the practice of opening your heart more fully to your
+                    soul. We will work with grief and ceremony as well as the
+                    art of romancing nature.
+                  </p>
+                  <p>
+                    Creative Expression:
+                    <br />
+                    Self-Portrait 2.
+                  </p>
+                  <h4>4. Personal Discovery</h4>
+                  <p>Purpose Discovery.</p>
+                  <ul>
+                    <li>What is your Giveaway?</li>
+                    <li>What is your Mission?</li>
+                    <li>What is your Message?</li>
+                    <li>What is your Delivery System?</li>
+                  </ul>
+                </DropDownBox>
+                <DropDownBox
+                  boxProps={darkBoxProps}
+                  title="SOUL ENCOUNTER: Receiving gifts from Soul."
                 >
-                  <RoundedHalfInnerTop>
-                    <h4>Soul Encounter: Receiving gifts from Soul</h4>
-                    <DDButton bg="var(--Primary-Dark" />
-                  </RoundedHalfInnerTop>
-                </BoxInnerRoundedHalf>
-                <BoxInnerRoundedHalf
-                  {...fadeInViewProps}
-                  style={{ borderColor: "var(--Primary-Dark)" }}
+                  <h4>1. Key Explorations</h4>
+                  <ul>
+                    <li>Surrendering to your deepest longing.</li>
+                    <li>What does your truest self whisper?</li>
+                    <li>Moving from egocentric to soul-centric living.</li>
+                    <li>Discovering your True Purpose.</li>
+                  </ul>
+                  <h4>2. Story</h4>
+                  <p>
+                    The Handless Maiden:
+                    <br />
+                    We will explore the initiatory path of the maiden as she
+                    enters and spends time in the large wild forest. This is the
+                    realm of the wild woman. What takes root? What does she
+                    find?
+                  </p>
+                  <p>
+                    The Feminine Face of Wisdom: Sophia, Hecate, Hestia.
+                    <br />
+                    The art of meditative listening for mystical and intuitive
+                    wisdom.
+                  </p>
+                  <h4>3. Soul Practices</h4>
+                  <p>
+                    Deepening into Soul: THE SOUL QUEST
+                    <br />
+                    Solo time on the land (8hours).
+                  </p>
+                  <p>
+                    Creative Expression:
+                    <br />
+                    Self-Portrait 3.
+                  </p>
+                  <h4>4. Personal Discovery</h4>
+                  <p>The Soul Quest is an act of soul-centric living:</p>
+                  <ul>
+                    <li>How can we surrender to Soul?</li>
+                    <li>Asking Nature: What can I do for you?</li>
+                    <li>Practising the art of listening.</li>
+                  </ul>
+                </DropDownBox>
+                <DropDownBox
+                  boxProps={darkBoxProps}
+                  title="RETURN: Integration and the embodiment of wisdom."
                 >
-                  <RoundedHalfInnerTop>
-                    <h4>Return: Integration and the embodiment of wisdom</h4>
-                    <DDButton bg="var(--Primary-Dark" />
-                  </RoundedHalfInnerTop>
-                </BoxInnerRoundedHalf>
+                  <h4>1. Key Explorations</h4>
+                  <ul>
+                    <li>Returning to your community.</li>
+                    <li>
+                      Keeping your soul encounter experiences close with
+                      expressive arts.
+                    </li>
+                    <li>Discerning your Sacred Instructions</li>
+                    <li>Your mythopoetic identity.</li>
+                    <li>Developing skills that resonate with your mythopoetic identity.
+                    </li>
+                    <li>Cultivating more facets of your wholeness.
+                    </li>
+                    <li>Begin to embody your Wise Woman.
+                    </li>
+                  </ul>
+                  <h4>2. Story</h4>
+                  <p>
+                    The Handless Maiden:
+                    <br />
+                    In the last stage of our study of this myth, we will focus on wholeness and the reunion of the sacred masculine and feminine.
+                  </p>
+                  <p>
+                    The Feminine Face of Wisdom: Self-Portrait 4 </p>
+                  <h4>3. Soul Practices</h4>
+                  <p>
+                    Creative Expression: Writing Your Unique Myth
+                  </p>
+                  <h4>4. Personal Discovery</h4>
+                  <ul>
+                    <li>Your mythopoetic identity.
+                    </li>
+                    <li>Writing your Wise Woman Commitment.</li>
+                    <li>Writing your Wise Woman Blessing Way.</li>
+                  </ul>
+                </DropDownBox>
               </Box>
             </motion.div>
           </div>

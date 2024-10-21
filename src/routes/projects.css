@@ -36,6 +36,7 @@
     box-sizing: border-box;
     width: 100%;
     background-color: var(--Accent-Dark);
+    gap: 100px;
 }
 
 .section-text-container {

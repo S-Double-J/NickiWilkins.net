@@ -95,6 +95,7 @@ const SectionButton = styled(motion.button)`
   position: relative;
   background-color: var(--Primary-Light);
   border: 1px solid var(--Accent-Dark);
+  cursor: pointer;
 `;
 const ActiveSpan = styled(motion.span)`
   display: flex;
@@ -109,6 +110,7 @@ const ActiveSpan = styled(motion.span)`
   position: absolute;
   background: var(--Accent-Dark);
   border: none;
+  cursor: pointer;
 `;
 
 const HideButtonDiv = styled.button`
@@ -127,6 +129,7 @@ const HideButtonDiv = styled.button`
   box-shadow: inherit;
   border: none;
   z-index: 100;
+  cursor: pointer;
 `;
 const HideButton = styled(motion.button)`
   display: flex;
@@ -140,6 +143,7 @@ const HideButton = styled(motion.button)`
   border-radius: 30px;
   border: 1px solid var(--Primary-Dark);
   background: var(--Primary-Light);
+  cursor: pointer;
 `;
 const HideButtonSVG = styled.svg`
   stroke: var(--Primary-Dark);
@@ -184,31 +188,53 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
 
   function ProjectsNavTool() {
     const [isHidden, setIsHidden] = useState(false);
-    const ForewordIsInView = useInView(ForewordRef, {margin: "-200px 0px"});
-    const LetterIsInView = useInView(LetterRef, {margin: "-200px 0px"});
-    const IntroIsInView = useInView(IntroRef, {margin: "-200px 0px"});
-    const YourJourneyIsInView = useInView(YourJourneyRef, {margin: "-200px 0px"});
-    const TheThreadsIsInView = useInView(TheThreadsRef, {margin: "-200px 0px"});
-    const TheFourStagesIsInView = useInView(TheFourStagesRef, {margin: "-200px 0px"});
-    const NickisRoleIsInView = useInView(NickisRoleRef, {margin: "-200px 0px"});
-    const TheDetailsIsInView = useInView(TheDetailsRef, {margin: "-200px 0px"});
-    const FAQsIsInView = useInView(FAQsRef, {margin: "-200px 0px"});
-    const OtherOptionsIsInView = useInView(OtherOptionsRef, {margin: "-200px 0px"});
+    const ForewordIsInView = useInView(ForewordRef, { margin: "-200px 0px" });
+    const LetterIsInView = useInView(LetterRef, { margin: "-200px 0px" });
+    const IntroIsInView = useInView(IntroRef, { margin: "-200px 0px" });
+    const YourJourneyIsInView = useInView(YourJourneyRef, {
+      margin: "-200px 0px",
+    });
+    const TheThreadsIsInView = useInView(TheThreadsRef, {
+      margin: "-200px 0px",
+    });
+    const TheFourStagesIsInView = useInView(TheFourStagesRef, {
+      margin: "-200px 0px",
+    });
+    const NickisRoleIsInView = useInView(NickisRoleRef, {
+      margin: "-200px 0px",
+    });
+    const TheDetailsIsInView = useInView(TheDetailsRef, {
+      margin: "-200px 0px",
+    });
+    const FAQsIsInView = useInView(FAQsRef, { margin: "-200px 0px" });
+    const OtherOptionsIsInView = useInView(OtherOptionsRef, {
+      margin: "-200px 0px",
+    });
 
     return (
       <FixedPositionContainer
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
         animate={isHidden ? "hidden" : "visible"}
         variants={{
           hidden: {
-            left: -156,
+            left: -160,
           },
           visible: {
-            left: 0,
+            left: 10,
           },
         }}
         transition={{
-          duration: 0.5,
-          ease: "easeInOut",
+          isHidden: {
+            duration: 0.5,
+            ease: "easeInOut",
+          },
+          opacity: {
+            delay: 3,
+            duration: 0.8,
+            ease: "easeInOut",
+          },
         }}
       >
         <GlassContainer>
@@ -587,7 +613,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                 duration: 0.8,
                 type: "spring",
                 bounce: 0.5,
-                delay: 0.3,
+                delay: 0.1,
               }}
             >
               <HideButtonSVG

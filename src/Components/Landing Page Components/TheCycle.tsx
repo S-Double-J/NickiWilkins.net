@@ -4,15 +4,16 @@ import styled from "styled-components";
 
 const Section3 = styled(motion.div)`
   width: 100%;
-  height: calc(100vh - 58px);
+  height: 100svh;
   background-color: var(--Primary-Dark);
   position: sticky;
   position: -webkit-sticky;
-  top: 62px;
+  top: 0px;
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
   z-index: 0;
+  padding-top: 62px;
 `;
 
 const StickyScrollDiv = styled.div`
@@ -51,6 +52,21 @@ const TextFrame = styled.div`
   align-items: flex-end;
   gap: 50px;
 `;
+const BlurDiv = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgba(140, 28, 28, 0.01);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+  width: auto;
+  height: 300px;
+  box-shadow: -4px -4px 4px 0px rgba(172, 172, 172, 0.25) inset,
+  4px 4px 4px 0px rgba(172, 172, 172, 0.25) inset;
+  border-radius: 31px;
+  margin-top: 20px;
+  margin-right: 5px;
+`
 
 interface Props{
   fadeInViewProps: object;
@@ -275,7 +291,7 @@ function TheCycle({fadeInViewProps}:Props) {
   return (
     <>
       <Section3 id="Third">
-        <motion.div className="blur" {...fadeInViewProps}>
+        <BlurDiv  {...fadeInViewProps}>
           <TextFrame>
             <h3 className="ta-right white">The Rebirthing Spiral</h3>
             <p className="ta-right white">
@@ -288,7 +304,7 @@ function TheCycle({fadeInViewProps}:Props) {
               rebirth. 
             </p>
           </TextFrame>
-        </motion.div>
+        </BlurDiv>
         <motion.div
           className="spiral-div"
           style={{

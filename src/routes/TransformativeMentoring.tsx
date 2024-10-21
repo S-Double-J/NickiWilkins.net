@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import "./projects.css";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import DropDownBox from "../Components/DropDownBox";
+import "./projects.css";
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
 
 const Box = styled.div`
   display: flex;
@@ -15,7 +16,110 @@ const Box = styled.div`
   background: var(--Primary-Dark);
   box-sizing: border-box;
 `;
+const FixedPositionContainer = styled(motion.div)`
+  width: auto;
+  position: fixed;
+  left: 0px;
+  top: calc(50svh + 62px);
+  transform: translateY(-50%);
+  overflow: visible;
+  z-index: 100;
+`;
+const GlassContainer = styled.div`
+  width: auto;
+  display: flex;
+  padding: 50px 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: -4px -4px 4px 0px rgba(172, 172, 172, 0.25) inset,
+    4px 4px 4px 0px rgba(172, 172, 172, 0.25) inset;
+  backdrop-filter: blur(5px);
+  box-sizing: border-box;
+  overflow: visible;
+  z-index: 100;
+`;
+const ButtonText = styled(motion.p)`
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.14px;
+  margin: 0;
+  padding: 0;
+`;
+const SectionButton = styled(motion.button)`
+  display: flex;
+  width: 138px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  box-shadow: inherit;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--Primary-Light);
+  border: 1px solid var(--Accent-Dark);
+  cursor: pointer;
+`;
+const ActiveSpan = styled(motion.span)`
+  display: flex;
+  width: 138px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  box-shadow: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: absolute;
+  background: var(--Accent-Dark);
+  border: none;
+  cursor: pointer;
+`;
 
+const HideButtonDiv = styled.button`
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -45px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(5px);
+  box-shadow: inherit;
+  border: none;
+  z-index: 100;
+  cursor: pointer;
+`;
+const HideButton = styled(motion.button)`
+  display: flex;
+  width: 30px;
+  height: 30px;
+  padding-left: 3px;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  border: 1px solid var(--Primary-Dark);
+  background: var(--Primary-Light);
+  cursor: pointer;
+`;
+const HideButtonSVG = styled.svg`
+  stroke: var(--Primary-Dark);
+  transform: rotate(180deg);
+`;
 interface Props {
   fadeInViewProps: {
     initial: { opacity: number };
@@ -38,8 +142,272 @@ function TransformativeMentoring({
     class_name: "white",
     fadeInViewProps: fadeInViewProps,
   };
+
+  const ForewordRef = useRef(null);
+  const IntroRef = useRef(null);
+  const YourJourneyRef = useRef(null);
+  const NickisRoleRef = useRef(null);
+  const TheDetailsRef = useRef(null);
+
+  function ProjectsNavTool() {
+    const [isHidden, setIsHidden] = useState(false);
+    const ForewordIsInView = useInView(ForewordRef, { margin: "-200px 0px" });
+    const IntroIsInView = useInView(IntroRef, { margin: "-200px 0px" });
+    const YourJourneyIsInView = useInView(YourJourneyRef, {
+      margin: "-200px 0px",
+    });
+    const NickisRoleIsInView = useInView(NickisRoleRef, {
+      margin: "-200px 0px",
+    });
+    const TheDetailsIsInView = useInView(TheDetailsRef, {
+      margin: "-200px 0px",
+    });
+
+    return (
+      <FixedPositionContainer
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        animate={isHidden ? "hidden" : "visible"}
+        variants={{
+          hidden: {
+            left: -160,
+          },
+          visible: {
+            left: 10,
+          },
+        }}
+        transition={{
+          isHidden: {
+            duration: 0.5,
+            ease: "easeInOut",
+          },
+          opacity: {
+            delay: 3.7,
+            duration: 0.8,
+            ease: "easeInOut",
+          },
+        }}
+      >
+        <GlassContainer>
+          <SectionButton
+            initial={false}
+            animate={ForewordIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("Foreword");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>Foreword</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={ForewordIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">Foreword</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
+            animate={IntroIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("Intro");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>Intro</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={IntroIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">Intro</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
+            animate={YourJourneyIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("YourJourney");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>Your Journey</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={YourJourneyIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">Your Journey</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
+            animate={NickisRoleIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("NickisRole");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>Nicki's Role</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={NickisRoleIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">Nicki's Role</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
+            animate={TheDetailsIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("TheDetails");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>The Details</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={TheDetailsIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">The Details</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <HideButtonDiv onClick={() => setIsHidden((prevValue) => !prevValue)}>
+            <HideButton
+              animate={isHidden ? "hidden" : "visible"}
+              variants={{
+                hidden: {
+                  rotate: "180deg",
+                },
+                visible: {
+                  rotate: "0deg",
+                },
+              }}
+              transition={{
+                duration: 0.8,
+                type: "spring",
+                bounce: 0.5,
+                delay: 0.1,
+              }}
+            >
+              <HideButtonSVG
+                width="19"
+                height="22"
+                viewBox="0 0 19 22"
+                fill="none"
+              >
+                <path
+                  d="M3.5 1L16.5 11L3.5 21M1.5 3.5L12 11L1.5 18.5"
+                  stroke-width="2"
+                />
+              </HideButtonSVG>
+            </HideButton>
+          </HideButtonDiv>
+        </GlassContainer>
+      </FixedPositionContainer>
+    );
+  }
   return (
     <div className="page-container">
+      <ProjectsNavTool />
       <div className="title-frame">
         <h1 className="projects-title-h">
           <MakeSplitTextAnim>TRANSFORMATIVE MENTORING</MakeSplitTextAnim>
@@ -55,7 +423,7 @@ function TransformativeMentoring({
           journey of rebirth
         </motion.p>
       </div>
-      <section className="section-frame" key="Foreword">
+      <section className="section-frame" ref={ForewordRef} id="Foreword">
         <div className="section-text-container">
           <motion.h3 {...fadeInViewProps}>Foreword</motion.h3>
           <motion.p {...fadeInViewProps}>
@@ -109,7 +477,7 @@ function TransformativeMentoring({
           </motion.div>
         </div>
       </section>
-      <section className="section-frame-dark" key="what is mentoring?">
+      <section className="section-frame-dark" ref={IntroRef} id="Intro">
         <div className="section-text-container">
           <motion.h3 {...fadeInViewProps} className="white">
             What is <i>mentoring</i> and how does it <i>differ</i> from{" "}
@@ -138,11 +506,7 @@ function TransformativeMentoring({
             where you are walking now.
           </motion.p>
         </div>
-      </section>
-      <section className="section-frame-dark" style={{ padding: 0 }}>
-        <motion.line {...fadeInViewProps} className="line-white" />
-      </section>
-      <section className="section-frame-dark" key="what is TM?">
+          <motion.line {...fadeInViewProps} className="line-white" style={{width: "100%"}}/>
         <div className="section-text-container">
           <motion.h3 {...fadeInViewProps} className="white">
             What is <i>Transformative Mentoring</i>?
@@ -166,10 +530,7 @@ function TransformativeMentoring({
           </motion.p>
         </div>
       </section>
-      <section
-        className="section-frame"
-        key="what will your journey look like?"
-      >
+      <section id="YourJourney" ref={YourJourneyRef} className="section-frame">
         <div className="section-text-container">
           <motion.h3 {...fadeInViewProps}>
             So, what will <i>Your Journey</i> look like?
@@ -380,7 +741,7 @@ function TransformativeMentoring({
           </ul>
         </div>
       </section>
-      <section className="section-frame-dark" key="my role">
+      <section className="section-frame-dark" ref={NickisRoleRef} id="NickisRole">
         <div className="section-text-container">
           <motion.h3 {...fadeInViewProps} className="white">
             My role as your <i>Transformative Mentor</i>
@@ -420,7 +781,7 @@ function TransformativeMentoring({
       <section className="section-frame-dark" style={{ padding: 0 }}>
         <motion.line {...fadeInViewProps} className="line-white" />
       </section>
-      <section className="section-frame-dark" key="the details">
+      <section className="section-frame-dark" ref={TheDetailsRef} id="TheDetails">
         <div className="section-text-container">
           <motion.h3 {...fadeInViewProps} className="white">
             The <i>Details</i>

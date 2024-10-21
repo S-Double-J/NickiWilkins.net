@@ -194,16 +194,22 @@ p, ul {
 .navbar {
   backdrop-filter: blur(10px);
   background: rgba(255, 244, 223, 0);
-  width: 100%;
+  width: calc(100% - 10px);
   position: sticky;
   position: -webkit-sticky;
+  height: 62px;
   top: 0;
   left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 62px;
   z-index: 200;
+  box-shadow: -4px -4px 4px 0px rgba(172, 172, 172, 0.25) inset,
+    4px 4px 4px 0px rgba(172, 172, 172, 0.25) inset;
+    border-radius: 999px;
+    margin:0px 5px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .navbar p {
@@ -219,12 +225,13 @@ p, ul {
 }
 
 .hamburger {
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   position: relative;
   cursor: pointer;
-  background: none;
-  border: none;
+  background: var(--Primary-Light);
+  border: 2px solid var(--Primary-Dark);
+  border-radius: 999px;
   padding: 0;
 }
 .hamburger-x-button {
@@ -250,7 +257,7 @@ p, ul {
 .hamburger-span {
   background: var(--Primary-Dark);
   height: 3px;
-  width: 40px;
+  width: 25px;
   position: absolute;
   border: none;
 }
@@ -481,7 +488,7 @@ p, ul {
   height: 100%;
   transition-duration: 0.8s;
 }
-.blur {
+/* .blur {
   display: flex;
   justify-content: flex-end;
   background: rgba(140, 28, 28, 0.01);
@@ -489,4 +496,4 @@ p, ul {
   z-index: 999;
   width: auto;
   height: 300px;
-}
+} */

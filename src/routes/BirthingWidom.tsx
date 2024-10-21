@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import DropDownBox from "../Components/DropDownBox";
 import "./projects.css";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
 
 const Box = styled.div`
   display: flex;
@@ -44,6 +45,106 @@ const Tick = styled.svg`
   stroke: var(--Primary-Light);
   flex-shrink: 0;
 `;
+const FixedPositionContainer = styled(motion.div)`
+  width: auto;
+  position: fixed;
+  left: 0px;
+  top: calc(50svh + 62px);
+  transform: translateY(-50%);
+  overflow: visible;
+  z-index: 100;
+`;
+const GlassContainer = styled.div`
+  width: auto;
+  display: flex;
+  padding: 50px 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: -4px -4px 4px 0px rgba(172, 172, 172, 0.25) inset,
+    4px 4px 4px 0px rgba(172, 172, 172, 0.25) inset;
+  backdrop-filter: blur(5px);
+  box-sizing: border-box;
+  overflow: visible;
+  z-index: 100;
+`;
+const ButtonText = styled(motion.p)`
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.14px;
+  margin: 0;
+  padding: 0;
+`;
+const SectionButton = styled(motion.button)`
+  display: flex;
+  width: 138px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  box-shadow: inherit;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--Primary-Light);
+  border: 1px solid var(--Accent-Dark);
+`;
+const ActiveSpan = styled(motion.span)`
+  display: flex;
+  width: 138px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  box-shadow: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: absolute;
+  background: var(--Accent-Dark);
+  border: none;
+`;
+
+const HideButtonDiv = styled.button`
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -45px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(5px);
+  box-shadow: inherit;
+  border: none;
+  z-index: 100;
+`;
+const HideButton = styled(motion.button)`
+  display: flex;
+  width: 30px;
+  height: 30px;
+  padding-left: 3px;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  border: 1px solid var(--Primary-Dark);
+  background: var(--Primary-Light);
+`;
+const HideButtonSVG = styled.svg`
+  stroke: var(--Primary-Dark);
+  transform: rotate(180deg);
+`;
 
 interface Props {
   fadeInViewProps: {
@@ -69,9 +170,447 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
     class_name: "",
     fadeInViewProps: fadeInViewProps,
   };
+
+  const ForewordRef = useRef(null);
+  const LetterRef = useRef(null);
+  const IntroRef = useRef(null);
+  const YourJourneyRef = useRef(null);
+  const TheThreadsRef = useRef(null);
+  const TheFourStagesRef = useRef(null);
+  const NickisRoleRef = useRef(null);
+  const TheDetailsRef = useRef(null);
+  const FAQsRef = useRef(null);
+  const OtherOptionsRef = useRef(null);
+
+  function ProjectsNavTool() {
+    const [isHidden, setIsHidden] = useState(false);
+    const ForewordIsInView = useInView(ForewordRef, {margin: "-200px 0px"});
+    const LetterIsInView = useInView(LetterRef, {margin: "-200px 0px"});
+    const IntroIsInView = useInView(IntroRef, {margin: "-200px 0px"});
+    const YourJourneyIsInView = useInView(YourJourneyRef, {margin: "-200px 0px"});
+    const TheThreadsIsInView = useInView(TheThreadsRef, {margin: "-200px 0px"});
+    const TheFourStagesIsInView = useInView(TheFourStagesRef, {margin: "-200px 0px"});
+    const NickisRoleIsInView = useInView(NickisRoleRef, {margin: "-200px 0px"});
+    const TheDetailsIsInView = useInView(TheDetailsRef, {margin: "-200px 0px"});
+    const FAQsIsInView = useInView(FAQsRef, {margin: "-200px 0px"});
+    const OtherOptionsIsInView = useInView(OtherOptionsRef, {margin: "-200px 0px"});
+
+    return (
+      <FixedPositionContainer
+        animate={isHidden ? "hidden" : "visible"}
+        variants={{
+          hidden: {
+            left: -156,
+          },
+          visible: {
+            left: 0,
+          },
+        }}
+        transition={{
+          duration: 0.5,
+          ease: "easeInOut",
+        }}
+      >
+        <GlassContainer>
+          <SectionButton
+            initial={false}
+            animate={ForewordIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("Foreword");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>Foreword</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={ForewordIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">Foreword</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
+            animate={LetterIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("Letter");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>Letter</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={LetterIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">Letter</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
+            animate={IntroIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("Intro");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>Intro</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={IntroIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">Intro</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
+            animate={YourJourneyIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("YourJourney");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>Your Journey</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={YourJourneyIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">Your Journey</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
+            animate={TheThreadsIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("TheThreads");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>The Threads</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={TheThreadsIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">The Threads</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
+            animate={TheFourStagesIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("TheFourStages");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>The Four Stages</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={TheFourStagesIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">The Four Stages</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
+            animate={NickisRoleIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("NickisRole");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>Nicki's Role</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={NickisRoleIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">Nicki's Role</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
+            animate={TheDetailsIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("TheDetails");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>The Details</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={TheDetailsIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">The Details</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
+            animate={FAQsIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("FAQs");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>FAQs</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={FAQsIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">FAQs</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
+            animate={OtherOptionsIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("OtherOptions");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>Other Options</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={OtherOptionsIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">Other Options</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <HideButtonDiv onClick={() => setIsHidden((prevValue) => !prevValue)}>
+            <HideButton
+              animate={isHidden ? "hidden" : "visible"}
+              variants={{
+                hidden: {
+                  rotate: "180deg",
+                },
+                visible: {
+                  rotate: "0deg",
+                },
+              }}
+              transition={{
+                duration: 0.8,
+                type: "spring",
+                bounce: 0.5,
+                delay: 0.3,
+              }}
+            >
+              <HideButtonSVG
+                width="19"
+                height="22"
+                viewBox="0 0 19 22"
+                fill="none"
+              >
+                <path
+                  d="M3.5 1L16.5 11L3.5 21M1.5 3.5L12 11L1.5 18.5"
+                  stroke-width="2"
+                />
+              </HideButtonSVG>
+            </HideButton>
+          </HideButtonDiv>
+        </GlassContainer>
+      </FixedPositionContainer>
+    );
+  }
   return (
     <>
-      <div className="page-container" key="Birthing Wisdom Page">
+      <div className="page-container" id="Birthing Wisdom Page">
+        <ProjectsNavTool />
         <div className="title-frame">
           <h1 className="projects-title-h">
             <MakeSplitTextAnim>Birthing Wisdom</MakeSplitTextAnim>
@@ -87,7 +626,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             journey of rebirth. January-June 2025
           </motion.p>
         </div>
-        <section className="section-frame" key="Foreword">
+        <section className="section-frame" ref={ForewordRef} id="Foreword">
           <div className="section-text-container">
             <motion.h3 {...fadeInViewProps}>Foreword</motion.h3>
             <motion.p {...fadeInViewProps}>
@@ -146,7 +685,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             </motion.div>
           </div>
         </section>
-        <section className="section-frame-dark" key="Letter">
+        <section className="section-frame-dark" ref={LetterRef} id="Letter">
           <div className="section-text-container">
             <motion.h3 className="white" {...fadeInViewProps}>
               A letter from Nicki, your guide
@@ -195,7 +734,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             </motion.p>
           </div>
         </section>
-        <section className="section-frame" key="what is Birthing Wisdom?">
+        <section className="section-frame" ref={IntroRef} id="Intro">
           <div className="section-text-container">
             <motion.h3 {...fadeInViewProps}>
               What is <i>Birthing Wisdom</i>?
@@ -245,7 +784,11 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
           </div>
         </section>
         <line className="line" />
-        <section className="section-frame" key="your journey">
+        <section
+          className="section-frame"
+          ref={YourJourneyRef}
+          id="YourJourney"
+        >
           <div className="section-text-container">
             <motion.h3 {...fadeInViewProps}>
               So, what will <i>Your Journey</i> look like?
@@ -395,7 +938,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
           </div>
         </section>
         <line className="line" />
-        <section className="section-frame" key="the threads">
+        <section className="section-frame" ref={TheThreadsRef} id="TheThreads">
           <div className="section-text-container">
             <motion.h3 {...fadeInViewProps}>
               The <i>Threads </i> of Birthing Wisdom
@@ -465,7 +1008,11 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             </motion.div>
           </div>
         </section>
-        <section className="section-frame-dark" key="the four stages">
+        <section
+          className="section-frame-dark"
+          ref={TheFourStagesRef}
+          id="TheFourStages"
+        >
           <div className="section-text-container">
             <motion.h3 className="white" {...fadeInViewProps}>
               The <i>Four Stages </i>of Birthing Wisdom
@@ -655,29 +1202,27 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                     </li>
                     <li>Discerning your Sacred Instructions</li>
                     <li>Your mythopoetic identity.</li>
-                    <li>Developing skills that resonate with your mythopoetic identity.
+                    <li>
+                      Developing skills that resonate with your mythopoetic
+                      identity.
                     </li>
-                    <li>Cultivating more facets of your wholeness.
-                    </li>
-                    <li>Begin to embody your Wise Woman.
-                    </li>
+                    <li>Cultivating more facets of your wholeness.</li>
+                    <li>Begin to embody your Wise Woman.</li>
                   </ul>
                   <h4>2. Story</h4>
                   <p>
                     The Handless Maiden:
                     <br />
-                    In the last stage of our study of this myth, we will focus on wholeness and the reunion of the sacred masculine and feminine.
+                    In the last stage of our study of this myth, we will focus
+                    on wholeness and the reunion of the sacred masculine and
+                    feminine.
                   </p>
-                  <p>
-                    The Feminine Face of Wisdom: Self-Portrait 4 </p>
+                  <p>The Feminine Face of Wisdom: Self-Portrait 4 </p>
                   <h4>3. Soul Practices</h4>
-                  <p>
-                    Creative Expression: Writing Your Unique Myth
-                  </p>
+                  <p>Creative Expression: Writing Your Unique Myth</p>
                   <h4>4. Personal Discovery</h4>
                   <ul>
-                    <li>Your mythopoetic identity.
-                    </li>
+                    <li>Your mythopoetic identity.</li>
                     <li>Writing your Wise Woman Commitment.</li>
                     <li>Writing your Wise Woman Blessing Way.</li>
                   </ul>
@@ -686,7 +1231,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             </motion.div>
           </div>
         </section>
-        <section className="section-frame" key="my role">
+        <section className="section-frame" ref={NickisRoleRef} id="NickisRole">
           <div className="section-text-container">
             <motion.h3 {...fadeInViewProps}>
               My role as your <i>Transformative Mentor</i>
@@ -726,7 +1271,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
           </div>
         </section>
         <line className="line" />
-        <section className="section-frame" key="the details">
+        <section className="section-frame" ref={TheDetailsRef} id="TheDetails">
           <div className="section-text-container">
             <motion.h3 {...fadeInViewProps}>
               The <i>Details</i>
@@ -750,7 +1295,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             </motion.p>
           </div>
         </section>
-        <section className="section-frame-dark" key="faqs">
+        <section className="section-frame-dark" ref={FAQsRef} id="FAQs">
           <div className="section-text-container">
             <motion.h3 className="white" {...fadeInViewProps}>
               Frequently asked <i>Questions</i>
@@ -806,8 +1351,9 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
           <line className="line-white" />
         </section>
         <section
+          id="OtherOptions"
+          ref={OtherOptionsRef}
           className="section-frame-dark"
-          key="other ways to work with me"
         >
           <div className="section-text-container">
             <motion.h3 className="white" {...fadeInViewProps}>

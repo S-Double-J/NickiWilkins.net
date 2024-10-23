@@ -9,8 +9,8 @@ const Frame = styled.div`
   justify-items: center;
   align-content: center;
   gap: 40px;
-  width: calc(100% - 100px);
-  padding: 50px;
+  /* width: calc(100% - 100px); */
+  width: 100%;
   z-index: inherit;
   margin-bottom: -6px;
 `;
@@ -27,7 +27,8 @@ const LinkText = styled(Link)`
   z-index: 1;
 `;
 const TextDiv = styled.div`
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
 `;
 interface Props {
   fadeInViewProps: object;

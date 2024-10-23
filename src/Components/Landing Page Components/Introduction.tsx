@@ -17,7 +17,8 @@ const InfoSection = styled.div`
 `;
 const OuterFrame = styled.div`
   display: flex;
-  width: 600px;
+  width: 95%;
+  max-width: 600px;
   flex-direction: column;
   align-items: flex-start;
   gap: 50px;

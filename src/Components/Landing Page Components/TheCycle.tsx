@@ -1,6 +1,8 @@
 import { motion, useTransform } from "framer-motion";
 import { useScroll } from "framer-motion";
 import styled from "styled-components";
+import { useState } from "react";
+import DropDownBox from "../DropDownBox";
 
 const Section3 = styled(motion.div)`
   width: 100%;
@@ -45,31 +47,40 @@ const SpiralTextAxis = styled.div`
 `;
 const TextFrame = styled.div`
   display: flex;
-  width: 700px;
-  max-width: 90%;
+  max-width: 700px;
+  width: 95%;
   padding: 50px;
   flex-direction: column;
   align-items: flex-end;
   gap: 50px;
+  height: auto;
+  @media screen and (max-width: 600px) {
+    padding: 10px;
+    gap: 10px;
+  }
 `;
 const BlurDiv = styled(motion.div)`
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: flex-end;
   background: rgba(140, 28, 28, 0.01);
   backdrop-filter: blur(10px);
   z-index: 999;
-  width: auto;
-  height: 300px;
   box-shadow: -4px -4px 4px 0px rgba(172, 172, 172, 0.25) inset,
   4px 4px 4px 0px rgba(172, 172, 172, 0.25) inset;
   border-radius: 31px;
   margin-top: 20px;
   margin-right: 5px;
+  height: fit-content;
 `
 
 interface Props{
-  fadeInViewProps: object;
+  fadeInViewProps: {
+    initial: { opacity: number };
+    whileInView: { opacity: number };
+    transition: { duration: number; ease: string };
+    viewport: { once: boolean; margin: string };
+}
 }
 function TheCycle({fadeInViewProps}:Props) {
   const { scrollYProgress } = useScroll({});
@@ -286,14 +297,22 @@ function TheCycle({fadeInViewProps}:Props) {
       fontSizeValues
     );
   }
-
+const [active, setActive] = useState(true);
+const lightBoxProps = {
+  bg: "var(--Primary-Light)",
+  border: "none",
+  class_name: "spiral-title",
+  dropDown: active,
+  setDropDown: setActive,
+  fadeInViewProps: fadeInViewProps,
+};
 
   return (
     <>
       <Section3 id="Third">
         <BlurDiv  {...fadeInViewProps}>
           <TextFrame>
-            <h3 className="ta-right white">The Rebirthing Spiral</h3>
+            <DropDownBox title="The Rebirthing Spiral" boxProps={lightBoxProps} >
             <p className="ta-right white">
               The spiral, an ancient symbol for regeneration, is the map I use
               for the Midlife Rebirth. Its circular movement invites you inward
@@ -303,6 +322,7 @@ function TheCycle({fadeInViewProps}:Props) {
               ask a new question to invite you to travel deeper into your
               rebirth. 
             </p>
+            </DropDownBox>
           </TextFrame>
         </BlurDiv>
         <motion.div

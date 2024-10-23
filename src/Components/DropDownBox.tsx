@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import DDButton from "./DropDownButton";
 
 const DropDownDiv = styled(motion.div)`
@@ -26,6 +25,7 @@ const RoundedHalfInnerTop = styled(motion.div)`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  gap: 10px;
 `;
 interface Props {
   title: string;
@@ -34,6 +34,8 @@ boxProps: {
     bg: string;
     border: string;
     class_name: string;
+    dropDown: boolean;
+    setDropDown: React.Dispatch<React.SetStateAction<boolean>>;
         fadeInViewProps: {
             initial: {
                 opacity: number;
@@ -54,11 +56,12 @@ boxProps: {
 }
 
 function DropDownBox({ boxProps, title, children }: Props) {
-  const [dropDown, setDropDown] = useState(false);
   const FADE_IN_VIEW_PROPS = boxProps.fadeInViewProps
   const BORDER = boxProps.border
   const CLASS_NAME = boxProps.class_name
   const BG = boxProps.bg
+  const dropDown = boxProps.dropDown
+  const setDropDown = boxProps.setDropDown
 
   return (
     <BoxInnerRoundedHalf {...FADE_IN_VIEW_PROPS} style={{border: BORDER}}>

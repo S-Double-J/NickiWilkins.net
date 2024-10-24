@@ -61,7 +61,6 @@ const ImageContainer = styled.div`
   align-self: stretch;
   width: 50%;
   min-width: 600px;
-  overflow: hidden;
   @media screen and (max-width: 1000px) {
     width: 100%;
     min-width: 0px;
@@ -85,7 +84,8 @@ const Image = styled.img`
   }
   object-fit: cover;
   rotate: 30deg;
-  border-radius: 100%;
+  border-radius: 999px;
+  border: 2px solid var(--Primary-Dark);
 `;
 interface Props {
   fadeInViewProps: {
@@ -156,7 +156,7 @@ function Contact({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             viewport={{ once: true }}
           >
             <ImageContainer>
-              <Image src="images/20220102_135354.jpg" />
+              <Image src="images/NickiContactImage.jpg" />
             </ImageContainer>
           </motion.div>
         </Content>

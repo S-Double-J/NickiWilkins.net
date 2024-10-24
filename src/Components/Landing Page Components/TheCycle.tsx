@@ -349,43 +349,42 @@ const lightBoxProps = {
           </Spiral>
           <SpiralTextAxis className="axis-1">
             <motion.p style={{ rotate: rotate1, fontSize: fontSize1 }}>
-              1. The Call in the middle of the night
+              1. WAKING UP: Did your soul-waters break?
             </motion.p>
           </SpiralTextAxis>
           <SpiralTextAxis className="axis-2">
             <motion.p style={{ rotate: rotate2, fontSize: fontSize2 }}>
-              2. Preparation: the gathering of allies, the road of trials. A
-              sorting of this from that
+              2. SETTING OFF: What will you carry with you?
             </motion.p>
           </SpiralTextAxis>
           <SpiralTextAxis className="axis-3">
             <motion.p style={{ rotate: rotate3, fontSize: fontSize3 }}>
-              3. Awakening to feelings of loss and death
+              3. INTO THE CENTRE: What will you let go?
             </motion.p>
           </SpiralTextAxis>
           <SpiralTextAxis className="axis-4">
             <motion.p style={{ rotate: rotate4, fontSize: fontSize4 }}>
-              4. The descent
+              4. AT THE THRESHOLD: What is your deepest longing?
             </motion.p>
           </SpiralTextAxis>
           <SpiralTextAxis className="axis-5">
             <motion.p style={{ rotate: rotate5, fontSize: fontSize5 }}>
-              5. Soul Quest
+              5. THE CENTRE: What does your truest Self whisper?
             </motion.p>
           </SpiralTextAxis>
           <SpiralTextAxis className="axis-6">
             <motion.p style={{ rotate: rotate6, fontSize: fontSize6 }}>
-              6. The return
+              6. THE RETURN: How will you integrate your wisdom?
             </motion.p>
           </SpiralTextAxis>
           <SpiralTextAxis className="axis-7">
             <motion.p style={{ rotate: rotate7, fontSize: fontSize7 }}>
-              7. Integration of the experience and the gift you received
+              7. STORY FEAST: Your unique myth.
             </motion.p>
           </SpiralTextAxis>
           <SpiralTextAxis className="axis-8">
             <motion.p style={{ rotate: rotate8, fontSize: fontSize8 }}>
-              8. Ceremony
+              8. WELCOME HOME: The Ceremony of Wholeness.
             </motion.p>
           </SpiralTextAxis>
         </motion.div>

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { FaInstagram } from "react-icons/fa";
+import { BsSubstack } from "react-icons/bs";
 
 const AboutDiv = styled.div`
   width: 100%;
@@ -25,7 +27,7 @@ const TitleSocialsAndImage = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 50px;
+  gap: 30px;
   min-height: calc(100svh - 62px);
 `;
 
@@ -47,14 +49,20 @@ const SocialsIcons = styled(motion.div)`
 `;
 
 const NickiPortraitMain = styled(motion.img)`
-  width: 350px;
-  height: 350px;
-  border-radius: 300px;
-  background: var(--Primary-Dark);
+  width: 600px;
+  height: 600px;
+  border-radius: 999px;
   flex-shrink: 0;
+  object-fit: cover;
+  object-position: 50% 95%;
+  border: 2px solid var(--Primary-Dark);
   @media screen and (max-width: 330px) {
     width: 200px;
     height: 200px;
+  }
+  @media screen and (max-width: 800px) {
+    width: 350px;
+    height: 350px;
   }
 `;
 
@@ -64,19 +72,31 @@ const Line = styled.line`
   background: var(--Primary-Dark);
   flex-shrink: 0;
 `;
-
-const Icons = styled.a`
-  width: 80px;
-  height: 80px;
-  background: var(--Primary-Dark);
-  border-radius: 50%;
-  flex-shrink: 0;
-`;
 const TextContainer = styled.div`
   max-width: 800px;
   gap: 50px;
   display: flex;
   flex-direction: column;
+`;
+const Icons = styled.a`
+  width: 80px;
+  height: 80px;
+  background: var(--Primary-Dark);
+  color: var(--Primary-Light);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Insta = styled(FaInstagram)`
+  width: 80%;
+  height: 80%;
+`;
+const Substack = styled(BsSubstack)`
+  width: 60%;
+  height: 60%;
 `;
 interface Props {
   fadeInViewProps: {
@@ -96,16 +116,17 @@ function About({ fadeInViewProps, MakeSplitTextAnim }: Props) {
       <AboutDiv key="About">
         <Container key="container">
           <TitleSocialsAndImage key="title-image-and-icons">
-            <h1 className="seventy">
-              <MakeSplitTextAnim>About Nicki</MakeSplitTextAnim>
-            </h1>{" "}
             <NickiPortraitMain
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: DURATION, ease: EASE, delay: DELAY }}
               viewport={{ once: true }}
               key="nicki-portrait-main"
+              src="images/NickiAboutImageopt2.jpg"
             />
+            <h1 className="seventy">
+              <MakeSplitTextAnim>About Nicki</MakeSplitTextAnim>
+            </h1>
             <TitleAndSocials>
               <SocialsIcons
                 initial={{ opacity: 0 }}
@@ -115,10 +136,10 @@ function About({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                 key="socials-icons"
               >
                 <Icons href="#">
-                  <i className="instagram"></i>
+                  <Insta />
                 </Icons>
                 <Icons href="#">
-                  <i className="substack"></i>
+                  <Substack />
                 </Icons>
               </SocialsIcons>
             </TitleAndSocials>

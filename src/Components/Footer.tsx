@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { FaInstagram } from "react-icons/fa";
+import { BsSubstack } from "react-icons/bs";
 
 const Container = styled.div`
   display: flex;
@@ -102,14 +104,31 @@ const Line = styled.div`
     height: 1px;
   }
 `
+const Icons = styled.a`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Insta = styled(FaInstagram)`
+  width: 80%;
+  height: 80%;
+`;
+const Substack = styled(BsSubstack)`
+  width: 60%;
+  height: 60%;
+`;
 function Footer() {
   const location = useLocation();
-  let containerBackground = "transparent";
-  let textColor = " var(--Primary-Light)";
+  let containerBackground = "var(--Primary-Light)";
+  let textColor = " var(--Primary-Dark)";
   if (location.pathname === "/" || location.pathname === "/birthing-wisdom" || location.pathname === "/transformative-mentoring") {
     containerBackground = "var(--Accent-Dark)";
-  } else {
-    textColor = "var(--Primary-Dark)";
+    textColor = "var(--Primary-Light)";
   }
   return (
     <Container style={{ backgroundColor: containerBackground }}>
@@ -125,7 +144,14 @@ function Footer() {
               nwilkins@btinternet.com
             </a>
           </p>
-          <Socials></Socials>
+          <Socials>
+            <Icons href="#" style={{ color: containerBackground, background: textColor}}>
+              <Insta />
+            </Icons>
+            <Icons href="#" style={{ color: containerBackground, background: textColor}}>
+              <Substack />
+            </Icons>
+          </Socials>
         </ContactsAndSocials>
         <PagesOuter>
           <PagesInner>

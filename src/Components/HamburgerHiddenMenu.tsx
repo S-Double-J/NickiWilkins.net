@@ -4,16 +4,100 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const LinkText = styled(Link)`
-text-decoration: none;
-color: var(--Accent-Light);
-font-family: "M Plus Rounded 1c";
-font-weight: 500;
-font-size: 16px;
-margin: 10px;
-transition: all 0.2s ease;
-&:hover {
- transform: translateX(3px)
-}`;
+  color: var(--Primary-Dark);
+  text-decoration: none;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.14px;
+  margin: 0;
+  padding: 0;
+`;
+const GlassContainer = styled(motion.div)`
+  width: auto;
+  display: flex;
+  padding: 50px 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-radius: 100px;
+  border-top-right-radius: 30px;
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: -4px -4px 4px 0px rgba(172, 172, 172, 0.25) inset,
+    4px 4px 4px 0px rgba(172, 172, 172, 0.25) inset;
+  backdrop-filter: blur(5px);
+  box-sizing: border-box;
+  overflow: visible;
+  z-index: 200;
+`;
+const SectionButton = styled(motion.button)`
+  display: flex;
+  width: 138px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  box-shadow: inherit;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--Primary-Light);
+  border: 1px solid var(--Accent-Dark);
+  cursor: pointer;
+`;
+const ActiveSpan = styled(motion.span)`
+  display: flex;
+  width: 138px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  box-shadow: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: absolute;
+  background: var(--Accent-Dark);
+  border: none;
+  cursor: pointer;
+`;
+const HideButtonDiv = styled.button`
+  display: flex;
+  width: 30px;
+  height: 3dvb;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 50px;
+  border: none;
+  z-index: 100;
+  cursor: pointer;
+`;
+const HideButton = styled(motion.button)`
+  display: flex;
+  width: 30px;
+  height: 30px;
+  padding-left: 3px;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  border: 1px solid var(--Primary-Dark);
+  background: var(--Primary-Light);
+  cursor: pointer;
+`;
+const HideButtonSVG = styled.svg`
+  stroke: var(--Primary-Dark);
+  transform: rotate(180deg);
+`;
 
 type ClickHandler = React.MouseEventHandler<HTMLElement>;
 
@@ -25,7 +109,22 @@ function Menu({ active, setActive }: Props) {
   const handleClick: ClickHandler = () => {
     setActive((prevValue) => !prevValue);
   };
-
+  const buttonVariants = {
+    active: {
+      border: "1px solid var(--Primary-Light)",
+    },
+    inactive: {
+      border: "1px solid var(--Primary-Dark)",
+    },
+  };
+  const spanVariants = {
+    active: {
+      transform: "translateY(0%)"
+    },
+    inactive: {
+         transform: "translateY(100%)"
+    },
+  };
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -45,114 +144,135 @@ function Menu({ active, setActive }: Props) {
     };
   }, [active, setActive]);
 
-
   return (
     <MotionConfig transition={{ duration: 0.3, ease: "easeInOut" }}>
-      <motion.div
+      <GlassContainer
         initial={false}
         ref={menuRef}
-        className="menu-background"
         animate={active ? "open" : "closed"}
-        style={{
-          width: "0px",
-          opacity: 0,
-        }}
         variants={{
           open: {
-            width: "100px",
+            right: 0,
             opacity: 1,
           },
           closed: {
-            width: "0px",
+            right: "-400px",
             opacity: 0,
           },
         }}
       >
-        <LinkText to="/">Home</LinkText>
-        <LinkText to="/about">About</LinkText>
-        <LinkText to="/contact">Contact</LinkText>
-        <LinkText to="/birthing-wisdom">Birthing Wisdom</LinkText>
-        <LinkText to="/transformative-mentoring">Transformative Mentoring</LinkText>
-        <motion.div
-          initial={false}
-          className="hamburger-x-div"
-          animate={active ? "open" : "closed"}
-          variants={{
-            open: {
-              width: "60px",
-              opacity: 1,
-            },
-            closed: {
-              width: "0px",
-              opacity: 0,
-            },
-          }}
+        <SectionButton
+          initial="inactive"
+          whileHover="active"
+          variants={buttonVariants}
+          transition={{ duration: 0.5, easing: "easeInOut" }}
         >
-          <motion.button
-            initial={false}
-            onClick={handleClick}
-            className="hamburger-x-button"
-            animate={active ? "open" : "closed"}
-            variants={{
-              open: {
-                width: "60px",
-                opacity: 1,
-              },
-              closed: {
-                width: "0px",
-                opacity: 0,
-              },
-            }}
+          <LinkText to="/">Home</LinkText>
+          <ActiveSpan
+            variants={spanVariants}
+            transition={{ duration: 0.3, easing: "easeInOut" }}
           >
-            <motion.span
-              className="hamburger-x-span"
-              animate={active ? "open" : "closed"}
-              style={{
-                left: "50%",
-                top: "50%",
-                x: "-50%",
-                y: "-50%",
-                rotate: "45deg",
-              }}
+            <LinkText to="/" style={{ color: "var(--Primary-Light)" }}>
+              Home
+            </LinkText>
+          </ActiveSpan>
+        </SectionButton>
+        <SectionButton
+          initial="inactive"
+          whileHover="active"
+          variants={buttonVariants}
+          transition={{ duration: 0.5, easing: "easeInOut" }}
+        >
+        <LinkText to="/about">About</LinkText>
+          <ActiveSpan
+            variants={spanVariants}
+            transition={{ duration: 0.3, easing: "easeInOut" }}
+          >
+            <LinkText to="/about" style={{ color: "var(--Primary-Light)" }}>
+              About
+            </LinkText>
+          </ActiveSpan>
+        </SectionButton>
+        <SectionButton
+          initial="inactive"
+          whileHover="active"
+          variants={buttonVariants}
+          transition={{ duration: 0.5, easing: "easeInOut" }}
+        >
+        <LinkText to="/contact">Contact</LinkText>
+          <ActiveSpan
+            variants={spanVariants}
+            transition={{ duration: 0.3, easing: "easeInOut" }}
+          >
+            <LinkText to="/contact" style={{ color: "var(--Primary-Light)" }}>
+              Contact
+            </LinkText>
+          </ActiveSpan>
+        </SectionButton>
+        <SectionButton
+          initial="inactive"
+          whileHover="active"
+          variants={buttonVariants}
+          transition={{ duration: 0.5, easing: "easeInOut" }}
+        >
+        <LinkText to="/birthing-wisdom">Birthing Wisdom</LinkText>
+          <ActiveSpan
+            variants={spanVariants}
+            transition={{ duration: 0.3, easing: "easeInOut" }}
+          >
+            <LinkText to="/birthing-wisdom" style={{ color: "var(--Primary-Light)" }}>
+              Birthing Wisdom
+            </LinkText>
+          </ActiveSpan>
+        </SectionButton>
+        <SectionButton
+          initial="inactive"
+          whileHover="active"
+          variants={buttonVariants}
+          transition={{ duration: 0.5, easing: "easeInOut" }}
+        >
+        <LinkText to="/transformative-mentoring">Transformative Mentoring</LinkText>
+          <ActiveSpan
+            variants={spanVariants}
+            transition={{ duration: 0.3, easing: "easeInOut" }}
+          >
+            <LinkText to="/transformative-mentoring" style={{ color: "var(--Primary-Light)" }}>
+              Transformative Mentoring
+            </LinkText>
+          </ActiveSpan>
+        </SectionButton>
+        <HideButtonDiv onClick={handleClick}>
+            <HideButton
+              animate={active ? "hidden" : "visible"}
               variants={{
-                open: {
-                  width: "30px",
-                  height: "2px",
-                  opacity: 1,
+                hidden: {
+                  rotate: "180deg",
                 },
-                closed: {
-                  height: "0px",
-                  width: "0px",
-                  opacity: 0,
+                visible: {
+                  rotate: "0deg",
                 },
               }}
-            />
-            <motion.span
-              className="hamburger-x-span"
-              animate={active ? "open" : "closed"}
-              style={{
-                left: "50%",
-                top: "50%",
-                x: "-50%",
-                y: "-50%",
-                rotate: "-45deg",
+              transition={{
+                duration: 0.8,
+                type: "spring",
+                bounce: 0.5,
+                delay: 0.1,
               }}
-              variants={{
-                open: {
-                  width: "30px",
-                  height: "2px",
-                  opacity: 1,
-                },
-                closed: {
-                  height: "0px",
-                  width: "0px",
-                  opacity: 0,
-                },
-              }}
-            />
-          </motion.button>
-        </motion.div>
-      </motion.div>
+            >
+              <HideButtonSVG
+                width="19"
+                height="22"
+                viewBox="0 0 19 22"
+                fill="none"
+              >
+                <path
+                  d="M3.5 1L16.5 11L3.5 21M1.5 3.5L12 11L1.5 18.5"
+                  stroke-width="2"
+                />
+              </HideButtonSVG>
+            </HideButton>
+          </HideButtonDiv>
+      </GlassContainer>
     </MotionConfig>
   );
 }

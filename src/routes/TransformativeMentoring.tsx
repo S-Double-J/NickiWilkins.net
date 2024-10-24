@@ -20,7 +20,7 @@ const FixedPositionContainer = styled(motion.div)`
   width: auto;
   position: fixed;
   left: 0px;
-  top: calc(50svh + 62px);
+  top: calc(50svh + 31px);
   transform: translateY(-50%);
   overflow: visible;
   z-index: 100;
@@ -92,8 +92,7 @@ const HideButtonDiv = styled.button`
   align-items: center;
   position: absolute;
   right: -45px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.01);
   backdrop-filter: blur(5px);
@@ -153,7 +152,7 @@ function TransformativeMentoring({
   const TheDetailsRef = useRef(null);
 
   function ProjectsNavTool() {
-    const [isHidden, setIsHidden] = useState(false);
+    const [isHidden, setIsHidden] = useState(true);
     const ForewordIsInView = useInView(ForewordRef, { margin: "-200px 0px" });
     const IntroIsInView = useInView(IntroRef, { margin: "-200px 0px" });
     const YourJourneyIsInView = useInView(YourJourneyRef, {

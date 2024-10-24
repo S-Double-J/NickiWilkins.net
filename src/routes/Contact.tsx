@@ -61,6 +61,7 @@ const ImageContainer = styled.div`
   align-self: stretch;
   width: 50%;
   min-width: 600px;
+  overflow: hidden;
   @media screen and (max-width: 1000px) {
     width: 100%;
     min-width: 0px;

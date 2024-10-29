@@ -132,7 +132,6 @@ function TransformativeMentoring({
   fadeInViewProps,
   MakeSplitTextAnim,
 }: Props) {
-  const [active, setActive] = useState(false)
   const DURATION = fadeInViewProps.transition.duration;
   const EASE = fadeInViewProps.transition.ease;
   const MARGIN = fadeInViewProps.viewport.margin;
@@ -141,8 +140,6 @@ function TransformativeMentoring({
     border: "1px solid var(--Primary-Light)",
     class_name: "white",
     fadeInViewProps: fadeInViewProps,
-    dropDown: active,
-    setDropDown: setActive
   };
 
   const ForewordRef = useRef(null);

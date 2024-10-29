@@ -160,7 +160,6 @@ interface Props {
   MakeSplitTextAnim: (props: { children: string }) => JSX.Element;
 }
 function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
-  const [active, setActive] = useState(false)
   const DURATION = fadeInViewProps.transition.duration;
   const EASE = fadeInViewProps.transition.ease;
   const lightBoxProps = {
@@ -168,16 +167,12 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
     border: "1px solid var(--Primary-Light)",
     class_name: "white",
     fadeInViewProps: fadeInViewProps,
-    dropDown: active,
-    setDropDown: setActive
   };
   const darkBoxProps = {
     bg: "var(--Primary-Dark)",
     border: "1px solid var(--Primary-Dark)",
     class_name: "",
     fadeInViewProps: fadeInViewProps,
-    dropDown: active,
-    setDropDown: setActive
   };
 
   const ForewordRef = useRef(null);

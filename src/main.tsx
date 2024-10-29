@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Root from "./routes/Root.tsx";
 import About from "./routes/About.tsx";
 import Contact from "./routes/Contact.tsx";
+import Retreats from "./routes/Retreats.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./routes/App.css";
@@ -70,6 +71,12 @@ const router = createBrowserRouter([
           </>
         ),
       },
+      {
+        path: "retreats",
+        element: (<>
+        <Retreats key="Retreats" fadeInViewProps={fadeInViewProps} MakeSplitTextAnim={MakeSplitTextAnim} />
+        </>)
+      }
     ],
   },
 ]);

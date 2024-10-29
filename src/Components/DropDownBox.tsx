@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import DDButton from "./DropDownButton";
+import { useState } from "react";
 
 const DropDownDiv = styled(motion.div)`
   display: flex;
@@ -34,8 +35,6 @@ boxProps: {
     bg: string;
     border: string;
     class_name: string;
-    dropDown: boolean;
-    setDropDown: React.Dispatch<React.SetStateAction<boolean>>;
         fadeInViewProps: {
             initial: {
                 opacity: number;
@@ -60,8 +59,7 @@ function DropDownBox({ boxProps, title, children }: Props) {
   const BORDER = boxProps.border
   const CLASS_NAME = boxProps.class_name
   const BG = boxProps.bg
-  const dropDown = boxProps.dropDown
-  const setDropDown = boxProps.setDropDown
+  const [dropDown, setDropDown] = useState(false)
 
   return (
     <BoxInnerRoundedHalf {...FADE_IN_VIEW_PROPS} style={{border: BORDER}}>

@@ -1,7 +1,6 @@
 import { motion, useTransform } from "framer-motion";
 import { useScroll } from "framer-motion";
 import styled from "styled-components";
-import { useState } from "react";
 import DropDownBox from "../DropDownBox";
 
 const Section3 = styled(motion.div)`
@@ -297,13 +296,10 @@ function TheCycle({fadeInViewProps}:Props) {
       fontSizeValues
     );
   }
-const [active, setActive] = useState(true);
 const lightBoxProps = {
   bg: "var(--Primary-Light)",
   border: "none",
   class_name: "spiral-title",
-  dropDown: active,
-  setDropDown: setActive,
   fadeInViewProps: fadeInViewProps,
 };
 

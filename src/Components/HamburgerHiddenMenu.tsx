@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const LinkText = styled(Link)`
+const LinkText = styled.p`
   color: var(--Primary-Dark);
   text-decoration: none;
   text-align: center;
@@ -161,86 +161,114 @@ function Menu({ active, setActive }: Props) {
           },
         }}
       >
+        <Link to="/" style={{textDecoration: "none"}}>
         <SectionButton
           initial="inactive"
           whileHover="active"
           variants={buttonVariants}
           transition={{ duration: 0.5, easing: "easeInOut" }}
         >
-          <LinkText to="/">Home</LinkText>
+          <LinkText>Home</LinkText>
           <ActiveSpan
             variants={spanVariants}
             transition={{ duration: 0.3, easing: "easeInOut" }}
           >
-            <LinkText to="/" style={{ color: "var(--Primary-Light)" }}>
+            <LinkText style={{ color: "var(--Primary-Light)" }}>
               Home
             </LinkText>
           </ActiveSpan>
         </SectionButton>
+        </Link>
+        <Link to="/about" style={{textDecoration: "none"}}>
         <SectionButton
           initial="inactive"
           whileHover="active"
           variants={buttonVariants}
           transition={{ duration: 0.5, easing: "easeInOut" }}
         >
-        <LinkText to="/about">About</LinkText>
+        <LinkText>About</LinkText>
           <ActiveSpan
             variants={spanVariants}
             transition={{ duration: 0.3, easing: "easeInOut" }}
           >
-            <LinkText to="/about" style={{ color: "var(--Primary-Light)" }}>
+            <LinkText style={{ color: "var(--Primary-Light)" }}>
               About
             </LinkText>
           </ActiveSpan>
         </SectionButton>
+        </Link>
+        <Link to="/contact" style={{textDecoration: "none"}}>
         <SectionButton
           initial="inactive"
           whileHover="active"
           variants={buttonVariants}
           transition={{ duration: 0.5, easing: "easeInOut" }}
         >
-        <LinkText to="/contact">Contact</LinkText>
+        <LinkText>Contact</LinkText>
           <ActiveSpan
             variants={spanVariants}
             transition={{ duration: 0.3, easing: "easeInOut" }}
           >
-            <LinkText to="/contact" style={{ color: "var(--Primary-Light)" }}>
+            <LinkText style={{ color: "var(--Primary-Light)" }}>
               Contact
             </LinkText>
           </ActiveSpan>
         </SectionButton>
+        </Link>
+        <Link to="/birthing-wisdom" style={{textDecoration: "none"}}>
         <SectionButton
           initial="inactive"
           whileHover="active"
           variants={buttonVariants}
           transition={{ duration: 0.5, easing: "easeInOut" }}
         >
-        <LinkText to="/birthing-wisdom">Birthing Wisdom</LinkText>
+        <LinkText>Birthing Wisdom</LinkText>
           <ActiveSpan
             variants={spanVariants}
             transition={{ duration: 0.3, easing: "easeInOut" }}
           >
-            <LinkText to="/birthing-wisdom" style={{ color: "var(--Primary-Light)" }}>
+            <LinkText style={{ color: "var(--Primary-Light)" }}>
               Birthing Wisdom
             </LinkText>
           </ActiveSpan>
         </SectionButton>
+        </Link>
+        <Link to="/transformative-mentoring" style={{textDecoration: "none"}}>
         <SectionButton
           initial="inactive"
           whileHover="active"
           variants={buttonVariants}
           transition={{ duration: 0.5, easing: "easeInOut" }}
         >
-        <LinkText to="/transformative-mentoring">Transformative Mentoring</LinkText>
+        <LinkText>Transformative Mentoring</LinkText>
           <ActiveSpan
             variants={spanVariants}
             transition={{ duration: 0.3, easing: "easeInOut" }}
           >
-            <LinkText to="/transformative-mentoring" style={{ color: "var(--Primary-Light)" }}>
+            <LinkText style={{ color: "var(--Primary-Light)" }}>
               Transformative Mentoring
             </LinkText>
           </ActiveSpan>
         </SectionButton>
+        </Link>
+         <Link to="/retreats" style={{textDecoration: "none"}}>
+        <SectionButton
+          initial="inactive"
+          whileHover="active"
+          variants={buttonVariants}
+          transition={{ duration: 0.5, easing: "easeInOut" }}
+        >
+        <LinkText>Retreats</LinkText>
+          <ActiveSpan
+            variants={spanVariants}
+            transition={{ duration: 0.3, easing: "easeInOut" }}
+          >
+            <LinkText style={{ color: "var(--Primary-Light)" }}>
+              Retreats
+            </LinkText>
+          </ActiveSpan>
+        </SectionButton>
+        </Link>
         <HideButtonDiv onClick={handleClick}>
             <HideButton
               animate={active ? "hidden" : "visible"}

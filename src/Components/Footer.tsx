@@ -126,7 +126,7 @@ function Footer() {
   const location = useLocation();
   let containerBackground = "var(--Primary-Light)";
   let textColor = " var(--Primary-Dark)";
-  if (location.pathname === "/" || location.pathname === "/birthing-wisdom" || location.pathname === "/transformative-mentoring") {
+  if (location.pathname === "/" || location.pathname === "/birthing-wisdom" || location.pathname === "/retreats" || location.pathname === "/transformative-mentoring") {
     containerBackground = "var(--Accent-Dark)";
     textColor = "var(--Primary-Light)";
   }

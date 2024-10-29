@@ -211,7 +211,7 @@ function Retreats({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                 </DropDownBox>
                 <DropDownBox
                   boxProps={darkBoxProps}
-                  title="What if I have specific dietary needsCan I contact you to discuss a retreat?">
+                  title="Can I contact you to discuss a retreat?">
                  <p>Of course, contact me here, and we can arrange for a call.</p>
                  <p style={{color: "red"}}>insert contact info for Nicki</p>
                 </DropDownBox>

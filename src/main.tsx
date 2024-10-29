@@ -4,6 +4,7 @@ import Root from "./routes/Root.tsx";
 import About from "./routes/About.tsx";
 import Contact from "./routes/Contact.tsx";
 import Retreats from "./routes/Retreats.tsx";
+import ErrorPage from "./Components/ErrorPage.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./routes/App.css";
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root key="Root" />,
+    errorElement: <ErrorPage />,
     children: [
       { path: "/", element: <LandingPage key="LandingPage" fadeInViewProps={fadeInViewProps} MakeSplitTextAnim={MakeSplitTextAnim}/> },
       {

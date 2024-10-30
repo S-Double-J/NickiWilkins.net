@@ -57,10 +57,10 @@ const SplotchBottom = styled.svg`
   z-index: 0;
   margin-bottom: -2px;
 `;
-interface IntroProps{
+interface IntroProps {
   fadeInViewProps: object;
 }
-function Intro({fadeInViewProps}: IntroProps) {
+function Intro({ fadeInViewProps }: IntroProps) {
   return (
     <InfoSection id="Second">
       <OuterFrame>
@@ -68,10 +68,10 @@ function Intro({fadeInViewProps}: IntroProps) {
           Hi, I'm Nicki
         </motion.h3>
         <motion.p {...fadeInViewProps}>
-           I’m a Transformative Mentor and certified Purpose Guide, a mother, a
-          poet and most importantly, an elder. I offer wisdom and guidance to
-          women as they move through menopause and transition into a new stage
-          of life.
+          I’m a Transformative Mentor and certified Purpose Guide, a mother, a
+          poet, and most importantly, an elder. I offer wisdom and guidance to
+          women as they navigate the soulful side of menopause and elderhood.
+          I’m a midwife for your midlife rebirth.
         </motion.p>
         <InnerFrame>
           <motion.h4 style={{ width: "100%" }} {...fadeInViewProps}>
@@ -108,7 +108,7 @@ function Intro({fadeInViewProps}: IntroProps) {
             elder. A valued, empowered contributor to her community. The Earth
             is in a time of global crisis and we need Her voice again. The
             Midlife Rebirth aims to give that validation and empowerment to a
-            new generation of Wise, Wild, Whole Women.
+            new generation of wise, wild, whole women.
           </motion.p>
           <motion.p {...fadeInViewProps}>
             Menopause, by its nature, is a cellular change in a woman's body.
@@ -120,8 +120,8 @@ function Intro({fadeInViewProps}: IntroProps) {
             During your Midlife Rebirth we will use myth, nature, and art to
             uncover your unique purpose. Then, by pairing your purpose discovery
             with the psychology, biology, and spirituality of menopause and
-            elderhood, I will guide you to find a more Wise, Wild and Whole way
-            of being. 
+            elderhood, I will guide you to find a more wise, wild and whole way
+            of being.
           </motion.p>
         </InnerFrame>
       </OuterFrame>
@@ -131,8 +131,8 @@ function Intro({fadeInViewProps}: IntroProps) {
           <motion.p {...fadeInViewProps}>
             Each woman’s journey is unique. Her journey begins and ends in her
             own time based on her strengths, needs, and her life story. To
-            address this, I offer a variety of ways to guide you on your{" "}
-            <i className="libre">Midlife Rebirth</i>.
+            address this, I offer a variety of ways to guide you on your Midlife
+            Rebirth.
           </motion.p>
         </InnerFrame>
       </OuterFrame>
@@ -143,8 +143,8 @@ function Intro({fadeInViewProps}: IntroProps) {
               Transformative Mentoring
             </motion.p>
             <motion.p {...fadeInViewProps}>
-              I offer one-to-one bespoke mentoring sessions for women who want
-              motion. a more intimate, personal approach.
+              I offer one-to-one bespoke mentoring sessions for women travelling
+              the midlife journey, seeking wisdom, purpose, and wholeness.
             </motion.p>
             <motion.div {...fadeInViewProps}>
               <LinkText
@@ -162,10 +162,10 @@ function Intro({fadeInViewProps}: IntroProps) {
               Birthing Wisdom
             </motion.p>
             <motion.p {...fadeInViewProps}>
-              For women who are wanting to be part of a community as they move
-              through this time of transition, I offer Birthing Wisdom, a
-              6-month online program that includes group sessions as well as
-              private mentoring sessions with me.
+              A 6-month online purpose discovery program for menopausal women
+              who are wanting to be part of a community as they transition into
+              elderhood. Birthing Wisdom includes group sessions and private
+              sessions with me.
             </motion.p>
             <motion.div {...fadeInViewProps}>
               <LinkText to={"/birthing-wisdom"} className="primary-button">
@@ -180,8 +180,8 @@ function Intro({fadeInViewProps}: IntroProps) {
               Retreats
             </motion.p>
             <motion.p {...fadeInViewProps}>
-              For women looking for a shorter intensive, I run regular week-long
-              Retreats.
+              For women looking for a shorter intensive, I run creative
+              retreats on the Isle of Iona, Scotland.
             </motion.p>
             <motion.div {...fadeInViewProps}>
               <LinkText to={"/retreats"} className="primary-button">

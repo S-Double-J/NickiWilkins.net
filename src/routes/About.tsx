@@ -156,7 +156,7 @@ function About({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               <b>FIRST, SOME DETAILS ABOUT MY TRAINING.</b> With a Masters of
               Divinity from Yale University and a Masters in Creative Writing
               from Stirling University in Scotland, and as a certified Purpose
-              Guide. I’ve been working with women and the spirituality of the
+              Guide, I’ve been working with women and the spirituality of the
               feminine life cycle for over thirty years, offering spiritual care
               and ceremony. Some of my work as a former priest included my
               spiritual work with pregnant women and new mothers. More recently,

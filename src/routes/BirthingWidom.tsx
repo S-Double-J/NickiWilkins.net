@@ -649,7 +649,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             viewport={{ once: true }}
           >
             A 6-month online soul initiation for women travelling the midlife
-            journey of rebirth. January-June 2025
+            journey of rebirth. February to July 2025
           </motion.p>
         </div>
         <section className="section-frame" ref={ForewordRef} id="Foreword">
@@ -667,7 +667,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               <b>
                 <i>initiate your Midlife Rebirth</i>
               </b>
-              , and offers{" "}
+               and offers{" "}
               <b>
                 <i>guidance</i>
               </b>{" "}
@@ -685,7 +685,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             <motion.p {...fadeInViewProps}>
               While this course shares themes and practices that are similar to
               my one-to-one sessions, Transformative Mentoring, what makes it
-              distinct is that this is a structured program, designed to be
+              distinct is that this is a structured program designed to be
               shared with a community of women as they travel the path of their
               Midlife Rebirth.
             </motion.p>
@@ -825,7 +825,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               also a collective of women who support each other on this journey
               to rebirth. By marrying these two intentions we find something the
               modern world does not offer. We find a space in which she can
-              rebirth in her own time, and share the gifts she finds in the
+              rebirth in her own time and share the gifts she finds in the
               process. We find a space where she is valued, and her voice is
               spoken and heard.
             </motion.p>
@@ -834,7 +834,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               meet as a group online for two hours, twice a month. We will use
               these bi-monthly sessions for teaching, learning, meditation,
               connection, and discussion. Once a month you will meet with Nicki
-              for a one-on-one mentoring session. The time in between sessions
+              for a one-to-one mentoring session. The time in between sessions
               is for personal reflection, soul practices, and creative
               expression.
             </motion.p>
@@ -970,7 +970,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               The <i>Threads </i> of Birthing Wisdom
             </motion.h3>
             <motion.p {...fadeInViewProps}>
-              There are many paths to Birthing your Wisdom. I weave some common
+              There are many paths to birthing your wisdom. I weave some common
               threads into this journey to help you dive deep into the centre of
               your truest self.
             </motion.p>
@@ -999,15 +999,12 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                     soulcentric journaling, and creativity.
                   </p>
                 </DropDownBox>
-                <DropDownBox
-                  boxProps={lightBoxProps}
-                  title="Personal Discovery"
-                >
+                <DropDownBox boxProps={lightBoxProps} title="Purpose Discovery">
                   <p className="white">
-                    This is a journey of personal inquiry and purpose discovery.
-                    This will be the work we do together in our private
-                    mentoring sessions. The focus is on finding your purpose and
-                    mythopoetic identity.
+                    This thread explores your soul’s purpose as you move into
+                    your wisdom years. We will dive deep into the centre of Self
+                    to explore your vision, values, powers, essence, giveaway,
+                    task, message, and delivery system.
                   </p>
                 </DropDownBox>
                 <DropDownBox boxProps={lightBoxProps} title="The Wisdom Circle">
@@ -1019,7 +1016,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                 </DropDownBox>
                 <DropDownBox boxProps={lightBoxProps} title="Private Mentoring">
                   <p className="white">
-                    These one-on-one sessions with me will allow you to dive
+                    These one-to-one sessions with me will allow you to dive
                     deeper into your purpose and rebirthing process.
                   </p>
                 </DropDownBox>
@@ -1102,11 +1099,8 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                     a series of four self-portraits using your preferred medium:
                     paint, photography, poetry, writing, sculpture, nature art.
                   </p>
-                  <h4>4. Personal Discovery</h4>
-                  <p>
-                    Purpose Discovery. We will focus on the following facets of
-                    purpose:
-                  </p>
+                  <h4>4. Purpose Discovery</h4>
+                  <p>We will focus on the following facets of purpose:</p>
                   <ul>
                     <li>What do you envision for the world?</li>
                     <li>What are your deepest values?</li>
@@ -1142,10 +1136,11 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                     one, the predator.
                   </p>
                   <p>
-                    The Feminine Face of Wisdom: The Cailleach and Kali.
+                    The Feminine Face of Wisdom: The Cailleach.
                     <br />
-                    We will explore the history of the Crone. Who is she? What’s
-                    her offering? Her role in the Life/Death/Life cycle?
+                    We will explore the archetype of the Wise Woman Crone. Who
+                    is she? What is her name? What’s her offering? What is her
+                    role in the Life/Death/Rebirth cycle?
                   </p>
                   <h4>3. Soul Practices</h4>
                   <p>
@@ -1161,8 +1156,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                     <br />
                     Self-Portrait 2.
                   </p>
-                  <h4>4. Personal Discovery</h4>
-                  <p>Purpose Discovery.</p>
+                  <h4>4. Purpose Discovery</h4>
                   <ul>
                     <li>What is your Giveaway?</li>
                     <li>What is your Mission?</li>
@@ -1207,7 +1201,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                     <br />
                     Self-Portrait 3.
                   </p>
-                  <h4>4. Personal Discovery</h4>
+                  <h4>4. Purpose Discovery</h4>
                   <p>The Soul Quest is an act of soul-centric living:</p>
                   <ul>
                     <li>How can we surrender to Soul?</li>
@@ -1246,7 +1240,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                   <p>The Feminine Face of Wisdom: Self-Portrait 4 </p>
                   <h4>3. Soul Practices</h4>
                   <p>Creative Expression: Writing Your Unique Myth</p>
-                  <h4>4. Personal Discovery</h4>
+                  <h4>4. Purpose Discovery</h4>
                   <ul>
                     <li>Your mythopoetic identity.</li>
                     <li>Writing your Wise Woman Commitment.</li>
@@ -1272,10 +1266,9 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               various stages of spiritual development. I bring 30+ years
               grounding in the spirituality of transformation, the study of the
               feminine life cycle, and a training ranging from the ordained
-              priesthood to a variety of meditative and somatic practices. At
-              the core of my work is my desire to reunite the division of the
-              body and soul. I’m currently a Mentor for The Purpose Guide
-              Institute, a poet, and an artist. 
+              priesthood to a variety of meditative and somatic practices. I’m
+              currently a Mentor for The Purpose Guide Institute, a poet, and an
+              artist.
             </motion.p>
             <motion.p {...fadeInViewProps}>
               <b>I believe in your body’s intelligence.</b> That you have a deep
@@ -1285,10 +1278,9 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               within.
             </motion.p>
             <motion.p {...fadeInViewProps}>
-              <b>I am committed to listening, deeply, to your soul,</b> looking
-              for your lost threads, I’m committed to working with you to help
-              weave your purpose-filled life. To rediscover your innate
-              wholeness.
+              <b>I am committed to listening to your soul,</b> looking for your
+              lost threads, and helping you weave together your purpose-filled,
+              soul-infused life.
             </motion.p>
             <motion.p {...fadeInViewProps}>
               <b>I’ve walked this midlife journey.</b> I know the themes and the
@@ -1305,19 +1297,20 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             <motion.p {...fadeInViewProps}>
               <b>When the course meets:</b>
               <br />
-              Course begins on <b>4 January 2025</b> and meets{" "}
-              <b>every other Saturday until 24 May 2025.</b>
+              Course begins on the <b>1st February 2025</b> and ends on the{" "}
+              <b>12th July 2025.</b>
+              We meet every other Saturday from 4.30pm – 6pm GMT.
             </motion.p>
             <motion.p {...fadeInViewProps}>
               <b>There are 12 Group Sessions:</b>
-              <br />4 Jan, 18 Jan, 1 Feb, 15th Feb, 1 March, 15 March, 29 March,
-              12 April, 26 April, 10 May, 17 May, 24 May. All private sessions
-              with Nicki will be arranged.
+              <br />1 Feb, 15th Feb, 1 March, 15 March, 29 March, 12 April, 26
+              April, 10 May, 24 May, 31 May (Soul Quest), 7 June, 28 June, 12
+              July. All private sessions with Nicki will be arranged.
             </motion.p>
             <motion.p {...fadeInViewProps}>
               <b>The cost of Birthing Wisdom:</b>
-              The 6-month online program is <b>£900</b>. This is a one-time
-              Special Launch price.
+              The 6-month online program is <b>£900</b>.<br /> This is a
+              one-time Special Launch price.
             </motion.p>
           </div>
         </section>
@@ -1429,7 +1422,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                     <br />
                     <br />
                     Contact me if you would like to book a private course, just
-                    for your and your sisters.
+                    for you and your sisters.
                   </motion.p>
                   <motion.div {...fadeInViewProps}>
                     <Link

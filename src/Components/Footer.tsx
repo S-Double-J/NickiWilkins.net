@@ -28,11 +28,11 @@ const FooterLeft = styled.div`
   @media screen and (max-width: 1300px) {
     flex-direction: column;
   }
-  @media screen and (max-width:700px) {
+  @media screen and (max-width: 700px) {
     flex-direction: row;
     width: 100%;
   }
-  @media screen and (max-width:600px) {
+  @media screen and (max-width: 600px) {
     flex-direction: column;
   }
 `;
@@ -64,7 +64,6 @@ const PagesInner = styled.div`
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
-
 `;
 const FooterRight = styled.div`
   display: flex;
@@ -77,7 +76,7 @@ const FooterRight = styled.div`
   gap: 20px;
   flex-shrink: 0;
   text-align: right;
-  @media screen and (max-width:700px) {
+  @media screen and (max-width: 700px) {
     align-items: center;
     width: 100%;
     text-align: left;
@@ -99,11 +98,11 @@ const Line = styled.div`
   width: 1px;
   background-color: var(--Primary-Dark);
   opacity: 50%;
-  @media screen and (max-width:700px) {
+  @media screen and (max-width: 700px) {
     width: 100%;
     height: 1px;
   }
-`
+`;
 const Icons = styled.a`
   width: 40px;
   height: 40px;
@@ -126,7 +125,12 @@ function Footer() {
   const location = useLocation();
   let containerBackground = "var(--Primary-Light)";
   let textColor = " var(--Primary-Dark)";
-  if (location.pathname === "/" || location.pathname === "/birthing-wisdom" || location.pathname === "/retreats" || location.pathname === "/transformative-mentoring") {
+  if (
+    location.pathname === "/" ||
+    location.pathname === "/birthing-wisdom" ||
+    location.pathname === "/retreats" ||
+    location.pathname === "/transformative-mentoring"
+  ) {
     containerBackground = "var(--Accent-Dark)";
     textColor = "var(--Primary-Light)";
   }
@@ -139,16 +143,23 @@ function Footer() {
             <br />
             <a
               style={{ color: textColor }}
-              href="mailto:nwilkins@btinternet.com"
+              href="mailto:nwilkinsmentor@gmail.com"
             >
-              nwilkins@btinternet.com
+              nwilkinsmentor@gmail.com
             </a>
           </p>
           <Socials>
-            <Icons href="#" style={{ color: containerBackground, background: textColor}}>
+            <Icons
+              href="https://www.instagram.com/_nickiwilkins_/"
+              style={{ color: containerBackground, background: textColor }}
+            >
               <Insta />
             </Icons>
-            <Icons href="#" style={{ color: containerBackground, background: textColor}}>
+            <Icons
+              href="https://substack.com/@nickiwilkins?utm_source=user-menu
+"
+              style={{ color: containerBackground, background: textColor }}
+            >
               <Substack />
             </Icons>
           </Socials>
@@ -178,14 +189,16 @@ function Footer() {
           </PagesInner>
         </PagesOuter>
       </FooterLeft>
-      <Line style={{ backgroundColor: textColor}}/>
+      <Line style={{ backgroundColor: textColor }} />
       <FooterRight>
         <p style={{ color: textColor }}>
-          I guide women navigating the soulfulness of menopause to reveal their
-          heart-based wisdom, gifts, and purpose for a regenerative world full
-          of compassion and meaning.
+          I guide women navigating the soulfulness of midlife, menopause, and
+          elderhood, revealing heart-based wisdom, gifts, and purpose for a
+          compassionate and regenerative world.
         </p>
-        <p style={{fontSize: "12px", color: textColor}}>Copyright @ 2024 Nicki Wilkins     All rights reserved</p>
+        <p style={{ fontSize: "12px", color: textColor }}>
+          Copyright @ 2024 Nicki Wilkins     All rights reserved
+        </p>
       </FooterRight>
     </Container>
   );

@@ -443,7 +443,7 @@ function TransformativeMentoring({
             <b>
               <i>Each person’s journey is different</i>
             </b>
-            , and as your transformative mentor, I offer{" "}
+            , and as your Transformative Mentor, I offer{" "}
             <b>
               <i>guidance and gentle accountability</i>
             </b>{" "}
@@ -505,7 +505,11 @@ function TransformativeMentoring({
             where you are walking now.
           </motion.p>
         </div>
-          <motion.line {...fadeInViewProps} className="line-white" style={{width: "100%"}}/>
+        <motion.line
+          {...fadeInViewProps}
+          className="line-white"
+          style={{ width: "100%" }}
+        />
         <div className="section-text-container">
           <motion.h3 {...fadeInViewProps} className="white">
             What is <i>Transformative Mentoring</i>?
@@ -532,7 +536,7 @@ function TransformativeMentoring({
       <section id="YourJourney" ref={YourJourneyRef} className="section-frame">
         <div className="section-text-container">
           <motion.h3 {...fadeInViewProps}>
-            So, what will <i>Your Journey</i> look like?
+            So, what will <i>your journey</i> look like?
           </motion.h3>
           <motion.p {...fadeInViewProps}>
             Whilst no two journeys are the same, which makes describing what a
@@ -542,9 +546,9 @@ function TransformativeMentoring({
           </motion.p>
           <motion.p {...fadeInViewProps}>
             <b>
-              <i>1. All journeys begin with three simple questions, </i>
+              <i>1. All journeys begin with three simple questions. </i>
             </b>
-            these will help to shape your journey into the path that is right
+            These will help to shape your journey into the path that is right
             for you:
           </motion.p>
           <motion.p {...fadeInViewProps} className="libre center">
@@ -574,8 +578,10 @@ function TransformativeMentoring({
             </i>
           </motion.p>
           <motion.p {...fadeInViewProps}>
-            <b>3. Soulful Questioning: </b>I’ve also noticed a series of common
-            questions that women ask:
+            <b>
+              <i>3. Soulful Questioning: </i>
+            </b>
+            I’ve also noticed a series of common questions that women ask:
           </motion.p>
           <motion.p {...fadeInViewProps} className="libre center">
             <i>
@@ -600,7 +606,7 @@ function TransformativeMentoring({
           </motion.p>
           <motion.p {...fadeInViewProps}>
             <b>
-              <i>4. Your Journeys Conclusion: </i>
+              <i>4. Your Journey's Conclusion: </i>
             </b>
             Since Transformative Mentoring is a journey, with a beginning,
             middle, and end, I encourage one of the following activities as a
@@ -614,7 +620,7 @@ function TransformativeMentoring({
               <br />
               A ceremony to mark your passage.
               <br />
-              Writing your Wise Woman commitment.
+              Writing your Wise Woman Commitment.
             </i>
           </motion.p>
           <motion.p {...fadeInViewProps}>
@@ -698,7 +704,7 @@ function TransformativeMentoring({
           </Box>
           <motion.p {...fadeInViewProps}>
             <b>
-              <i>6. Journey these sessions could take you on: </i>
+              <i>6. What journeys could these sessions take you on? </i>
             </b>
             These are just some of the many ways that my clients use these
             sessions.
@@ -740,7 +746,11 @@ function TransformativeMentoring({
           </ul>
         </div>
       </section>
-      <section className="section-frame-dark" ref={NickisRoleRef} id="NickisRole">
+      <section
+        className="section-frame-dark"
+        ref={NickisRoleRef}
+        id="NickisRole"
+      >
         <div className="section-text-container">
           <motion.h3 {...fadeInViewProps} className="white">
             My role as your <i>Transformative Mentor</i>
@@ -755,10 +765,8 @@ function TransformativeMentoring({
             various stages of spiritual development. I bring 30+ years grounding
             in the spirituality of transformation, the study of the feminine
             life cycle, and a training ranging from the ordained priesthood to a
-            variety of meditative and somatic practices. At the core of my work
-            is my desire to reunite the division of the body and soul. I’m
-            currently a Mentor for The Purpose Guide Institute, a poet, and an
-            artist. 
+            variety of meditative and somatic practices. I’m currently a Mentor
+            for The Purpose Guide Institute, a poet, and an artist.
           </motion.p>
           <motion.p {...fadeInViewProps} className="white">
             <b>I believe in your body’s intelligence.</b> That you have a deep
@@ -767,9 +775,9 @@ function TransformativeMentoring({
             self-reflection and meditation, helps locate that felt sense within.
           </motion.p>
           <motion.p {...fadeInViewProps} className="white">
-            <b>I am committed to listening, deeply, to your soul,</b> looking
-            for your lost threads, I’m committed to working with you to help
-            weave your purpose-filled life. To rediscover your innate wholeness.
+            <b>I am committed to listening to your soul,</b> looking for your
+            lost threads, and helping you weave together your purpose-filled,
+            soul-infused life.
           </motion.p>
           <motion.p {...fadeInViewProps} className="white">
             <b>I’ve walked this midlife journey.</b> I know the themes and the
@@ -780,7 +788,11 @@ function TransformativeMentoring({
       <section className="section-frame-dark" style={{ padding: 0 }}>
         <motion.line {...fadeInViewProps} className="line-white" />
       </section>
-      <section className="section-frame-dark" ref={TheDetailsRef} id="TheDetails">
+      <section
+        className="section-frame-dark"
+        ref={TheDetailsRef}
+        id="TheDetails"
+      >
         <div className="section-text-container">
           <motion.h3 {...fadeInViewProps} className="white">
             The <i>Details</i>
@@ -792,19 +804,19 @@ function TransformativeMentoring({
             video-call.
           </motion.p>
           <motion.p {...fadeInViewProps} className="white">
-            One 75-minute Session:
+            One 60-minute Session:
             <br />
-            £100
+            £80
           </motion.p>
           <motion.p {...fadeInViewProps} className="white">
-            Three 75-minute Sessions:
+            Three 60-minute Sessions:
             <br />
-            £275
+            £230
           </motion.p>
           <motion.p {...fadeInViewProps} className="white">
-            Six 75-minute Sessions:
+            Six 60-minute Sessions:
             <br />
-            £575
+            £460
           </motion.p>
         </div>
       </section>

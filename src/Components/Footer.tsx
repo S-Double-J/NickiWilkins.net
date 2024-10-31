@@ -19,7 +19,6 @@ const Container = styled.div`
 const FooterLeft = styled.div`
   display: flex;
   width: 40%;
-  max-width: 600px;
   padding: 25px 0px;
   justify-content: space-between;
   align-items: flex-start;
@@ -183,7 +182,7 @@ function Footer() {
             <Plink to="/transformative-mentoring" style={{ color: textColor }}>
               Transformative Mentoring
             </Plink>
-            <Plink to="#" style={{ color: textColor }}>
+            <Plink to="/retreats" style={{ color: textColor }}>
               Retreats
             </Plink>
           </PagesInner>

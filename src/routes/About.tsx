@@ -199,7 +199,7 @@ function About({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               personal journey to discover the Sacred Feminine. I had resisted
               it for decades, but when my bishop told me I had to choose between
               motherhood and the priesthood, it was a no brainer. I knew there
-              was more to explore. And, I chose motherhood.
+              was more to explore.
             </motion.p>
             <motion.p {...fadeInViewProps}>
               <b>HOME EDUCATING MY FOUR CHILDREN</b> was a soul-infused
@@ -222,11 +222,14 @@ function About({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               <b>ELSEWHERE:</b>
             </motion.p>
             <motion.p {...fadeInViewProps}>
-              Instagram :: This is where I share my artwork.
+              Instagram </motion.p> <Icons href="#">
+                  <Insta />
+                </Icons>
+                <motion.p {...fadeInViewProps}> This is where I share my artwork.
             </motion.p>
             <motion.p {...fadeInViewProps}>
               Substack :: The Soul Pelt Press is where I record the journey into
-              my wisewoman years.
+              my wise woman years.
             </motion.p>
             <motion.p {...fadeInViewProps}>
               #wisewildwhole :: Use this hashtag on Instagram to record your

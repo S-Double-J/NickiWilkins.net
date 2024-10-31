@@ -43,7 +43,7 @@ function Conclusion({fadeInViewProps}: Props) {
         <motion.p className="white" {...fadeInViewProps}>
           If you’re inspired to reframe your menopausal journey as a rebirth,
           and you’re curious about the ways your soul is asking you to show up
-          as a Wise, Wild, and Whole Woman, I invite you to read more about my
+          as a wise, wild, and whole woman, I invite you to read more about my
           courses, Birthing Wisdom and Transformative Mentoring. You can also
           sign up to my newsletter and read my Substack. 
         </motion.p>

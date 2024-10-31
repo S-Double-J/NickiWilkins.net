@@ -57,6 +57,13 @@
   align-items: left;
   gap: 30px;
 }
+.section-text-container-other-options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
 
 .col-to-row {
   display: flex;
@@ -125,4 +132,13 @@
   @media screen and (max-width: 400px) {
     font-size: 40px;
   }
+}
+
+.button-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 12px;
 }

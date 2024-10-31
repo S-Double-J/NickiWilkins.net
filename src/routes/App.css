@@ -130,7 +130,7 @@ p, ul {
 }
 .primary-button {
   display: flex;
-  width: auto;
+  width: max-content;
   padding: 17px 30px;
   text-decoration: none;
   justify-content: center;
@@ -145,7 +145,7 @@ p, ul {
 }
 .primary-button-dark {
   display: flex;
-  width: auto;
+  width: max-content;
   padding: 17px 30px;
   text-decoration: none;
   justify-content: center;

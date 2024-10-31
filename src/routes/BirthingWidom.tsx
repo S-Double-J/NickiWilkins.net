@@ -4,6 +4,10 @@ import DropDownBox from "../Components/DropDownBox";
 import "./projects.css";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import MeetingButton from "../Components/MeetingButton";
+
+
+
 
 const Box = styled.div`
   display: flex;
@@ -31,6 +35,7 @@ const SmallBox = styled.div`
   width: 100%;
   max-width: 400px;
   height: 500px;
+  gap: 20px;
   padding: 25px;
   flex-direction: column;
   justify-content: space-between;
@@ -183,6 +188,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
   const TheFourStagesRef = useRef(null);
   const NickisRoleRef = useRef(null);
   const TheDetailsRef = useRef(null);
+  const BookingRef = useRef(null);
   const FAQsRef = useRef(null);
   const OtherOptionsRef = useRef(null);
 
@@ -204,6 +210,9 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
       margin: "-200px 0px",
     });
     const TheDetailsIsInView = useInView(TheDetailsRef, {
+      margin: "-200px 0px",
+    });
+    const BookingIsInView = useInView(BookingRef, {
       margin: "-200px 0px",
     });
     const FAQsIsInView = useInView(FAQsRef, { margin: "-200px 0px" });
@@ -528,6 +537,42 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
           </SectionButton>
           <SectionButton
             initial={false}
+            animate={BookingIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("Booking");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>Booking</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={BookingIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">Booking</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
             animate={FAQsIsInView ? "active" : "inactive"}
             variants={{
               active: {
@@ -665,7 +710,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               </b>{" "}
               to{" "}
               <b>
-                <i>initiate your Midlife Rebirth</i>
+                <i>initiate your Midlife Rebirth </i>
               </b>
                and offers{" "}
               <b>
@@ -910,7 +955,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                       <b>12 Practical guides, </b>
                     </i>
                     one for each of the 12 modules, outlining practices and
-                    exercises to deepen your soul-work.
+                    exercises to deepen your soulwork.
                   </motion.p>
                 </BoxInnerNoBorder>
                 <BoxInnerNoBorder>
@@ -956,7 +1001,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                     <i>
                       <b>Additional readings and resouces </b>
                     </i>
-                    that support your soul-work
+                    that support your soulwork
                   </motion.p>
                 </BoxInnerNoBorder>
               </Box>
@@ -1055,7 +1100,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               >
                 <DropDownBox
                   boxProps={darkBoxProps}
-                  title="PREPARATION: Cultivating your innate wholeness"
+                  title="PREPARATION: Cultivating your innate wholeness."
                 >
                   <h4>1. Key Explorations</h4>
                   <p>How to cultivate your innate wholeness?</p>
@@ -1114,7 +1159,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                 </DropDownBox>
                 <DropDownBox
                   boxProps={darkBoxProps}
-                  title="DISSOLUTION: Softening the influence of Ego"
+                  title="DISSOLUTION: Softening the influence of Ego."
                 >
                   <h4>1. Key Explorations</h4>
                   <p>
@@ -1172,7 +1217,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                   <ul>
                     <li>Surrendering to your deepest longing.</li>
                     <li>What does your truest self whisper?</li>
-                    <li>Moving from egocentric to soul-centric living.</li>
+                    <li>Moving from egocentric to soulcentric living.</li>
                     <li>Discovering your True Purpose.</li>
                   </ul>
                   <h4>2. Story</h4>
@@ -1202,7 +1247,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                     Self-Portrait 3.
                   </p>
                   <h4>4. Purpose Discovery</h4>
-                  <p>The Soul Quest is an act of soul-centric living:</p>
+                  <p>The Soul Quest is an act of soulcentric living:</p>
                   <ul>
                     <li>How can we surrender to Soul?</li>
                     <li>Asking Nature: What can I do for you?</li>
@@ -1220,7 +1265,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                       Keeping your soul encounter experiences close with
                       expressive arts.
                     </li>
-                    <li>Discerning your Sacred Instructions</li>
+                    <li>Discerning your Sacred Instructions.</li>
                     <li>Your mythopoetic identity.</li>
                     <li>
                       Developing skills that resonate with your mythopoetic
@@ -1299,7 +1344,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               <br />
               Course begins on the <b>1st February 2025</b> and ends on the{" "}
               <b>12th July 2025.</b>
-              We meet every other Saturday from 4.30pm – 6pm GMT.
+              We meet every other Saturday from 4pm – 6pm GMT.
             </motion.p>
             <motion.p {...fadeInViewProps}>
               <b>There are 12 Group Sessions:</b>
@@ -1312,6 +1357,18 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               The 6-month online program is <b>£900</b>.<br /> This is a
               one-time Special Launch price.
             </motion.p>
+          </div>
+        </section>
+        <line className="line" />
+        <section className="section-frame" ref={BookingRef} id="Booking">
+          <div className="section-text-container">
+            <motion.h3 {...fadeInViewProps}>
+              How to <i>book your place</i> on the course
+            </motion.h3>
+            <motion.p {...fadeInViewProps}>
+              If you would like to book your place on Birthing Wisdom please book a free 30 minute virtual meeting with Nicki. In this meeting you will be able to ask any questions you might have about the course and Nicki will take your details and get to know you a little.
+            </motion.p>
+            <MeetingButton class_name="primary-button" fadeInViewProps={fadeInViewProps}/>
           </div>
         </section>
         <section className="section-frame-dark" ref={FAQsRef} id="FAQs">
@@ -1374,10 +1431,12 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
           ref={OtherOptionsRef}
           className="section-frame-dark"
         >
-          <div className="section-text-container">
+          <div className="section-text-container-other-options">
+            <div className="section-text-container">
             <motion.h3 className="white" {...fadeInViewProps}>
               <i>Other ways</i> to work with me and this journey
             </motion.h3>
+            </div>
             <div className="col-to-row">
               <motion.div {...fadeInViewProps}>
                 <SmallBox>
@@ -1398,12 +1457,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                     </motion.li>
                   </ul>
                   <motion.div {...fadeInViewProps}>
-                    <Link
-                      to={"/transformative-mentoring"}
-                      className="primary-button"
-                    >
-                      <p>Book now</p>
-                    </Link>
+                    <MeetingButton class_name="primary-button" fadeInViewProps={fadeInViewProps} />
                   </motion.div>
                 </SmallBox>
               </motion.div>
@@ -1425,12 +1479,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                     for you and your sisters.
                   </motion.p>
                   <motion.div {...fadeInViewProps}>
-                    <Link
-                      to={"/transformative-mentoring"}
-                      className="primary-button"
-                    >
-                      <p>Book now</p>
-                    </Link>
+                  <MeetingButton class_name="primary-button" fadeInViewProps={fadeInViewProps} />
                   </motion.div>
                 </SmallBox>
               </motion.div>
@@ -1438,6 +1487,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
           </div>
         </section>
       </div>
+      
     </>
   );
 }

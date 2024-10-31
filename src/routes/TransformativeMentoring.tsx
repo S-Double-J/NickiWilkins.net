@@ -711,37 +711,37 @@ function TransformativeMentoring({
           </motion.p>
           <ul>
             <motion.li {...fadeInViewProps} className="libre">
-              Weaving spirituality into your life
+              Weaving spirituality into your life.
             </motion.li>
             <motion.li {...fadeInViewProps} className="libre">
-              Living authentically, aligning your inner self with your work
+              Living authentically, aligning your inner self with your work.
             </motion.li>
             <motion.li {...fadeInViewProps} className="libre">
-              Developing a loving relationship with your body
+              Developing a loving relationship with your body.
             </motion.li>
             <motion.li {...fadeInViewProps} className="libre">
-              Exploring the wild feminine through myth and nature connection
+              Exploring the wild feminine through myth and nature connection.
             </motion.li>
             <motion.li {...fadeInViewProps} className="libre">
-              Healing and unifying your inner masculine and feminine
+              Healing and unifying your inner masculine and feminine.
             </motion.li>
             <motion.li {...fadeInViewProps} className="libre">
-              Working with internal and external resistances and inner critics. 
+              Working with internal and external resistances and inner critics.
             </motion.li>
             <motion.li {...fadeInViewProps} className="libre">
-              Practising self-love, self-acceptance, and self-loyalty
+              Practising self-love, self-acceptance, and self-loyalty.
             </motion.li>
             <motion.li {...fadeInViewProps} className="libre">
-              Finding your mythopoetic identity
+              Finding your mythopoetic identity.
             </motion.li>
             <motion.li {...fadeInViewProps} className="libre">
-              Exploring your expanding creativity
+              Exploring your expanding creativity.
             </motion.li>
             <motion.li {...fadeInViewProps} className="libre">
-              Integration of your rebirthing journey
+              Integration of your rebirthing journey.
             </motion.li>
             <motion.li {...fadeInViewProps} className="libre">
-              Embodiment of your soul’s purpose and calling
+              Embodiment of your soul’s purpose and calling.
             </motion.li>
           </ul>
         </div>

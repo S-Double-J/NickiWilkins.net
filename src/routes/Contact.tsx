@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ScrollRestoration } from "react-router-dom";
 import { motion } from "framer-motion";
+import MeetingButton from "../Components/MeetingButton";
 
 const ContactContainer = styled.div`
   display: flex;
@@ -149,6 +150,7 @@ function Contact({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             >
               <p>Email Nicki</p>
             </motion.a>
+            <MeetingButton class_name="primary-button" fadeInViewProps={fadeInViewProps} />
           </TextContainer>
           <motion.div
             initial={{ opacity: 0 }}

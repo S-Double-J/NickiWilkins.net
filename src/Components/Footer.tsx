@@ -174,6 +174,9 @@ function Footer() {
             <Plink to="/contact" style={{ color: textColor }}>
               Contact
             </Plink>
+            <Plink to="http://eepurl.com/i3rdLQ" style={{ color: textColor }}>
+              Mailing List
+            </Plink>
           </PagesInner>
           <PagesInner>
             <Plink to="/birthing-wisdom" style={{ color: textColor }}>

@@ -311,14 +311,14 @@ p, ul {
   align-items: center;
   justify-content: center;
   @media (max-width: 1050px) {
-    width: 437px;
-    height: 437px;
+    width: 500px;
+    height: 500px;
     bottom: -50px;
-    left: -300px;
-  }
-  @media (max-width: 650px) {
-    bottom: -200px;
     left: -200px;
+  }
+  @media screen and (max-width:800px) {
+    width: 400px;
+    height: 400px;
   }
   @media screen and (orientation: landscape) and (max-height: 535px) {
     bottom: -200px;
@@ -334,13 +334,19 @@ p, ul {
   position: absolute;
   color: var(--Primary-Light);
   width: 40vw;
-  top: -100px;
+  top: -60px;
   text-align: center;
   @media (max-width: 1050px) {
     width: 400px;
+    top: -200px;
   }
-  @media (max-width: 450px) {
+  @media screen and (max-width: 900px){
+    top: -50px;
+  }
+  @media screen and (max-width: 550px) {
     width: 90svw;
+    top: -10px;
+    left: -50px
   }
 }
 

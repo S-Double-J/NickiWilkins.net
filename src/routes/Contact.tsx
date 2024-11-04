@@ -141,7 +141,7 @@ function Contact({ fadeInViewProps, MakeSplitTextAnim }: Props) {
 
             <motion.a
               style={{ textDecoration: "none" }}
-              href="mailto:nwilkins@btinternet.com"
+              href="mailto:nwilkinsmentor@gmail.com"
               className="primary-button"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -150,7 +150,17 @@ function Contact({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             >
               <p>Email Nicki</p>
             </motion.a>
-            <MeetingButton class_name="primary-button" fadeInViewProps={fadeInViewProps} />
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: DURATION, ease: EASE, delay: DELAY }}
+              viewport={{ once: true }}
+            >
+              <MeetingButton
+                class_name="primary-button"
+                fadeInViewProps={fadeInViewProps}
+              />
+            </motion.div>
           </TextContainer>
           <motion.div
             initial={{ opacity: 0 }}

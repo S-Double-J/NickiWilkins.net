@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import DropDownBox from "../Components/DropDownBox";
+import MeetingButton from "../Components/MeetingButton";
 import "./projects.css";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
@@ -147,6 +148,7 @@ function TransformativeMentoring({
   const YourJourneyRef = useRef(null);
   const NickisRoleRef = useRef(null);
   const TheDetailsRef = useRef(null);
+  const BookingRef = useRef(null)
 
   function ProjectsNavTool() {
     const [isHidden, setIsHidden] = useState(true);
@@ -161,6 +163,7 @@ function TransformativeMentoring({
     const TheDetailsIsInView = useInView(TheDetailsRef, {
       margin: "-200px 0px",
     });
+    const BookingIsInView = useInView(BookingRef, { margin: "-200px 0px" });
 
     return (
       <FixedPositionContainer
@@ -356,6 +359,42 @@ function TransformativeMentoring({
             <ActiveSpan
               initial={false}
               animate={TheDetailsIsInView ? "active" : "inactive"}
+              variants={{
+                active: {
+                  top: 0,
+                },
+                inactive: {
+                  top: "100%",
+                },
+              }}
+              transition={{ duration: 0.3, easing: "easeInOut" }}
+            >
+              <ButtonText className="white">The Details</ButtonText>
+            </ActiveSpan>
+          </SectionButton>
+          <SectionButton
+            initial={false}
+            animate={BookingIsInView ? "active" : "inactive"}
+            variants={{
+              active: {
+                border: "1px solid var(--Primary-Light)",
+              },
+              inactive: {
+                border: "1px solid var(--Primary-Dark)",
+              },
+            }}
+            transition={{ duration: 0.5, easing: "easeInOut" }}
+            onClick={() => {
+              const element = document.getElementById("Booking");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            <ButtonText>Booking</ButtonText>
+            <ActiveSpan
+              initial={false}
+              animate={BookingIsInView ? "active" : "inactive"}
               variants={{
                 active: {
                   top: 0,
@@ -820,6 +859,20 @@ function TransformativeMentoring({
           </motion.p>
         </div>
       </section>
+      <section className="section-frame-dark" style={{ padding: 0 }}>
+        <motion.line {...fadeInViewProps} className="line-white" />
+      </section>
+      <section className="section-frame-dark" ref={BookingRef} id="Booking">
+          <div className="section-text-container">
+            <motion.h3  className="white" {...fadeInViewProps}>
+              How to <i>book your first session(s)</i>
+            </motion.h3>
+            <motion.p className="white" {...fadeInViewProps}>
+              If you would like to book your first Transformative Mentoring session(s) please first book a free 30 minute virtual meeting with Nicki. In this meeting you will be able to ask any questions you might have about Transformative Mentoring and Nicki will take your details and get to know you a little.
+            </motion.p>
+            <MeetingButton class_name="primary-button-dark" fadeInViewProps={fadeInViewProps}/>
+          </div>
+        </section>
     </div>
   );
 }

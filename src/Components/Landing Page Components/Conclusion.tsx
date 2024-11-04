@@ -63,12 +63,12 @@ function Conclusion({fadeInViewProps}: Props) {
           </LinkText>
         </motion.div>
         <motion.div {...fadeInViewProps}>
-          <LinkText to={"#"} className="primary-button-dark">
+          <LinkText to="http://eepurl.com/i3rdLQ" className="primary-button-dark">
             <p>Sign up to my Newsletter</p>
           </LinkText>
         </motion.div>
         <motion.div {...fadeInViewProps}>
-          <LinkText to={"#"} className="primary-button-dark">
+          <LinkText to={"https://substack.com/@nickiwilkins?utm_source=user-menu"} className="primary-button-dark">
             <p>Read my Substack</p>
           </LinkText>
         </motion.div>

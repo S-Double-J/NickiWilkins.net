@@ -18,16 +18,6 @@ const ColourBox = styled.div`
   z-index: 200;
   position: relative;
 `;
-const StickyScrollDiv = styled.div`
-  width: 100%;
-  z-index: 0;
-  position: relative;
-`;
-const SVG = styled.svg`
-  width: 100%;
-  position: relative;
-  margin-bottom: -6px;
-`
 interface Props {
   fadeInViewProps: {
     initial: { opacity: number };
@@ -42,19 +32,11 @@ function LandingPage({fadeInViewProps, MakeSplitTextAnim}: Props) {
     <>
       <Heroine fadeInViewProps={fadeInViewProps} MakeSplitTextAnim={MakeSplitTextAnim}/>
       <WiseWildWhole fadeInViewProps={fadeInViewProps}/>
-      <StickyScrollDiv>
       <TheCycle fadeInViewProps={fadeInViewProps}/>
-      <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 206">
-        <path
-          d="M0 206H1440V80C1440 80 1237.49 10.7817 1102.5 2.00005C870.274 -13.1072 752.925 118.349 520.5 130C316.552 140.224 0 80 0 80V206Z"
-          fill="#590000"
-        />
-      </SVG>
       <ColourBox>
         <Testimonials fadeInViewProps={fadeInViewProps}/>
         <Conclusion fadeInViewProps={fadeInViewProps}/>
       </ColourBox>
-      </StickyScrollDiv>
     </>
   );
 }

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import "./projects.css";
 import DropDownBox from "../Components/DropDownBox";
+import MeetingButton from "../Components/MeetingButton";
 
 const Box = styled.div`
   display: flex;
@@ -339,12 +340,7 @@ function Retreats({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                   >
                     <p>Email Nicki</p>
                   </LinkText>
-                  <LinkText
-                    href=""
-                    className="primary-button"
-                  >
-                    <p>Book a virtual meeting</p>
-                  </LinkText>
+                  <MeetingButton class_name="primary-button"fadeInViewProps={fadeInViewProps}/>
                 </motion.div>
               </DropDownBox>
             </Box>

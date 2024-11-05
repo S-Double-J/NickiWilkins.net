@@ -125,7 +125,7 @@ function Intro({ fadeInViewProps }: IntroProps) {
           </motion.p>
         </InnerFrame>
       </OuterFrame>
-      <OuterFrame>
+      <OuterFrame id="Courses">
         <motion.h3 {...fadeInViewProps}>Your Journey</motion.h3>
         <InnerFrame>
           <motion.p {...fadeInViewProps}>

@@ -125,14 +125,14 @@ function Contact({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                 <b>
                   Not sure which program is the right one for you? Let’s chat.
                 </b>{" "}
-                I’m happy to talk with you to discuss what is the right path for
+                I’m happy to talk with you about the right path for
                 you. I offer a free 30-minute session to see if my work
                 resonates with you.
                 <br />
                 <br />
                 <p>
                   <b>Want to interview me on your podcast? Contact me.</b> I
-                  love discussing meaningful topics like women’s spirituality,
+                  love discussing meaningful topics like women’s spirituality, the Sacred Feminine,
                   the soulful side of menopause, the power of fully initiated
                   elders, and how to find purpose in the second half of life.
                 </p>

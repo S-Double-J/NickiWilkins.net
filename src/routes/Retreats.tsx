@@ -90,7 +90,7 @@ function Retreats({ fadeInViewProps, MakeSplitTextAnim }: Props) {
       <section className="section-frame" id="soul-pelt">
         <div className="section-text-container">
           <motion.h3 {...fadeInViewProps}>
-            Finding your Soul Pelt:<br/> The Selkie myth and The Midlife
+            Finding your Soul Pelt:<br/> The Selkie Myth and The Midlife
             Metamorphosis
           </motion.h3>
           <motion.p {...fadeInViewProps} className="libre">

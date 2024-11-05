@@ -78,7 +78,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const IconTextBox = styled.div`
+const IconTextBox = styled(motion.div)`
   width: 100%;
   display: flex;
   justify-content: left;
@@ -172,18 +172,13 @@ function About({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               on Substack. 
             </motion.p>
             <motion.p {...fadeInViewProps}>
-              <b>I AM A POEM.</b> And so are you! I see poems everywhere. Ones
-              written and ones lived. Short ones. Long ones. Forever growing
-              ones.
-            </motion.p>
-            <motion.p {...fadeInViewProps}>
               <b>MY INTRODUCTION TO SOUL</b> started when my grandma walked me
               around her garden. Always visiting her compost heap (It was her
               holiest of holies), she taught me how to walk an ordinary
               pilgrimage. To circumnavigate. I’ve been hooked ever since.
             </motion.p>
             <motion.p {...fadeInViewProps}>
-              <b>MY SOUL PURPOSE</b> is to hold space for others as they walk
+              <b>MY SOUL'S PURPOSE</b> is to hold space for others as they walk
               life’s journey. I’m like a soul detective, curious and eager for
               you to find your lost threads. The artist in me likes to help you
               weave them together.
@@ -213,6 +208,11 @@ function About({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               political philosophy. 
             </motion.p>
             <motion.p {...fadeInViewProps}>
+              <b>I AM A POEM.</b> And so are you! I see poems everywhere. Ones
+              written and ones lived. Short ones. Long ones. Forever growing
+              ones.
+            </motion.p>
+            <motion.p {...fadeInViewProps}>
               <b>IF I HAD TO DECLARE A SPIRITUAL PRACTICE</b> it would be haiku.
               I write while walking, just like the old haiku monks of Japan,
               counting syllables with my fingers.
@@ -226,7 +226,7 @@ function About({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             <motion.p {...fadeInViewProps}>
               <b>ELSEWHERE:</b>
             </motion.p>
-            <IconTextBox>
+            <IconTextBox {...fadeInViewProps}>
               {" "}
               <Icons href="https://www.instagram.com/_nickiwilkins_/">
                 <Insta />
@@ -235,7 +235,7 @@ function About({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                 Instagram :: This is where I share my artwork.
               </motion.p>
             </IconTextBox>
-            <IconTextBox>
+            <IconTextBox {...fadeInViewProps}>
               <Icons href="https://substack.com/@nickiwilkins?utm_source=user-menu">
                 <Substack />
               </Icons>

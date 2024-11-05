@@ -15,7 +15,6 @@ const ColourBox = styled.div`
   flex: 1 0 0;
   align-self: stretch;
   background: #590000;
-  z-index: 200;
   position: relative;
 `;
 interface Props {

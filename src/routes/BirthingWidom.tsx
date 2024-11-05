@@ -1239,7 +1239,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                   <p>
                     Deepening into Soul: THE SOUL QUEST
                     <br />
-                    Solo time on the land (8hours).
+                    Solo time on the land (8 hours).
                   </p>
                   <p>
                     Creative Expression:
@@ -1366,7 +1366,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               How to <i>book your place</i> on the course
             </motion.h3>
             <motion.p {...fadeInViewProps}>
-              If you would like to book your place on Birthing Wisdom please book a free 30 minute virtual meeting with Nicki. In this meeting you will be able to ask any questions you might have about the course and Nicki will take your details and get to know you a little.
+              If you would like to book your place on Birthing Wisdom please book a free 30 minute introductory call with Nicki. This is a chance to get to know each other and answer any questions you might have.
             </motion.p>
             <MeetingButton class_name="primary-button" fadeInViewProps={fadeInViewProps}/>
           </div>

@@ -868,7 +868,7 @@ function TransformativeMentoring({
               How to <i>book your first session(s)</i>
             </motion.h3>
             <motion.p className="white" {...fadeInViewProps}>
-              If you would like to book your first Transformative Mentoring session(s) please first book a free 30 minute virtual meeting with Nicki. In this meeting you will be able to ask any questions you might have about Transformative Mentoring and Nicki will take your details and get to know you a little.
+              If you would like to book your first Transformative Mentoring session(s) please first book a free 30 minute introductory call with Nicki. This is a chance to get to know each other and answer any questions you might have.
             </motion.p>
             <MeetingButton class_name="primary-button-dark" fadeInViewProps={fadeInViewProps}/>
           </div>

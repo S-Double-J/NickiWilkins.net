@@ -141,10 +141,10 @@ function About({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                 viewport={{ once: true }}
                 key="socials-icons"
               >
-                <Icons href="#">
+                <Icons href="https://www.instagram.com/_nickiwilkins_/">
                   <Insta />
                 </Icons>
-                <Icons href="#">
+                <Icons href="https://substack.com/@nickiwilkins?utm_source=user-menu">
                   <Substack />
                 </Icons>
               </SocialsIcons>

@@ -69,7 +69,7 @@ function Intro({ fadeInViewProps }: IntroProps) {
         </motion.h3>
         <motion.p {...fadeInViewProps}>
           I’m a Transformative Mentor and certified Purpose Guide, a mother, a
-          poet, and most importantly, an elder. I offer wisdom and guidance to
+          poet, and artist. I offer wisdom and guidance to
           women as they navigate the soulful side of menopause and elderhood.
           I’m a midwife for your midlife rebirth.
         </motion.p>
@@ -162,7 +162,7 @@ function Intro({ fadeInViewProps }: IntroProps) {
               Birthing Wisdom
             </motion.p>
             <motion.p {...fadeInViewProps}>
-              A 6-month online purpose discovery program for menopausal women
+              A 3-month online purpose discovery program for menopausal women
               who are wanting to be part of a community as they transition into
               elderhood. Birthing Wisdom includes group sessions and private
               sessions with me.

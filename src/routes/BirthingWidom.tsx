@@ -693,8 +693,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             transition={{ duration: DURATION, ease: EASE, delay: 2.6 }}
             viewport={{ once: true }}
           >
-            A 6-month online soul initiation for women travelling the midlife
-            journey of rebirth. February to July 2025
+            A 3-month online soul initiation for women travelling the midlife journey of rebirth. March to June 2025
           </motion.p>
         </div>
         <section className="section-frame" ref={ForewordRef} id="Foreword">
@@ -906,9 +905,9 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                   </motion.div>
                   <motion.p className="white" {...fadeInViewProps}>
                     <i>
-                      <b>12 Live, interactive group sessions </b>
+                      <b>8 Live, interactive group sessions </b>
                     </i>
-                    with Nicki
+                    with Nicki.
                   </motion.p>
                 </BoxInnerNoBorder>
                 <BoxInnerNoBorder>
@@ -929,9 +928,9 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                   </motion.div>
                   <motion.p className="white" {...fadeInViewProps}>
                     <i>
-                      <b>6 Private, 60 minute sessions </b>
+                      <b>3 Private, 60 minute sessions </b>
                     </i>
-                    with Nicki
+                    with Nicki.
                   </motion.p>
                 </BoxInnerNoBorder>
                 <BoxInnerNoBorder>
@@ -952,7 +951,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                   </motion.div>
                   <motion.p className="white" {...fadeInViewProps}>
                     <i>
-                      <b>12 Practical guides, </b>
+                      <b>8 Practical guides, </b>
                     </i>
                     one for each of the 12 modules, outlining practices and
                     exercises to deepen your soulwork.
@@ -976,9 +975,9 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                   </motion.div>
                   <motion.p className="white" {...fadeInViewProps}>
                     <i>
-                      <b>7 Guided soul encounter meditations </b>
+                      <b>6 Guided soul encounter meditations </b>
                     </i>
-                    with Nicki
+                    with Nicki.
                   </motion.p>
                 </BoxInnerNoBorder>
                 <BoxInnerNoBorder>
@@ -999,9 +998,9 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                   </motion.div>
                   <motion.p className="white" {...fadeInViewProps}>
                     <i>
-                      <b>Additional readings and resouces </b>
+                      <b>Additional readings and resources </b>
                     </i>
-                    that support your soulwork
+                    that support your soulwork.
                   </motion.p>
                 </BoxInnerNoBorder>
               </Box>
@@ -1342,19 +1341,17 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             <motion.p {...fadeInViewProps}>
               <b>When the course meets:</b>
               <br />
-              Course begins on the <b>1st February 2025</b> and ends on the{" "}
-              <b>12th July 2025.</b>
+              Course begins on the <b>4th March 2025</b> and ends on the{" "}
+              <b>10th June 2025. </b>
               We meet every other Saturday from 4pm – 6pm GMT.
             </motion.p>
             <motion.p {...fadeInViewProps}>
-              <b>There are 12 Group Sessions:</b>
-              <br />1 Feb, 15th Feb, 1 March, 15 March, 29 March, 12 April, 26
-              April, 10 May, 24 May, 31 May (Soul Quest), 7 June, 28 June, 12
-              July. All private sessions with Nicki will be arranged.
+              <b>There are 8 Group Sessions:</b>
+              <br />4 March, 18 March, 8 April, 22 April, 6 May, 20 May, 3 June, 10 June. All private sessions with Nicki will be arranged.
             </motion.p>
             <motion.p {...fadeInViewProps}>
-              <b>The cost of Birthing Wisdom:</b>
-              The 6-month online program is <b>£900</b>.<br /> This is a
+              <b>The cost of Birthing Wisdom:</b><br/>
+              The 3-month online program is <b>£750</b>.<br /> This is a
               one-time Special Launch price.
             </motion.p>
           </div>
@@ -1445,14 +1442,14 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                   </motion.h4>
                   <ul>
                     <motion.li {...fadeInViewProps}>
-                      12 individual sessions with me, at your pace.
+                      8 individual sessions with me, at your pace.
                     </motion.li>
                     <motion.li {...fadeInViewProps}>
                       These individual sessions will follow the structure of
                       Birthing Wisdom.
                     </motion.li>
                     <motion.li {...fadeInViewProps}>
-                      In person or online. £1800 (This is a one-time special
+                      In person or online. £1200 (This is a one-time special
                       launch price. Offer ends soon.)
                     </motion.li>
                   </ul>

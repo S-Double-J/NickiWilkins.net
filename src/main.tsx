@@ -22,16 +22,16 @@ const fadeInViewProps = {
 function MakeSplitTextAnim({ children }: { children: string }) {
   return (
     <span>
-      {children.split("").map((l, i) => {
+      {children.split("").map((letter, index) => {
         return (
           <motion.span
-            key={i}
+            key={index}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.7, ease: "easeInOut", delay: 0.13 * i }}
+            transition={{ duration: 0.7, ease: "easeInOut", delay: 0.13 * index }}
             viewport={{ once: true }}
           >
-            {l}
+            {letter}
           </motion.span>
         );
       })}

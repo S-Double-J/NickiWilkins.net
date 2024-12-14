@@ -6,9 +6,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import MeetingButton from "../Components/MeetingButton";
 
-
-
-
 const Box = styled.div`
   display: flex;
   max-width: 800px;
@@ -693,7 +690,8 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             transition={{ duration: DURATION, ease: EASE, delay: 2.6 }}
             viewport={{ once: true }}
           >
-            A 3-month online soul initiation for women travelling the midlife journey of rebirth. March to June 2025
+            A 3-month online soul initiation for women travelling the midlife
+            journey of rebirth. March to June 2025
           </motion.p>
         </div>
         <section className="section-frame" ref={ForewordRef} id="Foreword">
@@ -711,7 +709,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               <b>
                 <i>initiate your Midlife Rebirth </i>
               </b>
-               and offers{" "}
+              and offers{" "}
               <b>
                 <i>guidance</i>
               </b>{" "}
@@ -953,7 +951,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                     <i>
                       <b>8 Practical guides, </b>
                     </i>
-                    one for each of the 12 modules, outlining practices and
+                    one for each of the 8 modules, outlining practices and
                     exercises to deepen your soulwork.
                   </motion.p>
                 </BoxInnerNoBorder>
@@ -1343,14 +1341,17 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               <br />
               Course begins on the <b>4th March 2025</b> and ends on the{" "}
               <b>10th June 2025. </b>
-              We meet every other Saturday from 4pm – 6pm GMT.
+              We meet every other Tuesday from 7pm – 8.30pm GMT.
             </motion.p>
             <motion.p {...fadeInViewProps}>
               <b>There are 8 Group Sessions:</b>
-              <br />4 March, 18 March, 8 April, 22 April, 6 May, 20 May, 3 June, 10 June. All private sessions with Nicki will be arranged.
+              <br />4 March, 18 March, 8 April, 22 April, 6 May, 20 May, 3 June,
+              10 June.
+              <br /> All private sessions with Nicki will be arranged.
             </motion.p>
             <motion.p {...fadeInViewProps}>
-              <b>The cost of Birthing Wisdom:</b><br/>
+              <b>The cost of Birthing Wisdom:</b>
+              <br />
               The 3-month online program is <b>£750</b>.<br /> This is a
               one-time Special Launch price.
             </motion.p>
@@ -1363,9 +1364,15 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               How to <i>book your place</i> on the course
             </motion.h3>
             <motion.p {...fadeInViewProps}>
-              If you would like to book your place on Birthing Wisdom please book a free 30 minute introductory call with Nicki. This is a chance to get to know each other and answer any questions you might have.
+              If you would like to book your place on Birthing Wisdom please
+              book a free 30 minute introductory call with Nicki. This is a
+              chance to get to know each other and answer any questions you
+              might have.
             </motion.p>
-            <MeetingButton class_name="primary-button" fadeInViewProps={fadeInViewProps}/>
+            <MeetingButton
+              class_name="primary-button"
+              fadeInViewProps={fadeInViewProps}
+            />
           </div>
         </section>
         <section className="section-frame-dark" ref={FAQsRef} id="FAQs">
@@ -1430,9 +1437,9 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
         >
           <div className="section-text-container-other-options">
             <div className="section-text-container">
-            <motion.h3 className="white" {...fadeInViewProps}>
-              <i>Other ways</i> to work with me and this journey
-            </motion.h3>
+              <motion.h3 className="white" {...fadeInViewProps}>
+                <i>Other ways</i> to work with me and this journey
+              </motion.h3>
             </div>
             <div className="col-to-row">
               <motion.div {...fadeInViewProps}>
@@ -1449,12 +1456,16 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                       Birthing Wisdom.
                     </motion.li>
                     <motion.li {...fadeInViewProps}>
-                      In person or online. £1200 (This is a one-time special
-                      launch price. Offer ends soon.)
+                      In person or online. <br />
+                      £1200 (This is a one-time special launch price. Offer ends
+                      soon.)
                     </motion.li>
                   </ul>
                   <motion.div {...fadeInViewProps}>
-                    <MeetingButton class_name="primary-button" fadeInViewProps={fadeInViewProps} />
+                    <MeetingButton
+                      class_name="primary-button"
+                      fadeInViewProps={fadeInViewProps}
+                    />
                   </motion.div>
                 </SmallBox>
               </motion.div>
@@ -1476,7 +1487,10 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                     for you and your sisters.
                   </motion.p>
                   <motion.div {...fadeInViewProps}>
-                  <MeetingButton class_name="primary-button" fadeInViewProps={fadeInViewProps} />
+                    <MeetingButton
+                      class_name="primary-button"
+                      fadeInViewProps={fadeInViewProps}
+                    />
                   </motion.div>
                 </SmallBox>
               </motion.div>
@@ -1484,7 +1498,6 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
           </div>
         </section>
       </div>
-      
     </>
   );
 }

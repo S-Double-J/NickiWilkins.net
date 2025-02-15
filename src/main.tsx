@@ -12,6 +12,7 @@ import BirthingWisdom from "./routes/BirthingWidom.tsx";
 import TransformativeMentoring from "./routes/TransformativeMentoring.tsx";
 import LandingPage from "./routes/LandingPage.tsx";
 import { motion } from "framer-motion";
+import "./Components/mailchimp/mailchimpStyles.css"
 
 const fadeInViewProps = {
   initial: { opacity: 0 },

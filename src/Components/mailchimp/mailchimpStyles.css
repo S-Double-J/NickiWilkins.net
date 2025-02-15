@@ -1,0 +1,148 @@
+/* Main form container */
+#mc_embed_signup {
+  background: var(--Accent-Dark);
+  border-radius: 8px;
+  font-family: Montserrat, sans-serif;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+/* Form element */
+#mc-embedded-subscribe-form {
+  margin: 0;
+  padding: 0;
+}
+
+/* Scrollable container */
+#mc_embed_signup_scroll {
+  margin: 0;
+  padding: 0;
+}
+
+/* Required field indicator */
+.indicates-required {
+  font-size: 12px;
+  color: var(--Primary-Light);
+  margin-bottom: 10px;
+}
+
+.asterisk {
+  color: var(--Primary-Dark);
+}
+
+/* Form fields */
+.mc-field-group {
+  margin-bottom: 20px;
+}
+
+.mc-field-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--Primary-Light);
+}
+
+.mc-field-group input[type="email"],
+.mc-field-group input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* GDPR section */
+#mergeRow-gdpr {
+  margin-top: 20px;
+  border-radius: 4px;
+  gap: 20px;
+  & p {
+    color: var(--Primary-Light);
+  }
+}
+
+.content__gdpr {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content__gdprBlock {
+  margin-bottom: 10px;
+}
+
+.mc_fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gdprRequired label {
+  font-weight: normal;
+}
+
+.checkbox input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#link {
+  color: var(--Primary-Light);
+}
+
+#gdpr_47758 {
+    cursor: pointer;
+}
+
+/* Submit button */
+#mc-embedded-subscribe.button {
+  background-color: var(--Primary-Light);
+  color: var(--Primary-Dark);
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 20px;
+  height: 50px;
+  width: 150px;
+}
+
+#mc-embedded-subscribe.button:hover {
+  transform: translateY(-5px) scale(105%);
+  background-color: var(--Primary-Light);
+  color: var(--Primary-Dark);
+}
+
+/* Error and success messages */
+#mce-error-response,
+#mce-success-response {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  display: none; /* Hidden by default */
+}
+
+#mce-error-response {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+#mce-success-response {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* Footer section */
+.optionalParent {
+  margin-top: 20px;
+}
+
+.foot {
+  text-align: center;
+}
+
+/* Anti-bot field */
+[style="position: absolute; left: -5000px;"] {
+  display: none;
+}

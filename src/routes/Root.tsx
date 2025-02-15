@@ -2,6 +2,7 @@ import Footer from "../Components/Footer";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import { useState } from "react";
+import NewFooter from "../Components/NewFooter";
 
 
 function Root() {
@@ -10,7 +11,8 @@ function Root() {
     <>
         <Navbar key="Navbar" active={active} setActive={setActive}/>
         <Outlet />
-        <Footer key="Footer" />
+        <NewFooter key="NewFooter" />
+        {/* <Footer key="Footer" /> */}
       <ScrollRestoration
          getKey={(location) => {
           return location.pathname;

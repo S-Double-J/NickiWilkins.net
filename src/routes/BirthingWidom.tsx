@@ -690,8 +690,9 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             transition={{ duration: DURATION, ease: EASE, delay: 2.6 }}
             viewport={{ once: true }}
           >
-            A 3-month online soul initiation for women travelling the midlife
-            journey of rebirth. March to June 2025
+            An 8-week online soul initiation for women travelling the midlife
+            journey of rebirth. August and September 2025.<br /><i style={{opacity: 0.7, fontSize: 20}}> Possible add-on: Wise
+            Women Stories, a creative retreat on Iona, 9-15 October, 2025.</i>
           </motion.p>
         </div>
         <section className="section-frame" ref={ForewordRef} id="Foreword">
@@ -926,7 +927,7 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                   </motion.div>
                   <motion.p className="white" {...fadeInViewProps}>
                     <i>
-                      <b>3 Private, 60 minute sessions </b>
+                      <b>2 Private, 60 minute sessions </b>
                     </i>
                     with Nicki.
                   </motion.p>
@@ -1339,20 +1340,19 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
             <motion.p {...fadeInViewProps}>
               <b>When the course meets:</b>
               <br />
-              Course begins on the <b>4th March 2025</b> and ends on the{" "}
-              <b>10th June 2025. </b>
-              We meet every other Tuesday from 7pm – 8.30pm GMT.
+              The course begins on the <b>10th of August 2025</b> and ends on the{" "}
+              <b>28th of September 2025. </b>
+              We meet on Sunday from 4pm-6pm GMT.
             </motion.p>
             <motion.p {...fadeInViewProps}>
               <b>There are 8 Group Sessions:</b>
-              <br />4 March, 18 March, 8 April, 22 April, 6 May, 20 May, 3 June,
-              10 June.
+              <br />10 August, 17 August, 24 August, 31 August, 7 September, 14 September, 21 September, 28 September.
               <br /> All private sessions with Nicki will be arranged.
             </motion.p>
             <motion.p {...fadeInViewProps}>
               <b>The cost of Birthing Wisdom:</b>
               <br />
-              The 3-month online program is <b>£750</b>.<br /> This is a
+              The 8-week online program is <b>£575</b>.<br /> This is a
               one-time Special Launch price.
             </motion.p>
           </div>
@@ -1457,8 +1457,6 @@ function BirthingWisdom({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                     </motion.li>
                     <motion.li {...fadeInViewProps}>
                       In person or online. <br />
-                      £1200 (This is a one-time special launch price. Offer ends
-                      soon.)
                     </motion.li>
                   </ul>
                   <motion.div {...fadeInViewProps}>

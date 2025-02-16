@@ -69,9 +69,9 @@ function Intro({ fadeInViewProps }: IntroProps) {
         </motion.h3>
         <motion.p {...fadeInViewProps}>
           I’m a Transformative Mentor and certified Purpose Guide, a mother, a
-          poet, and artist. I offer wisdom and guidance to
-          women as they navigate the soulful side of menopause and elderhood.
-          I’m a midwife for your midlife rebirth.
+          poet, and artist. I offer wisdom and guidance to women as they
+          navigate the soulful side of menopause and elderhood. I’m a midwife
+          for your midlife rebirth.
         </motion.p>
         <InnerFrame>
           <motion.h4 style={{ width: "100%" }} {...fadeInViewProps}>
@@ -162,9 +162,9 @@ function Intro({ fadeInViewProps }: IntroProps) {
               Birthing Wisdom
             </motion.p>
             <motion.p {...fadeInViewProps}>
-              A 3-month online purpose discovery program for menopausal women
-              who are wanting to be part of a community as they transition into
-              elderhood. Birthing Wisdom includes group sessions and private
+              An 8-week online soul-initiation journey for menopausal women who
+              are wanting to be part of a community as they transition into
+              wisdomhood. Birthing Wisdom includes group sessions and private
               sessions with me.
             </motion.p>
             <motion.div {...fadeInViewProps}>
@@ -180,8 +180,8 @@ function Intro({ fadeInViewProps }: IntroProps) {
               Retreats
             </motion.p>
             <motion.p {...fadeInViewProps}>
-              For women looking for a shorter intensive, I run creative
-              retreats on the Isle of Iona, Scotland.
+              For women looking for a shorter intensive, I run creative retreats
+              on the Isle of Iona, Scotland.
             </motion.p>
             <motion.div {...fadeInViewProps}>
               <LinkText to={"/retreats"} className="primary-button">

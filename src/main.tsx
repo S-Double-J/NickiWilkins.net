@@ -17,7 +17,7 @@ import "./Components/mailchimp/mailchimpStyles.css"
 const fadeInViewProps = {
   initial: { opacity: 0 },
   whileInView: { opacity: 1 },
-  transition: { duration: 1, ease: "easeInOut" },
+  transition: { duration: 0.65, ease: "easeInOut" },
   viewport: { once: true, margin: "-100px" },
 };
 function MakeSplitTextAnim({ children }: { children: string }) {
@@ -29,7 +29,7 @@ function MakeSplitTextAnim({ children }: { children: string }) {
             key={index}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.7, ease: "easeInOut", delay: 0.13 * index }}
+            transition={{ duration: 0.65, ease: "easeInOut", delay: 0.13 * index }}
             viewport={{ once: true }}
           >
             {letter}

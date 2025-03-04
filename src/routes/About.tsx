@@ -80,12 +80,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const IconTextBox = styled(motion.div)`
-  width: 100%;
-  display: flex;
-  justify-content: left;
-  gap: 10px;
-`;
+
 const Icons = styled.a`
   width: 30px;
   height: 30px;
@@ -109,7 +104,7 @@ const Substack = styled(BsSubstack)`
 const FB = styled(FaFacebook)`
   width: 90%;
   height: 90%;
-`
+`;
 interface Props {
   fadeInViewProps: {
     initial: { opacity: number };
@@ -154,8 +149,8 @@ function About({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                   <Substack />
                 </Icons>
                 <Icons href="https://www.facebook.com/themidliferebirth/?locale=en_GB">
-                <FB />
-              </Icons>
+                  <FB />
+                </Icons>
               </SocialsIcons>
             </TitleAndSocials>
           </TitleSocialsAndImage>

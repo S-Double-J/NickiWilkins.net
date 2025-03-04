@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { FaInstagram } from "react-icons/fa";
 import { BsSubstack } from "react-icons/bs";
+import { FaFacebook } from "react-icons/fa";
 
 const AboutDiv = styled.div`
   width: 100%;
@@ -9,6 +10,7 @@ const AboutDiv = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: var(--Primary-Light);
+  margin-bottom: 50px;
 `;
 
 const Container = styled.div`
@@ -104,6 +106,10 @@ const Substack = styled(BsSubstack)`
   width: 60%;
   height: 60%;
 `;
+const FB = styled(FaFacebook)`
+  width: 90%;
+  height: 90%;
+`
 interface Props {
   fadeInViewProps: {
     initial: { opacity: number };
@@ -147,6 +153,9 @@ function About({ fadeInViewProps, MakeSplitTextAnim }: Props) {
                 <Icons href="https://substack.com/@nickiwilkins?utm_source=user-menu">
                   <Substack />
                 </Icons>
+                <Icons href="https://www.facebook.com/themidliferebirth/?locale=en_GB">
+                <FB />
+              </Icons>
               </SocialsIcons>
             </TitleAndSocials>
           </TitleSocialsAndImage>
@@ -221,32 +230,6 @@ function About({ fadeInViewProps, MakeSplitTextAnim }: Props) {
               <b>THE WORK I OFFER</b> is for the healing of Earth, our home. I
               know that when fully initiated wise women speak truth with love
               and authenticity, the next seven generations have a chance. 
-            </motion.p>
-            <Line />
-            <motion.p {...fadeInViewProps}>
-              <b>ELSEWHERE:</b>
-            </motion.p>
-            <IconTextBox {...fadeInViewProps}>
-              {" "}
-              <Icons href="https://www.instagram.com/_nickiwilkins_/">
-                <Insta />
-              </Icons>
-              <motion.p {...fadeInViewProps}>
-                Instagram :: This is where I share my artwork.
-              </motion.p>
-            </IconTextBox>
-            <IconTextBox {...fadeInViewProps}>
-              <Icons href="https://substack.com/@nickiwilkins?utm_source=user-menu">
-                <Substack />
-              </Icons>
-              <motion.p {...fadeInViewProps}>
-                Substack :: The Soul Pelt Press is where I record the journey
-                into my wise woman years.
-              </motion.p>
-            </IconTextBox>
-            <motion.p {...fadeInViewProps}>
-              #wisewildwhole :: Use this hashtag on Instagram to record your
-              journey to your wise, wild, and whole self.
             </motion.p>
           </TextContainer>
         </Container>

@@ -5,6 +5,7 @@ import MailchimpForm from "./mailchimp/MailchimpForm";
 const FooterFrame = styled.div`
   display: flex;
   width: 100%;
+  min-height: 100svh;
   padding: 50px 50px 10px 50px;
   box-sizing: border-box;
   justify-content: center;
@@ -172,6 +173,7 @@ function NewFooter() {
         </p>
       </LeftFrame>
       <RightFrame>
+        <h2 style={{color: "var(--Primary-Light)", marginTop: 40}}>Subscribe</h2>
         <MailchimpForm />
       </RightFrame>
     </FooterFrame>
